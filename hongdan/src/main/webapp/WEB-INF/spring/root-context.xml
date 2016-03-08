@@ -5,6 +5,7 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
+	<!-- DB 커넥션(mysql) -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 	        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
 	        <property name="url" value="jdbc:mysql://hongdan.cxyjhvqjj1go.ap-northeast-2.rds.amazonaws.com:3306/hongdancompany" />
@@ -18,5 +19,12 @@
 	 <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 	        <constructor-arg ref="sqlSessionFactory" />
 	 </bean>
+	 
+	 <!-- 파일 등록처리 -->
+	 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	 
+	 <!-- JSON 파서 -->
+	 <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+	 	
 		
 </beans>
