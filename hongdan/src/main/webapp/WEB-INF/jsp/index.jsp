@@ -156,7 +156,7 @@
     <section class="p-b-0 bkp-01">
         <div class="container">
            <div class="delievery">
-             <h2>FAST DELIVERY</h2>
+             <h2><font color="black">FAST DELIVERY</font></h2>
              <p>Sollicitudin vitae nibh moresa at magna eu augue semper.</p>
              <a href="#" class="button border rounded transparent"><strong>CALL US: 1234 0404</strong></a>
            </div>
