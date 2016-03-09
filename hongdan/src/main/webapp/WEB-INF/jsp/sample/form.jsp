@@ -12,7 +12,7 @@
 		    <input type="submit" value="서버전달"/>
 		</form>
 		
-		<img src="/logo.png">
+		
 		
 
 			
