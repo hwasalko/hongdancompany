@@ -1,6 +1,5 @@
-package com.hongdan.auto.sample;
+package com.hongdan.auto.sample.controller;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,19 +10,22 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.hongdan.auto.sample.dao.SampleDao;
+import com.hongdan.auto.sample.service.SampleService;
+//import com.hongdan.auto.sample.service.SampleService;
 import com.hongdan.auto.sample.vo.FileVo;
 import com.hongdan.auto.sample.vo.ListVo;
 import com.hongdan.auto.sample.vo.ObjectVo;
-import com.hongdan.auto.sample.vo.RedirectVo;
+
 
 /**
  * Handles requests for the application home page.
@@ -32,6 +34,13 @@ import com.hongdan.auto.sample.vo.RedirectVo;
 public class SampleController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SampleController.class);
+	
+	@Autowired
+	private SampleDao sampleDao;;
+
+	@Autowired
+	private SampleService sampleService;
+
 		
 	
 	@RequestMapping(value = "/sample/submit")
@@ -199,7 +208,42 @@ public class SampleController {
 	    return "redirect:/sample/herepage";
 	}
 
+	
+	/**
+	 * Dao 직접 호출 테스트
+	 * @return
+	 */
+	@RequestMapping("/sample/dbtest")
+	public String dbTest( Model model ){
+		String result = "";
+			
+	    try {
+	    	result = sampleDao.test();
+	        logger.debug("DB TEST 결과 : " + result );    
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    
+	    model.addAttribute("dbresult", result);
+	    
+	    return "sample/dbTest";
+	}
 
+	
+	/**
+	 * 트랜젝션 테스트
+	 * @return
+	 */
+	
+	@RequestMapping("/sample/insertTest")
+	public void insertTest(){
+	    try {
+	        sampleService.transactionTest();    
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	}
+	
 
 	
 }

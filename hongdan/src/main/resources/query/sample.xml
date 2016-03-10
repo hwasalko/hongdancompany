@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongdan.auto.sample">
+
+    <select id="com.hongdan.auto.sample.getUserId" resultType="String">
+        SELECT id
+        FROM user
+        WHERE id = 'hwasalko'
+    </select>
+    
+    
+    
+	<insert id="com.hongdan.auto.sample.insertTest" parameterType = "String">
+	    INSERT INTO mybatis_table(title)
+	    VALUES(#{value})
+	</insert>
+
+    
+    
+    
+</mapper>

@@ -2,12 +2,12 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<title>== Hongdan Company 1st Auto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/> 
+<title>Hongdan Company 1st Auto</title>
  
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/fontawesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
@@ -414,17 +414,17 @@
     <section class="background-grey p-b-40">
        <div class="container">
             <div class="heading heading-center">
-            <h2>MEET OUR TEAM</h2>
-            <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+            <h2>BEST PARTNERSHIP</h2>
+            <p>베스트 파트너를 통해 최고의 Total A/S 서비스를 제공합니다.</p>
        </div>
             <div class="row">
                 <div class="col-md-3">
                     <div class="image-box circle-image medium"> <img class="" src="images/team/c1.jpg" alt=""> </div>
                         <div class="image-box-description text-center">
-                            <h4>Mark Henry</h4>
-                            <p>GRILL  CHEF</p>
+                            <h4>홍길동</h4>
+                            <p>수석 엔지니어</p>
                             <hr class="line">
-                            <div>Nullam vulputate euis od urna non pharetra thasellus</div>
+                            <div>썬팅 전문업체</div>
                             <div class="social-icons social-icons-border m-t-10 text-center">
                             <ul>
                                 <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -572,9 +572,9 @@
                             <h4 class="widget-title">Contact us</h4>
                             <ul class="list-large list-icons">
                                 <li><i class="fa fa-map-marker"></i>
-                                    <strong>Address:</strong> 795 Folsom Ave, Suite 600
-                                    <br>San Francisco, CA 94107</li>
-                                <li><i class="fa fa-phone"></i><strong>Phone:</strong> (123) 456-7890 </li>
+                                    <strong>Address:</strong> 서울특별시 동작구 흑석동
+                                    <br>홍단빌딩 202호</li>
+                                <li><i class="fa fa-phone"></i><strong>Phone:</strong> 010-1234-5678 </li>
                                 <li><i class="fa fa-clock-o"></i>Monday - Friday: <strong>08:00 - 22:00</strong>
                                     <br>Saturday, Sunday: <strong>Closed</strong>
                                 </li>
@@ -588,7 +588,7 @@
             <div class="container">
                 <div class="row">
                     <div class="copyright-text text-center">
-                        &copy; 2015 Canteen - Restaurant Template. All Rights Reserved.
+                        &copy; 2016 Hongdan Company - 1st Auto. All Rights Reserved.
                     </div>
                 </div>
             </div>

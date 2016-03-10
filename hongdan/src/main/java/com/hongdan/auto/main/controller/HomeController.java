@@ -1,4 +1,4 @@
-package com.hongdan.auto.main;
+package com.hongdan.auto.main.controller;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Locale;

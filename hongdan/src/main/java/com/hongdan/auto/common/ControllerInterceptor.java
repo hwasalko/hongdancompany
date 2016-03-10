@@ -10,7 +10,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.hongdan.auto.main.HomeController;
+import com.hongdan.auto.main.controller.HomeController;
 
 
 
