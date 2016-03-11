@@ -6,7 +6,7 @@ import java.util.Map;
 
 public interface SampleService {
 	
-	public void insertTest() throws SQLException;
+	public void saveTest() throws SQLException;
 	
 	public List<Map<String, String>> getUsers() throws SQLException;
 	

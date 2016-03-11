@@ -8,8 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.hongdan.auto.sample.controller.SampleController;
 import com.hongdan.auto.sample.dao.SampleDao;
 
 @Service
@@ -20,8 +20,10 @@ public class SampleServiceImpl implements SampleService {
 	@Autowired
     private SampleDao sampleDao;
  
+	
     @Override
-    public void insertTest() throws SQLException {
+    @Transactional
+    public void saveTest() throws SQLException {
         //String tmp = "글 등록테스트!";
         String tmp2 = "write test";
         

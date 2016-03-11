@@ -241,10 +241,10 @@ public class SampleController {
 	 * @return
 	 */
 	
-	@RequestMapping("/sample/insertTest")
+	@RequestMapping("/sample/saveTest")
 	public void insertTest(){
 	    try {
-	        sampleService.insertTest();    
+	        sampleService.saveTest();    
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }

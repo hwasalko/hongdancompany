@@ -65,18 +65,18 @@
                 <div class="container">
                     <nav id="mainMenu" class="main-menu mega-menu">
                         <ul class="main-menu nav nav-pills">
-                            <li class="dropdown"><a href="index.html" class="nav-to">Home</a></li>
-                            <li class="dropdown"> <a href="about.html" class="nav-to">About</a> </li>
-                            <li class="dropdown"> <a href="services.html" class="nav-to">Service</a> </li>
+                            <li class="dropdown"><a href="/" class="nav-to">Home</a></li>
+                            <li class="dropdown"> <a href="/about" class="nav-to">About</a> </li>
+                            <li class="dropdown"> <a href="/services" class="nav-to">Service</a> </li>
                             <li class="dropdown"> <a href="#">Menus <i class="fa fa-angle-down"></i> </a>
                                 <ul class="dropdown-menu">
-                                    <li> <a href="menu.html">Basic</a> </li>
-                                    <li> <a href="menu-masonary.html">Masonary</a> </li>
-                                    <li> <a href="menu-without-parallax.html">Without Parallex</a> </li>
+                                    <li> <a href="/menu">Basic</a> </li>
+                                    <li> <a href="/menu-masonary">Masonary</a> </li>
+                                    <li> <a href="/menu-without-parallax">Without Parallex</a> </li>
                                 </ul>
                             </li>
-                            <li class="dropdown"> <a href="reservation.html" class="nav-to">Reservation</a> </li>
-                            <li class="dropdown"> <a href="contact.html" class="nav-to">Contact us</a> </li>
+                            <li class="dropdown"> <a href="/reservation" class="nav-to">Reservation</a> </li>
+                            <li class="dropdown"> <a href="/contact" class="nav-to">Contact us</a> </li>
                         </ul>
                     </nav>
                 </div>
