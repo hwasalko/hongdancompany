@@ -304,6 +304,19 @@ public class SampleController {
 	       
 	}
 
+		
+	/**
+	 * 멀티row DB테스트
+	 * @return
+	 * @throws SQLException 
+	 */
+	@RequestMapping(value="/sample/getUsers")
+    public String getUsers(Model model) throws SQLException{
+        model.addAttribute("interests", sampleService.getUsers());
+        
+        return "sample/getUsers";
+    }
+
 
 
 	

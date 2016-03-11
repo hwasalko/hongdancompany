@@ -1,6 +1,8 @@
 package com.hongdan.auto.sample.service;
 
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,4 +32,14 @@ public class SampleServiceImpl implements SampleService {
     	sampleDao.insertTest(tmp2);
         sampleDao.insertTest(null);        
     }
+    
+    
+    @Override 
+    public List<Map<String, String>> getUsers() throws SQLException {
+        return sampleDao.getUsers();
+    }
+    
+
+    
+    
 }

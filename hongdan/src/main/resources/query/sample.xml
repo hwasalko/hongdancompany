@@ -26,5 +26,13 @@
 	</select>
     
     
+    <select id="com.hongdan.auto.sample.getUsers" resultType="hashmap">
+	    SELECT
+	        *
+	    FROM
+	        user
+	</select>
+    
+    
     
 </mapper>

@@ -1,6 +1,7 @@
 package com.hongdan.auto.sample.dao;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -37,6 +38,12 @@ public class SampleDaoImpl implements SampleDao {
     @Override
     public Map<String, Object> getByteImage() throws SQLException {
         return query.selectOne("com.hongdan.auto.sample.getByteImage");
+    }
+
+    
+    @Override
+    public List<Map<String, String>> getUsers() throws SQLException {
+        return query.selectList("com.hongdan.auto.sample.getUsers");
     }
 
 
