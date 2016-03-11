@@ -19,7 +19,7 @@ public class SampleServiceImpl implements SampleService {
     private SampleDao sampleDao;
  
     @Override
-    public void transactionTest() throws SQLException {
+    public void insertTest() throws SQLException {
         //String tmp = "글 등록테스트!";
         String tmp2 = "write test";
         
@@ -28,6 +28,6 @@ public class SampleServiceImpl implements SampleService {
     	
     	//sampleDao.insertTest(tmp);
     	sampleDao.insertTest(tmp2);
-        //sampleDao.insertTest(null);        
+        sampleDao.insertTest(null);        
     }
 }

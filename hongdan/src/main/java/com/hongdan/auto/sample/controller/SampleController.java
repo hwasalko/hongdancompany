@@ -1,5 +1,6 @@
 package com.hongdan.auto.sample.controller;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,6 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +30,7 @@ import com.hongdan.auto.sample.service.SampleService;
 import com.hongdan.auto.sample.vo.FileVo;
 import com.hongdan.auto.sample.vo.ListVo;
 import com.hongdan.auto.sample.vo.ObjectVo;
+import com.hongdan.auto.sample.vo.ImageFileVo;
 
 
 /**
@@ -238,12 +244,67 @@ public class SampleController {
 	@RequestMapping("/sample/insertTest")
 	public void insertTest(){
 	    try {
-	        sampleService.transactionTest();    
+	        sampleService.insertTest();    
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
 	}
+
 	
+	
+	/**
+	 * 파일태그를 위한 폼태그
+	 * @return
+	 */
+	@RequestMapping(value="/sample/formFile")
+	public String formFile() {
+	    return "sample/formFile";
+	}
+
+	/**
+	 * 파일처리 컨트롤러
+	 * @param vo
+	 * @return
+	 */
+	@RequestMapping(value="/sample/saveImage")
+	public String saveImage(ImageFileVo vo) {
+	    try {
+	        Map<String, Object> hmap = new HashMap<String, Object>();
+	        hmap.put("img", vo.getImgFile().getBytes());
+	        sampleDao.saveImage(hmap);    
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return "redirect:/sample/formFile";
+	}
+
+	/**
+	 * 임의의 뷰페이지
+	 * @return
+	 */
+	@RequestMapping(value="/sample/view")
+	public String view() {
+	    return "sample/view";
+	}
+	
+	/**
+	 * 이미지태그의 src 컨트롤러
+	 * @return
+	 * @throws SQLException 
+	 */
+	@RequestMapping(value="/sample/getByteImage")
+	public ResponseEntity<byte[]> getByteImage() throws Exception {
+	    Map<String, Object> map;
+	    map = sampleDao.getByteImage();
+		byte[] imageContent = (byte[]) map.get("img");
+		final HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.IMAGE_PNG);
+		    
+		return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);
+	       
+	}
+
+
 
 	
 }

@@ -1,6 +1,7 @@
 package com.hongdan.auto.sample.dao;
 
 import java.sql.SQLException;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
@@ -8,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.hongdan.auto.sample.service.SampleServiceImpl;
 
 @Repository
 public class SampleDaoImpl implements SampleDao {
@@ -28,6 +28,17 @@ public class SampleDaoImpl implements SampleDao {
     	logger.info("[DAO] 파라미터 : " + value );
         query.insert("com.hongdan.auto.sample.insertTest",value);
     }
+
+    @Override
+    public void saveImage(Map<String, Object> hmap) throws SQLException {
+        query.insert("com.hongdan.auto.sample.saveImage",hmap);
+    }
+    
+    @Override
+    public Map<String, Object> getByteImage() throws SQLException {
+        return query.selectOne("com.hongdan.auto.sample.getByteImage");
+    }
+
 
     
 }

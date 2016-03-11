@@ -15,6 +15,15 @@
 	    VALUES(#{value})
 	</insert>
 
+
+	<insert id="com.hongdan.auto.sample.saveImage" parameterType="java.util.Map">
+	    INSERT INTO img_table VALUES(#{img})    
+	</insert>
+
+    <select id="com.hongdan.auto.sample.getByteImage" resultType="java.util.Map">
+	    SELECT img
+	    FROM img_table
+	</select>
     
     
     
