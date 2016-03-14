@@ -7,57 +7,12 @@
 
 <body class="wide">
  
-  <div class="loader-wrapper">
-    <div class="loader">
-        <img src="images/logo-sm.png" alt="Loading">
-        <span class="loader-title">Loading...</span>
-    </div>
-  </div>
+  <jsp:include page="include/inc_body_loader.jsp" flush="true" />
  
   <div class="wrapper">
-    <header id="header" class="">
-      <div id="header-wrap">
-        <div class="container">
-            <div id="logo">
-                <a href="#" class="logo" data-dark-logo="images/logo-dark.png">
-                <img src="images/logo.png" alt="Logo">
-                </a>
-            </div>
-            <div class="nav-main-menu-responsive">
-                <button data-toggle="collapse" data-target=".main-menu-collapse"><i class="fa fa-navicon"></i></button>
-            </div>
-            <div id="top-search">
-                <a id="top-search-trigger">
-                    <i class="fa fa-search"></i>
-                    <i class="fa fa-close"></i>
-                </a>
-                <form action="#" method="get">
-                    <input type="text" name="q" class="form-control" value="" placeholder="Start typing & press  &quot;Enter&quot;">
-                </form>
-            </div>
-            <div class="navbar-collapse collapse main-menu-collapse navigation-wrap">
-                <div class="container">
-                    <nav id="mainMenu" class="main-menu mega-menu">
-                        <ul class="main-menu nav nav-pills">
-                            <li class="dropdown"><a href="index.html" class="nav-to">Home</a></li>
-                            <li class="dropdown"> <a href="about.html" class="nav-to">About</a> </li>
-                            <li class="dropdown"> <a href="services.html" class="nav-to">Service</a> </li>
-                            <li class="dropdown"> <a href="#">Menus <i class="fa fa-angle-down"></i> </a>
-                                <ul class="dropdown-menu">
-                                    <li> <a href="menu.html">Basic</a> </li>
-                                    <li> <a href="menu-masonary.html">Masonary</a> </li>
-                                    <li> <a href="menu-without-parallax.html">Without Parallex</a> </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"> <a href="reservation.html" class="nav-to">Reservation</a> </li>
-                            <li class="dropdown"> <a href="contact.html" class="nav-to">Contact us</a> </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-      </div>
-    </header>
+    
+    <jsp:include page="include/inc_body_header.jsp" flush="true" />
+
 
     <section class="menu-top-banner background-2 page-title-center">
         <div class="container">
@@ -204,109 +159,12 @@
         </div>
     </section>
 
-    <footer class="background-dark text-grey bkp-04">
-        <div class="footer-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="widget clearfix widget-categories">
-                            <h4 class="widget-title">Our Services</h4>
-                            <ul class="list list-arrow-icons">
-                                <li> <a href="#" title="">Development </a> </li>
-                                <li> <a href="#" title="">Branding </a> </li>
-                                <li> <a href="#" title="">Marketing </a> </li>
-                                <li> <a href="#" title="">Branding </a> </li>
-                                <li> <a href="#" title="">Strategy solutions</a> </li>
-                                <li> <a href="#" title="">Copywriting </a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="widget clearfix widget-categories">
-                            <h4 class="widget-title">Blog categories</h4>
-                            <ul class="list list-arrow-icons">
-                                <li> <a href="#" title="">Development </a> </li>
-                                <li> <a href="#" title="">Branding </a> </li>
-                                <li> <a href="#" title="">Marketing </a> </li>
-                                <li> <a href="#" title="">Branding </a> </li>
-                                <li> <a href="#" title="">Strategy solutions</a> </li>
-                                <li> <a href="#" title="">Copywriting </a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <h4 class="widget-title">Opening Times</h4>
-                        <ul class="list list-arrow-icons">
-                            <li>
-                                <p>Monday
-                                    <time datetime="00:01">1 pm - 10 pm</time>
-                                </p>
-                            </li>
-                            <li>
-                                <p>Tuesday
-                                    <time datetime="00:01">1 pm - 10 pm</time>
-                                </p>
-                            </li>
-                            <li>
-                                <p>Wednesday
-                                    <time datetime="00:01">1 pm - Midnight</time>
-                                </p>
-                            </li>
-                            <li>
-                                <p>Thursday
-                                    <time datetime="00:01">1 pm - 10 pm</time>
-                                </p>
-                            </li>
-                            <li>
-                                <p>Friday
-                                    <time datetime="00:01">1 pm - Midnight</time>
-                                </p>
-                            </li>
-                            <li>
-                                <p>Saturday <span class="label label-default">Closed</span></p>
-                            </li>
-                            <li>
-                                <p>Sunday
-                                    <time datetime="00:01">1 pm - 10 pm</time>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="widget clearfix widget-contact-us" style="background-image: url('images/world-map.png'); background-position: 50% 55px; background-repeat: no-repeat">
-                            <h4 class="widget-title">Contact us</h4>
-                            <ul class="list-large list-icons">
-                                <li><i class="fa fa-map-marker"></i>
-                                    <strong>Address:</strong> 795 Folsom Ave, Suite 600
-                                    <br>San Francisco, CA 94107</li>
-                                <li><i class="fa fa-phone"></i><strong>Phone:</strong> (123) 456-7890 </li>
-                                <li><i class="fa fa-clock-o"></i>Monday - Friday: <strong>08:00 - 22:00</strong>
-                                    <br>Saturday, Sunday: <strong>Closed</strong>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-content">
-            <div class="container">
-                <div class="row">
-                    <div class="copyright-text text-center">
-                        &copy; 2015 Canteen - Restaurant Template. All Rights Reserved.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+	<jsp:include page="include/inc_footer.jsp" flush="true" />
 
   </div>
- 
-  <a class="gototop gototop-button" href="#"><i class="fa fa-chevron-up"></i></a>
- 
-  <script src="vendor/jquery/jquery-1.11.2.min.js"></script>
-  <script src="vendor/plugins.js"></script>
-  <script src="js/theme-functions.js"></script>
-  <script src="js/custom.js"></script>
+
+	<jsp:include page="include/inc_footer2.jsp" flush="true" /> 
+  
+
 </body>
 </html>
