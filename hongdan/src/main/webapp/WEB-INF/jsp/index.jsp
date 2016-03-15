@@ -4,15 +4,16 @@
 <!DOCTYPE html>
 <html lang="kr">
 
-<jsp:include page="include/inc_head.jsp" flush="true" />
+<jsp:include page="include/inc_head.jsp"  />
 
 <body class="wide">
  
-  <jsp:include page="include/inc_body_loader.jsp" flush="true" />
+  <jsp:include page="include/inc_body_loader.jsp"  />
  
   <div class="wrapper">
     
-    <jsp:include page="include/inc_body_header.jsp" flush="true" />
+    <jsp:include page="include/inc_body_header.jsp"  />
+
 
 
     <section id="slider" class="no-padding">
@@ -429,12 +430,12 @@
     </section>
 
 
-	<jsp:include page="include/inc_footer.jsp" flush="true" />
+	<jsp:include page="include/inc_footer.jsp"  />
     
 
   </div>
  
- 	<jsp:include page="include/inc_footer2.jsp" flush="true" />
+	<jsp:include page="include/inc_footer2.jsp"  />
 
 </body>
 </html>
