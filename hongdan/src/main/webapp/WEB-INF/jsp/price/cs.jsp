@@ -77,7 +77,7 @@
 				          <div class="portfolio-details">
 				              <p>
 				              		<ul>
-					              		<li>40가지 정기점검정비</li>
+					              		<li>40가지 정기점검정비</li>	
 					              		<li>실내외 손세차</li>
 					              	</ul>	
 					              	<hr>

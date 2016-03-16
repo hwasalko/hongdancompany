@@ -31,13 +31,13 @@
 	                            
 	                            <li class="dropdown"> <a href="/services" class="nav-to">Service</a> </li>
 	                            
-	                            <li class="dropdown"> <a href="/price/cs">Price <i class="fa fa-angle-down"></i> </a>
+	                            <li class="dropdown"> <a href="#">Price <i class="fa fa-angle-down"></i> </a>
 	                                <ul class="dropdown-menu">
 	                                    <li> <a href="/price/cs">C/S</a> </li>
 	                                </ul>
 	                            </li>
 	                            
-	                            <li class="dropdown"> <a href="/menu">Menus <i class="fa fa-angle-down"></i> </a>
+	                            <li class="dropdown"> <a href="#">Menus <i class="fa fa-angle-down"></i> </a>
 	                                <ul class="dropdown-menu">
 	                                    <li> <a href="/menu">Basic</a> </li>
 	                                    <li> <a href="/menu-masonary">Masonary</a> </li>
