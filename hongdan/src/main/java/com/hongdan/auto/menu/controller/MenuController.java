@@ -20,19 +20,19 @@ public class MenuController {
 	@RequestMapping(value = "/menu")
 	public String menu(HttpServletRequest request,  Model model) {		
 		
-		return "menu";
+		return "menu/menu";
 	}	
 	
 	@RequestMapping(value = "/menu-masonary")
 	public String menu_masonary(HttpServletRequest request,  Model model) {		
 		
-		return "menu-masonary";
+		return "menu/menu-masonary";
 	}
 	
 	@RequestMapping(value = "/menu-without-parallax")
 	public String menu_without_parallax(HttpServletRequest request,  Model model) {		
 		
-		return "menu-without-parallax";
+		return "menu/menu-without-parallax";
 	}
 	
 }

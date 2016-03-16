@@ -4,8 +4,8 @@
 	      <div id="header-wrap">
 	        <div class="container">
 	            <div id="logo">
-	                <a href="#" class="logo" data-dark-logo="images/logo-dark.png">
-	                <img src="images/logo.png" alt="Logo">
+	                <a href="/" class="logo" data-dark-logo="/images/logo-dark.png">
+	                <img src="/images/logo.png" alt="Logo">
 	                </a>
 	            </div>
 	            <div class="nav-main-menu-responsive">
@@ -24,18 +24,31 @@
 	                <div class="container">
 	                    <nav id="mainMenu" class="main-menu mega-menu">
 	                        <ul class="main-menu nav nav-pills">
+	                            
 	                            <li class="dropdown"><a href="/" class="nav-to">Home</a></li>
+	                            
 	                            <li class="dropdown"> <a href="/about" class="nav-to">About</a> </li>
+	                            
 	                            <li class="dropdown"> <a href="/services" class="nav-to">Service</a> </li>
-	                            <li class="dropdown"> <a href="#">Menus <i class="fa fa-angle-down"></i> </a>
+	                            
+	                            <li class="dropdown"> <a href="/price/cs">Price <i class="fa fa-angle-down"></i> </a>
+	                                <ul class="dropdown-menu">
+	                                    <li> <a href="/price/cs">C/S</a> </li>
+	                                </ul>
+	                            </li>
+	                            
+	                            <li class="dropdown"> <a href="/menu">Menus <i class="fa fa-angle-down"></i> </a>
 	                                <ul class="dropdown-menu">
 	                                    <li> <a href="/menu">Basic</a> </li>
 	                                    <li> <a href="/menu-masonary">Masonary</a> </li>
 	                                    <li> <a href="/menu-without-parallax">Without Parallex</a> </li>
 	                                </ul>
 	                            </li>
+	                            
 	                            <li class="dropdown"> <a href="/reservation" class="nav-to">Reservation</a> </li>
+	                            
 	                            <li class="dropdown"> <a href="/contact" class="nav-to">Contact us</a> </li>
+	                            
 	                        </ul>
 	                    </nav>
 	                </div>

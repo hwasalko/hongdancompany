@@ -2,7 +2,7 @@
 
 	<div class="loader-wrapper">
 	    <div class="loader">
-	        <img src="images/logo-sm.png" alt="Loading">
+	        <img src="/images/logo-sm.png" alt="Loading">
 	        <span class="loader-title">Loading...</span>
 	    </div>
 	</div>
