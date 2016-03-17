@@ -15,11 +15,11 @@ public class PriceController {
 	private static final Logger logger = LoggerFactory.getLogger(PriceController.class);
 	
 	
-	// cs 프로그램 가격
-	@RequestMapping(value = "/price/cs")
+	// 사후관리서비스 가격안내
+	@RequestMapping(value = "/price/post_management")
 	public String services(HttpServletRequest request,  Model model) {		
 		
-		return "price/cs";
+		return "price/post_management";
 	}	
 	
 }
