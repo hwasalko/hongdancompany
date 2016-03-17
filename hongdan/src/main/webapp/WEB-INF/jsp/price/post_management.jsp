@@ -44,12 +44,12 @@
 				        </div>
 				      <div class="container portfolio">
 				
-				      <div class="filter-active-title">Show All</div>
+				      <div class="filter-active-title">전체조회 (Show All)</div>
 				      <ul class="portfolio-filter" id="portfolio-filter" data-isotope-nav="isotope">
-				          <li class="ptf-active" data-filter="*">Show All</li>
-				          <li data-filter=".vip">VIP</li>
-				          <li data-filter=".year">연간회원</li>
-				          <li data-filter=".non">비회원</li>
+				          <li class="ptf-active" data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>
+				          <li data-filter=".vip" style="text-align: center;">VIP<br>(연100만원)</li>
+				          <li data-filter=".year" style="text-align: center;">연간회원<br>(연 50만원)</li>
+				          <li data-filter=".non" style="text-align: center;">비회원<br>(개별가격)</li>
 				      </ul>
 				
 				
@@ -210,22 +210,13 @@
 				          </div>				          
 				          <div class="portfolio-details">				          				          
 				              		<div class="menu-price">
-							        	<p></p>
-							        </div>
-				              		<ul>
-					              		<li>40가지 정기점검정비</li>	
-					              		<li>실내외 손세차</li>
-					              	</ul>
-					              	
-					              	<hr>
-					              	<div class="menu-price">
 							        	<p>연2회</p>
 							        </div>
 					              	<ul>
-					              		<li>엔진클리닝/외장 잔기스 관리</li>
-					              		<li>워셔액/부동액 보충 등 점검</li>
-					              		<li>가죽시트케어 서비스</li>
-					              		<li>실내크리닝</li>
+					              		<li>사고 및 보험견적/수비/정비튜닝</li>
+					              		<li>휠/타이어 업그레이드</li>
+					              		<li>A/V장착/썬팅/광택</li>
+					              		<li>협력업체 최저가 할인보장</li>
 					              	</ul>					              					              
 				          </div>
 				      </div>
@@ -244,24 +235,226 @@
 				              <h4 class="title">렌트 서비스 <span style="color: olive;">[VIP]</span></h4>
 				              <hr>
 				          </div>				          
-				          <div class="portfolio-details">				          				          
-				              		<div class="menu-price">
-							        	<p></p>
-							        </div>
-				              		<ul>
-					              		<li>당일 차량정비에 한하여 렌트제공</li>
-					              	</ul>
-					              	
-					              	<hr>
+				          <div class="portfolio-details">
 					              	<div class="menu-price">
 							        	<p>연2회</p>
 							        </div>
 					              	<ul>
-					              		<li>엔진클리닝/외장 잔기스 관리</li>
-					              		<li>워셔액/부동액 보충 등 점검</li>
-					              		<li>가죽시트케어 서비스</li>
-					              		<li>실내크리닝</li>
+					              		<li>당일 차량정비에 한하여 렌트제공</li>
 					              	</ul>					              					              
+				          </div>
+				      </div>
+				      
+				      
+				      <div class="portfolio-item year">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/menus/1.jpg" alt="">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">렌트 서비스 <span style="color: olive;">[연간회원]</span></h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">				
+					              	<div class="menu-price">
+							        	<p>연1회</p>
+							        </div>
+					              	<ul>
+					              		<li>당일 차량정비에 한하여 렌트제공</li>
+					              	</ul>					              					              
+				          </div>
+				      </div>
+				      
+				      
+				      <div class="portfolio-item non">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/menus/1.jpg" alt="">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">렌트 서비스 <span style="color: olive;">[비회원]</span></h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">				
+					              	<div class="menu-price">
+							        	<p>10만원<br><span style="color: maroon;">(회당)</span></p>
+							        </div>
+					              	<ul>
+					              		<li>당일 차량정비에 한하여 렌트제공</li>
+					              	</ul>					              					              
+				          </div>
+				      </div>
+				      
+				      
+				      <div class="portfolio-item vip">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/menus/1.jpg" alt="">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">차량구입 프로그램 <span style="color: olive;">[VIP]</span></h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">				
+					              	<div class="menu-price">
+							        	<p>무제한</p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[신차 구입시]</span>
+					              		<li>각 메이커별 one-stop 차량정보 컨설팅 및 시승</li>
+					              		<li>구입 전과정 비교견적(현금/할부/리스/렌트/보험/이전)</li>
+					              		<li>최대할인 및 신차검수</li>
+					              	</ul>				
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p>무제한</p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[중고차 구입시]</span>
+					              		<li>15가지 차량정밀검사 국내 무사고차량 선정</li>
+					              		<li>정밀검사로 최상의 컨디션을 갖춘 차량선정</li>
+					              		<li>최대할인 및 최저가로 구입 전과정 완벽대행</li>
+					              	</ul>	
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p>무제한</p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[직수입 차량 구입시]</span>
+					              		<li></li>
+					              		<li></li>
+					              		<li></li>
+					              	</ul>					    
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p>무제한</p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[기존차량 위탁 매각시]</span>
+					              		<li>최고시세로 서류이전 등 전과정 one-stop 완벽대행</li>
+					              	</ul>					              					              
+				          </div>
+				      </div>
+				      
+				      
+				      <div class="portfolio-item year">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/menus/1.jpg" alt="">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">차량구입 프로그램 <span style="color: olive;">[연간회원]</span></h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">				
+					              	<div class="menu-price">
+							        	<p>10만원<br><span style="color: maroon;">(착수금)</span></p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[신차 구입시]</span>
+					              		<li>각 메이커별 one-stop 차량정보 컨설팅 및 시승</li>
+					              		<li>구입 전과정 비교견적(현금/할부/리스/렌트/보험/이전)</li>
+					              		<li>최대할인 및 신차검수</li>
+					              	</ul>				
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p>20만원<br><span style="color: maroon;">(착수금)</span></p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[중고차 구입시]</span>
+					              		<li>15가지 차량정밀검사 국내 무사고차량 선정</li>
+					              		<li>정밀검사로 최상의 컨디션을 갖춘 차량선정</li>
+					              		<li>최대할인 및 최저가로 구입 전과정 완벽대행</li>
+					              	</ul>	
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p></p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[직수입 차량 구입시]</span>
+					              		<li></li>
+					              		<li></li>
+					              		<li></li>
+					              	</ul>					    
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p>30만원<br><span style="color: maroon;">(수수료)</span></p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[기존차량 위탁 매각시]</span>
+					              		<li>최고시세로 서류이전 등 전과정 one-stop 완벽대행</li>
+					              	</ul>					       			              					              
+				          </div>
+				      </div>
+				      
+				      
+				      <div class="portfolio-item non">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/menus/1.jpg" alt="">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">차량구입 프로그램 <span style="color: olive;">[비회원]</span></h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">				
+					              	<div class="menu-price">
+							        	<p>30만원<br><span style="color: maroon;">(착수금)</span></p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[신차 구입시]</span>
+					              		<li>각 메이커별 one-stop 차량정보 컨설팅 및 시승</li>
+					              		<li>구입 전과정 비교견적(현금/할부/리스/렌트/보험/이전)</li>
+					              		<li>최대할인 및 신차검수</li>
+					              	</ul>				
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p>30만원<br><span style="color: maroon;">(착수금)</span></p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[중고차 구입시]</span>
+					              		<li>15가지 차량정밀검사 국내 무사고차량 선정</li>
+					              		<li>정밀검사로 최상의 컨디션을 갖춘 차량선정</li>
+					              		<li>최대할인 및 최저가로 구입 전과정 완벽대행</li>
+					              	</ul>	
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p></p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[직수입 차량 구입시]</span>
+					              		<li></li>
+					              		<li></li>
+					              		<li></li>
+					              	</ul>					    
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p>50만원<br><span style="color: maroon;">(수수료)</span></p>
+							        </div>
+					              	<ul>
+					              		<span style="text-align: center; color: navy;">[기존차량 위탁 매각시]</span>
+					              		<li>최고시세로 서류이전 등 전과정 one-stop 완벽대행</li>
+					              	</ul>					       					              					              
 				          </div>
 				      </div>
 				      
