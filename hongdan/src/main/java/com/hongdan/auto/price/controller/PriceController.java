@@ -16,10 +16,10 @@ public class PriceController {
 	
 	
 	// 사후관리서비스 가격안내
-	@RequestMapping(value = "/price/post_management")
+	@RequestMapping(value = "/price/car_management")
 	public String services(HttpServletRequest request,  Model model) {		
 		
-		return "price/post_management";
+		return "price/car_management";
 	}	
 	
 }

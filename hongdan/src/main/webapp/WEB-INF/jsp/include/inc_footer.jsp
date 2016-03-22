@@ -8,12 +8,13 @@
                         <div class="widget clearfix widget-categories">
                             <h4 class="widget-title">Our Services</h4>
                             <ul class="list list-arrow-icons">
-                                <li> <a href="#" title="">Development </a> </li>
-                                <li> <a href="#" title="">Branding </a> </li>
-                                <li> <a href="#" title="">Marketing </a> </li>
-                                <li> <a href="#" title="">Branding </a> </li>
-                                <li> <a href="#" title="">Strategy solutions</a> </li>
-                                <li> <a href="#" title="">Copywriting </a> </li>
+                                <li> <a href="#" title="">차량관리정비 프로그램</a> </li>
+                                <li> <a href="#" title="">콜 서비스 </a> </li>
+                                <li> <a href="#" title="">렌트 서비스</a> </li>
+                                <li> <a href="#" title="">차량구입 프로그램</a> </li>
+                                <li> <a href="#" title="">신차구입상담</a> </li>
+                                <li> <a href="#" title="">중고차구입상담</a> </li>
+                                <li> <a href="#" title="">기존차량매각</a> </li>
                             </ul>
                         </div>
                     </div>

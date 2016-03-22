@@ -33,7 +33,7 @@
 	                            
 	                            <li class="dropdown"> <a href="#">Price <i class="fa fa-angle-down"></i> </a>
 	                                <ul class="dropdown-menu">
-	                                    <li> <a href="/price/post_management">사후관리서비스 (Post Management Service)</a> </li>
+	                                    <li> <a href="/price/car_management">차량관리서비스</a> </li>
 	                                </ul>
 	                            </li>
 	                            

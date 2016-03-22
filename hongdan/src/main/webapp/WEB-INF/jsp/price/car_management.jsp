@@ -6,6 +6,7 @@
 	<jsp:include page="/WEB-INF/jsp/include/inc_head.jsp"  />
 	
 	<body class="wide">
+	
 	 
 			<jsp:include page="/WEB-INF/jsp/include/inc_body_loader.jsp"  />
 			
@@ -18,7 +19,7 @@
 				      <div class="container">
 				          <div class="page-title col-md-8">
 				              <h1>PRICE</h1>
-				              <span>Post Management Service</span>
+				              <span>Car Management Service</span>
 				          </div>
 				      </div>
 				  </section>	
@@ -40,16 +41,16 @@
 				 -->
 				  <section id="content" class="background-grey">
 				  		<div class="heading heading-center m-b-40" data-animation="fadeInUp">
-				            <h2>사후관리서비스 가격표</h2>
+				            <h2>차량관리서비스 가격표</h2>
 				        </div>
 				      <div class="container portfolio">
 				
 				      <div class="filter-active-title">전체조회 (Show All)</div>
 				      <ul class="portfolio-filter" id="portfolio-filter" data-isotope-nav="isotope">
-				          <li class="ptf-active" data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>
-				          <li data-filter=".vip" style="text-align: center;">VIP<br>(연100만원)</li>
+				          <li class="ptf-active"  data-filter=".vip" style="text-align: center;">VIP<br>(연100만원)</li>
 				          <li data-filter=".year" style="text-align: center;">연간회원<br>(연 50만원)</li>
 				          <li data-filter=".non" style="text-align: center;">비회원<br>(개별가격)</li>
+				          <li data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>
 				      </ul>
 				
 				
@@ -59,10 +60,10 @@
 				      
 				      <div class="portfolio-item vip">
 				          <div class="portfolio-image effect social-links">
-				              <img src="/images/menus/1.jpg" alt="">
+				              <img src="/images/price/car_fix_program.jpg" alt="차량관리 정비 프로그램[VIP]">
 				              <div class="image-box-content">
 				                  <p>
-				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                      <a href="/images/price/car_fix_program.jpg" data-lightbox="image" title="차량관리 정비 프로그램[VIP]"><i class="fa fa-expand"></i></a>
 				                  </p>
 				              </div>
 				          </div>
@@ -125,10 +126,10 @@
 				      
 				      <div class="portfolio-item year">
 				          <div class="portfolio-image effect social-links">
-				              <img src="/images/menus/1.jpg" alt="">
+				              <img src="/images/price/car_fix_program.jpg" alt="">
 				              <div class="image-box-content">
 				                  <p>
-				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                      <a href="/images/price/car_fix_program.jpg" data-lightbox="image" title="차량관리 정비 프로그램[연간회원]"><i class="fa fa-expand"></i></a>
 				                  </p>
 				              </div>
 				          </div>
@@ -161,10 +162,10 @@
 				      
 				      <div class="portfolio-item non">
 				          <div class="portfolio-image effect social-links">
-				              <img src="/images/menus/1.jpg" alt="">
+				              <img src="/images/price/car_fix_program.jpg" alt="">
 				              <div class="image-box-content">
 				                  <p>
-				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                      <a href="/images/price/car_fix_program.jpg" data-lightbox="image" title="차량관리 정비 프로그램[비회원]"><i class="fa fa-expand"></i></a>
 				                  </p>
 				              </div>
 				          </div>
@@ -197,10 +198,10 @@
 				      
 				      <div class="portfolio-item vip">
 				          <div class="portfolio-image effect social-links">
-				              <img src="/images/menus/1.jpg" alt="">
+				              <img src="/images/price/call_service_program.jpg" alt="콜 서비스">
 				              <div class="image-box-content">
 				                  <p>
-				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                      <a href="/images/price/call_service_program.jpg" data-lightbox="image" title="콜 서비스"><i class="fa fa-expand"></i></a>
 				                  </p>
 				              </div>
 				          </div>
@@ -224,10 +225,10 @@
 				      
 				      <div class="portfolio-item vip">
 				          <div class="portfolio-image effect social-links">
-				              <img src="/images/menus/1.jpg" alt="">
+				              <img src="/images/price/car_rent_program.jpg" alt="">
 				              <div class="image-box-content">
 				                  <p>
-				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                      <a href="/images/price/car_rent_program.jpg" data-lightbox="image" title="렌트서비스"><i class="fa fa-expand"></i></a>
 				                  </p>
 				              </div>
 				          </div>
@@ -248,10 +249,10 @@
 				      
 				      <div class="portfolio-item year">
 				          <div class="portfolio-image effect social-links">
-				              <img src="/images/menus/1.jpg" alt="">
+				              <img src="/images/price/car_rent_program.jpg" alt="">
 				              <div class="image-box-content">
 				                  <p>
-				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                      <a href="/images/price/car_rent_program.jpg" data-lightbox="image" title="렌트서비스"><i class="fa fa-expand"></i></a>
 				                  </p>
 				              </div>
 				          </div>
@@ -272,10 +273,10 @@
 				      
 				      <div class="portfolio-item non">
 				          <div class="portfolio-image effect social-links">
-				              <img src="/images/menus/1.jpg" alt="">
+				              <img src="/images/price/car_rent_program.jpg" alt="">
 				              <div class="image-box-content">
 				                  <p>
-				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                      <a href="/images/price/car_rent_program.jpg" data-lightbox="image" title="렌트서비스"><i class="fa fa-expand"></i></a>
 				                  </p>
 				              </div>
 				          </div>
@@ -296,10 +297,10 @@
 				      
 				      <div class="portfolio-item vip">
 				          <div class="portfolio-image effect social-links">
-				              <img src="/images/menus/1.jpg" alt="">
+				              <img src="/images/price/buy_car_program.jpg" alt="차량구입 프로그램">
 				              <div class="image-box-content">
 				                  <p>
-				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                      <a href="/images/price/buy_car_program.jpg" data-lightbox="image" title="차량구입 프로그램"><i class="fa fa-expand"></i></a>
 				                  </p>
 				              </div>
 				          </div>
@@ -351,10 +352,10 @@
 				      
 				      <div class="portfolio-item year">
 				          <div class="portfolio-image effect social-links">
-				              <img src="/images/menus/1.jpg" alt="">
+				              <img src="/images/price/buy_car_program.jpg" alt="">
 				              <div class="image-box-content">
 				                  <p>
-				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                      <a href="/images/price/buy_car_program.jpg" data-lightbox="image" title="차량구입 프로그램"><i class="fa fa-expand"></i></a>
 				                  </p>
 				              </div>
 				          </div>
@@ -406,10 +407,10 @@
 				      
 				      <div class="portfolio-item non">
 				          <div class="portfolio-image effect social-links">
-				              <img src="/images/menus/1.jpg" alt="">
+				              <img src="/images/price/buy_car_program.jpg" alt="">
 				              <div class="image-box-content">
 				                  <p>
-				                      <a href="/images/menus/1.jpg" data-lightbox="image" title="Your image title here!"><i class="fa fa-expand"></i></a>
+				                      <a href="/images/price/buy_car_program.jpg" data-lightbox="image" title="차량구입 프로그램"><i class="fa fa-expand"></i></a>
 				                  </p>
 				              </div>
 				          </div>
@@ -472,6 +473,20 @@
 			</div>
 			
 			 <jsp:include page="/WEB-INF/jsp/include/inc_footer2.jsp"  />
+			 
+			 <script type="text/javascript">
+				$(window.document).ready(function(){
+					/* alert(1);
+					//alert( $('[data-isotope-nav=isotope]').filter );
+					//$window.resize();
+					console.log( $('[data-isotope-nav=isotope]') );
+					
+					$('[data-isotope-nav=isotope]').filter.val('.vip');
+					$window.resize();
+					
+					alert(2); */
+				});	
+			</script>
 			 
 	</body>
 </html>

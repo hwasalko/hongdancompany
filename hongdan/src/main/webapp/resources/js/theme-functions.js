@@ -408,8 +408,8 @@ var INSPIRO = {};
             });
             var $menu = $('[data-isotope-nav="' + id + '"]');
             $menu.length && $menu.find("li").on("click", function(e) {
-                var $link = $(this);
-                $(".filter-active-title").empty().append($link.text());
+            	var $link = $(this);
+            	$(".filter-active-title").empty().append($link.text());
                 if (!$link.hasClass("ptf-active")) {
                     var selector = $link.attr("data-filter");
                     $link.parents(".portfolio-filter").eq(0).find(".ptf-active").removeClass("ptf-active"), $link.addClass("ptf-active"), $elem.isotope({
@@ -420,7 +420,7 @@ var INSPIRO = {};
                 return false;
             }), $window.resize();
         });
-    };
+    };    
     var itemWidth = function(columns, $elemContainer, itemElement, itemElementSpace) {
         var $findElement = $elemContainer.find(itemElement);
         var $findElementLarge = $elemContainer.find(".large-item");
