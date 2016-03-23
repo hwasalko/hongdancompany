@@ -5,7 +5,7 @@
 
 	<jsp:include page="/WEB-INF/jsp/include/inc_head.jsp"  />
 	
-	<body class="wide">
+	<body class="wide" >
 	
 	 
 			<jsp:include page="/WEB-INF/jsp/include/inc_body_loader.jsp"  />
@@ -23,6 +23,9 @@
 				          </div>
 				      </div>
 				  </section>	
+				
+				<div id='hwasalko'>버튼</div>
+				
 				
 				<!-- 
 				  <section class="p-b-0" id="section-about">
@@ -60,10 +63,10 @@
 				
 				      <div class="filter-active-title">전체조회 (Show All)</div>
 				      <ul class="portfolio-filter" id="portfolio-filter" data-isotope-nav="isotope">
-				          <li class="ptf-active"  data-filter=".vip" style="text-align: center;">VIP<br>(연100만원)</li>
+				          <li data-filter=".vip" style="text-align: center;">VIP<br>(연100만원)</li>
 				          <li data-filter=".year" style="text-align: center;">연간회원<br>(연 50만원)</li>
 				          <li data-filter=".non" style="text-align: center;">비회원<br>(개별가격)</li>
-				          <li data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>
+				          <li class="ptf-active" data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>
 				      </ul>
 				
 				
@@ -488,16 +491,14 @@
 			 <jsp:include page="/WEB-INF/jsp/include/inc_footer2.jsp"  />
 			 
 			 <script type="text/javascript">
-				$(window.document).ready(function(){
-					/* alert(1);
-					//alert( $('[data-isotope-nav=isotope]').filter );
-					//$window.resize();
-					console.log( $('[data-isotope-nav=isotope]') );
+			 	
+				$(window).load(function(){
 					
-					$('[data-isotope-nav=isotope]').filter.val('.vip');
-					$window.resize();
+					//VIP 옵션으로 버튼 초기화
+					//$('#hwasalko').click(function(){
+						$('li[data-filter*=vip]').click();
+					//});
 					
-					alert(2); */
 				});	
 			</script>
 			 
