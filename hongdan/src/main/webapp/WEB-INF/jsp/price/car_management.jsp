@@ -24,7 +24,6 @@
 				      </div>
 				  </section>	
 				
-				<div id='hwasalko'>버튼</div>
 				
 				
 				<!-- 
@@ -493,12 +492,8 @@
 			 <script type="text/javascript">
 			 	
 				$(window).load(function(){
-					
 					//VIP 옵션으로 버튼 초기화
-					//$('#hwasalko').click(function(){
-						$('li[data-filter*=vip]').click();
-					//});
-					
+					$('li[data-filter*=vip]').click();					
 				});	
 			</script>
 			 
