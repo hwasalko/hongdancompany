@@ -60,12 +60,12 @@
 				        </div>
 				      <div class="container portfolio">
 				
-				      <div class="filter-active-title">전체조회 (Show All)</div>
+				      <div class="filter-active-title"></div>
 				      <ul class="portfolio-filter" id="portfolio-filter" data-isotope-nav="isotope">
 				          <li data-filter=".vip" style="text-align: center;">VIP<br>(연100만원)</li>
 				          <li data-filter=".year" style="text-align: center;">연간회원<br>(연 50만원)</li>
-				          <li data-filter=".non" style="text-align: center;">비회원<br>(개별가격)</li>
-				          <li class="ptf-active" data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>
+				          <li data-filter=".non" style="text-align: center;">비회원<br>(N/A)</li>
+				          <!-- <li class="ptf-active" data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>  -->
 				      </ul>
 				
 				
@@ -73,6 +73,10 @@
 				  <div id="isotope" class="isotope portfolio-items" data-isotope-item-space="3" data-isotope-mode="masonry" data-isotope-col="3" data-isotope-item=".portfolio-item">
 				      
 				      
+				      
+				      
+				      
+				      <!----------------------------------------------- VIP 시작 ---------------------------------------------------->
 				      <div class="portfolio-item vip">
 				          <div class="portfolio-image effect social-links">
 				              <img src="/images/price/car_fix_program.jpg" alt="차량관리 정비 프로그램[VIP]">
@@ -83,7 +87,7 @@
 				              </div>
 				          </div>
 				          <div class="portfolio-description">
-				              <h4 class="title">차량관리 정비 프로그램 <span style="color: olive;">[VIP]</span></h4>
+				              <h4 class="title">차량관리 정비 프로그램</h4>
 				              <hr>
 				          </div>				          
 				          <div class="portfolio-details">				          				          
@@ -137,177 +141,6 @@
 					              	</ul>					              					              
 				          </div>
 				      </div>
-				      				      
-				      
-				      <div class="portfolio-item year">
-				          <div class="portfolio-image effect social-links">
-				              <img src="/images/price/car_fix_program.jpg" alt="">
-				              <div class="image-box-content">
-				                  <p>
-				                      <a href="/images/price/car_fix_program.jpg" data-lightbox="image" title="차량관리 정비 프로그램[연간회원]"><i class="fa fa-expand"></i></a>
-				                  </p>
-				              </div>
-				          </div>
-				          <div class="portfolio-description">
-				              <h4 class="title">차량관리 정비 프로그램 <span style="color: olive;">[연간회원]</span></h4>
-				              <hr>
-				          </div>				          
-				          <div class="portfolio-details">				          				          
-				              		<div class="menu-price">
-							        	<p></p>
-							        </div>
-				              		<ul>
-					              		<li>40가지 정기점검정비</li>	
-					              		<li>실내외 손세차</li>
-					              	</ul>
-					              	
-					              	<hr>
-					              	<div class="menu-price">
-							        	<p>연2회</p>
-							        </div>
-					              	<ul>
-					              		<li>엔진클리닝/외장 잔기스 관리</li>
-					              		<li>워셔액/부동액 보충 등 점검</li>
-					              		<li>가죽시트케어 서비스</li>
-					              		<li>실내크리닝</li>
-					              	</ul>					              					              
-				          </div>
-				      </div>
-				      
-				      
-				      <div class="portfolio-item non">
-				          <div class="portfolio-image effect social-links">
-				              <img src="/images/price/car_fix_program.jpg" alt="">
-				              <div class="image-box-content">
-				                  <p>
-				                      <a href="/images/price/car_fix_program.jpg" data-lightbox="image" title="차량관리 정비 프로그램[비회원]"><i class="fa fa-expand"></i></a>
-				                  </p>
-				              </div>
-				          </div>
-				          <div class="portfolio-description">
-				              <h4 class="title">차량관리 정비 프로그램 <span style="color: olive;">[비회원]</span></h4>
-				              <hr>
-				          </div>				          
-				          <div class="portfolio-details">				          				          
-				              		<div class="menu-price">
-							        	<p></p>
-							        </div>
-				              		<ul>
-					              		<li>40가지 정기점검정비</li>	
-					              		<li>실내외 손세차</li>
-					              	</ul>
-					              	
-					              	<hr>
-					              	<div class="menu-price">
-							        	<p>10만원<br><span style="color: maroon;">(회당)</span></p>
-							        </div>
-					              	<ul>
-					              		<li>엔진클리닝/외장 잔기스 관리</li>
-					              		<li>워셔액/부동액 보충 등 점검</li>
-					              		<li>가죽시트케어 서비스</li>
-					              		<li>실내크리닝</li>
-					              	</ul>					              					              
-				          </div>
-				      </div>
-				      
-				      
-				      <div class="portfolio-item vip">
-				          <div class="portfolio-image effect social-links">
-				              <img src="/images/price/call_service_program.jpg" alt="콜 서비스">
-				              <div class="image-box-content">
-				                  <p>
-				                      <a href="/images/price/call_service_program.jpg" data-lightbox="image" title="콜 서비스"><i class="fa fa-expand"></i></a>
-				                  </p>
-				              </div>
-				          </div>
-				          <div class="portfolio-description">
-				              <h4 class="title">콜 서비스 <span style="color: olive;">[VIP]</span></h4>
-				              <hr>
-				          </div>				          
-				          <div class="portfolio-details">				          				          
-				              		<div class="menu-price">
-							        	<p>연2회</p>
-							        </div>
-					              	<ul>
-					              		<li>사고 및 보험견적/수비/정비튜닝</li>
-					              		<li>휠/타이어 업그레이드</li>
-					              		<li>A/V장착/썬팅/광택</li>
-					              		<li>협력업체 최저가 할인보장</li>
-					              	</ul>					              					              
-				          </div>
-				      </div>
-				      
-				      
-				      <div class="portfolio-item vip">
-				          <div class="portfolio-image effect social-links">
-				              <img src="/images/price/car_rent_program.jpg" alt="">
-				              <div class="image-box-content">
-				                  <p>
-				                      <a href="/images/price/car_rent_program.jpg" data-lightbox="image" title="렌트서비스"><i class="fa fa-expand"></i></a>
-				                  </p>
-				              </div>
-				          </div>
-				          <div class="portfolio-description">
-				              <h4 class="title">렌트 서비스 <span style="color: olive;">[VIP]</span></h4>
-				              <hr>
-				          </div>				          
-				          <div class="portfolio-details">
-					              	<div class="menu-price">
-							        	<p>연2회</p>
-							        </div>
-					              	<ul>
-					              		<li>당일 차량정비에 한하여 렌트제공</li>
-					              	</ul>					              					              
-				          </div>
-				      </div>
-				      
-				      
-				      <div class="portfolio-item year">
-				          <div class="portfolio-image effect social-links">
-				              <img src="/images/price/car_rent_program.jpg" alt="">
-				              <div class="image-box-content">
-				                  <p>
-				                      <a href="/images/price/car_rent_program.jpg" data-lightbox="image" title="렌트서비스"><i class="fa fa-expand"></i></a>
-				                  </p>
-				              </div>
-				          </div>
-				          <div class="portfolio-description">
-				              <h4 class="title">렌트 서비스 <span style="color: olive;">[연간회원]</span></h4>
-				              <hr>
-				          </div>				          
-				          <div class="portfolio-details">				
-					              	<div class="menu-price">
-							        	<p>연1회</p>
-							        </div>
-					              	<ul>
-					              		<li>당일 차량정비에 한하여 렌트제공</li>
-					              	</ul>					              					              
-				          </div>
-				      </div>
-				      
-				      
-				      <div class="portfolio-item non">
-				          <div class="portfolio-image effect social-links">
-				              <img src="/images/price/car_rent_program.jpg" alt="">
-				              <div class="image-box-content">
-				                  <p>
-				                      <a href="/images/price/car_rent_program.jpg" data-lightbox="image" title="렌트서비스"><i class="fa fa-expand"></i></a>
-				                  </p>
-				              </div>
-				          </div>
-				          <div class="portfolio-description">
-				              <h4 class="title">렌트 서비스 <span style="color: olive;">[비회원]</span></h4>
-				              <hr>
-				          </div>				          
-				          <div class="portfolio-details">				
-					              	<div class="menu-price">
-							        	<p>10만원<br><span style="color: maroon;">(회당)</span></p>
-							        </div>
-					              	<ul>
-					              		<li>당일 차량정비에 한하여 렌트제공</li>
-					              	</ul>					              					              
-				          </div>
-				      </div>
 				      
 				      
 				      <div class="portfolio-item vip">
@@ -320,7 +153,7 @@
 				              </div>
 				          </div>
 				          <div class="portfolio-description">
-				              <h4 class="title">차량구입 프로그램 <span style="color: olive;">[VIP]</span></h4>
+				              <h4 class="title">차량구입 프로그램</h4>
 				              <hr>
 				          </div>				          
 				          <div class="portfolio-details">				
@@ -363,6 +196,98 @@
 					              	</ul>					              					              
 				          </div>
 				      </div>
+
+
+				      <div class="portfolio-item vip">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/price/call_service_program.jpg" alt="콜 서비스">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/price/call_service_program.jpg" data-lightbox="image" title="콜 서비스"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">콜 서비스</h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">				          				          
+				              		<div class="menu-price">
+							        	<p>연2회</p>
+							        </div>
+					              	<ul>
+					              		<li>사고 및 보험견적/수비/정비튜닝</li>
+					              		<li>휠/타이어 업그레이드</li>
+					              		<li>A/V장착/썬팅/광택</li>
+					              		<li>협력업체 최저가 할인보장</li>
+					              	</ul>					              					              
+				          </div>
+				      </div>
+				      
+				      <div class="portfolio-item vip">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/price/car_rent_program.jpg" alt="">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/price/car_rent_program.jpg" data-lightbox="image" title="렌트서비스"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">렌트 서비스</h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">
+					              	<div class="menu-price">
+							        	<p>연2회</p>
+							        </div>
+					              	<ul>
+					              		<li>당일 차량정비에 한하여 렌트제공</li>
+					              	</ul>					              					              
+				          </div>
+				      </div>
+				      <!----------------------------------------------- VIP 끝 ---------------------------------------------------->
+				      
+				      
+				      
+				      
+				      
+				      
+				      <!----------------------------------------------- 연간회원 시작 ---------------------------------------------------->
+				      <div class="portfolio-item year">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/price/car_fix_program.jpg" alt="">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/price/car_fix_program.jpg" data-lightbox="image" title="차량관리 정비 프로그램[연간회원]"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">차량관리 정비 프로그램</h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">				          				          
+				              		<div class="menu-price">
+							        	<p></p>
+							        </div>
+				              		<ul>
+					              		<li>40가지 정기점검정비</li>	
+					              		<li>실내외 손세차</li>
+					              	</ul>
+					              	
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p>연2회</p>
+							        </div>
+					              	<ul>
+					              		<li>엔진클리닝/외장 잔기스 관리</li>
+					              		<li>워셔액/부동액 보충 등 점검</li>
+					              		<li>가죽시트케어 서비스</li>
+					              		<li>실내크리닝</li>
+					              	</ul>					              					              
+				          </div>
+				      </div>
 				      
 				      
 				      <div class="portfolio-item year">
@@ -375,7 +300,7 @@
 				              </div>
 				          </div>
 				          <div class="portfolio-description">
-				              <h4 class="title">차량구입 프로그램 <span style="color: olive;">[연간회원]</span></h4>
+				              <h4 class="title">차량구입 프로그램</h4>
 				              <hr>
 				          </div>				          
 				          <div class="portfolio-details">				
@@ -420,6 +345,70 @@
 				      </div>
 				      
 				      
+				      <div class="portfolio-item year">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/price/car_rent_program.jpg" alt="">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/price/car_rent_program.jpg" data-lightbox="image" title="렌트서비스"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">렌트 서비스</h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">				
+					              	<div class="menu-price">
+							        	<p>연1회</p>
+							        </div>
+					              	<ul>
+					              		<li>당일 차량정비에 한하여 렌트제공</li>
+					              	</ul>					              					              
+				          </div>
+				      </div>
+				      <!----------------------------------------------- 연간회원 끝 ------------------------------------------------------->
+				      
+				      
+				      
+				      
+				      <!----------------------------------------------- 비회원 시작------------------------------------------------------->
+				      <div class="portfolio-item non">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/price/car_fix_program.jpg" alt="">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/price/car_fix_program.jpg" data-lightbox="image" title="차량관리 정비 프로그램[비회원]"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">차량관리 정비 프로그램</h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">				          				          
+				              		<div class="menu-price">
+							        	<p></p>
+							        </div>
+				              		<ul>
+					              		<li>40가지 정기점검정비</li>	
+					              		<li>실내외 손세차</li>
+					              	</ul>
+					              	
+					              	<hr>
+					              	<div class="menu-price">
+							        	<p>10만원<br><span style="color: maroon;">(회당)</span></p>
+							        </div>
+					              	<ul>
+					              		<li>엔진클리닝/외장 잔기스 관리</li>
+					              		<li>워셔액/부동액 보충 등 점검</li>
+					              		<li>가죽시트케어 서비스</li>
+					              		<li>실내크리닝</li>
+					              	</ul>					              					              
+				          </div>
+				      </div>
+				      				      
+				      
 				      <div class="portfolio-item non">
 				          <div class="portfolio-image effect social-links">
 				              <img src="/images/price/buy_car_program.jpg" alt="">
@@ -430,7 +419,7 @@
 				              </div>
 				          </div>
 				          <div class="portfolio-description">
-				              <h4 class="title">차량구입 프로그램 <span style="color: olive;">[비회원]</span></h4>
+				              <h4 class="title">차량구입 프로그램</h4>
 				              <hr>
 				          </div>				          
 				          <div class="portfolio-details">				
@@ -475,8 +464,36 @@
 				      </div>
 				      
 				      
+				      <div class="portfolio-item non">
+				          <div class="portfolio-image effect social-links">
+				              <img src="/images/price/car_rent_program.jpg" alt="">
+				              <div class="image-box-content">
+				                  <p>
+				                      <a href="/images/price/car_rent_program.jpg" data-lightbox="image" title="렌트서비스"><i class="fa fa-expand"></i></a>
+				                  </p>
+				              </div>
+				          </div>
+				          <div class="portfolio-description">
+				              <h4 class="title">렌트 서비스</h4>
+				              <hr>
+				          </div>				          
+				          <div class="portfolio-details">				
+					              	<div class="menu-price">
+							        	<p>10만원<br><span style="color: maroon;">(회당)</span></p>
+							        </div>
+					              	<ul>
+					              		<li>당일 차량정비에 한하여 렌트제공</li>
+					              	</ul>					              					              
+				          </div>
+				      </div>
+				      <!----------------------------------------------- 비회원 시작------------------------------------------------------->
+				      
+				      
+				      
 				      
 				  </div>
+				  
+				  
 				
 				  </div>
 				      <hr class="space">
@@ -489,12 +506,17 @@
 			
 			 <jsp:include page="/WEB-INF/jsp/include/inc_footer2.jsp"  />
 			 
+			 
+			 
+			 
+			 
 			 <script type="text/javascript">
 			 	
 				$(window).load(function(){
 					//VIP 옵션으로 버튼 초기화
 					$('li[data-filter*=vip]').click();					
 				});	
+				
 			</script>
 			 
 	</body>
