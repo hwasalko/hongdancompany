@@ -2802,6 +2802,7 @@ body:not(.device-lg):not(.device-md) .filter-active-title {
     padding-bottom: 80px;
 }
 
+
 /*****************************
    Menu page
 *****************************/
@@ -2856,6 +2857,11 @@ body:not(.device-lg):not(.device-md) .filter-active-title {
 .background-5
 {
     background-image: url("../images/menus/reservation_banner2.jpg");
+}
+
+.background-service
+{
+    background-image: url("../images/service/top_bg.jpg");
 }
 
 .bkp-01

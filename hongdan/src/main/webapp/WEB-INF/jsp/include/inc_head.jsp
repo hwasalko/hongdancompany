@@ -28,20 +28,18 @@
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Italianno">
 
 <!-- 구글 한글웹폰트 추가 -->
-<!-- 
+<!--
 <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
 <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejugothic.css">
-<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejuhallasan.css">
 <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css">
 <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/kopubbatang.css">
-<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css">
-<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
 <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
 <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
-<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
--->
+ -->
 <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
-
+<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejuhallasan.css">
+<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
+<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css">
 
 </head>
