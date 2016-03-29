@@ -39,7 +39,7 @@
 	 <!-- 컨트롤러 Interceptor -->
 	<interceptors>
 		<interceptor>
-			<mapping path="/admin/**"/>
+			<mapping path="/administrator/**"/>
 			<beans:bean class="com.hongdan.auto.common.ControllerInterceptor"/>
 		</interceptor>
 	</interceptors>	 

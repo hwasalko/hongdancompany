@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongdan.auto.admin">
+
+    
+	<insert id="com.hongdan.auto.admin.insertBlog"  parameterType="java.util.Map" >
+	    
+	    INSERT INTO TB_BLOG(
+	    	BLOG_SEQ,
+  			TITLE,
+  			CONTENTS
+	    )
+		SELECT 
+			(IFNULL(MAX(BLOG_SEQ), 0) +1) BLOG_SEQ,
+			#{title},
+			#{contents}
+		FROM TB_BLOG
+		
+	</insert>
+
+    
+</mapper>

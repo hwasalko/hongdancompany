@@ -4,15 +4,15 @@
 <!DOCTYPE html>
 <html lang="kr">
 
-<jsp:include page="include/inc_head.jsp"  />
+<jsp:include page="/WEB-INF/jsp/include/inc_head.jsp"  />
 
 <body class="wide">
  
-  <jsp:include page="include/inc_body_loader.jsp"  />
+  <jsp:include page="/WEB-INF/jsp/include/inc_body_loader.jsp"  />
  
   <div class="wrapper">
     
-    <jsp:include page="include/inc_body_header.jsp"  />
+    <jsp:include page="/WEB-INF/jsp/include/inc_body_header.jsp"  />
 
 
 
@@ -430,12 +430,12 @@
     </section>
 
 
-	<jsp:include page="include/inc_footer.jsp"  />
+	<jsp:include page="/WEB-INF/jsp/include/inc_footer.jsp"  />
     
 
   </div>
  
-	<jsp:include page="include/inc_footer2.jsp"  />
+	<jsp:include page="/WEB-INF/jsp/include/inc_footer2.jsp"  />
 
 </body>
 </html>

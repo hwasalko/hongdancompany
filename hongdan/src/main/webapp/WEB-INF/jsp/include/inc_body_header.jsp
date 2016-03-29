@@ -49,6 +49,8 @@
 	                            
 	                            <li class="dropdown"> <a href="/contact" class="nav-to">Contact us</a> </li>
 	                            
+	                            <li class="dropdown"> <a href="/admin/blog" class="nav-to">Admin</a> </li>
+	                            
 	                        </ul>
 	                    </nav>
 	                </div>
