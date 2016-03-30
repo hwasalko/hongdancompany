@@ -2,6 +2,7 @@ package com.hongdan.auto.admin.controller;
 
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,20 +27,31 @@ public class AdminController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
-	@Autowired
-	private AdminDao adminDao;;
-
+	
 	@Autowired
 	private AdminService adminService;
 	
 	
-	@RequestMapping(value = "/admin/blog", method = RequestMethod.GET )
+	
+	
+	@RequestMapping(value = "/admin/blog/list", method = RequestMethod.GET )
+	public String blogList(HttpServletRequest request,  Model model) throws SQLException {		
+		List<Map<String, String>> resultList = adminService.getBlogList();
+		logger.debug("쿼리결과건수 : " + resultList.size());
+		model.addAttribute("blogList" , resultList );
+		
+		return "admin/blog/list";
+	}
+	
+	
+	@RequestMapping(value = "/admin/blog/write", method = RequestMethod.GET )
 	public String blogWrite(HttpServletRequest request,  Model model) {		
 		
 		return "admin/blog/write";
 	}	
 	
-	@RequestMapping(value = "/admin/blog", method = RequestMethod.POST )
+	
+	@RequestMapping(value = "/admin/blog/write", method = RequestMethod.POST )
 	public void blogSave(HttpServletRequest request,  Model model) {		
 		
 		String title 			= request.getParameter("blog_title");
@@ -54,7 +66,7 @@ public class AdminController {
     	param.put("contents", contents);
 		
 		try {
-			int result = adminDao.insertBlog( param );
+			int result = adminService.insertBlog( param );
 			logger.info("처리결과 : " + result);
 		} catch (SQLException e) {
 			e.printStackTrace();

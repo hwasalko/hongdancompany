@@ -30,6 +30,10 @@ public class AdminDaoImpl implements AdminDao {
         query.insert("com.hongdan.auto.admin.saveImage",hmap);
     }
 
+    @Override
+    public List<Map<String, String>> getBlogList() throws SQLException {
+        return query.selectList("com.hongdan.auto.admin.getBlogList");
+    }
     
 }
 

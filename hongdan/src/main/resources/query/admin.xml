@@ -4,19 +4,28 @@
 
     
 	<insert id="com.hongdan.auto.admin.insertBlog"  parameterType="java.util.Map" >
-	    
 	    INSERT INTO TB_BLOG(
 	    	BLOG_SEQ,
   			TITLE,
-  			CONTENTS
+  			CONTENTS,
+  			REG_DDTM
 	    )
 		SELECT 
 			(IFNULL(MAX(BLOG_SEQ), 0) +1) BLOG_SEQ,
 			#{title},
-			#{contents}
+			#{contents},
+			DATE_FORMAT(now(), '%Y%m%d%H%i%s')
 		FROM TB_BLOG
-		
 	</insert>
+	
+	<select id="com.hongdan.auto.admin.getBlogList" resultType="java.util.Map">
+	    SELECT
+	        BLOG_SEQ,
+  			TITLE,
+  			CONTENTS,
+  			REG_DDTM
+	    FROM TB_BLOG
+	</select>
 
     
 </mapper>

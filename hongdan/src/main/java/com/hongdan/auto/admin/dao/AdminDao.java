@@ -1,6 +1,7 @@
 package com.hongdan.auto.admin.dao;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 
 public interface AdminDao {
@@ -9,4 +10,5 @@ public interface AdminDao {
 	
 	public void saveFileToBlob(Map<String, Object> hmap) throws SQLException;
 	
+	public List<Map<String, String>> getBlogList() throws SQLException;
 }

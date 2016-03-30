@@ -28,7 +28,17 @@ public class AdminServiceImpl implements AdminService {
     }
     
     
+    @Override
+    @Transactional
+    public int insertBlog(Map<String, String> param) throws SQLException{
+    	return adminDao.insertBlog(param);
+    }
 
+    
+    @Override 
+    public List<Map<String, String>> getBlogList() throws SQLException {
+        return adminDao.getBlogList();
+    }
     
     
 }

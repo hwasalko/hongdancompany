@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
+
+
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -26,7 +28,7 @@
 				        <div class="container">
 				            <div class="row">
 				                <div class="col-md-10 col-md-offset-1">
-				                <form id="frm" action="/admin/blog" method="post">
+				                <form id="frm" action="/admin/blog/write" method="post">
 				                
 				                    <div class="row">
 				                        <div class="col-md-12">
@@ -41,14 +43,7 @@
 				                        <div class="col-md-12">
 				                            <div class="form-group">
 				                                <label class="upper" for="comment">내용</label>
-				                                <!-- <textarea class="form-control required" name="blog_content" rows="9" placeholder="Enter comment" id="blog_content" aria-required="true"></textarea> -->
 				                                <textarea name="blog_content" id="blog_content" rows="10" cols="100" style="width:''100%''; height:412px; display:none;"></textarea>
-				                                <p>
-													<input type="button" onclick="pasteHTML();" value="본문에 내용 넣기" />
-													<input type="button" onclick="showHTML();" value="본문 내용 가져오기" />
-													<input type="button" onclick="submitContents(this);" value="서버로 내용 전송" />
-													<input type="button" onclick="setDefaultFont();" value="기본 폰트 지정하기 (궁서_24)" />
-												</p>
 				                            </div>
 				                        </div>
 				                    </div>
@@ -56,7 +51,7 @@
 				                    <div class="row">
 		                                <div class="col-md-12">
 		                                    <div class="form-group text-center">
-		                                        <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"></i>&nbsp;등록</button>
+		                                        <button class="btn btn-primary" onclick="submitContents();"><i class="fa fa-paper-plane"></i>&nbsp;등록</button>
 		                                    </div>
 		                                </div>
 		                            </div>
@@ -79,6 +74,7 @@
 			<script type="text/javascript" src="/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 			
 			<script type="text/javascript">
+			
 					var oEditors = [];
 					
 					// 추가 글꼴 목록
@@ -104,6 +100,9 @@
 						fCreator: "createSEditor2"
 					});
 					
+					
+					
+					
 					function pasteHTML() {
 						var sHTML = "<span style='color:#FF0000;'>이미지도 같은 방식으로 삽입합니다.<\/span>";
 						oEditors.getById["blog_content"].exec("PASTE_HTML", [sHTML]);
@@ -114,21 +113,25 @@
 						alert(sHTML);
 					}
 						
-					function submitContents(elClickedObj) {
+					
+					// 등록버튼 클릭 시 
+					function submitContents() {
 						oEditors.getById["blog_content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
-						
 						// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
 						
 						try {
-							elClickedObj.form.submit();
+							$("#frm").form.submit();
 						} catch(e) {}
 					}
 					
+					
+					// 폰트 지정
 					function setDefaultFont() {
 						var sDefaultFont = '궁서';
-						var nFontSize = 24;
+						var nFontSize = 9;
 						oEditors.getById["blog_content"].setDefaultFont(sDefaultFont, nFontSize);
 					}
+					
 			</script>
 		  
 		</body>

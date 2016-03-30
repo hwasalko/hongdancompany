@@ -12,7 +12,7 @@
 	
 	<!-- Application Loggers -->
 	<logger name="com.hongdan.auto">
-		<level value="info" />
+		<level value="debug" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
