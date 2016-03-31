@@ -37,7 +37,6 @@ public class AdminController {
 	@RequestMapping(value = "/admin/blog/list", method = RequestMethod.GET )
 	public String blogList(HttpServletRequest request,  Model model) throws SQLException {		
 		List<Map<String, String>> resultList = adminService.getBlogList();
-		logger.debug("쿼리결과건수 : " + resultList.size());
 		model.addAttribute("blogList" , resultList );
 		
 		return "admin/blog/list";
