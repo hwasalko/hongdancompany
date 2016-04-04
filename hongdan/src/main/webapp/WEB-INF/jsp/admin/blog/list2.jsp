@@ -5,9 +5,9 @@
 <html lang="kr">
 
 		<jsp:include page="/WEB-INF/jsp/include/inc_head.jsp"  />
-<head>
-<link href="/css/feature-table.css" rel="stylesheet">
-</head>
+		<head>
+		<link href="/css/feature-table.css" rel="stylesheet">
+		</head>
 		<body class="wide">
 		
 				<jsp:include page="/WEB-INF/jsp/include/inc_body_loader.jsp"  />

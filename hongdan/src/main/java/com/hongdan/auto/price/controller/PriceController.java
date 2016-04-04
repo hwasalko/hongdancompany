@@ -16,10 +16,17 @@ public class PriceController {
 	
 	
 	// 사후관리서비스 가격안내
-	@RequestMapping(value = "/price/car_management")
-	public String services(HttpServletRequest request,  Model model) {		
+	@RequestMapping(value = "/price/car_management_each")
+	public String carManagementEach(HttpServletRequest request,  Model model) {		
 		
-		return "price/car_management";
+		return "price/car_management_each";
+	}	
+	
+	// 사후관리서비스 가격안내
+	@RequestMapping(value = "/price/car_management_total")
+	public String carManagementTotal(HttpServletRequest request,  Model model) {		
+		
+		return "price/car_management_total";
 	}	
 	
 }
