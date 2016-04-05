@@ -473,11 +473,71 @@
 						      </div>
 						      <!----------------------------------------------- 비회원 시작------------------------------------------------------->
 						      
-						      
-						      
 						  </div>
 						  
+						  
+						  <hr style="margin-top:30px; margin-bottom: 30px;"/>
+						
+							<div class="raw">
+					    		<div class="col-md-6" >
+			    			  			<blockquote>
+						    				<p>
+						    					<strong>신차 구입상담</strong>
+						    				</p>
+						    				<footer>1:1 상담 차량구입관련 컨설팅</footer>
+						    				<footer>데이터화된 자료를 통해 각 브랜드별 차종과 유지관리 컨설팅</footer>
+						    				<footer>각 브랜드 별 등급차량 비교분석</footer>
+						    				<footer>각 딜러사들 비교견적 최저가 할인 유도</footer>
+						    				<footer>차량등록 및 보험 등</footer>
+						    				<footer>계약 및 출고일자 통보 출고시 차량이상유무 검차</footer>
+						    				<footer>회원이 계신곳으로 차량 인도(출고트럭 구입)</footer>							    				
+						    			</blockquote>
+					    		</div>
+					    		<div class="col-md-6" >
+			    			  			<blockquote>
+						    				<p>
+						    					<strong>중고차 구입상담</strong>
+						    				</p>
+						    				<footer>1:1 상담 차량구입관련 컨설팅</footer>
+						    				<footer>데이터화된 자료를 통해 각 브랜드별 차종과 유지관리 컨설팅</footer>
+						    				<footer>회원 성향에 맞는 차종 선택</footer>
+						    				<footer>차량 구입에 관한 전과정 시스템 가동</footer>
+						    				<footer>무사고 확인 및 15가지 차량정밀검사 회원 휴대폰으로 차량영상 전송</footer>
+						    				<footer>차량등록 및 보험 등 구입에 관한 전과정 대행</footer>
+						    				<footer>회원이 계신 곳으로 차량 인도</footer>							    				
+						    			</blockquote>
+					    		</div>
+					    	</div>	
+							
+							
+							<div class="raw" style="padding-top : 30px;">
+					    		<div class="col-md-6" >
+			    			  			<blockquote>
+						    				<p>
+						    					<strong>기존차량 매각</strong>
+						    				</p>
+						    				<footer>차량상태 점검 실시</footer>
+						    				<footer>차량가액 설정 및 즉시매각 또는 위탁매각 논의</footer>							    				
+						    				<footer>등록 및 보험 등 차량매각에 관한 전과정 대행</footer>
+						    				<footer>차량금액지불 등 완료 통보</footer>
+						    				<footer>신차 컨설팅 및 상담</footer>
+						    			</blockquote>
+					    		</div>
+					    		<div class="col-md-6" >
+			    			  			<blockquote>
+						    				<p>
+						    					<strong>차량관리 멤버쉽 가입 과정</strong>
+						    				</p>
+						    				<footer>매니저 방문 멤버쉽 차량관리 1:1 상담 진행</footer>
+						    				<footer>차량상태확인 및 점검 계약서 작성</footer>							    				
+						    			</blockquote>
+					    		</div>
+					    	</div>	
+						  
+						  
 					  </div>
+					  
+					  
 					  
 				  </section>
 				  

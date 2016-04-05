@@ -23,163 +23,53 @@
 			        </div>
 			    </section>
 		
-
-		
 				<section class="p-b-10">
-			        <div class="container">
-			        
-			        
-			        	<div class="row">
-						    	<div id="postlist">
-						    	
-						    	
-									<div class="panel">
-						                <div class="panel-heading">
-						                    <div class="text-center">
-						                        <div class="row">
-						                            <div class="col-sm-9">
-						                                <h3 class="pull-left">Welcome</h3>
-						                            </div>
-						                            <div class="col-sm-3">
-						                                <h4 class="pull-right">
-						                                <small><em>2014-07-30<br>18:30:00</em></small>
-						                                </h4>
-						                            </div>
-						                        </div>
-						                    </div>
-						                </div>
-						                
-						            <div class="panel-body">
-						                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						                consequat. Duis aute irure dolor in... <a href="#">Read more</a>
-						            </div>
-						            
-						            <div class="panel-footer">
-						                <span class="label label-default">Welcome</span> <span class="label label-default">Updates</span> <span class="label label-default">July</span>
-						            </div>
-						        </div>
-						        
-						        <div class="panel">
-						                <div class="panel-heading">
-						                    <div class="text-center">
-						                        <div class="row">
-						                            <div class="col-sm-9">
-						                                <h3 class="pull-left">Post With image</h3>
-						                            </div>
-						                            <div class="col-sm-3">
-						                                <h4 class="pull-right">
-						                                <small><em>2014-07-30 18:30:00</em></small>
-						                                </h4>
-						                            </div>
-						                        </div>
-						                    </div>
-						                </div>
-						                
-						            <div class="panel-body">
-						                <a href="#" class="thumbnail">
-						                    <img alt="Image" src="http://i.imgur.com/tAHVmXi.jpg">
-						                </a>
-						                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						                quis nostrud exercitation... <a href="#">Read more</a>
-						            </div>
-						            
-						            <div class="panel-footer">
-						                <span class="label label-default">Image</span> <span class="label label-default">Updates</span> <span class="label label-default">July</span>
-						            </div>
-						        </div>
-						    </div>
 						
-						</div>
-			        
-			        
-			        
-			        
-			        	<c:forEach var="list" items="${blogList }">
-			        	
-			        	<div class="row">
-			        		<div class="col-md-12">
-					        		<div class="panel panel-default">
-					        			<div class="panel-heading">
-					        						<h4>
-					        								${list.TITLE} 
-					        								<span style="padding-left:10px;"></span>
-					        								<small>
-					        									${list.REG_DDTM}
-					        									<span style="padding-left: 5px;"></span> 
-					        									<span class="label label-danger">New</span>
-					        								</small>
-					        						</h4>
-					        			</div>
-					        			<div class="panel-body">
-									    	${list.CONTENTS }
-									  	</div>
-									</div>
-							</div>
-						</div>			
+						<div class="container">
+						
+							<div class="col-md-12">
 							
-			        	</c:forEach>
-			            
-			            <hr>
-			            
-			            	<!-- 
-			            	<hr>
-				            <div class="row">
-				            	 
-				                <div class="col-md-4">
-				                    <div class="carousel portfolio-basic-image" data-carousel-col="1">
-				                        <img alt="image" src="/images/menus/1.jpg">
-				                        <img alt="image" src="/images/menus/2.jpg">
-				                        <img alt="image" src="/images/menus/3.jpg">
-				                    </div>
-				                </div>
-				                 
-				                <div class="col-md-8">
-				                    
-				                    <div class="page-header">
-									  <h4>${list.BLOG_SEQ}. ${list.TITLE} <small>Subtext for header</small> <span class="label label-danger">New</span> </h4>
-									</div>
-									
-				                    <div class="heading heading text-left">    
-				                        <span>
-				                        		${list.CONTENTS } 
-				                        </span>
-				                    </div>
-				                </div>
-				            </div>
-				            -->
+								<hr>
+							
+								<c:forEach var="list" items="${blogList }">
+								
+								    <h2>${list.TITLE}</h2>
+								    <p>${list.CONTENTS }</p>
+								    <div style="padding-top : 20px;">
+										<span class="badge">Posted ${list.REG_DDTM}</span>
+										<div class="pull-right">
+												<span class="label label-default">alice</span> 
+												<span class="label label-primary">story</span> 
+												<span class="label label-success">blog</span> 
+												<span class="label label-info">personal</span> 
+												<span class="label label-warning">Warning</span> 
+												<span class="label label-danger">Danger</span>
+										</div>         
+								     </div>
+								     <p>Tags: 
+									    <a href="#"><span class="label label-info">Snipp</span></a> 
+										<a href="#"><span class="label label-info">Bootstrap</span></a> 
+										<a href="#"><span class="label label-info">UI</span></a> 
+										<a href="#"><span class="label label-info">growth</span></a>
+										| <i class="icon-user"></i> <a href="#">Admin</a> 
+										| <i class="icon-calendar"></i> Sept 16th, 2012 at 4:20 pm
+									 	| <i class="icon-comment"></i> <a href="#">3 Comments</a>
+									   	| <i class="icon-share"></i> <a href="#">39 Shares</a>
+									</p>
+							    
+							    	<hr style="padding-bottom : 20px;">
+							    	
+							    </c:forEach>	
+							    
+							</div>
+							
+						</div>
 						
-						
-						<nav>
-							  <ul class="pagination">
-								    <li>
-									      <a href="#" aria-label="Previous">
-									      		<span aria-hidden="true">&laquo;</span>
-									      </a>
-								    </li>
-								    <li class="active"><a href="#">1</a></li>
-								    <li><a href="#">2</a></li>
-								    <li><a href="#">3</a></li>
-								    <li><a href="#">4</a></li>
-								    <li><a href="#">5</a></li>
-								    <li><a href="#">6</a></li>
-								    <li><a href="#">7</a></li>
-								    <li><a href="#">8</a></li>
-								    <li><a href="#">9</a></li>
-								    <li>
-									      <a href="#" aria-label="Next">
-									        	<span aria-hidden="true">&raquo;</span>
-									      </a>
-								    </li>
-							  </ul>
-						</nav>
-						
-			        </div>
-			        	
-			    </section>
-			  
+				</section>
+		
+		
+		
+				
 			  
 			  
 			  

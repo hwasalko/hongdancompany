@@ -23,7 +23,7 @@
 	        BLOG_SEQ,
   			TITLE,
   			CONTENTS,
-  			REG_DDTM
+  			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM
 	    FROM TB_BLOG
 	</select>
 
