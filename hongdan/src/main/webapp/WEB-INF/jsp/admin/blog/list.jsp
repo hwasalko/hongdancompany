@@ -14,7 +14,7 @@
 		   
 		   		<jsp:include page="/WEB-INF/jsp/include/inc_body_header.jsp"  />
 		   
-			    <section class="menu-top-banner background-5 page-title-center">
+			    <section class="menu-top-banner background-blog page-title-center">
 			        <div class="container">
 			            <div class="page-title col-md-8">
 			                <h1>BLOG</h1>

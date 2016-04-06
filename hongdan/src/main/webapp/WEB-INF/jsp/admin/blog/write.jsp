@@ -15,11 +15,11 @@
 		   
 		   		<jsp:include page="/WEB-INF/jsp/include/inc_body_header.jsp"  />
 		   
-			    <section class="menu-top-banner background-5 page-title-center">
+			    <section class="menu-top-banner background-blog page-title-center">
 			        <div class="container">
 			            <div class="page-title col-md-8">
-			                <h1>BLOG 관리</h1>
-			                <span>Write blog</span>
+			                <h1>BLOG</h1>
+			                <span>Hongdan 블로그 입니다.</span>
 			            </div>
 			        </div>
 			    </section>

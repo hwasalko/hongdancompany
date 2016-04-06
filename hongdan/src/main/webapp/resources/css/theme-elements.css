@@ -2884,6 +2884,10 @@ body:not(.device-lg):not(.device-md) .filter-active-title {
     background-image: url("../images/parallax/footer.jpg");
 }
 
+.background-blog
+{
+    background-image: url("../images/blog/blog_top.jpg");
+}
 
 
 .banner-title-content {
