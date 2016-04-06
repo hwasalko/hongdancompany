@@ -12,4 +12,6 @@ public interface AdminService {
 	
 	public List<Map<String, String>> getBlogList() throws SQLException;
 	
+	public Map<String, String> getBlogView(Map<String, String> param) throws SQLException;
+	
 }

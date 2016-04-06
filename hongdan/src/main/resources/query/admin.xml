@@ -25,6 +25,17 @@
   			CONTENTS,
   			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM
 	    FROM TB_BLOG
+	    ORDER BY BLOG_SEQ DESC
+	</select>
+	
+	<select id="com.hongdan.auto.admin.getBlogView" parameterType="String"  resultType="java.util.Map">
+	    SELECT
+	        BLOG_SEQ,
+  			TITLE,
+  			CONTENTS,
+  			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM
+	    FROM TB_BLOG
+	    WHERE BLOG_SEQ = #{blog_seq}	    	
 	</select>
 
     

@@ -35,5 +35,10 @@ public class AdminDaoImpl implements AdminDao {
         return query.selectList("com.hongdan.auto.admin.getBlogList");
     }
     
+    @Override
+    public Map<String, String> getBlogView(Map<String, String> param) throws SQLException {
+    	return query.selectOne("com.hongdan.auto.admin.getBlogView", param);
+    }
+    
 }
 

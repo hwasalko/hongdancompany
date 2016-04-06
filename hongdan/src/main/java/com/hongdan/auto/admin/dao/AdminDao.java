@@ -11,4 +11,6 @@ public interface AdminDao {
 	public void saveFileToBlob(Map<String, Object> hmap) throws SQLException;
 	
 	public List<Map<String, String>> getBlogList() throws SQLException;
+	
+	public Map<String, String> getBlogView(Map<String, String> param) throws SQLException;
 }

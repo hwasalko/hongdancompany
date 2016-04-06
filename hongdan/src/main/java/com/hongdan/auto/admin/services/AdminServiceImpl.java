@@ -40,5 +40,10 @@ public class AdminServiceImpl implements AdminService {
         return adminDao.getBlogList();
     }
     
+    @Override 
+    public Map<String, String> getBlogView(Map<String, String> param) throws SQLException {
+        return adminDao.getBlogView(param);
+    }
+    
     
 }

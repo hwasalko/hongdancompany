@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -40,6 +41,18 @@ public class AdminController {
 		model.addAttribute("blogList" , resultList );
 		
 		return "admin/blog/list";
+	}
+	
+	@RequestMapping(value = "/admin/blog/{blog_seq}")
+	public String blogView(HttpServletRequest request,  Model model, @PathVariable String blog_seq) throws SQLException {
+		
+		Map<String, String> param = new HashMap<String, String>();
+    	param.put("blog_seq",blog_seq);
+		
+		Map<String, String> resultMap = adminService.getBlogView(param);
+		model.addAttribute("blogMap" , resultMap );
+		
+		return "admin/blog/view";
 	}
 	
 	

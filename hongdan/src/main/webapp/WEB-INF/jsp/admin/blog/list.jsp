@@ -18,58 +18,129 @@
 			        <div class="container">
 			            <div class="page-title col-md-8">
 			                <h1>BLOG</h1>
-			                <span>Blog list</span>
+			                <span>Hongdan 블로그 입니다.</span>
 			            </div>
 			        </div>
 			    </section>
-		
-				<section class="p-b-10">
-						
-						<div class="container">
-						
-							<div class="col-md-12">
-							
-								<hr>
-							
-								<c:forEach var="list" items="${blogList }">
+			    
+			    
+			    
+			    
+			    
+			    <section class="p-b-10">
+			    
+								<!-- Page Content -->
+								    <div class="container">
 								
-								    <h2>${list.TITLE}</h2>
-								    <p>${list.CONTENTS }</p>
-								    <div style="padding-top : 20px;">
-										<span class="badge">Posted ${list.REG_DDTM}</span>
-										<div class="pull-right">
-												<span class="label label-default">alice</span> 
-												<span class="label label-primary">story</span> 
-												<span class="label label-success">blog</span> 
-												<span class="label label-info">personal</span> 
-												<span class="label label-warning">Warning</span> 
-												<span class="label label-danger">Danger</span>
-										</div>         
-								     </div>
-								     <p>Tags: 
-									    <a href="#"><span class="label label-info">Snipp</span></a> 
-										<a href="#"><span class="label label-info">Bootstrap</span></a> 
-										<a href="#"><span class="label label-info">UI</span></a> 
-										<a href="#"><span class="label label-info">growth</span></a>
-										| <i class="icon-user"></i> <a href="#">Admin</a> 
-										| <i class="icon-calendar"></i> Sept 16th, 2012 at 4:20 pm
-									 	| <i class="icon-comment"></i> <a href="#">3 Comments</a>
-									   	| <i class="icon-share"></i> <a href="#">39 Shares</a>
-									</p>
-							    
-							    	<hr style="padding-bottom : 20px;">
-							    	
-							    </c:forEach>	
-							    
-							</div>
-							
-						</div>
-						
-				</section>
+								        <div class="row">
+								
+								            <!-- Blog Entries Column -->
+								            <div class="col-md-8">
+								            	
+								            	<blockquote>총 ${blogList.size()} 건의 포스트가 존재합니다.</blockquote>
+								            	<hr style="padding-bottom : 20px;">
+								
+												<c:forEach var="list" items="${blogList }">
+												        <!-- Blog Post -->
+										                <h2><a href="/admin/blog/${list.BLOG_SEQ}">${list.TITLE}</a></h2>
+										                <p class="lead">by Hongdan</p>
+										                <p><span class="glyphicon glyphicon-time"></span> Posted on ${list.REG_DDTM} <span class="label label-danger">New</span> <small>1 hours ago</small> </p>
+										                <hr>
+										                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+										                <p>${list.CONTENTS}</p>
+										                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+										
+										                <hr>
+										                
+												</c:forEach>
+								                
+								               
+								                
+								                
+								                <!-- pageing -->
+											    <nav>
+													  <ul class="pagination">
+														    <li>
+															      <a href="#" aria-label="Previous">
+															      		<span aria-hidden="true">&laquo;</span>
+															      </a>
+														    </li>
+														    <li class="active"><a href="#">1</a></li>
+														    <li><a href="#">2</a></li>
+														    <li><a href="#">3</a></li>
+														    <li><a href="#">4</a></li>
+														    <li><a href="#">5</a></li>
+														    <li><a href="#">6</a></li>
+														    <li><a href="#">7</a></li>
+														    <li><a href="#">8</a></li>
+														    <li><a href="#">9</a></li>
+														    <li>
+															      <a href="#" aria-label="Next">
+															        	<span aria-hidden="true">&raquo;</span>
+															      </a>
+														    </li>
+													  </ul>
+												</nav>	
+								
+								            </div>
+								
+								
+								            <!-- Blog Sidebar Widgets Column -->
+								            <div class="col-md-4">
+								
+								                <!-- Blog Search Well -->
+								                <div class="well">
+								                    <h4>Search</h4>
+								                    <div class="input-group">
+								                        <input type="text" class="form-control">
+								                        <span class="input-group-btn">
+								                            <button class="btn btn-default" type="button">
+								                                <span class="glyphicon glyphicon-search"></span>
+								                        	</button>
+								                        </span>
+								                    </div>
+								                    <!-- /.input-group -->
+								                </div>
+								
+								                <!-- Blog Categories Well -->
+								                <div class="well">
+								                    <h4>Categories</h4>
+								                    <div class="row">
+								                        <div class="col-lg-12">
+								                        	<a href="#"><span class="label label-primary">전체</span></a>
+								                        </div>
+								                        <div class="col-lg-12">
+								                        	<a href="#"><span class="label label-success">Benz</span></a>								                            
+								                            <a href="#"><span class="label label-success">BMW</span></a>
+								                            <a href="#"><span class="label label-success">New Cars</span></a>
+								                            <a href="#"><span class="label label-success">...</span></a>
+								                        </div>
+								                    </div>
+								                    <!-- /.row -->
+								                </div>
+								
+								                <!-- Side Widget Well 
+								                <div class="well">
+								                    <h4>Side Widget Well</h4>
+								                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+								                </div>
+								                -->
+								
+								            </div>
+								
+								        </div>
+								        <!-- /.row -->
+								        
+								        
+								        
+								    </div>
+								    <!-- /.container -->
+								    
+								    
+								    
+			    
+			    </section>
 		
-		
-		
-				
 			  
 			  
 			  
