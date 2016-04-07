@@ -1,4 +1,4 @@
-package com.hongdan.auto.admin.dao;
+package com.hongdan.auto.blog.dao;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -13,31 +13,34 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public class AdminDaoImpl implements AdminDao {
-         
-	private static final Logger logger = LoggerFactory.getLogger(AdminDaoImpl.class);
-	
+public class BlogDaoImpl implements BlogDao {
+    
     @Autowired
     private SqlSessionTemplate query;
 
     @Override
     public int insertBlog(Map<String, String> param) throws SQLException {
-        return query.insert("com.hongdan.auto.admin.insertBlog",param);
+        return query.insert("com.hongdan.auto.blog.insertBlog",param);
     }
     
     @Override
     public void saveFileToBlob(Map<String, Object> hmap) throws SQLException {
-        query.insert("com.hongdan.auto.admin.saveImage",hmap);
+        query.insert("com.hongdan.auto.blog.saveImage",hmap);
     }
 
     @Override
-    public List<Map<String, String>> getBlogList() throws SQLException {
-        return query.selectList("com.hongdan.auto.admin.getBlogList");
+    public List<Map<String, String>> getBlogList(Map<String, Integer> param) throws SQLException {
+        return query.selectList("com.hongdan.auto.blog.getBlogList", param);
+    }
+    
+    @Override
+    public int getBlogListTotalCount() throws SQLException {
+        return query.selectOne("com.hongdan.auto.blog.getBlogListTotalCount");
     }
     
     @Override
     public Map<String, String> getBlogView(Map<String, String> param) throws SQLException {
-    	return query.selectOne("com.hongdan.auto.admin.getBlogView", param);
+    	return query.selectOne("com.hongdan.auto.blog.getBlogView", param);
     }
     
 }

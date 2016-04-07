@@ -29,6 +29,8 @@
 	                            
 	                            <li class="dropdown"> <a href="/about" class="nav-to">About</a> </li>
 	                            
+	                            <li class="dropdown"> <a href="/blog/list" class="nav-to">Blog</a> </li>
+	                            
 	                            <li class="dropdown"> <a href="/services" class="nav-to">Service</a> </li>
 	                            
 	                            <li class="dropdown"> <a href="#">Price <i class="fa fa-angle-down"></i> </a>
@@ -49,8 +51,6 @@
 	                            <li class="dropdown"> <a href="/reservation" class="nav-to">Reservation</a> </li>
 	                            
 	                            <li class="dropdown"> <a href="/contact" class="nav-to">Contact us</a> </li>
-	                            
-	                            <li class="dropdown"> <a href="/admin/blog/list" class="nav-to">Admin</a> </li>
 	                            
 	                        </ul>
 	                    </nav>

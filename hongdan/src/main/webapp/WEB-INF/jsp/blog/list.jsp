@@ -27,7 +27,7 @@
 			    
 			    
 			    
-			    <section class="p-b-10">
+			    <section class="p-b-20">
 			    
 								<!-- Page Content -->
 								    <div class="container">
@@ -35,14 +35,18 @@
 								        <div class="row">
 								
 								            <!-- Blog Entries Column -->
-								            <div class="col-md-8">
+								            <div class="col-md-9">
 								            	
-								            	<blockquote>총 ${blogList.size()} 건의 포스트가 존재합니다.</blockquote>
-								            	<hr style="padding-bottom : 20px;">
+								            	<blockquote>
+								            		<p>
+								            			전체 <strong>${blogList.size()}</strong> 건
+								            		</p>
+								            	</blockquote>
+								            	<hr style="padding-bottom : 20px; padding-top : 20px;">
 								
 												<c:forEach var="list" items="${blogList }">
 												        <!-- Blog Post -->
-										                <h2><a href="/admin/blog/${list.BLOG_SEQ}">${list.TITLE}</a></h2>
+										                <h2><a href="/blog/${list.BLOG_SEQ}">${list.TITLE}</a></h2>
 										                <p class="lead">by Hongdan</p>
 										                <p><span class="glyphicon glyphicon-time"></span> Posted on ${list.REG_DDTM} <span class="label label-danger">New</span> <small>1 hours ago</small> </p>
 										                <hr>
@@ -65,8 +69,8 @@
 															      		<span aria-hidden="true">&laquo;</span>
 															      </a>
 														    </li>
-														    <li class="active"><a href="#">1</a></li>
-														    <li><a href="#">2</a></li>
+														    <li class="active"><a href="/blog/list/1">1</a></li>
+														    <li><a href="/blog/list/2">2</a></li>
 														    <li><a href="#">3</a></li>
 														    <li><a href="#">4</a></li>
 														    <li><a href="#">5</a></li>
@@ -86,7 +90,7 @@
 								
 								
 								            <!-- Blog Sidebar Widgets Column -->
-								            <div class="col-md-4">
+								            <div class="col-md-3">
 								
 								                <!-- Blog Search Well -->
 								                <div class="well">

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hongdan.auto.admin">
+<mapper namespace="com.hongdan.auto.blog">
 
     
-	<insert id="com.hongdan.auto.admin.insertBlog"  parameterType="java.util.Map" >
+	<insert id="com.hongdan.auto.blog.insertBlog"  parameterType="java.util.Map" >
 	    INSERT INTO TB_BLOG(
 	    	BLOG_SEQ,
   			TITLE,
@@ -18,7 +18,7 @@
 		FROM TB_BLOG
 	</insert>
 	
-	<select id="com.hongdan.auto.admin.getBlogList" resultType="java.util.Map">
+	<select id="com.hongdan.auto.blog.getBlogList" resultType="java.util.Map">
 	    SELECT
 	        BLOG_SEQ,
   			TITLE,
@@ -26,9 +26,15 @@
   			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM
 	    FROM TB_BLOG
 	    ORDER BY BLOG_SEQ DESC
+	    LIMIT  ${currentPageNo} , ${pageSize}
 	</select>
 	
-	<select id="com.hongdan.auto.admin.getBlogView" parameterType="String"  resultType="java.util.Map">
+	<select id="com.hongdan.auto.blog.getBlogListTotalCount" resultType="integer">
+	    SELECT COUNT(*) TOTAL_CNT
+	    FROM TB_BLOG
+	</select>
+	
+	<select id="com.hongdan.auto.blog.getBlogView" parameterType="String"  resultType="java.util.Map">
 	    SELECT
 	        BLOG_SEQ,
   			TITLE,
