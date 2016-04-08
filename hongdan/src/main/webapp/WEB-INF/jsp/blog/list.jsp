@@ -31,31 +31,34 @@
 			    
 								<!-- Page Content -->
 								    <div class="container">
-								
+											
 								        <div class="row">
 								
 								            <!-- Blog Entries Column -->
 								            <div class="col-md-9">
-								            	
+								            
 								            	<blockquote>
 								            		<p>
-								            			전체 <strong>${blogList.size()}</strong> 건
+								            			전체 <strong>${blogListTotalCount}</strong> 건
 								            		</p>
 								            	</blockquote>
+								            	
 								            	<hr style="padding-bottom : 20px; padding-top : 20px;">
-								
+								            	
+								            	
 												<c:forEach var="list" items="${blogList }">
 												        <!-- Blog Post -->
-										                <h2><a href="/blog/${list.BLOG_SEQ}">${list.TITLE}</a></h2>
+										                <h3><a href="/blog/${list.BLOG_SEQ}">${list.TITLE}</a></h3>
 										                <p class="lead">by Hongdan</p>
 										                <p><span class="glyphicon glyphicon-time"></span> Posted on ${list.REG_DDTM} <span class="label label-danger">New</span> <small>1 hours ago</small> </p>
 										                <hr>
+										                <!-- 
 										                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
 										                <p>${list.CONTENTS}</p>
 										                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-										
+										 				
 										                <hr>
-										                
+										                -->
 												</c:forEach>
 								                
 								               

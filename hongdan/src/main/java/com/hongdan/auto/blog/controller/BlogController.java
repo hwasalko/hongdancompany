@@ -61,6 +61,7 @@ public class BlogController {
 		
 		List<Map<String, String>> resultList = blogService.getBlogList( param );
 		model.addAttribute("blogList" , resultList );
+		model.addAttribute("blogListTotalCount" , totalCount );
 		
 		return "blog/list";
 	}

@@ -35,10 +35,10 @@
 								        <div class="row">
 								
 								            <!-- Blog Entries Column -->
-								            <div class="col-lg-8">
+								            <div class="col-lg-9">
 								            	
 								            	        <!-- 제목 -->
-										                <h1>${blogMap.TITLE}</h1>
+										                <h2>${blogMap.TITLE}</h2>
 										                
 										                <!-- 등록자 -->
 										                <p class="lead">by Hongdan</p>
@@ -51,7 +51,6 @@
 										                <hr>
 										                
 										                <!-- 내용  -->
-										                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
 										                <p class="lead">
 										                	${blogMap.CONTENTS}
 										                </p>
@@ -121,7 +120,7 @@
 								
 								
 								            <!-- Blog Sidebar Widgets Column -->
-								            <div class="col-md-4">
+								            <div class="col-md-3">
 								
 								                <!-- Blog Search Well -->
 								                <div class="well">
