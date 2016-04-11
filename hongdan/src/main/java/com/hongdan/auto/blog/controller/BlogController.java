@@ -46,22 +46,38 @@ public class BlogController {
 		
 		int totalCount = blogService.getBlogListTotalCount();	// 총건수
 		int pageSize = 3; // 한 페이지에 보일 게시글 수		
-		int currentPageNo = 1; // 현재 페이지 번호(디폴트)		
+		int blockSize = 5; // 페이지 번호 링크 개수
+		int currentPageNo = 1; // 현재 페이지 번호(디폴트)
+		int finalPage = (totalCount + (pageSize - 1)) / pageSize; // 마지막 페이지
 		
 		// 번호가 파라미터로 왔을 시에는 주입
 		if (page != null) currentPageNo=Integer.parseInt(page); 	
 		
+		// 페이징 관련
+		int startPageNo = ((currentPageNo - 1) / blockSize) * blockSize + 1; // 시작 페이지 (페이징 네비 기준)
+		int endPageNo = startPageNo + blockSize - 1; // 끝 페이지 (페이징 네비 기준)
 		
-		Map<String, Integer> param = new HashMap<String, Integer>();
-    	
+		if (endPageNo > finalPage) { // [마지막 페이지 (페이징 네비 기준) > 마지막 페이지]보다 큰 경우
+			endPageNo = finalPage;
+		}
+		
+		
+		
+		// 파라미터
+		Map<String, Integer> param = new HashMap<String, Integer>();    	
     	param.put("totalCount",totalCount);
     	param.put("pageSize", pageSize);
     	param.put("currentPageNo", (currentPageNo-1) * pageSize);	// 0부터 시작하기때문에 -1 처리함
 
 		
-		List<Map<String, String>> resultList = blogService.getBlogList( param );
-		model.addAttribute("blogList" , resultList );
+    	// 결과셋팅
+		model.addAttribute("blogList" , blogService.getBlogList( param ) );
 		model.addAttribute("blogListTotalCount" , totalCount );
+		model.addAttribute("blogListPageSize", pageSize);
+		model.addAttribute("blogListCurrentPageNo", currentPageNo);
+		model.addAttribute("blogListStartPageNo", startPageNo);
+		model.addAttribute("blogListEndPageNo", endPageNo);
+		
 		
 		return "blog/list";
 	}

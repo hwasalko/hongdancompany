@@ -33,32 +33,34 @@
 								    <div class="container">
 											
 								        <div class="row">
-								
+								        	<H4>
+								        		전체 <strong>${blogListTotalCount}</strong> 건
+								        	</H4>	
+
+											<hr style="border-color : #BBB ; padding-bottom : 20px; padding-top : 20px;">
+								            
 								            <!-- Blog Entries Column -->
 								            <div class="col-md-9">
-								            
-								            	<blockquote>
-								            		<p>
-								            			전체 <strong>${blogListTotalCount}</strong> 건
-								            		</p>
-								            	</blockquote>
-								            	
-								            	<hr style="padding-bottom : 20px; padding-top : 20px;">
-								            	
 								            	
 												<c:forEach var="list" items="${blogList }">
-												        <!-- Blog Post -->
-										                <h3><a href="/blog/${list.BLOG_SEQ}">${list.TITLE}</a></h3>
-										                <p class="lead">by Hongdan</p>
-										                <p><span class="glyphicon glyphicon-time"></span> Posted on ${list.REG_DDTM} <span class="label label-danger">New</span> <small>1 hours ago</small> </p>
-										                <hr>
-										                <!-- 
-										                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-										                <p>${list.CONTENTS}</p>
-										                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-										 				
-										                <hr>
-										                -->
+												
+														<blockquote>
+														        <!-- Blog Post -->
+												                
+												                <h4><a href="/blog/${list.BLOG_SEQ}">${list.TITLE}</a> <span class="label label-danger" style="font-size: 10px;">New</span></h4>
+												                <!-- <p class="lead">by Hongdan</p> -->
+												                
+												                <p style="font-size: 14px; color: gray;">
+												                	<span class="glyphicon glyphicon-time"></span> Posted on ${list.REG_DDTM}
+												                	| <span class="glyphicon glyphicon-user"></span> by Hongdan
+												                	| <span class="glyphicon glyphicon-tags"></span> Tags <span class="label label-default">Benz</span>
+												                </p>
+												                
+												                
+												         </blockquote>
+												         
+												         <hr style="border :1px #CCC dotted;">
+										                
 												</c:forEach>
 								                
 								               
@@ -67,27 +69,35 @@
 								                <!-- pageing -->
 											    <nav>
 													  <ul class="pagination">
-														    <li>
-															      <a href="#" aria-label="Previous">
+													  		<li>
+															      <a href="/blog/list/1" aria-label="Previous">
 															      		<span aria-hidden="true">&laquo;</span>
 															      </a>
 														    </li>
-														    <li class="active"><a href="/blog/list/1">1</a></li>
-														    <li><a href="/blog/list/2">2</a></li>
-														    <li><a href="#">3</a></li>
-														    <li><a href="#">4</a></li>
-														    <li><a href="#">5</a></li>
-														    <li><a href="#">6</a></li>
-														    <li><a href="#">7</a></li>
-														    <li><a href="#">8</a></li>
-														    <li><a href="#">9</a></li>
+														    <c:forEach var="i" begin="${blogListStartPageNo}" end="${blogListEndPageNo}" step="1">
+																	<c:choose>
+																			<c:when test="${i eq blogListCurrentPageNo}">
+																				<li class="active">
+																			</c:when>
+																			<c:otherwise>
+																				<li>
+																			</c:otherwise>
+																	</c:choose>
+																	<a href="/blog/list/${i}">${i}</a> </li>
+															</c:forEach>
+															
 														    <li>
-															      <a href="#" aria-label="Next">
+															      <a href="/blog/list/${blogListEndPageNo}" aria-label="Next">
 															        	<span aria-hidden="true">&raquo;</span>
 															      </a>
 														    </li>
 													  </ul>
 												</nav>	
+												
+												<p>
+													<a href="/blog/write"><button type="button" class="btn btn-primary btn-right">글쓰기</button></a>
+												</p>
+												
 								
 								            </div>
 								
@@ -101,7 +111,7 @@
 								                    <div class="input-group">
 								                        <input type="text" class="form-control">
 								                        <span class="input-group-btn">
-								                            <button class="btn btn-default" type="button">
+								                            <button class="btn btn-default btn-xs" type="button">
 								                                <span class="glyphicon glyphicon-search"></span>
 								                        	</button>
 								                        </span>
@@ -111,16 +121,16 @@
 								
 								                <!-- Blog Categories Well -->
 								                <div class="well">
-								                    <h4>Categories</h4>
+								                    <h4>Tags</h4>
 								                    <div class="row">
 								                        <div class="col-lg-12">
-								                        	<a href="#"><span class="label label-primary">전체</span></a>
-								                        </div>
-								                        <div class="col-lg-12">
-								                        	<a href="#"><span class="label label-success">Benz</span></a>								                            
-								                            <a href="#"><span class="label label-success">BMW</span></a>
-								                            <a href="#"><span class="label label-success">New Cars</span></a>
-								                            <a href="#"><span class="label label-success">...</span></a>
+								                        	<a href="#"><span class="label label-default">Benz</span></a>								                            
+								                            <a href="#"><span class="label label-default">BMW</span></a>
+								                            <a href="#"><span class="label label-default">New Cars</span></a>
+								                            <a href="#"><span class="label label-default">Benz</span></a>								                            
+								                            <a href="#"><span class="label label-default">BMW</span></a>
+								                            <a href="#"><span class="label label-default">New Cars</span></a>
+								                            <a href="#"><span class="label label-default">...</span></a>
 								                        </div>
 								                    </div>
 								                    <!-- /.row -->
