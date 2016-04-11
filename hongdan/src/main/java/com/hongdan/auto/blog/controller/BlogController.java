@@ -104,7 +104,7 @@ public class BlogController {
 	
 	
 	@RequestMapping(value = "/blog/write", method = RequestMethod.POST )
-	public void blogSave(HttpServletRequest request,  Model model) {		
+	public String blogSave(HttpServletRequest request,  Model model) {		
 		
 		String title 			= request.getParameter("blog_title");
 		String contents 	= request.getParameter("blog_content");
@@ -124,6 +124,8 @@ public class BlogController {
 			e.printStackTrace();
 			logger.error(e.toString());
 		}
+		
+		return "redirect:/blog/list";
 		
 	}
 	

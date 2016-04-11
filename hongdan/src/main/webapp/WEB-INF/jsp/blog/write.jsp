@@ -28,7 +28,7 @@
 				        <div class="container">
 				            <div class="row">
 				                <div class="col-md-10 col-md-offset-1">
-				                <form id="frm" action="/admin/blog/write" method="post">
+				                <form id="frm" action="/blog/write" method="post">
 				                
 				                    <div class="row">
 				                        <div class="col-md-12">
