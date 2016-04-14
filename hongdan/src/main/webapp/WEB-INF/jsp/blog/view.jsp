@@ -107,12 +107,18 @@
 								                <!-- Pager -->
 								                <ul class="pager">
 								                    <li class="previous">
-								                        <a href="#">&larr; 이전글</a>
+								                        <a href="/blog/${blog_seq-1}">&larr; 이전글</a>
 								                    </li>
 								                    <li class="next">
-								                        <a href="#">다음글 &rarr;</a>
+								                        <a href="/blog/${blog_seq+1}">다음글 &rarr;</a>
 								                    </li>
 								                </ul>
+								                
+								                <div class="text-center" style="padding-bottom : 20px;">
+													<a href="/blog/list"><button class="btn btn-primary"><i class="fa fa-paper-plane"></i>&nbsp;목록</button></a>
+													<a href="/blog/edit/${blog_seq}"><button class="btn btn-success"><i class="fa fa-wrench"></i>&nbsp;수정</button></a>
+													<a href="/blog/delete/${blog_seq}"><button class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;삭제</button></a>
+												</div>
 								                
 								                
 								

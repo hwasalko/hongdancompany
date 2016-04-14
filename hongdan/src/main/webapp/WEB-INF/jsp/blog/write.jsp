@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <!DOCTYPE html>
@@ -28,37 +28,54 @@
 				        <div class="container">
 				            <div class="row">
 				                <div class="col-md-10 col-md-offset-1">
-				                <form id="frm" action="/blog/write" method="post">
 				                
-				                    <div class="row">
-				                        <div class="col-md-12">
-				                            <div class="form-group">
-				                                <label class="upper" for="name">제목</label>
-				                                <input type="text" class="form-control required" name="blog_title" placeholder="Enter blog title" id="blog_title" aria-required="true">
-				                            </div>
-				                        </div>
-				                    </div>
+					                <c:if test="${empty blogMap }">
+					                	<form id="frm" action = "/blog/write" method="post" >
+					                </c:if>
+					                <c:if test="${not empty blogMap }">
+					                	<form id="frm" action = "/blog/edit/${blog_seq}" method="post" >
+					                </c:if>    
+					                
+					                    <div class="row">
+					                        <div class="col-md-12">
+					                            <div class="form-group">
+					                                <label class="upper" for="name">제목</label>
+					                                <input type="text" class="form-control required" name="blog_title" placeholder="Enter blog title" id="blog_title" aria-required="true" value="${blogMap.TITLE}">
+					                            </div>
+					                        </div>
+					                    </div>
+					                    
+					                    <div class="row">
+					                        <div class="col-md-12">
+					                            <div class="form-group">
+					                                <label class="upper" for="comment">내용</label>
+					                                <textarea name="blog_content" id="blog_content" rows="10" cols="100" style="width:''100%''; height:412px; display:none;"></textarea>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    
+					              </form>
 				                    
-				                    <div class="row">
-				                        <div class="col-md-12">
-				                            <div class="form-group">
-				                                <label class="upper" for="comment">내용</label>
-				                                <textarea name="blog_content" id="blog_content" rows="10" cols="100" style="width:''100%''; height:412px; display:none;"></textarea>
-				                            </div>
-				                        </div>
-				                    </div>
 				                    
 				                    <div class="row">
 		                                <div class="col-md-12">
 		                                    <div class="form-group text-center">
-		                                        <button class="btn btn-primary" onclick="submitContents();"><i class="fa fa-paper-plane"></i>&nbsp;등록</button>
+		                                    	<c:if test="${empty blogMap }">
+		                                        	<button class="btn btn-success" onclick="submitContents();"><i class="fa fa-check"></i>&nbsp;등록</button>
+		                                        	<a href="/blog/list"><button class="btn btn-primary"><i class="fa fa-ban"></i>&nbsp;취소</button></a>
+		                                        </c:if>
+		                                        <c:if test="${not empty blogMap }">
+		                                        	<button class="btn btn-success" onclick="updateContents();"><i class="fa fa-check"></i>&nbsp;수정</button>
+		                                        	<a href="/blog/${blog_seq}"><button class="btn btn-primary"><i class="fa fa-ban"></i>&nbsp;취소</button></a>
+		                                        </c:if>
+		                                        	
 		                                    </div>
 		                                </div>
 		                            </div>
 		                            
-				                </form>
 				                
-				            </div>
+				                
+				            	</div>
 				            </div>
 				        </div>
 				    </section>
@@ -75,6 +92,7 @@
 			
 			<script type="text/javascript">
 			
+					var contents = '${blogMap.CONTENTS}';
 					var oEditors = [];
 					
 					// 추가 글꼴 목록
@@ -95,7 +113,8 @@
 						}, //boolean
 						fOnAppLoad : function(){
 							//수정모드 시 활용
-							//oEditors.getById["blog_content"].exec("PASTE_HTML", ["로딩이 완료된 후에 본문에 삽입되는 text입니다."]);
+							//oEditors.getById["blog_content"].exec("PASTE_HTML", ["로딩이 완료된 후에 본문에 삽입되는 text입니다."]); 
+							oEditors.getById["blog_content"].exec("PASTE_HTML", [contents]);
 						},
 						fCreator: "createSEditor2"
 					});
@@ -120,7 +139,19 @@
 						// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
 						
 						try {
-							$("#frm").form.submit();
+							$("#frm").action='/blog/write'; 
+							$("#frm").submit();
+						} catch(e) {}
+					}
+					
+					// 수정버튼 클릭 시 
+					function updateContents() {
+						oEditors.getById["blog_content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
+						// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
+						
+						try {
+							$("#frm").action='/blog/editProcs/${blog_seq}'; 
+							$("#frm").submit();
 						} catch(e) {}
 					}
 					

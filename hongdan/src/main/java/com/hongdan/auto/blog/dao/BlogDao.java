@@ -15,4 +15,8 @@ public interface BlogDao {
 	public int getBlogListTotalCount() throws SQLException;
 	
 	public Map<String, String> getBlogView(Map<String, String> param) throws SQLException;
+	
+	public int deleteBlog(Map<String, String> param) throws SQLException;
+	
+	public int updateBlog(Map<String, String> param) throws SQLException;
 }

@@ -8,13 +8,17 @@
 	    	BLOG_SEQ,
   			TITLE,
   			CONTENTS,
-  			REG_DDTM
+  			REG_DDTM,
+  			REG_ID,
+  			DEL_YN
 	    )
 		SELECT 
 			(IFNULL(MAX(BLOG_SEQ), 0) +1) BLOG_SEQ,
 			#{title},
 			#{contents},
-			DATE_FORMAT(now(), '%Y%m%d%H%i%s')
+			DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
+			'hongdan',
+			'N'
 		FROM TB_BLOG
 	</insert>
 	
@@ -23,8 +27,11 @@
 	        BLOG_SEQ,
   			TITLE,
   			CONTENTS,
-  			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM
+  			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM,
+  			REG_ID,
+  			DEL_YN
 	    FROM TB_BLOG
+	    WHERE DEL_YN = 'N'
 	    ORDER BY BLOG_SEQ DESC
 	    LIMIT  ${currentPageNo} , ${pageSize}
 	</select>
@@ -32,6 +39,7 @@
 	<select id="com.hongdan.auto.blog.getBlogListTotalCount" resultType="integer">
 	    SELECT COUNT(*) TOTAL_CNT
 	    FROM TB_BLOG
+	    WHERE DEL_YN = 'N'
 	</select>
 	
 	<select id="com.hongdan.auto.blog.getBlogView" parameterType="String"  resultType="java.util.Map">
@@ -39,10 +47,30 @@
 	        BLOG_SEQ,
   			TITLE,
   			CONTENTS,
-  			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM
+  			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM,
+  			REG_ID,
+  			DEL_YN
 	    FROM TB_BLOG
-	    WHERE BLOG_SEQ = #{blog_seq}	    	
+	    WHERE
+	    	DEL_YN = 'N' 
+	    	AND BLOG_SEQ = #{blog_seq}	    	
+	    
 	</select>
+	
+	
+	<update id="com.hongdan.auto.blog.deleteBlog"  parameterType="java.util.Map" >
+	    UPDATE TB_BLOG
+  		SET DEL_YN = 'Y'
+  		WHERE BLOG_SEQ = #{blog_seq}
+	</update>
+	
+	<update id="com.hongdan.auto.blog.updateBlog"  parameterType="java.util.Map" >
+	    UPDATE TB_BLOG
+  		SET TITLE = #{title},
+  			  CONTENTS = #{contents},
+  			  UPDATE_DDTM = DATE_FORMAT(now(), '%Y%m%d%H%i%s')
+  		WHERE BLOG_SEQ = #{blog_seq}
+	</update>
 
     
 </mapper>

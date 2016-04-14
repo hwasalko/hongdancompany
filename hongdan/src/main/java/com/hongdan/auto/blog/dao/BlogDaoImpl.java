@@ -40,5 +40,14 @@ public class BlogDaoImpl implements BlogDao {
     	return query.selectOne("com.hongdan.auto.blog.getBlogView", param);
     }
     
+    @Override
+    public int deleteBlog(Map<String, String> param) throws SQLException {
+        return query.update("com.hongdan.auto.blog.deleteBlog",param);
+    }
+    
+    @Override
+    public int updateBlog(Map<String, String> param) throws SQLException {
+        return query.update("com.hongdan.auto.blog.updateBlog",param);
+    }
 }
 

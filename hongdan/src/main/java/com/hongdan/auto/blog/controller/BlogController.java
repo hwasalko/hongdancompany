@@ -91,6 +91,7 @@ public class BlogController {
 		
 		Map<String, String> resultMap = blogService.getBlogView(param);
 		model.addAttribute("blogMap" , resultMap );
+		model.addAttribute("blog_seq" , blog_seq );
 		
 		return "blog/view";
 	}
@@ -119,6 +120,64 @@ public class BlogController {
 		
 		try {
 			int result = blogService.insertBlog( param );
+			logger.info("처리결과 : " + result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			logger.error(e.toString());
+		}
+		
+		return "redirect:/blog/list";
+		
+	}
+	
+	
+	@RequestMapping(value = "/blog/delete/{blog_seq}")
+	public String blogDelete(HttpServletRequest request,  Model model, @PathVariable String blog_seq) {		
+		
+		Map<String, String> param = new HashMap<String, String>();
+    	param.put("blog_seq",blog_seq);
+		
+		try {
+			int result = blogService.deleteBlog(param );
+			logger.info("처리결과 : " + result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			logger.error(e.toString());
+		}
+		
+		return "redirect:/blog/list";
+		
+	}
+	
+	
+	@RequestMapping(value = "/blog/edit/{blog_seq}", method = RequestMethod.GET)
+	public String blogEdit(HttpServletRequest request,  Model model, @PathVariable String blog_seq) throws SQLException {
+		
+		Map<String, String> param = new HashMap<String, String>();
+    	param.put("blog_seq",blog_seq);
+		
+		Map<String, String> resultMap = blogService.getBlogView(param);
+		model.addAttribute("blogMap" , resultMap );
+		model.addAttribute("blog_seq" , blog_seq );
+		
+		return "blog/write";
+	}
+	
+	@RequestMapping(value = "/blog/edit/{blog_seq}", method = RequestMethod.POST )
+	public String blogEditProcess(HttpServletRequest request,  Model model, @PathVariable String blog_seq) {		
+		
+		String title 			= request.getParameter("blog_title");
+		String contents 	= request.getParameter("blog_content");
+		
+		Map<String, String> param = new HashMap<String, String>();
+    	
+    	param.put("blog_seq",blog_seq);
+    	param.put("title",title);
+    	param.put("contents", contents);
+    	
+		
+		try {
+			int result = blogService.updateBlog( param );
 			logger.info("처리결과 : " + result);
 		} catch (SQLException e) {
 			e.printStackTrace();

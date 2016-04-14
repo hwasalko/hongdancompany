@@ -67,36 +67,39 @@
 								                
 								                
 								                <!-- pageing -->
-											    <nav>
-													  <ul class="pagination">
-													  		<li>
-															      <a href="/blog/list/1" aria-label="Previous">
-															      		<span aria-hidden="true">&laquo;</span>
-															      </a>
-														    </li>
-														    <c:forEach var="i" begin="${blogListStartPageNo}" end="${blogListEndPageNo}" step="1">
-																	<c:choose>
-																			<c:when test="${i eq blogListCurrentPageNo}">
-																				<li class="active">
-																			</c:when>
-																			<c:otherwise>
-																				<li>
-																			</c:otherwise>
-																	</c:choose>
-																	<a href="/blog/list/${i}">${i}</a> </li>
-															</c:forEach>
-															
-														    <li>
-															      <a href="/blog/list/${blogListEndPageNo}" aria-label="Next">
-															        	<span aria-hidden="true">&raquo;</span>
-															      </a>
-														    </li>
-													  </ul>
-												</nav>	
+								                <div class="text-center" >
+												    <nav>
+														  <ul class="pagination">
+														  		<li>
+																      <a href="/blog/list/1" aria-label="Previous">
+																      		<span aria-hidden="true">&laquo;</span>
+																      </a>
+															    </li>
+															    <c:forEach var="i" begin="${blogListStartPageNo}" end="${blogListEndPageNo}" step="1">
+																		<c:choose>
+																				<c:when test="${i eq blogListCurrentPageNo}">
+																					<li class="active">
+																				</c:when>
+																				<c:otherwise>
+																					<li>
+																				</c:otherwise>
+																		</c:choose>
+																		<a href="/blog/list/${i}">${i}</a> </li>
+																</c:forEach>
+																
+															    <li>
+																      <a href="/blog/list/${blogListEndPageNo}" aria-label="Next">
+																        	<span aria-hidden="true">&raquo;</span>
+																      </a>
+															    </li>
+														  </ul>
+													</nav>	
+												</div>
 												
-												<p>
-													<a href="/blog/write"><button type="button" class="btn btn-primary btn-right">글쓰기</button></a>
-												</p>
+												<div class="text-right" style="padding-bottom : 10px;">
+													<a href="/blog/write"><button class="btn btn-success"><i class="fa fa-pencil-square-o"></i>&nbsp;글쓰기</button></a>
+												</div>
+												
 												
 								
 								            </div>

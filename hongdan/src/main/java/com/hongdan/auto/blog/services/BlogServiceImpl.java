@@ -47,6 +47,17 @@ public class BlogServiceImpl implements BlogService {
     public Map<String, String> getBlogView(Map<String, String> param) throws SQLException {
         return blogDao.getBlogView(param);
     }
+
+    @Override
+    @Transactional
+    public int deleteBlog(Map<String, String> param) throws SQLException{
+    	return blogDao.deleteBlog(param);
+    }
     
+    @Override
+    @Transactional
+    public int updateBlog(Map<String, String> param) throws SQLException{
+    	return blogDao.updateBlog(param);
+    }
     
 }
