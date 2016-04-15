@@ -28,7 +28,7 @@
 
 				  <section id="content" class="background-grey">
 				  		<div class="heading heading-center m-b-40" data-animation="fadeInUp">
-				  			<h2 style="font-family: 'Nanum Gothic', sans-serif;">차량관리서비스 가격 안내(회원별)</h2>
+				  			<h3 style="font-family: 'Nanum Gothic', sans-serif;">차량관리서비스 가격안내(회원별)</h3>
 					  		<!--
 					  			<h2>차량관리서비스 가격표</h2>
 					            <h2 style="font-family: 'Jeju Gothic', sans-serif;">차량관리서비스 가격표</h2>
@@ -45,14 +45,14 @@
 				        </div>
 				      <div class="container portfolio">
 				
-				      	  <div class="filter-active-title"></div>
-					      <ul class="portfolio-filter" id="portfolio-filter" data-isotope-nav="isotope">
-					          <li data-filter=".vip" style="text-align: center;">VIP<br>(연100만원)</li>
-					          <li data-filter=".year" style="text-align: center;">연간회원<br>(연 50만원)</li>
-					          <li data-filter=".non" style="text-align: center;">비회원<br>(N/A)</li>
-					          <!-- <li class="ptf-active" data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>  -->
-					      </ul>
-				
+			      	  <div class="filter-active-title"></div>
+				      <ul class="portfolio-filter" id="portfolio-filter" data-isotope-nav="isotope">
+				          <li data-filter=".vip" style="text-align: center;">VIP<br>(연100만원)</li>
+				          <li data-filter=".year" style="text-align: center;">연간회원<br>(연 50만원)</li>
+				          <li data-filter=".non" style="text-align: center;">비회원<br>(N/A)</li>
+				          <!-- <li class="ptf-active" data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>  -->
+				      </ul>
+					    
 				
 						  <!-- 포트폴리오 컨텐츠 영역 -->
 						  <div id="isotope" class="isotope portfolio-items" data-isotope-item-space="3" data-isotope-mode="masonry" data-isotope-col="3" data-isotope-item=".portfolio-item">

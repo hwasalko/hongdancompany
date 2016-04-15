@@ -87,6 +87,8 @@
 			<jsp:include page="/WEB-INF/jsp/include/inc_footer2.jsp"  />
 			
 			
+			
+			
 			<!-- 스마트 에디터 관련 js 로드 -->
 			<script type="text/javascript" src="/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 			
@@ -135,26 +137,51 @@
 					
 					// 등록버튼 클릭 시 
 					function submitContents() {
-						oEditors.getById["blog_content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
-						// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
 						
-						try {
-							$("#frm").action='/blog/write'; 
-							$("#frm").submit();
-						} catch(e) {}
+						if( check() ){
+						
+							oEditors.getById["blog_content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
+							// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
+							
+							try {
+								$("#frm").action='/blog/write'; 
+								$("#frm").submit();
+							} catch(e) {}
+						
+						}
 					}
 					
 					// 수정버튼 클릭 시 
 					function updateContents() {
-						oEditors.getById["blog_content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
-						// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
 						
-						try {
-							$("#frm").action='/blog/editProcs/${blog_seq}'; 
-							$("#frm").submit();
-						} catch(e) {}
+						if( check() ){
+						
+							oEditors.getById["blog_content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
+							// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
+							
+							try {
+								$("#frm").action='/blog/editProcs/${blog_seq}'; 
+								$("#frm").submit();
+							} catch(e) {}
+							
+						}
+						
 					}
 					
+					
+					// validation
+					function check(){
+						
+						var result = true;
+						
+						if( $("#blog_title").val() == '' ){
+							alert( "제목을 입력하세요" );
+							$("#blog_title").focus();
+							result = false;
+						}
+						
+						return result;
+					}
 					
 					// 폰트 지정
 					function setDefaultFont() {

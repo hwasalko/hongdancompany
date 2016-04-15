@@ -104,20 +104,28 @@
 								                
 								                <hr style="margin-top:5em;">
 								                
-								                <!-- Pager -->
-								                <ul class="pager">
-								                    <li class="previous">
-								                        <a href="/blog/${blog_seq-1}">&larr; 이전글</a>
-								                    </li>
-								                    <li class="next">
-								                        <a href="/blog/${blog_seq+1}">다음글 &rarr;</a>
-								                    </li>
-								                </ul>
+								                <div class="row">
+										                <div class="col-xs-12 text-left">
+												                <!-- Pager -->
+												                <ul class="pager">
+												                    <li class="previous">
+												                        <a href="/blog/${blog_seq-1}">&larr; 이전글</a>
+												                    </li>
+												                    <li class="next">
+												                        <a href="/blog/${blog_seq+1}">다음글 &rarr;</a>
+												                    </li>
+												                </ul>
+										                </div>
+								                </div>
 								                
-								                <div class="text-center" style="padding-bottom : 20px;">
-													<a href="/blog/list"><button class="btn btn-primary"><i class="fa fa-paper-plane"></i>&nbsp;목록</button></a>
-													<a href="/blog/edit/${blog_seq}"><button class="btn btn-success"><i class="fa fa-wrench"></i>&nbsp;수정</button></a>
-													<a href="/blog/delete/${blog_seq}"><button class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;삭제</button></a>
+								                <div class="row">
+										                <div class="col-xs-8 text-left" style="padding-bottom : 20px;">
+															<a href="/blog/edit/${blog_seq}"><button class="btn btn-success"><i class="fa fa-wrench"></i>&nbsp;수정</button></a>
+															<button class="btn btn-danger" onClick="del('${blog_seq}');"><i class="fa fa-trash"></i>&nbsp;삭제</button>
+														</div>
+														<div class="col-xs-4 text-right" style="padding-bottom : 20px;">
+															<a href="/blog/list"><button class="btn btn-primary"><i class="fa fa-paper-plane"></i>&nbsp;목록</button></a>
+														</div>
 												</div>
 								                
 								                
@@ -175,7 +183,7 @@
 			    </section>
 		
 			  
-			  
+			 
 			  
 			  
 		    	<jsp:include page="/WEB-INF/jsp/include/inc_footer.jsp"  />
@@ -183,6 +191,19 @@
 		  	</div>
 		 
 			<jsp:include page="/WEB-INF/jsp/include/inc_footer2.jsp"  />
+			
+			
+			
+				<script type="text/javascript">
+				
+					 // 삭제버튼 클릭 시
+					function del(blog_seq){
+						if( confirm("정말 삭제하시겠습니까?") ){
+							location.href = '/blog/delete/' + blog_seq;
+						}
+					}
+				
+				</script>
 			
 					  
 		</body>
