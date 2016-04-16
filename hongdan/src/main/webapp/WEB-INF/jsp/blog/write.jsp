@@ -61,12 +61,12 @@
 		                                <div class="col-md-12">
 		                                    <div class="form-group text-center">
 		                                    	<c:if test="${empty blogMap }">
-		                                        	<button class="btn btn-success" onclick="submitContents();"><i class="fa fa-check"></i>&nbsp;등록</button>
-		                                        	<a href="/blog/list"><button class="btn btn-primary"><i class="fa fa-ban"></i>&nbsp;취소</button></a>
+		                                        	<button class="btn btn-primary btn-xs" onclick="submitContents();"><i class="fa fa-check"></i>&nbsp;등록</button>
+		                                        	<a href="/blog/list"><button class="btn btn-default btn-xs"><i class="fa fa-ban"></i>&nbsp;취소</button></a>
 		                                        </c:if>
 		                                        <c:if test="${not empty blogMap }">
-		                                        	<button class="btn btn-success" onclick="updateContents();"><i class="fa fa-check"></i>&nbsp;수정</button>
-		                                        	<a href="/blog/${blog_seq}"><button class="btn btn-primary"><i class="fa fa-ban"></i>&nbsp;취소</button></a>
+		                                        	<button class="btn btn-success btn-xs" onclick="updateContents();"><i class="fa fa-check"></i>&nbsp;수정</button>
+		                                        	<a href="/blog/${blog_seq}"><button class="btn btn-default btn-xs"><i class="fa fa-ban"></i>&nbsp;취소</button></a>
 		                                        </c:if>
 		                                        	
 		                                    </div>

@@ -38,20 +38,19 @@
 								            <div class="col-lg-9">
 								            	
 								            	        <!-- 제목 -->
-										                <h2>${blogMap.TITLE}</h2>
+										                <h2>${blogMap.TITLE} <span class="label label-danger" style="font-size: 10px;">New</span></h2>
 										                
-										                <!-- 등록자 -->
-										                <p class="lead">by Hongdan</p>
 										                
-										                <hr>
-										                
-										                <!-- 등록시간 -->
-										                <p><span class="glyphicon glyphicon-time"></span> Posted on ${blogMap.REG_DDTM} <span class="label label-danger">New</span> <small>1 hours ago</small> </p>
-										                
+										                <!-- 등록정보 -->
+										                <p style="font-size: 14px; color: gray;">
+												                	<span class="glyphicon glyphicon-time"></span> Posted on ${blogMap.REG_DDTM} 
+												                	| <span class="glyphicon glyphicon-user"></span> by ${blogMap.REG_ID}
+												                	| <span class="glyphicon glyphicon-tags"></span> Tags <span class="label label-default">Benz</span>
+												                </p>
 										                <hr>
 										                
 										                <!-- 내용  -->
-										                <p class="lead">
+										                <p>
 										                	${blogMap.CONTENTS}
 										                </p>
 										                
@@ -105,7 +104,7 @@
 								                <hr style="margin-top:5em;">
 								                
 								                <div class="row">
-										                <div class="col-xs-12 text-left">
+										                <div class="col-xs-12">
 												                <!-- Pager -->
 												                <ul class="pager">
 												                    <li class="previous">
@@ -120,11 +119,11 @@
 								                
 								                <div class="row">
 										                <div class="col-xs-8 text-left" style="padding-bottom : 20px;">
-															<a href="/blog/edit/${blog_seq}"><button class="btn btn-success"><i class="fa fa-wrench"></i>&nbsp;수정</button></a>
-															<button class="btn btn-danger" onClick="del('${blog_seq}');"><i class="fa fa-trash"></i>&nbsp;삭제</button>
+															<a href="/blog/edit/${blog_seq}"><button class="btn btn-primary btn-xs"><i class="fa fa-wrench"></i>&nbsp;수정</button></a>
+															<button class="btn btn-danger btn-xs" onClick="del('${blog_seq}');"><i class="fa fa-trash"></i>&nbsp;삭제</button>
 														</div>
 														<div class="col-xs-4 text-right" style="padding-bottom : 20px;">
-															<a href="/blog/list"><button class="btn btn-primary"><i class="fa fa-paper-plane"></i>&nbsp;목록</button></a>
+															<a href="/blog/list"><button class="btn btn-default btn-xs"><i class="fa fa-list"></i>&nbsp;목록</button></a>
 														</div>
 												</div>
 								                

@@ -52,7 +52,7 @@
 												                
 												                <p style="font-size: 14px; color: gray;">
 												                	<span class="glyphicon glyphicon-time"></span> Posted on ${list.REG_DDTM}
-												                	| <span class="glyphicon glyphicon-user"></span> by Hongdan
+												                	| <span class="glyphicon glyphicon-user"></span> by ${list.REG_ID}
 												                	| <span class="glyphicon glyphicon-tags"></span> Tags <span class="label label-default">Benz</span>
 												                </p>
 												                
@@ -97,7 +97,7 @@
 												</div>
 												
 												<div class="text-right" style="padding-bottom : 10px;">
-													<a href="/blog/write"><button class="btn btn-success"><i class="fa fa-pencil-square-o"></i>&nbsp;글쓰기</button></a>
+													<a href="/blog/write"><button class="btn btn-success btn-xs"><i class="fa fa-pencil-square-o"></i>&nbsp;글쓰기</button></a>
 												</div>
 												
 												
