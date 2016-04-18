@@ -48,6 +48,15 @@
 					                    <div class="row">
 					                        <div class="col-md-12">
 					                            <div class="form-group">
+					                                <label class="upper" for="name">태그(Tag)</label>
+					                                <input type="text" class="form-control required" name="blog_tag" placeholder="Tag를 입력해 주세요(#자동차, #여행, ...)" id="blog_tag" aria-required="true" value="${blogMap.TAG}">
+					                            </div>
+					                        </div>
+					                    </div>
+					                    
+					                    <div class="row">
+					                        <div class="col-md-12">
+					                            <div class="form-group">
 					                                <label class="upper" for="comment">내용</label>
 					                                <textarea name="blog_content" id="blog_content" rows="10" cols="100" style="width:''100%''; height:412px; display:none;"></textarea>
 					                            </div>

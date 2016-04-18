@@ -43,10 +43,10 @@
 										                
 										                <!-- 등록정보 -->
 										                <p style="font-size: 14px; color: gray;">
-												                	<span class="glyphicon glyphicon-time"></span> Posted on ${blogMap.REG_DDTM} 
+												                	s ${blogMap.REG_DDTM} 
 												                	| <span class="glyphicon glyphicon-user"></span> by ${blogMap.REG_ID}
-												                	| <span class="glyphicon glyphicon-tags"></span> Tags <span class="label label-default">Benz</span>
-												                </p>
+												                	| <span class="glyphicon glyphicon-tags"></span> Tags : <span class="badge badge-info">Benz</span>
+												        </p>
 										                <hr>
 										                
 										                <!-- 내용  -->
@@ -137,11 +137,11 @@
 								
 								                <!-- Blog Search Well -->
 								                <div class="well">
-								                    <h4>Search</h4>
+								                    <h4><i class="fa fa-search"></i> Search</h4>
 								                    <div class="input-group">
 								                        <input type="text" class="form-control">
 								                        <span class="input-group-btn">
-								                            <button class="btn btn-default" type="button">
+								                            <button class="btn btn-default btn-sm" type="button">
 								                                <span class="glyphicon glyphicon-search"></span>
 								                        	</button>
 								                        </span>
@@ -151,19 +151,18 @@
 								
 								                <!-- Blog Categories Well -->
 								                <div class="well">
-								                    <h4>Categories</h4>
-								                    <div class="row">
-								                        <div class="col-lg-12">
-								                        	<a href="#"><span class="label label-primary">전체</span></a>
-								                        </div>
-								                        <div class="col-lg-12">
-								                        	<a href="#"><span class="label label-success">Benz</span></a>								                            
-								                            <a href="#"><span class="label label-success">BMW</span></a>
-								                            <a href="#"><span class="label label-success">New Cars</span></a>
-								                            <a href="#"><span class="label label-success">...</span></a>
-								                        </div>
-								                    </div>
-								                    <!-- /.row -->
+									                    <h4><i class="fa fa-tags"></i> Popular Tags:</h4>
+									                    <div class="row">
+										                        <div class="col-lg-12">
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        </div>
+									                    </div>
 								                </div>
 								
 								            </div>

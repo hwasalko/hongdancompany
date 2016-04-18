@@ -51,9 +51,9 @@
 												                <!-- <p class="lead">by Hongdan</p> -->
 												                
 												                <p style="font-size: 14px; color: gray;">
-												                	<span class="glyphicon glyphicon-time"></span> Posted on ${list.REG_DDTM}
+												                	<i class="fa fa-calendar"></i> ${list.REG_DDTM}
 												                	| <span class="glyphicon glyphicon-user"></span> by ${list.REG_ID}
-												                	| <span class="glyphicon glyphicon-tags"></span> Tags <span class="label label-default">Benz</span>
+												                	| <span class="glyphicon glyphicon-tags"></span> Tags : <span class="badge badge-info">Benz</span>
 												                </p>
 												                
 												                
@@ -110,11 +110,11 @@
 								
 								                <!-- Blog Search Well -->
 								                <div class="well">
-								                    <h4>Search</h4>
+								                    <h4><i class="fa fa-search"></i> Search</h4>
 								                    <div class="input-group">
 								                        <input type="text" class="form-control">
 								                        <span class="input-group-btn">
-								                            <button class="btn btn-default btn-xs" type="button">
+								                            <button class="btn btn-default btn-sm" type="button">
 								                                <span class="glyphicon glyphicon-search"></span>
 								                        	</button>
 								                        </span>
@@ -124,22 +124,21 @@
 								
 								                <!-- Blog Categories Well -->
 								                <div class="well">
-								                    <h4>Tags</h4>
-								                    <div class="row">
-								                        <div class="col-lg-12">
-								                        	<a href="#"><span class="label label-default">Benz</span></a>								                            
-								                            <a href="#"><span class="label label-default">BMW</span></a>
-								                            <a href="#"><span class="label label-default">New Cars</span></a>
-								                            <a href="#"><span class="label label-default">Benz</span></a>								                            
-								                            <a href="#"><span class="label label-default">BMW</span></a>
-								                            <a href="#"><span class="label label-default">New Cars</span></a>
-								                            <a href="#"><span class="label label-default">...</span></a>
-								                        </div>
-								                    </div>
-								                    <!-- /.row -->
+									                    <h4><i class="fa fa-tags"></i> Popular Tags:</h4>
+									                    <div class="row">
+										                        <div class="col-lg-12">
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        </div>
+									                    </div>
 								                </div>
 								
-								                <!-- Side Widget Well 
+								                            <!-- Side Widget Well 
 								                <div class="well">
 								                    <h4>Side Widget Well</h4>
 								                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
