@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 
 <!DOCTYPE html>
 <html lang="kr">
@@ -53,7 +55,18 @@
 												                <p style="font-size: 14px; color: gray;">
 												                	<i class="fa fa-calendar"></i> ${list.REG_DDTM}
 												                	| <span class="glyphicon glyphicon-user"></span> by ${list.REG_ID}
-												                	| <span class="glyphicon glyphicon-tags"></span> Tags : <span class="badge badge-info">Benz</span>
+												                	
+												                	<!-- tag값이 있을경우에만 표시 -->
+												                	<c:if test="${not empty list.TAGS}">
+													                	| <span class="glyphicon glyphicon-tags"></span> Tags : 
+													                	
+													                			<c:set var="orgTags" value="${list.TAGS}" />
+													                			<c:set var="taglist" value="${ fn:split(orgTags, ',') }" /> 
+													                			<c:forEach var="tag" items="${taglist}">
+													                					<span class="badge badge-info">${tag}</span>
+													                			</c:forEach>
+												                	</c:if>	
+												                			
 												                </p>
 												                
 												                

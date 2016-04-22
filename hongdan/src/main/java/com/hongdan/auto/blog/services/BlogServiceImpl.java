@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,10 +13,9 @@ import com.hongdan.auto.blog.dao.BlogDao;
 @Service
 public class BlogServiceImpl implements BlogService {
     
-	
 	@Autowired
     private BlogDao blogDao;
- 
+	
 	
     @Override
     @Transactional
@@ -35,7 +33,7 @@ public class BlogServiceImpl implements BlogService {
     
     @Override 
     public List<Map<String, String>> getBlogList(Map<String, Integer> param) throws SQLException {
-        return blogDao.getBlogList(param);
+    	return blogDao.getBlogList(param);
     }
     
     @Override 

@@ -2,6 +2,7 @@ package com.hongdan.auto.blog.controller;
 
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -70,7 +71,7 @@ public class BlogController {
 
 		
     	// 결과셋팅
-		model.addAttribute("blogList" , blogService.getBlogList( param ) );
+    	model.addAttribute("blogList" , blogService.getBlogList( param ) );
 		model.addAttribute("blogListTotalCount" , totalCount );
 		model.addAttribute("blogListPageSize", pageSize);
 		model.addAttribute("blogListCurrentPageNo", currentPageNo);
@@ -109,14 +110,18 @@ public class BlogController {
 		
 		String title 			= request.getParameter("blog_title");
 		String contents 	= request.getParameter("blog_content");
+		String tags 		= request.getParameter("blog_tag");
 		
 		logger.info("제목 : " + title  );
+		logger.info("태그 : " + tags  );
 		logger.info("내용 : " + contents  );
 		
     	Map<String, String> param = new HashMap<String, String>();
     	
     	param.put("title",title);
+    	param.put("tags", tags);
     	param.put("contents", contents);
+    	
 		
 		try {
 			int result = blogService.insertBlog( param );
@@ -168,12 +173,14 @@ public class BlogController {
 		
 		String title 			= request.getParameter("blog_title");
 		String contents 	= request.getParameter("blog_content");
+		String tags 		= request.getParameter("blog_tag");
 		
 		Map<String, String> param = new HashMap<String, String>();
     	
     	param.put("blog_seq",blog_seq);
     	param.put("title",title);
     	param.put("contents", contents);
+    	param.put("tags", tags);
     	
 		
 		try {

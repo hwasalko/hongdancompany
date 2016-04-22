@@ -10,7 +10,8 @@
   			CONTENTS,
   			REG_DDTM,
   			REG_ID,
-  			DEL_YN
+  			DEL_YN,
+  			TAGS
 	    )
 		SELECT 
 			(IFNULL(MAX(BLOG_SEQ), 0) +1) BLOG_SEQ,
@@ -18,7 +19,8 @@
 			#{contents},
 			DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
 			'hongdan',
-			'N'
+			'N',
+			#{tags}
 		FROM TB_BLOG
 	</insert>
 	
@@ -29,7 +31,8 @@
   			CONTENTS,
   			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM,
   			REG_ID,
-  			DEL_YN
+  			DEL_YN,
+  			REPLACE(TAGS, ' ', '') TAGS
 	    FROM TB_BLOG
 	    WHERE DEL_YN = 'N'
 	    ORDER BY BLOG_SEQ DESC
@@ -49,7 +52,9 @@
   			CONTENTS,
   			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM,
   			REG_ID,
-  			DEL_YN
+  			DEL_YN,
+  			TAGS,
+  			REPLACE(TAGS, ' ', '') TAGS_TRIM
 	    FROM TB_BLOG
 	    WHERE
 	    	DEL_YN = 'N' 
@@ -68,6 +73,7 @@
 	    UPDATE TB_BLOG
   		SET TITLE = #{title},
   			  CONTENTS = #{contents},
+  			  TAGS = #{tags},
   			  UPDATE_DDTM = DATE_FORMAT(now(), '%Y%m%d%H%i%s')
   		WHERE BLOG_SEQ = #{blog_seq}
 	</update>

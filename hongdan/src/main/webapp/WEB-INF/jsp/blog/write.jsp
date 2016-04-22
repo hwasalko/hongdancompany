@@ -49,7 +49,7 @@
 					                        <div class="col-md-12">
 					                            <div class="form-group">
 					                                <label class="upper" for="name">태그(Tag)</label>
-					                                <input type="text" class="form-control required" name="blog_tag" placeholder="Tag를 입력해 주세요(#자동차, #여행, ...)" id="blog_tag" aria-required="true" value="${blogMap.TAG}">
+					                                <input type="text" class="form-control required" name="blog_tag" placeholder="Tag를 입력해 주세요(#자동차, #여행, ...)" id="blog_tag" aria-required="true" value="${blogMap.TAGS}">
 					                            </div>
 					                        </div>
 					                    </div>

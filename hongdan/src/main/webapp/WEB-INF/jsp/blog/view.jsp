@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html lang="kr">
@@ -43,9 +44,21 @@
 										                
 										                <!-- 등록정보 -->
 										                <p style="font-size: 14px; color: gray;">
-												                	s ${blogMap.REG_DDTM} 
+												                	<i class="fa fa-calendar"></i> ${blogMap.REG_DDTM} 
 												                	| <span class="glyphicon glyphicon-user"></span> by ${blogMap.REG_ID}
-												                	| <span class="glyphicon glyphicon-tags"></span> Tags : <span class="badge badge-info">Benz</span>
+												                	
+												                	
+												                	<!-- tag값이 있을경우에만 표시 -->
+												                	<c:if test="${not empty blogMap.TAGS_TRIM}">
+													                	| <span class="glyphicon glyphicon-tags"></span> Tags : 
+													                	
+													                			<c:set var="orgTags" value="${blogMap.TAGS_TRIM}" />
+													                			<c:set var="taglist" value="${ fn:split(orgTags, ',') }" /> 
+													                			<c:forEach var="tag" items="${taglist}">
+													                					<span class="badge badge-info">${tag}</span>
+													                			</c:forEach>
+												                	</c:if>	
+												                	
 												        </p>
 										                <hr>
 										                
@@ -117,7 +130,7 @@
 										                </div>
 								                </div>
 								                
-								                <div class="row">
+								                <div class="row" style="padding-top : 20px;">
 										                <div class="col-xs-8 text-left" style="padding-bottom : 20px;">
 															<a href="/blog/edit/${blog_seq}"><button class="btn btn-primary btn-xs"><i class="fa fa-wrench"></i>&nbsp;수정</button></a>
 															<button class="btn btn-danger btn-xs" onClick="del('${blog_seq}');"><i class="fa fa-trash"></i>&nbsp;삭제</button>
