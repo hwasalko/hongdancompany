@@ -86,14 +86,15 @@
 														  <ul class="pagination">
 														  		<li>
 																      <a href="/blog/list/${paging.firstPageNo}" aria-label="Previous">
-																      		<span aria-hidden="true">First</span>
+																      		<span aria-hidden="true">&laquo;</span>
 																      </a>
 															    </li>
+															    
 															    <li>
-																      <a href="/blog/list/${paging.prevPageNo}" aria-label="Previous">
-																      		<span aria-hidden="true">Previous</span>
-																      </a>
-															    </li>
+																	      <a href="/blog/list/${paging.prevPageNo}" aria-label="Previous">
+																	      		<span aria-hidden="true">&lsaquo;</span>
+																	      </a> 
+																</li>
 															    
 															    <c:forEach var="i" begin="${paging.startPageNo}" end="${paging.endPageNo}" step="1">
 																		<c:choose>
@@ -108,12 +109,12 @@
 																
 																<li>
 																      <a href="/blog/list/${paging.nextPageNo}" aria-label="Next">
-																        	<span aria-hidden="true">Next</span>
+																        	<span aria-hidden="true">&rsaquo;</span>
 																      </a>
 															    </li>
 															    <li>
 																      <a href="/blog/list/${paging.finalPageNo}" aria-label="Next">
-																        	<span aria-hidden="true">Last</span>
+																        	<span aria-hidden="true">&raquo;</span>
 																      </a>
 															    </li>
 														  </ul>
