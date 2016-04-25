@@ -82,33 +82,50 @@
 								                <!-- pageing -->
 								                <div class="text-center" >
 												    <nav>
+												    
 														  <ul class="pagination">
 														  		<li>
-																      <a href="/blog/list/1" aria-label="Previous">
-																      		<span aria-hidden="true">&laquo;</span>
+																      <a href="/blog/list/${paging.firstPageNo}" aria-label="Previous">
+																      		<span aria-hidden="true">First</span>
 																      </a>
 															    </li>
-															    <c:forEach var="i" begin="${blogListStartPageNo}" end="${blogListEndPageNo}" step="1">
+															    <li>
+																      <a href="/blog/list/${paging.prevPageNo}" aria-label="Previous">
+																      		<span aria-hidden="true">Previous</span>
+																      </a>
+															    </li>
+															    
+															    <c:forEach var="i" begin="${paging.startPageNo}" end="${paging.endPageNo}" step="1">
 																		<c:choose>
-																				<c:when test="${i eq blogListCurrentPageNo}">
-																					<li class="active">
+																				<c:when test="${i eq paging.pageNo}">
+																					<li class="active"><a href="/blog/list/${i}">${i}</a></li>
 																				</c:when>
 																				<c:otherwise>
-																					<li>
+																					<li><a href="/blog/list/${i}">${i}</a> </li>
 																				</c:otherwise>
 																		</c:choose>
-																		<a href="/blog/list/${i}">${i}</a> </li>
 																</c:forEach>
 																
+																<li>
+																      <a href="/blog/list/${paging.nextPageNo}" aria-label="Next">
+																        	<span aria-hidden="true">Next</span>
+																      </a>
+															    </li>
 															    <li>
-																      <a href="/blog/list/${blogListEndPageNo}" aria-label="Next">
-																        	<span aria-hidden="true">&raquo;</span>
+																      <a href="/blog/list/${paging.finalPageNo}" aria-label="Next">
+																        	<span aria-hidden="true">Last</span>
 																      </a>
 															    </li>
 														  </ul>
+														  
 													</nav>	
 												</div>
 												
+												
+												
+												
+												
+												<!-- 글쓰기 버튼 -->
 												<div class="text-right" style="padding-bottom : 10px;">
 													<a href="/blog/write"><button class="btn btn-success btn-xs"><i class="fa fa-pencil-square-o"></i>&nbsp;글쓰기</button></a>
 												</div>

@@ -13,11 +13,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.hongdan.auto.blog.services.BlogService;
+import com.hongdan.auto.common.PagingUtil;
 
 /**
  * Handles requests for the application home page.
@@ -42,42 +44,31 @@ public class BlogController {
 	}
 	
 	@RequestMapping(value = "/blog/list/{page}", method = RequestMethod.GET )
-	public String blogList(HttpServletRequest request,  Model model, @PathVariable String page) throws SQLException {
+	public String blogList(
+											@ModelAttribute("pagingDTO") PagingUtil pagingUtil, 
+											HttpServletRequest request,  
+											Model model, 
+											@PathVariable String page
+									) throws SQLException {
 		
-		int totalCount = blogService.getBlogListTotalCount();	// 총건수
-		int pageSize = 3; // 한 페이지에 보일 게시글 수		
-		int blockSize = 5; // 페이지 번호 링크 개수
-		int currentPageNo = 1; // 현재 페이지 번호(디폴트)
-		int finalPage = (totalCount + (pageSize - 1)) / pageSize; // 마지막 페이지
-		
-		// 번호가 파라미터로 왔을 시에는 주입
-		if (page != null) currentPageNo=Integer.parseInt(page); 	
-		
-		// 페이징 관련
-		int startPageNo = ((currentPageNo - 1) / blockSize) * blockSize + 1; // 시작 페이지 (페이징 네비 기준)
-		int endPageNo = startPageNo + blockSize - 1; // 끝 페이지 (페이징 네비 기준)
-		
-		if (endPageNo > finalPage) { // [마지막 페이지 (페이징 네비 기준) > 마지막 페이지]보다 큰 경우
-			endPageNo = finalPage;
-		}
+		// 페이징 요소 셋팅
+		pagingUtil.setPageSize(5); 																		// 한 페이지에 보일 게시글 수
+		pagingUtil.setPageNo(1); 																		// 현재 페이지 번호(Default)
+		if(page != null){ pagingUtil.setPageNo(Integer.parseInt(page)); }				// 현재 페이지 번호(Parameter)
+		pagingUtil.setBlockSize(10);																		// 페이징 블럭사이즈
+		pagingUtil.setTotalCount( blogService.getBlogListTotalCount() ); 				// 게시물 총 개수(makePaging()이 실행된다)
 		
 		
-		
-		// 파라미터
+		// 파라미터( DB 조회용 파라미터 생성 )
 		Map<String, Integer> param = new HashMap<String, Integer>();    	
-    	param.put("totalCount",totalCount);
-    	param.put("pageSize", pageSize);
-    	param.put("currentPageNo", (currentPageNo-1) * pageSize);	// 0부터 시작하기때문에 -1 처리함
-
-		
+    	param.put("totalCount",pagingUtil.getTotalCount() );	// 전체건수
+    	param.put("pageSize", pagingUtil.getPageSize() );	// 페이지사이즈
+    	param.put("currentPageNo", pagingUtil.getPageNo4MySql() );	// mysql 쿼리용 현재페이지 번호
+    	
+    		
     	// 결과셋팅
+    	model.addAttribute("paging", pagingUtil);
     	model.addAttribute("blogList" , blogService.getBlogList( param ) );
-		model.addAttribute("blogListTotalCount" , totalCount );
-		model.addAttribute("blogListPageSize", pageSize);
-		model.addAttribute("blogListCurrentPageNo", currentPageNo);
-		model.addAttribute("blogListStartPageNo", startPageNo);
-		model.addAttribute("blogListEndPageNo", endPageNo);
-		
 		
 		return "blog/list";
 	}
