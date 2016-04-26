@@ -1,12 +1,21 @@
 package com.hongdan.auto.blog.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
-
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,8 +26,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartRequest;
 
 import com.hongdan.auto.blog.services.BlogService;
+import com.hongdan.auto.blog.vo.PhotoVo;
+import com.hongdan.auto.common.DateUtil;
+import com.hongdan.auto.common.FileUpload;
 import com.hongdan.auto.common.PagingUtil;
 
 /**
@@ -185,5 +199,148 @@ public class BlogController {
 		return "redirect:/blog/list";
 		
 	}
+	
+	
+	/*
+	@RequestMapping(value = "/blog/testFileUpload", method = RequestMethod.POST)
+	 public String fileUpload(Model model, MultipartRequest multipartRequest, HttpServletRequest request) throws IOException{
+
+		Calendar cal = Calendar.getInstance();
+		
+		MultipartFile imgfile = multipartRequest.getFile("Filedata");     //input file의 name
+	  
+		String fileName = imgfile.getOriginalFilename();													// 원본파일명
+		String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());	// 확장자
+		String replaceName = cal.getTimeInMillis() + fileType;  										// 저장파일명(중복방지를 위해 시간을 기준으로 파일명 부여)
+		String path = request.getSession().getServletContext().getRealPath("/")+File.separator+"resources/upload"; //파일이 저장 경로 
+		
+		FileUpload.fileUpload(imgfile, path, replaceName);		// 파일업로드
+		
+		  
+		//파라미터
+		model.addAttribute("path", path);                         // 파일업로드 경로
+		model.addAttribute("filename", replaceName);       // 저장파일명
+		
+		return "file_upload";
+
+	 }
+	 */
+
+	
+	
+	//에디터 단일파일업로드
+	@RequestMapping("/blog/imageFileUpload")
+	public String photoUpload(HttpServletRequest request, PhotoVo vo){
+	    
+		String callback = vo.getCallback();
+	    String callback_func = vo.getCallback_func();
+	    String file_result = "";
+	    String subDirectory = DateUtil.getCurrentDate();
+	    
+	    try {
+	    	
+	        if( vo.getFiledata() != null && vo.getFiledata().getOriginalFilename() != null && !vo.getFiledata().getOriginalFilename().equals("") ) { //파일이 존재하면
+	            
+		            String original_name = vo.getFiledata().getOriginalFilename();													//파일명
+		            String ext = original_name.substring(original_name.lastIndexOf(".")+1);										//파일확장자
+		            String defaultPath = request.getSession().getServletContext().getRealPath("/");								//파일 기본경로
+		            String path = defaultPath + "resources" + File.separator + "photo_upload" + File.separator + subDirectory + File.separator ;   	//파일 기본경로 _ 상세경로           
+		            
+		            File file = new File(path);
+		            
+		            logger.debug("파일경로 path : "+path);
+		            
+		            if(!file.exists()) {	//디렉토리 존재하지 않을경우 디렉토리 생성
+		            	boolean resultMakeDir = file.mkdirs();
+		                logger.debug("디렉토리 생성 => " + resultMakeDir );
+		            }
+		            
+		            //서버에 업로드 할 파일명(한글문제로 인해 원본파일은 올리지 않는것이 좋음)
+		            String realname = UUID.randomUUID().toString() + "." + ext;
+
+		            ///////////////// 서버에 파일쓰기 ///////////////// 
+		            vo.getFiledata().transferTo(new File(path+realname));
+		            file_result += "&bNewLine=true&sFileName="+original_name+"&sFileURL=/photo_upload/"+ subDirectory + "/"  + realname;
+		            
+	        } else {
+	            file_result += "&errstr=error";
+	        }
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    
+	    logger.debug("파일업로드 후 최종URL => " + file_result );
+	    
+	    return "redirect:" + callback + "?callback_func="+callback_func+file_result;
+	}
+
+
+	
+	
+	
+	//에디터 다중파일업로드
+	@RequestMapping("/blog/multiImageFileUpload")
+	public void multiplePhotoUpload(HttpServletRequest request, HttpServletResponse response){
+	    
+		try {   
+				 String subDirectory = DateUtil.getCurrentDate();																															//서브디렉토리
+		         String sFileInfo = "";																																									//파일정보
+		         String filename = request.getHeader("file-name");																														//파일명을 받는다 - 일반 원본파일명
+		         String filename_ext = filename.substring(filename.lastIndexOf(".")+1).toLowerCase();																			//파일 확장자(확장자를소문자로 변경)
+		         String dftFilePath = request.getSession().getServletContext().getRealPath("/");																					//파일 기본경로
+		         String filePath = dftFilePath + "resources" + File.separator + "photo_upload" + File.separator + subDirectory + File.separator;		//파일 기본경로 _ 상세경로
+		         String realFileNm = "";																																								// 실제파일명
+		         
+		         
+		         
+		         File file = new File(filePath);
+		         if(!file.exists()) {
+		            file.mkdirs();
+		         }
+		         
+		         realFileNm = UUID.randomUUID().toString() + filename.substring(filename.lastIndexOf("."));
+		         String rlFileNm = filePath + realFileNm;
+		         
+		         logger.debug("다중업로드 realFileNm => " + realFileNm );
+		         
+		         ///////////////// 서버에 파일쓰기 ///////////////// 
+		         InputStream is = request.getInputStream();
+		         OutputStream os=new FileOutputStream(rlFileNm);
+		         
+		         int numRead;
+		         byte b[] = new byte[Integer.parseInt(request.getHeader("file-size"))];
+		         while((numRead = is.read(b,0,b.length)) != -1){
+		            os.write(b,0,numRead);
+		         }
+		         
+		         if(is != null) {
+		            is.close();
+		         }
+		         os.flush();
+		         os.close();
+		         
+		         ///////////////// 서버에 파일쓰기 /////////////////
+		         
+		         sFileInfo += "&bNewLine=true";	// 정보 출력
+		         sFileInfo += "&sFileName="+ filename;;	// img 태그의 title 속성을 원본파일명으로 적용시켜주기 위함
+		         sFileInfo += "&sFileURL="+"/photo_upload/" + subDirectory + "/" +realFileNm;
+		         
+		         logger.debug("다중업로드 sFileInfo => " + sFileInfo );
+		         
+		         PrintWriter print = response.getWriter();
+		         print.print(sFileInfo);
+		         print.flush();
+		         
+		         print.close();
+	         
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } 
+	}
+
+
+	
+	
 	
 }
