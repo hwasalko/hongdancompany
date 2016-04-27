@@ -35,6 +35,9 @@
   			REPLACE(TAGS, ' ', '') TAGS
 	    FROM TB_BLOG
 	    WHERE DEL_YN = 'N'
+				    <if test = "sarchWord != null">
+						AND TITLE LIKE CONCAT('%', #{sarchWord}, '%') 
+					</if>
 	    ORDER BY BLOG_SEQ DESC
 	    LIMIT  ${currentPageNo} , ${pageSize}
 	</select>
@@ -43,6 +46,9 @@
 	    SELECT COUNT(*) TOTAL_CNT
 	    FROM TB_BLOG
 	    WHERE DEL_YN = 'N'
+	    			<if test = "sarchWord != null">
+						AND TITLE LIKE CONCAT('%', #{sarchWord}, '%') 
+					</if>
 	</select>
 	
 	<select id="com.hongdan.auto.blog.getBlogView" parameterType="String"  resultType="java.util.Map">
@@ -77,6 +83,13 @@
   			  UPDATE_DDTM = DATE_FORMAT(now(), '%Y%m%d%H%i%s')
   		WHERE BLOG_SEQ = #{blog_seq}
 	</update>
+	
+	<select id="com.hongdan.auto.blog.getBlogTagsAll"  resultType="java.util.Map">
+		SELECT DISTINCT REPLACE(TAGS, ' ', '') TAGS 
+		FROM TB_BLOG
+		WHERE LENGTH(TAGS) > 0
+				AND DEL_YN = 'N' 
+	</select>
 
     
 </mapper>

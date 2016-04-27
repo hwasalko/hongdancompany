@@ -10,13 +10,15 @@ public interface BlogDao {
 	
 	public void saveFileToBlob(Map<String, Object> hmap) throws SQLException;
 	
-	public List<Map<String, String>> getBlogList(Map<String, Integer> param) throws SQLException;
+	public List<Map<String, String>> getBlogList(Map<String, Object> param) throws SQLException;
 	
-	public int getBlogListTotalCount() throws SQLException;
+	public int getBlogListTotalCount(Map<String, Object> param) throws SQLException;
 	
 	public Map<String, String> getBlogView(Map<String, String> param) throws SQLException;
 	
 	public int deleteBlog(Map<String, String> param) throws SQLException;
 	
 	public int updateBlog(Map<String, String> param) throws SQLException;
+
+	public List<Map<String, String>> getBlogTagsAll() throws SQLException;
 }

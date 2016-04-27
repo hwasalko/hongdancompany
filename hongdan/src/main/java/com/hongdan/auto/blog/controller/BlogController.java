@@ -57,7 +57,7 @@ public class BlogController {
 	    return "redirect:/blog/list/1";
 	}
 	
-	@RequestMapping(value = "/blog/list/{page}", method = RequestMethod.GET )
+	@RequestMapping(value = "/blog/list/{page}" )
 	public String blogList(
 											@ModelAttribute("pagingDTO") PagingUtil pagingUtil, 
 											HttpServletRequest request,  
@@ -65,24 +65,36 @@ public class BlogController {
 											@PathVariable String page
 									) throws SQLException {
 		
+		Map<String, Object> param = new HashMap<String, Object>();   // DB 조회 시 사용할 파라미터 MAP
+		
+		
+		//파라미터 저장
+		String searchVal = request.getParameter("searchVal");
+		param.put("sarchWord", searchVal);	// 검색어
+		
+		logger.debug("검색어 : " + searchVal );
+		
 		// 페이징 요소 셋팅
 		pagingUtil.setPageSize(5); 																		// 한 페이지에 보일 게시글 수
 		pagingUtil.setPageNo(1); 																		// 현재 페이지 번호(Default)
 		if(page != null){ pagingUtil.setPageNo(Integer.parseInt(page)); }				// 현재 페이지 번호(Parameter)
 		pagingUtil.setBlockSize(10);																		// 페이징 블럭사이즈
-		pagingUtil.setTotalCount( blogService.getBlogListTotalCount() ); 				// 게시물 총 개수(makePaging()이 실행된다)
+		pagingUtil.setTotalCount( blogService.getBlogListTotalCount(param) ); 				// 게시물 총 개수(makePaging()이 실행된다)
 		
 		
 		// 파라미터( DB 조회용 파라미터 생성 )
-		Map<String, Integer> param = new HashMap<String, Integer>();    	
     	param.put("totalCount",pagingUtil.getTotalCount() );	// 전체건수
     	param.put("pageSize", pagingUtil.getPageSize() );	// 페이지사이즈
     	param.put("currentPageNo", pagingUtil.getPageNo4MySql() );	// mysql 쿼리용 현재페이지 번호
     	
     		
+    	
     	// 결과셋팅
     	model.addAttribute("paging", pagingUtil);
     	model.addAttribute("blogList" , blogService.getBlogList( param ) );
+    	model.addAttribute("tagsList", blogService.getBlogTagsAllList());
+    	model.addAttribute("sarchWord", searchVal);
+    	model.addAttribute("blogListTotalCount",pagingUtil.getTotalCount() );	// 전체건수
 		
 		return "blog/list";
 	}

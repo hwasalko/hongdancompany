@@ -1,6 +1,7 @@
 package com.hongdan.auto.blog.services;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -32,13 +33,13 @@ public class BlogServiceImpl implements BlogService {
 
     
     @Override 
-    public List<Map<String, String>> getBlogList(Map<String, Integer> param) throws SQLException {
+    public List<Map<String, String>> getBlogList(Map<String, Object> param) throws SQLException {
     	return blogDao.getBlogList(param);
     }
     
     @Override 
-    public int getBlogListTotalCount() throws SQLException {
-        return blogDao.getBlogListTotalCount();
+    public int getBlogListTotalCount(Map<String, Object> param) throws SQLException {
+        return blogDao.getBlogListTotalCount(param);
     }
     
     @Override 
@@ -56,6 +57,23 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     public int updateBlog(Map<String, String> param) throws SQLException{
     	return blogDao.updateBlog(param);
+    }
+    
+    @Override 
+    public List<String> getBlogTagsAllList() throws SQLException {
+    	List<Map<String, String>> tagsList = blogDao.getBlogTagsAll();
+    	List<String> resultList = new ArrayList<String>();
+    	
+    	for(Map<String, String> map : tagsList){
+    		String[] tmpStr = map.get("TAGS").toString().split(",");
+    		
+    		for(String tag : tmpStr){
+    			resultList.add(tag);
+    		}
+    		
+    	}
+    	
+    	return resultList;
     }
     
 }

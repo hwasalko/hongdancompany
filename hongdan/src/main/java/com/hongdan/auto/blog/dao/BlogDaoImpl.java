@@ -26,13 +26,13 @@ public class BlogDaoImpl implements BlogDao {
     }
 
     @Override
-    public List<Map<String, String>> getBlogList(Map<String, Integer> param) throws SQLException {
+    public List<Map<String, String>> getBlogList(Map<String, Object> param) throws SQLException {
         return query.selectList("com.hongdan.auto.blog.getBlogList", param);
     }
     
     @Override
-    public int getBlogListTotalCount() throws SQLException {
-        return query.selectOne("com.hongdan.auto.blog.getBlogListTotalCount");
+    public int getBlogListTotalCount(Map<String, Object> param) throws SQLException {
+        return query.selectOne("com.hongdan.auto.blog.getBlogListTotalCount", param);
     }
     
     @Override
@@ -49,5 +49,11 @@ public class BlogDaoImpl implements BlogDao {
     public int updateBlog(Map<String, String> param) throws SQLException {
         return query.update("com.hongdan.auto.blog.updateBlog",param);
     }
+    
+    @Override
+    public List<Map<String, String>> getBlogTagsAll() throws SQLException {
+    	return query.selectList("com.hongdan.auto.blog.getBlogTagsAll");
+    }
+    
 }
 

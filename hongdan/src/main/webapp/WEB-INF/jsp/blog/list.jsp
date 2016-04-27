@@ -85,13 +85,13 @@
 												    
 														  <ul class="pagination">
 														  		<li>
-																      <a href="/blog/list/${paging.firstPageNo}" aria-label="Previous">
+																      <a href="javascript:goPage('${paging.firstPageNo}')" aria-label="Previous">
 																      		<span aria-hidden="true">&laquo;</span>
 																      </a>
 															    </li>
 															    
 															    <li>
-																	      <a href="/blog/list/${paging.prevPageNo}" aria-label="Previous">
+																	      <a href="javascript:goPage('${paging.prevPageNo}')" aria-label="Previous">
 																	      		<span aria-hidden="true">&lsaquo;</span>
 																	      </a> 
 																</li>
@@ -102,18 +102,18 @@
 																					<li class="active"><a href="/blog/list/${i}">${i}</a></li>
 																				</c:when>
 																				<c:otherwise>
-																					<li><a href="/blog/list/${i}">${i}</a> </li>
+																					<li><a href="javascript:goPage('${i}')">${i}</a> </li>
 																				</c:otherwise>
 																		</c:choose>
 																</c:forEach>
 																
 																<li>
-																      <a href="/blog/list/${paging.nextPageNo}" aria-label="Next">
+																      <a href="javascript:goPage('${paging.nextPageNo}')" aria-label="Next">
 																        	<span aria-hidden="true">&rsaquo;</span>
 																      </a>
 															    </li>
 															    <li>
-																      <a href="/blog/list/${paging.finalPageNo}" aria-label="Next">
+																      <a href="javascript:goPage('${paging.finalPageNo}')" aria-label="Next">
 																        	<span aria-hidden="true">&raquo;</span>
 																      </a>
 															    </li>
@@ -143,9 +143,9 @@
 								                <div class="well">
 								                    <h4><i class="fa fa-search"></i> Search</h4>
 								                    <div class="input-group">
-								                        <input type="text" class="form-control">
+								                        <input type="text" class="form-control" id="searchWord" value="${sarchWord }">
 								                        <span class="input-group-btn">
-								                            <button class="btn btn-default btn-sm" type="button">
+								                            <button class="btn btn-default btn-sm" type="button" onclick="goPage(1);">
 								                                <span class="glyphicon glyphicon-search"></span>
 								                        	</button>
 								                        </span>
@@ -158,13 +158,9 @@
 									                    <h4><i class="fa fa-tags"></i> Popular Tags:</h4>
 									                    <div class="row">
 										                        <div class="col-lg-12">
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<c:forEach var="tagNm" items="${tagsList }">
+										                        			<a href=""><span class="badge badge-info">${ tagNm }</span></a>
+										                        		</c:forEach>
 										                        </div>
 									                    </div>
 								                </div>
@@ -193,6 +189,10 @@
 		
 			  
 			  
+			  <form id="frm" name="frm" method="POST" >
+			  		<input type="hidden" name="searchVal" id="searchVal">
+			  </form>
+			  
 			  
 			  
 		    	<jsp:include page="/WEB-INF/jsp/include/inc_footer.jsp"  />
@@ -200,6 +200,19 @@
 		  	</div>
 		 
 			<jsp:include page="/WEB-INF/jsp/include/inc_footer2.jsp"  />
+			
+			
+				<script type="text/javascript">
+					
+					// 페이지 클릭 시
+					function goPage(no){
+						 var val = $("#searchWord").val();	//검색어
+						 
+						$("#searchVal").val(val);
+						$('#frm').attr({action : '/blog/list/' + no }).submit();
+					}
+				
+				</script>
 			
 					  
 		</body>
