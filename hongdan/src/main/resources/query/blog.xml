@@ -35,9 +35,21 @@
   			REPLACE(TAGS, ' ', '') TAGS
 	    FROM TB_BLOG
 	    WHERE DEL_YN = 'N'
-				    <if test = "sarchWord != null">
-						AND TITLE LIKE CONCAT('%', #{sarchWord}, '%') 
+	    
+				    <if test = 'sarchWord != null and searchWordTagYn.equals("N") '>					    	
+					 AND ( 
+								TITLE LIKE CONCAT('%', #{sarchWord}, '%')
+								OR 
+								CONTENTS LIKE CONCAT('%', #{sarchWord}, '%')
+							)  
 					</if>
+					
+					<if test = 'sarchWord != null and searchWordTagYn.equals("Y") '>
+					AND ( 
+						TAGS LIKE CONCAT('%', #{sarchWord}, '%')
+					)  
+					</if>
+					
 	    ORDER BY BLOG_SEQ DESC
 	    LIMIT  ${currentPageNo} , ${pageSize}
 	</select>
@@ -46,9 +58,21 @@
 	    SELECT COUNT(*) TOTAL_CNT
 	    FROM TB_BLOG
 	    WHERE DEL_YN = 'N'
-	    			<if test = "sarchWord != null">
-						AND TITLE LIKE CONCAT('%', #{sarchWord}, '%') 
+	    
+	    			<if test = 'sarchWord != null and searchWordTagYn.equals("N") '>					    	
+					 AND ( 
+								TITLE LIKE CONCAT('%', #{sarchWord}, '%')
+								OR 
+								CONTENTS LIKE CONCAT('%', #{sarchWord}, '%')
+							)  
 					</if>
+					
+					<if test = 'sarchWord != null and searchWordTagYn.equals("Y") '>
+					AND ( 
+						TAGS LIKE CONCAT('%', #{sarchWord}, '%')
+					)  
+					</if>
+					
 	</select>
 	
 	<select id="com.hongdan.auto.blog.getBlogView" parameterType="String"  resultType="java.util.Map">

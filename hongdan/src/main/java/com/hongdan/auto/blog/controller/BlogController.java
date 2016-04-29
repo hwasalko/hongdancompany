@@ -70,9 +70,16 @@ public class BlogController {
 		
 		//파라미터 저장
 		String searchVal = request.getParameter("searchVal");
-		param.put("sarchWord", searchVal);	// 검색어
 		
-		logger.debug("검색어 : " + searchVal );
+		String searchValTagYn = "N";	// 검색어 해시Tag 여부
+		if( searchVal != null && searchVal.startsWith("#")  ){
+			searchValTagYn = "Y"; 
+		}
+		
+		param.put("sarchWord", searchVal);	// 검색어
+		param.put("searchWordTagYn", searchValTagYn);	// 검색어 Tag여부
+		logger.debug("검색어 : " + searchVal );	
+		logger.debug("검색어 Tag여부 : " + searchValTagYn );
 		
 		// 페이징 요소 셋팅
 		pagingUtil.setPageSize(5); 																		// 한 페이지에 보일 게시글 수

@@ -63,7 +63,7 @@
 													                			<c:set var="orgTags" value="${list.TAGS}" />
 													                			<c:set var="taglist" value="${ fn:split(orgTags, ',') }" /> 
 													                			<c:forEach var="tag" items="${taglist}">
-													                					<span class="badge badge-info">${tag}</span>
+													                					<a href="javascript:searchTags('${tag}')"><span class="badge badge-info">${tag}</span></a>
 													                			</c:forEach>
 												                	</c:if>	
 												                			
@@ -76,6 +76,9 @@
 										                
 												</c:forEach>
 								                
+								                <c:if test="${empty blogList}">
+								                		<p style="font-size: 16px; color: red; text-align: center;">검색 결과가 없습니다.</p>								                	
+								                </c:if>
 								               
 								                
 								                
@@ -159,7 +162,7 @@
 									                    <div class="row">
 										                        <div class="col-lg-12">
 										                        		<c:forEach var="tagNm" items="${tagsList }">
-										                        			<a href=""><span class="badge badge-info">${ tagNm }</span></a>
+										                        			<a href="javascript:searchTags('${ tagNm }');"><span class="badge badge-info">${ tagNm }</span></a>
 										                        		</c:forEach>
 										                        </div>
 									                    </div>
@@ -210,6 +213,12 @@
 						 
 						$("#searchVal").val(val);
 						$('#frm').attr({action : '/blog/list/' + no }).submit();
+					}
+					
+					// tag 클릭 시
+					function searchTags(tagNm){
+						 $("#searchWord").val(tagNm);	 //검색어 입력창에 tag명 입력						 
+						 goPage(1);
 					}
 				
 				</script>
