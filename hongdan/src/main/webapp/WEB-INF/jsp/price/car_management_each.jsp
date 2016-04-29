@@ -27,6 +27,16 @@
 				
 
 				  <section id="content" class="background-grey">
+				  
+				  <div class="container portfolio">
+				  
+				  		<!-- Navigation -->	
+						<ol class="breadcrumb">
+							  <li><a href="/">Home</a></li>
+							  <li><a href="/price/car_management_each">PRICE</a></li>
+							  <li class="active">차량관리서비스(회원)</li>
+						</ol>	
+				  
 				  		<div class="heading heading-center m-b-40" data-animation="fadeInUp">
 				  			<h3 style="font-family: 'Nanum Gothic', sans-serif;">차량관리서비스 가격안내(회원별)</h3>
 					  		<!--
@@ -43,15 +53,16 @@
 					            <h2 style="font-family: 'Noto Sans KR', sans-serif;">차량관리서비스 가격표</h2>
 					          -->    
 				        </div>
-				      <div class="container portfolio">
+				      
+				      <div class="raw">
 				
-			      	  <div class="filter-active-title"></div>
-				      <ul class="portfolio-filter" id="portfolio-filter" data-isotope-nav="isotope">
-				          <li data-filter=".vip" style="text-align: center;">VIP<br>(연100만원)</li>
-				          <li data-filter=".year" style="text-align: center;">연간회원<br>(연 50만원)</li>
-				          <li data-filter=".non" style="text-align: center;">비회원<br>(N/A)</li>
-				          <!-- <li class="ptf-active" data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>  -->
-				      </ul>
+				      	  <div class="filter-active-title"></div>
+					      <ul class="portfolio-filter" id="portfolio-filter" data-isotope-nav="isotope">
+					          <li data-filter=".vip" style="text-align: center;">VIP<br>(연100만원)</li>
+					          <li data-filter=".year" style="text-align: center;">연간회원<br>(연 50만원)</li>
+					          <li data-filter=".non" style="text-align: center;">비회원<br>(N/A)</li>
+					          <!-- <li class="ptf-active" data-filter="*" style="text-align: center;">전체조회<br>(Show All)</li>  -->
+					      </ul>
 					    
 				
 						  <!-- 포트폴리오 컨텐츠 영역 -->
@@ -534,11 +545,11 @@
 					    		</div>
 					    	</div>	
 						  
+						  </div>
 						  
 					  </div>
 					  
-					  
-					  
+					   
 				  </section>
 				  
 				

@@ -26,6 +26,13 @@
 		
 			    <section>
 				        <div class="container">
+				        
+				        	<!-- Navigation -->	
+							<ol class="breadcrumb">
+								  <li><a href="/">Home</a></li>
+								  <li class="active">BLOG</li>
+							</ol>	
+				        
 				            <div class="row">
 				                <div class="col-md-10 col-md-offset-1">
 				                
@@ -33,7 +40,7 @@
 					                	<form id="frm" action = "/blog/write" method="post" >
 					                </c:if>
 					                <c:if test="${not empty blogMap }">
-					                	<form id="frm" action = "/blog/edit/${blog_seq}" method="post" >
+					                	<form id="frm" action = "/blog/edit/${blog_seq}?pageNo=${pageNo}" method="post" >
 					                </c:if>    
 					                
 					                    <div class="row">
@@ -153,7 +160,7 @@
 							// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
 							
 							try {
-								$("#frm").action='/blog/write'; 
+								//$("#frm").action='/blog/write'; 
 								$("#frm").submit();
 							} catch(e) {}
 						
@@ -169,7 +176,7 @@
 							// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
 							
 							try {
-								$("#frm").action='/blog/editProcs/${blog_seq}'; 
+								//$("#frm").action='/blog/editProcs/${blog_seq}'; 
 								$("#frm").submit();
 							} catch(e) {}
 							

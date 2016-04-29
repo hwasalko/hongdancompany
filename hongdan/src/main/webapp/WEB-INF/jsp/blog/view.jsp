@@ -33,13 +33,27 @@
 								<!-- Page Content -->
 								    <div class="container">
 								
+										<!-- Navigation -->	
+										<ol class="breadcrumb">
+											  <li><a href="/">Home</a></li>
+											  <li class="active">BLOG</li>
+										</ol>	
+										
+								
 								        <div class="row">
+								        
+								        	<hr style="padding-top : 10px;">
 								
 								            <!-- Blog Entries Column -->
 								            <div class="col-lg-9">
 								            	
 								            	        <!-- 제목 -->
-										                <h2>${blogMap.TITLE} <span class="label label-danger" style="font-size: 10px;">New</span></h2>
+										                <h2>
+										                	${blogMap.TITLE}
+										                	<c:if test="${blogMap.TIME_DIFF_HOUR lt 2 }"> 
+										                		<span class="label label-danger" style="font-size: 10px;">New</span>
+										                	</c:if>
+										                </h2>
 										                
 										                
 										                <!-- 등록정보 -->
@@ -60,6 +74,7 @@
 												                	</c:if>	
 												                	
 												        </p>
+										                
 										                <hr>
 										                
 										                <!-- 내용  -->
@@ -132,11 +147,11 @@
 								                
 								                <div class="row" style="padding-top : 20px;">
 										                <div class="col-xs-8 text-left" style="padding-bottom : 20px;">
-															<a href="/blog/edit/${blog_seq}"><button class="btn btn-primary btn-xs"><i class="fa fa-wrench"></i>&nbsp;수정</button></a>
+															<a href="/blog/edit/${blog_seq}?pageNo=${pageNo}"><button class="btn btn-primary btn-xs"><i class="fa fa-wrench"></i>&nbsp;수정</button></a>
 															<button class="btn btn-danger btn-xs" onClick="del('${blog_seq}');"><i class="fa fa-trash"></i>&nbsp;삭제</button>
 														</div>
 														<div class="col-xs-4 text-right" style="padding-bottom : 20px;">
-															<a href="/blog/list"><button class="btn btn-default btn-xs"><i class="fa fa-list"></i>&nbsp;목록</button></a>
+															<a href="/blog/list/${pageNo}"><button class="btn btn-default btn-xs"><i class="fa fa-list"></i>&nbsp;목록</button></a>
 														</div>
 												</div>
 								                

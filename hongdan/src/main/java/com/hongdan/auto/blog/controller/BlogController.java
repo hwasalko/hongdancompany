@@ -117,6 +117,7 @@ public class BlogController {
 		Map<String, String> resultMap = blogService.getBlogView(param);
 		model.addAttribute("blogMap" , resultMap );
 		model.addAttribute("blog_seq" , blog_seq );
+		model.addAttribute("pageNo", request.getParameter("pageNo") );
 		
 		return "blog/view";
 	}
@@ -188,6 +189,7 @@ public class BlogController {
 		Map<String, String> resultMap = blogService.getBlogView(param);
 		model.addAttribute("blogMap" , resultMap );
 		model.addAttribute("blog_seq" , blog_seq );
+		model.addAttribute("pageNo", request.getParameter("pageNo") );
 		
 		return "blog/write";
 	}
@@ -198,6 +200,9 @@ public class BlogController {
 		String title 			= request.getParameter("blog_title");
 		String contents 	= request.getParameter("blog_content");
 		String tags 		= request.getParameter("blog_tag");
+		String pageNo = request.getParameter("pageNo");
+		
+		logger.debug("pageNo : " + pageNo);
 		
 		Map<String, String> param = new HashMap<String, String>();
     	
@@ -215,7 +220,7 @@ public class BlogController {
 			logger.error(e.toString());
 		}
 		
-		return "redirect:/blog/list";
+		return "redirect:/blog/list/" + pageNo;
 		
 	}
 	

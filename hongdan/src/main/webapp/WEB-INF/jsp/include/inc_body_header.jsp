@@ -40,6 +40,7 @@
 	                                </ul>
 	                            </li>
 	                            
+	                            <!-- 
 	                            <li class="dropdown"> <a href="#">Menus <i class="fa fa-angle-down"></i> </a>
 	                                <ul class="dropdown-menu">
 	                                    <li> <a href="/menu">Basic</a> </li>
@@ -47,6 +48,7 @@
 	                                    <li> <a href="/menu-without-parallax">Without Parallex</a> </li>
 	                                </ul>
 	                            </li>
+	                             -->
 	                            
 	                            <li class="dropdown"> <a href="/reservation" class="nav-to">Reservation</a> </li>
 	                            

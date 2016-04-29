@@ -25,6 +25,13 @@
 			
 			<section>
 			    <div class="container">
+			    
+			    	<!-- Navigation -->	
+					<ol class="breadcrumb">
+						  <li><a href="/">Home</a></li>
+						  <li class="active">SERVICE</li>
+					</ol>	
+			    
 			        <div class="heading heading-center m-b-40" data-animation="fadeInUp">
 			            <h2 style="font-family: 'Noto Sans KR', sans-serif;">제공 서비스</h2>
 			            <span class="lead" style="font-family: 'Nanum Brush Script', cursive;">Hongdan Company에서 제공하는 서비스를 소개합니다.</span>

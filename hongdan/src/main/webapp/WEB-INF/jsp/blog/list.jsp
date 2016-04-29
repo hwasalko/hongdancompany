@@ -34,12 +34,16 @@
 								<!-- Page Content -->
 								    <div class="container">
 											
+										<!-- Navigation -->	
+										<ol class="breadcrumb">
+											  <li><a href="/">Home</a></li>
+											  <li class="active">BLOG</li>
+										</ol>	
+										
 								        <div class="row">
-								        	<H4>
-								        		전체 <strong>${blogListTotalCount}</strong> 건
-								        	</H4>	
-
-											<hr style="border-color : #BBB ; padding-bottom : 20px; padding-top : 20px;">
+								        	
+											<hr style="padding-top : 10px;">
+								            
 								            
 								            <!-- Blog Entries Column -->
 								            <div class="col-md-9">
@@ -49,7 +53,13 @@
 														<blockquote>
 														        <!-- Blog Post -->
 												                
-												                <h4><a href="/blog/${list.BLOG_SEQ}">${list.TITLE}</a> <span class="label label-danger" style="font-size: 10px;">New</span></h4>
+												                <h4>
+												                	<a href="/blog/${list.BLOG_SEQ}?pageNo=${paging.pageNo}">${list.TITLE}</a>
+												                	<c:if test="${list.TIME_DIFF_HOUR lt 2 }">
+												                		<span class="label label-danger" style="font-size: 10px;">New</span>
+												                	</c:if>
+												                </h4>
+												                
 												                <!-- <p class="lead">by Hongdan</p> -->
 												                
 												                <p style="font-size: 14px; color: gray;">
@@ -63,7 +73,7 @@
 													                			<c:set var="orgTags" value="${list.TAGS}" />
 													                			<c:set var="taglist" value="${ fn:split(orgTags, ',') }" /> 
 													                			<c:forEach var="tag" items="${taglist}">
-													                					<a href="javascript:searchTags('${tag}')"><span class="badge badge-info">${tag}</span></a>
+													                					<a href="javascript:searchTags('${tag}')"><span class="label label-default">${tag}</span></a>
 													                			</c:forEach>
 												                	</c:if>	
 												                			
@@ -72,7 +82,7 @@
 												                
 												         </blockquote>
 												         
-												         <hr style="border :1px #CCC dotted;">
+												         <hr style="border : 1px #CCC dotted;">
 										                
 												</c:forEach>
 								                
@@ -81,6 +91,13 @@
 								                </c:if>
 								               
 								                
+								                <div class="text-right" >
+								                <p>전체 <strong>${blogListTotalCount}</strong> 건</p>
+									            </div>
+								                
+								                
+								                
+								                <c:if test="${not empty blogList}">
 								                
 								                <!-- pageing -->
 								                <div class="text-center" >
@@ -125,7 +142,7 @@
 													</nav>	
 												</div>
 												
-												
+												</c:if>
 												
 												
 												
@@ -162,7 +179,7 @@
 									                    <div class="row">
 										                        <div class="col-lg-12">
 										                        		<c:forEach var="tagNm" items="${tagsList }">
-										                        			<a href="javascript:searchTags('${ tagNm }');"><span class="badge badge-info">${ tagNm }</span></a>
+										                        			<a href="javascript:searchTags('${ tagNm }');"><span class="label label-primary">${ tagNm }</span></a>
 										                        		</c:forEach>
 										                        </div>
 									                    </div>

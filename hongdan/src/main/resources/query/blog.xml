@@ -32,6 +32,7 @@
   			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM,
   			REG_ID,
   			DEL_YN,
+  			TIMESTAMPDIFF(day, DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s'), DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s') ) TIME_DIFF_HOUR,
   			REPLACE(TAGS, ' ', '') TAGS
 	    FROM TB_BLOG
 	    WHERE DEL_YN = 'N'
@@ -83,6 +84,7 @@
   			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM,
   			REG_ID,
   			DEL_YN,
+  			TIMESTAMPDIFF(day, DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s'), DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s') ) TIME_DIFF_HOUR,
   			TAGS,
   			REPLACE(TAGS, ' ', '') TAGS_TRIM
 	    FROM TB_BLOG
