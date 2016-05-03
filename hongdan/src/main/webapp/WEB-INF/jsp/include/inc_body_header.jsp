@@ -17,14 +17,14 @@
 	                    <!-- <i class="fa fa-search"></i> -->
 	                    <i class="fa fa-close"></i>
 	                </a>
-	                <form class="form-inline">
+	                <form class="form-inline" style="padding-top: 10px;" method="post"  action="/admin/login" >
 						  <div class="form-group">
-						    <input type="text" class="form-control" id="exampleInputName2" placeholder="ID">
+						    <input type="text" class="form-control" name="admin_id" id="admin_id" placeholder="Admin ID를 입력하세요">
 						  </div>
 						  <div class="form-group">
-						    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Password">
+						    <input type="password" class="form-control" id="admin_password"  name="admin_password"  placeholder="Password를 입력하세요">
 						  </div>
-						  <span class="label label-default">Login</span>
+						  <button type="submit" class="btn btn-warning">Login</button>
 					</form>
 	            </div>
 	            <div class="navbar-collapse collapse main-menu-collapse navigation-wrap">
