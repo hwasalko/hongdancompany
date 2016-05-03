@@ -5,6 +5,68 @@
 
 	<jsp:include page="/WEB-INF/jsp/include/inc_head.jsp"  />
 	
+	<head>
+		<style type="text/css">
+				
+			/* 카드형 UI 스타일시트 추가 */	
+			.shape{	
+				border-style: solid; border-width: 0 70px 40px 0; float:right; height: 0px; width: 0px;
+				-ms-transform:rotate(360deg); /* IE 9 */
+				-o-transform: rotate(360deg);  /* Opera 10.5 */
+				-webkit-transform:rotate(360deg); /* Safari and Chrome */
+				transform:rotate(360deg);
+			}
+			.offer{
+				background:#fff; border:1px solid #ddd; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); margin: 15px 0; overflow:hidden;
+			}
+			.offer-radius{
+				border-radius:7px;
+			}
+			.offer-danger {	border-color: #d9534f; }
+			.offer-danger .shape{
+				border-color: transparent #d9534f transparent transparent;
+				border-color: rgba(255,255,255,0) #d9534f rgba(255,255,255,0) rgba(255,255,255,0);
+			}
+			.offer-success {	border-color: #5cb85c; }
+			.offer-success .shape{
+				border-color: transparent #5cb85c transparent transparent;
+				border-color: rgba(255,255,255,0) #5cb85c rgba(255,255,255,0) rgba(255,255,255,0);
+			}
+			.offer-default {	border-color: #999999; }
+			.offer-default .shape{
+				border-color: transparent #999999 transparent transparent;
+				border-color: rgba(255,255,255,0) #999999 rgba(255,255,255,0) rgba(255,255,255,0);
+			}
+			.offer-primary {	border-color: #428bca; }
+			.offer-primary .shape{
+				border-color: transparent #428bca transparent transparent;
+				border-color: rgba(255,255,255,0) #428bca rgba(255,255,255,0) rgba(255,255,255,0);
+			}
+			.offer-info {	border-color: #5bc0de; }
+			.offer-info .shape{
+				border-color: transparent #5bc0de transparent transparent;
+				border-color: rgba(255,255,255,0) #5bc0de rgba(255,255,255,0) rgba(255,255,255,0);
+			}
+			.offer-warning {	border-color: #f0ad4e; }
+			.offer-warning .shape{
+				border-color: transparent #f0ad4e transparent transparent;
+				border-color: rgba(255,255,255,0) #f0ad4e rgba(255,255,255,0) rgba(255,255,255,0);
+			}
+			
+			.shape-text{
+				color:#fff; font-size:12px; font-weight:bold; position:relative; right:-40px; top:-2px; white-space: nowrap;
+				-ms-transform:rotate(30deg); /* IE 9 */
+				-o-transform: rotate(360deg);  /* Opera 10.5 */
+				-webkit-transform:rotate(30deg); /* Safari and Chrome */
+				transform:rotate(30deg);
+			}	
+			.offer-content{
+				padding:10px 20px 10px;
+			}	
+				
+		</style>
+	</head>
+	
 	<body class="wide" >
 	
 	 
@@ -38,7 +100,7 @@
 						</ol>	
 				  
 				  		<div class="heading heading-center m-b-40" data-animation="fadeInUp">
-				  			<h3 style="font-family: 'Nanum Gothic', sans-serif;">차량관리서비스 가격안내(회원별)</h3>
+				  			<h3 style="font-family: 'Nanum Gothic', sans-serif;">차량관리서비스 가격</h3>
 					  		<!--
 					  			<h2>차량관리서비스 가격표</h2>
 					            <h2 style="font-family: 'Jeju Gothic', sans-serif;">차량관리서비스 가격표</h2>
@@ -489,6 +551,8 @@
 						  
 						  <hr style="margin-top:30px; margin-bottom: 30px;"/>
 						
+						
+						<!-- 
 							<div class="raw">
 					    		<div class="col-md-6" >
 			    			  			<blockquote>
@@ -548,7 +612,115 @@
 						  </div>
 						  
 					  </div>
-					  
+					   -->
+					   
+					   	</div>
+					   
+					   </div>
+					   
+					   
+					   <!--  신차구입상담 등 -->
+					   <div class="container">
+							<div class="row">
+										
+										<div class="col-md-6">
+											<div class="offer offer-radius offer-success">
+												<div class="shape">
+													<div class="shape-text">
+														<i class="fa fa-car fa-lg" aria-hidden="true"></i>								
+													</div>
+												</div>
+												<div class="offer-content">
+													<h4>
+														신차 구입상담
+													</h4>
+													<p>
+															<i class="fa fa-hand-o-right" aria-hidden="true"></i> 1:1 상담 차량구입관련 컨설팅<br>
+															<i class="fa fa-hand-o-right" aria-hidden="true"></i> 데이터화된 자료를 통해 각 브랜드별 차종과 유지관리 컨설팅<br>
+															<i class="fa fa-hand-o-right" aria-hidden="true"></i> 각 브랜드 별 등급차량 비교분석<br>
+															<i class="fa fa-hand-o-right" aria-hidden="true"></i> 각 딜러사들 비교견적 최저가 할인 유도<br>
+															<i class="fa fa-hand-o-right" aria-hidden="true"></i> 차량등록 및 보험 등<br>
+															<i class="fa fa-hand-o-right" aria-hidden="true"></i> 계약 및 출고일자 통보 출고시 차량이상유무 검차<br>
+															<i class="fa fa-hand-o-right" aria-hidden="true"></i> 회원이 계신곳으로 차량 인도(출고트럭 구입)
+													</p>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-md-6">
+											<div class="offer offer-radius offer-primary">
+												<div class="shape">
+													<div class="shape-text">
+														<i class="fa fa-car fa-lg" aria-hidden="true"></i>								
+													</div>
+												</div>
+												<div class="offer-content">
+													<h4>
+														중고차 구입상담
+													</h4>						
+													<p>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 1:1 상담 차량구입관련 컨설팅<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 데이터화된 자료를 통해 각 브랜드별 차종과 유지관리 컨설팅<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 회원 성향에 맞는 차종 선택<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 차량 구입에 관한 전과정 시스템 가동<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 무사고 확인 및 15가지 차량정밀검사 회원 휴대폰으로 차량영상 전송<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 차량등록 및 보험 등 구입에 관한 전과정 대행<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 회원이 계신 곳으로 차량 인도
+													</p>
+												</div>
+											</div>
+										</div>
+								</div>
+								
+								<div class="row">
+										<div class="col-md-6">
+											<div class="offer offer-radius offer-warning">
+												<div class="shape">
+													<div class="shape-text">
+														<i class="fa fa-car fa-lg" aria-hidden="true"></i>							
+													</div>
+												</div>
+												<div class="offer-content">
+													<h4>
+														기존차량 매각
+													</h4>						
+													<p>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 차량상태 점검 실시<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 차량가액 설정 및 즉시매각 또는 위탁매각 논의<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 등록 및 보험 등 차량매각에 관한 전과정 대행<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 차량금액지불 등 완료 통보<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 신차 컨설팅 및 상담
+													</p>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-md-6">
+											<div class="offer offer-radius offer-danger">
+												<div class="shape">
+													<div class="shape-text">
+														<i class="fa fa-car fa-lg" aria-hidden="true"></i>							
+													</div>
+												</div>
+												<div class="offer-content">
+													<h4>
+														차량관리 멤버쉽 가입 과정
+													</h4>						
+													<p>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 매니저 방문 멤버쉽 차량관리 1:1 상담 진행<br>
+														<i class="fa fa-hand-o-right" aria-hidden="true"></i> 차량상태확인 및 점검 계약서 작성
+														<br>
+														<br>
+														<br>
+														<br>
+													</p>
+												</div>
+											</div>
+										</div>
+										
+					        </div>
+					        
+					</div>
 					   
 				  </section>
 				  

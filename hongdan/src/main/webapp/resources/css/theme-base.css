@@ -1283,7 +1283,7 @@ body.outter #vertical-dot-menu {
     color: #fff;
 }
 
-body.top-search-open #header #top-search a i.fa.fa-search,
+body.top-search-open #header #top-search a i.fa.fa-power-off,
 #top-search a i.fa.fa-close {
     opacity: 0;
 }

@@ -13,12 +13,19 @@
 	            </div>
 	            <div id="top-search">
 	                <a id="top-search-trigger">
-	                    <i class="fa fa-search"></i>
+	                    <i class="fa fa-power-off"></i>
+	                    <!-- <i class="fa fa-search"></i> -->
 	                    <i class="fa fa-close"></i>
 	                </a>
-	                <form action="#" method="get">
-	                    <input type="text" name="q" class="form-control" value="" placeholder="Start typing & press  &quot;Enter&quot;">
-	                </form>
+	                <form class="form-inline">
+						  <div class="form-group">
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="ID">
+						  </div>
+						  <div class="form-group">
+						    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Password">
+						  </div>
+						  <span class="label label-default">Login</span>
+					</form>
 	            </div>
 	            <div class="navbar-collapse collapse main-menu-collapse navigation-wrap">
 	                <div class="container">
