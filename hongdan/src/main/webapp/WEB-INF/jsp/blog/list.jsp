@@ -147,9 +147,11 @@
 												
 												
 												<!-- 글쓰기 버튼 -->
+												<c:if test="${ not empty sessionScope }">
 												<div class="text-right" style="padding-bottom : 10px;">
 													<a href="/blog/write"><button class="btn btn-success btn-xs"><i class="fa fa-pencil-square-o"></i>&nbsp;글쓰기</button></a>
 												</div>
+												</c:if>
 												
 												
 								
@@ -184,13 +186,7 @@
 										                        </div>
 									                    </div>
 								                </div>
-								
-								                            <!-- Side Widget Well 
-								                <div class="well">
-								                    <h4>Side Widget Well</h4>
-								                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-								                </div>
-								                -->
+								                         
 								
 								            </div>
 								
@@ -223,7 +219,20 @@
 			
 			
 				<script type="text/javascript">
-					
+
+				 	
+					$(window).ready(function(){
+	
+						// 엔터키 입력 이벤트
+						$("#searchWord").keydown(function (key) {
+								  if (key.keyCode == 13) {
+								    goPage(1);
+								  }
+							});
+			
+					});				
+
+				
 					// 페이지 클릭 시
 					function goPage(no){
 						 var val = $("#searchWord").val();	//검색어

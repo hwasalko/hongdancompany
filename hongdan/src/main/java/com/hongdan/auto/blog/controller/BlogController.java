@@ -16,6 +16,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -112,12 +113,14 @@ public class BlogController {
 	public String blogView(HttpServletRequest request,  Model model, @PathVariable String blog_seq) throws SQLException {
 		
 		Map<String, String> param = new HashMap<String, String>();
-    	param.put("blog_seq",blog_seq);
+		
+		param.put("blog_seq",blog_seq);
 		
 		Map<String, String> resultMap = blogService.getBlogView(param);
 		model.addAttribute("blogMap" , resultMap );
 		model.addAttribute("blog_seq" , blog_seq );
 		model.addAttribute("pageNo", request.getParameter("pageNo") );
+		model.addAttribute("tagsList", blogService.getBlogTagsAllList());
 		
 		return "blog/view";
 	}
@@ -131,22 +134,26 @@ public class BlogController {
 	
 	
 	@RequestMapping(value = "/blog/write", method = RequestMethod.POST )
-	public String blogSave(HttpServletRequest request,  Model model) {		
+	public String blogSave(HttpServletRequest request,  Model model, HttpSession session) {		
 		
 		String title 			= request.getParameter("blog_title");
 		String contents 	= request.getParameter("blog_content");
 		String tags 		= request.getParameter("blog_tag");
+		String writer_id	= (String) session.getAttribute("usr_id");	// 로그인 사용자 ID
 		
 		logger.info("제목 : " + title  );
 		logger.info("태그 : " + tags  );
 		logger.info("내용 : " + contents  );
+		logger.info("작성자 : " + writer_id  );
+		
+		
 		
     	Map<String, String> param = new HashMap<String, String>();
     	
     	param.put("title",title);
     	param.put("tags", tags);
     	param.put("contents", contents);
-    	
+    	param.put("register_id", writer_id);
 		
 		try {
 			int result = blogService.insertBlog( param );

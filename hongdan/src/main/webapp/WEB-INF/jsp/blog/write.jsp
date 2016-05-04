@@ -72,7 +72,7 @@
 					                    
 					              </form>
 				                    
-				                    
+				                  <c:if test="${ not empty sessionScope }">
 				                    <div class="row">
 		                                <div class="col-md-12">
 		                                    <div class="form-group text-center">
@@ -88,6 +88,7 @@
 		                                    </div>
 		                                </div>
 		                            </div>
+		                          </c:if>
 		                            
 				                
 				                
@@ -176,7 +177,6 @@
 							// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
 							
 							try {
-								//$("#frm").action='/blog/editProcs/${blog_seq}'; 
 								$("#frm").submit();
 							} catch(e) {}
 							

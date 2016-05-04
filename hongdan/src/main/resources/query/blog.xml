@@ -18,7 +18,7 @@
 			#{title},
 			#{contents},
 			DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
-			'hongdan',
+			#{register_id},
 			'N',
 			#{tags}
 		FROM TB_BLOG

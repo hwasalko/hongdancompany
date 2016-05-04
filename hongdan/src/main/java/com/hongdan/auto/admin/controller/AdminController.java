@@ -55,7 +55,8 @@ public class AdminController {
     	
 		if( resultMap != null && resultMap.size() > 0 ){
 			session.setAttribute("usr_nm", resultMap.get("USR_NM"));
-			logger.debug("로그인 성공! ==> " + resultMap.get("USR_NM"));
+			session.setAttribute("usr_id", resultMap.get("ID"));
+			logger.debug("로그인 성공! ==> " + resultMap.get("ID") + ", " + resultMap.get("USR_NM"));
 		}else{
 			logger.debug("로그인 실패!! ");
 		}

@@ -82,53 +82,7 @@
 										                	${blogMap.CONTENTS}
 										                </p>
 										                
-										                
-										                
-										                <!-- Blog Comments 
-
-										                
-										                <div class="well">
-										                    <h4>Leave a Comment:</h4>
-										                    <form role="form">
-										                        <div class="form-group">
-										                            <textarea class="form-control" rows="3"></textarea>
-										                        </div>
-										                        <button type="submit" class="btn btn-primary">Submit</button>
-										                    </form>
-										                </div>
-										
-										                <hr>
-										
-										                
-										                
-										                <div class="media">
-										                    <a class="pull-left" href="#">
-										                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-										                    </a>
-										                    <div class="media-body">
-										                        <h4 class="media-heading">Start Bootstrap
-										                            <small>August 25, 2014 at 9:30 PM</small>
-										                        </h4>
-										                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-										                        
-										                        
-										                        
-										                        <div class="media">
-										                            <a class="pull-left" href="#">
-										                                <img class="media-object" src="http://placehold.it/64x64" alt="">
-										                            </a>
-										                            <div class="media-body">
-										                                <h4 class="media-heading">Nested Start Bootstrap
-										                                    <small>August 25, 2014 at 9:30 PM</small>
-										                                </h4>
-										                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-										                            </div>
-										                        </div>
-										                        
-										                    </div>
-										                </div>
-										                -->
-								                
+										        
 								                <hr style="margin-top:5em;">
 								                
 								                <div class="row">
@@ -146,10 +100,14 @@
 								                </div>
 								                
 								                <div class="row" style="padding-top : 20px;">
+								                	
 										                <div class="col-xs-8 text-left" style="padding-bottom : 20px;">
-															<a href="/blog/edit/${blog_seq}?pageNo=${pageNo}"><button class="btn btn-primary btn-xs"><i class="fa fa-wrench"></i>&nbsp;수정</button></a>
-															<button class="btn btn-danger btn-xs" onClick="del('${blog_seq}');"><i class="fa fa-trash"></i>&nbsp;삭제</button>
+										                	<c:if test="${ not empty sessionScope }">
+																<a href="/blog/edit/${blog_seq}?pageNo=${pageNo}"><button class="btn btn-primary btn-xs"><i class="fa fa-wrench"></i>&nbsp;수정</button></a>
+																<button class="btn btn-danger btn-xs" onClick="del('${blog_seq}');"><i class="fa fa-trash"></i>&nbsp;삭제</button>
+															</c:if>
 														</div>
+
 														<div class="col-xs-4 text-right" style="padding-bottom : 20px;">
 															<a href="/blog/list/${pageNo}"><button class="btn btn-default btn-xs"><i class="fa fa-list"></i>&nbsp;목록</button></a>
 														</div>
@@ -167,9 +125,9 @@
 								                <div class="well">
 								                    <h4><i class="fa fa-search"></i> Search</h4>
 								                    <div class="input-group">
-								                        <input type="text" class="form-control">
+								                        <input type="text" class="form-control" id="searchWord" value="">
 								                        <span class="input-group-btn">
-								                            <button class="btn btn-default btn-sm" type="button">
+								                            <button class="btn btn-default btn-sm" type="button" onclick="goPage(1);">
 								                                <span class="glyphicon glyphicon-search"></span>
 								                        	</button>
 								                        </span>
@@ -182,13 +140,9 @@
 									                    <h4><i class="fa fa-tags"></i> Popular Tags:</h4>
 									                    <div class="row">
 										                        <div class="col-lg-12">
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
-										                        		<a href=""><span class="badge badge-info">Windows 8</span></a>
+										                        		<c:forEach var="tagNm" items="${tagsList }">
+										                        			<a href="javascript:searchTags('${ tagNm }');"><span class="label label-primary">${ tagNm }</span></a>
+										                        		</c:forEach>
 										                        </div>
 									                    </div>
 								                </div>
@@ -209,7 +163,9 @@
 			    </section>
 		
 			  
-			 
+				 <form id="frm" name="frm" method="POST" >
+				  		<input type="hidden" name="searchVal" id="searchVal">
+				  </form>
 			  
 			  
 		    	<jsp:include page="/WEB-INF/jsp/include/inc_footer.jsp"  />
@@ -221,12 +177,38 @@
 			
 			
 				<script type="text/javascript">
+			
+					// onLoad
+					$(window).ready(function(){
+						
+						// 엔터키 입력 이벤트
+						$("#searchWord").keydown(function (key) {
+								  if (key.keyCode == 13) {
+								    goPage(1);
+								  }
+							});
+			
+					});			
 				
 					 // 삭제버튼 클릭 시
 					function del(blog_seq){
 						if( confirm("정말 삭제하시겠습니까?") ){
 							location.href = '/blog/delete/' + blog_seq;
 						}
+					}
+					 
+					// 페이지 클릭 시
+					function goPage(no){
+						 var val = $("#searchWord").val();	//검색어
+						 
+						$("#searchVal").val(val);
+						$('#frm').attr({action : '/blog/list/' + no }).submit();
+					}
+					
+					// tag 클릭 시
+					function searchTags(tagNm){
+						 $("#searchWord").val(tagNm);	 //검색어 입력창에 tag명 입력						 
+						 goPage(1);
 					}
 				
 				</script>

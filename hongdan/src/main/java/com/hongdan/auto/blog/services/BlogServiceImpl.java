@@ -68,7 +68,9 @@ public class BlogServiceImpl implements BlogService {
     		String[] tmpStr = map.get("TAGS").toString().split(",");
     		
     		for(String tag : tmpStr){
-    			resultList.add(tag);
+    			if(!resultList.contains(tag)){	// 중복제거
+    				resultList.add(tag);
+    			}
     		}
     		
     	}

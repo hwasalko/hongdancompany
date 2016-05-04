@@ -19,10 +19,10 @@
 	                    <i class="fa fa-close"></i>
 	                </a>
 	                <c:if test="${not empty sessionScope}" >
-						<form class="form-inline" style="padding-top: 10px;" method="post"  action="/admin/logout" >
-							  <div class="form-group" >
-							  	<span class="label label-default" >${sessionScope.usr_nm} 님 환영합니다. </span>&nbsp;
-							  	<span class="label label-danger" onclick="submit();" style="cursor: pointer;" > <i class="fa fa-sign-out"></i> <strong>Logout</strong> </span>
+						<form class="form-inline"  style="padding: 32px 50px; text-align: right;" method="post"  action="/admin/logout" >
+							  <div class="form-group">
+							  	<span class="label label-default">${sessionScope.usr_nm} 님 환영합니다. </span>&nbsp;
+							  	<span class="label label-danger" onclick="submit();" style="cursor: pointer;" > <i class="fa fa-sign-out"></i> <strong>LOGOUT</strong> </span>
 							  </div>
 						</form>
 					</c:if> 
@@ -34,7 +34,7 @@
 							  <div class="form-group">
 							    <input type="password" class="form-control" id="admin_password"  name="admin_password"  placeholder="Password를 입력하세요">
 							  </div>
-							  <button type="submit" class="btn btn-warning text-right">Login</button>
+							  <button type="submit" class="btn btn-warning btb-xs text-right">Login</button>
 						</form>
 					</c:if>
 	            </div>
@@ -75,9 +75,10 @@
 	                            <li class="dropdown"> <a href="/contact" class="nav-to">Contact us</a></li>
 	                            
 	                            <c:if test="${not empty sessionScope}" >
-	                            <li class="dropdown">
-	                            	<span class="label label-default" >${sessionScope.usr_nm} 님 환영합니다. </span>&nbsp; 
-	                            	<span class="label label-danger" ><a href="/admin/logout"><i class="fa fa-sign-out"></i><strong>Logout</strong></a> </span>
+	                            <li class="dropdown">	
+	                            	<a href="/admin/logout" class="nav-to">
+	                            	<span class="label label-danger" ><i class="fa fa-sign-out"></i><strong>Logout</strong> </span>
+	                            	</a>
 	                            </li>
 	                            </c:if>
 	                            

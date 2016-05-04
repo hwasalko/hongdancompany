@@ -668,15 +668,5 @@
 			 
 			 
 			 
-			 
-			 <script type="text/javascript">
-			 	
-				$(window).load(function(){
-					//VIP 옵션으로 버튼 초기화
-					$('li[data-filter*=vip]').click();					
-				});				
-				
-			</script>
-			 
 	</body>
 </html>
