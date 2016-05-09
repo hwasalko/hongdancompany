@@ -18,7 +18,7 @@
         <div class="container">
             <div class="page-title col-md-8">
                 <h1>ABOUT US</h1>
-                <span>Work is easy when you have all tools around you!</span>
+                <span>Hongdan Company 1st AUTO를 소개합니다.</span>
             </div>
         </div>
     </section>
@@ -30,13 +30,25 @@
                 <div class="col-md-6">
                     <div class="heading heading text-left">
                         <h2>THE COMPANY</h2>
-                        <span class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum volutpat quis. Suspendisse consectetur fringilla luctus. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor. </span>
+                        <span class="lead" style="font-size:12pt;">
+                        	Hongdan Company 는 자동차 토탈케어 프로그램을 제공합니다.....<br>
+                        	Hongdan Company 는 자동차 토탈케어 프로그램을 제공합니다.....<br>
+                        	Hongdan Company 는 자동차 토탈케어 프로그램을 제공합니다.....<br>
+                        	Hongdan Company 는 자동차 토탈케어 프로그램을 제공합니다.....<br>
+                        	Hongdan Company 는 자동차 토탈케어 프로그램을 제공합니다.....
+						</span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="heading heading text-left">
                         <h2>Our Vision</h2>
-                        <span class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum volutpat quis. Suspendisse consectetur fringilla luctus. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor. </span>
+                        <span class="lead" style="font-size:12pt;">
+                        	우리의 비전은 다음과 같습니다....<br>
+                        	우리의 비전은 다음과 같습니다....<br>
+                        	우리의 비전은 다음과 같습니다....<br>
+                        	우리의 비전은 다음과 같습니다....<br>
+                        	우리의 비전은 다음과 같습니다....
+						</span>
                     </div>
                 </div>
             </div>

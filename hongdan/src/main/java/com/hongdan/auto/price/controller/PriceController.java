@@ -25,4 +25,11 @@ public class PriceController {
 		return "price/car_management_total";
 	}	
 	
+	// 사후관리서비스 가격안내
+	@RequestMapping(value = "/price/car_management_table")
+	public String carManagementTable(HttpServletRequest request,  Model model) {		
+		
+		return "price/car_management_table";
+	}	
+	
 }

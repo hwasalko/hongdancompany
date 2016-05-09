@@ -39,7 +39,6 @@
                         <div class="text-center text-light">
                             <h4>Everything, Easy, One stop</h4>
                             <h1 class="text-uppercase">Auto Total Service</h1>
-                            <a href="#" class="button border rounded transparent"><strong>CALL US: 1234 0404</strong></a>
                         </div>
                     </div>
                 </div>
@@ -65,8 +64,8 @@
     <section class="discover">
         <div class="container">
             <div class="heading heading-center m-b-40" data-animation="fadeInUp">
-                <h2><span>Discover</span> OUR STORY</h2>
-                <span class="lead">Create amam ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                <h2>INTRODUCE OUR COMPANY</h2>
+                <span class="lead">Hongdan Company 1st AUTO를 소개합니다.</span>
             </div>
             <div class="row" data-animation="fadeInUp">
                 <div class="col-md-3 col-sm-3">
@@ -78,7 +77,7 @@
                 <div class="col-md-6 col-sm-6">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam dolor, tincidunt sit amet imperdiet viverra, accumsan at sem. Integer felis enim, aliquam id blandit ut, imperdiet vel nulla. Pellentesque et ex blandit, vehicula dui nec, facilisis magna. Mauris scelerisque ipsum sit amet vulputate lobortis. Duis blandit, nibh ac posuere placerat, mi leo pellentesque arcu, ac dictum odio lorem a purus. Etiam ac ipsum eu dolor eleifend feugiat.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam dolor, tincidunt sit amet imperdiet viverra, accumsan at sem. Integer felis enim, aliquam id blandit ut, imperdiet vel nulla. Pellentesque et ex blandit, vehicula dui nec, facilisis magna. Mauris scelerisque ipsum sit amet vulputate lobortis. Duis blandit, nibh ac posuere placerat, mi leo pellentesque arcu, ac dictum odio lorem a purus. Etiam ac ipsum eu dolor eleifend feugiat.</p>
-                    <a href="#" class="button border rounded red"><strong>More About US</strong></a>
+                    <a href="/about" class="button border rounded red"><strong>More About US</strong></a>
                 </div>
             </div>
         </div>
@@ -87,9 +86,9 @@
     <section class="p-b-0 bkp-01">
         <div class="container">
            <div class="delievery">
-             <h2><font color="black">FAST DELIVERY</font></h2>
-             <p>Sollicitudin vitae nibh moresa at magna eu augue semper.</p>
-             <a href="#" class="button border rounded transparent"><strong>CALL US: 1234 0404</strong></a>
+             <h2><font color="black">TOTAL CAR CARE SERVICE</font></h2>
+             <p>종합 차량 케어 서비스</p>
+             <a href="#" class="button border rounded transparent"><strong>CONTACT US</strong></a>
            </div>
         </div>
     </section>
@@ -98,144 +97,137 @@
     <section class="background-grey">
         <div class="container">
             <div class="heading heading-center m-b-40" data-animation="fadeInUp">
-                <h2>Our Features</h2>
-                <span class="lead">Create amam ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            	<h2 style="font-family: 'Noto Sans KR', sans-serif;">제공 서비스</h2>
+			     <span class="lead" style="font-family: 'Nanum Brush Script', cursive;">Hongdan Company에서 제공하는 서비스를 소개합니다.</span>
             </div>
             <div class="row text-center">
-                <div class="col-md-4">
-                    <div class="icon-box medium">
-                        <div class="icon">
-                            <a href="#">
-                                <i class="flaticon-heating5"></i>
-                            </a>
-                        </div>
-                        <h4 class="subtitle">Hot Fish</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="icon-box medium">
-                        <div class="icon">
-                            <a href="#">
-                                <i class="flaticon-food32"></i>
-                            </a>
-                        </div>
-                        <h4 class="subtitle">Hot Fish</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="icon-box medium">
-                        <div class="icon">
-                            <a href="#">
-                                <i class="flaticon-soup4"></i>
-                            </a>
-                        </div>
-                        <h4 class="subtitle">Hot Fish</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="icon-box medium">
-                        <div class="icon">
-                            <a href="#">
-                                <i class="flaticon-pizza4"></i>
-                            </a>
-                        </div>
-                        <h4 class="subtitle">Hot Fish</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="icon-box medium">
-                        <div class="icon">
-                            <a href="#">
-                                <i class="flaticon-covered16"></i>
-                            </a>
-                        </div>
-                        <h4 class="subtitle">Hot Fish</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="icon-box medium">
-                        <div class="icon">
-                            <a href="#">
-                                <i class="flaticon-plate7"></i>
-                            </a>
-                        </div>
-                        <h4 class="subtitle">Hot Fish</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-                    </div>
-                </div>
-            </div>
+			        
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                            <i class="flaticon-heating5"></i>
+			                        </a>
+			                    </div>
+			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량관리정비 프로그램 제공</h4>
+			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
+			                    	40가지 정기점검정비, 실내외 손세차 <br>
+			                    	엔진클리닝 / 외장 잔기스 관리<br>
+			                    	워셔액 / 부동액 보충 등 점검 등
+			                    </p>
+			                </div>
+			            </div>
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                            <i class="flaticon-food32"></i>
+			                        </a>
+			                    </div>
+			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">콜 서비스</h4>
+			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
+			                    	사고 및 보험견적 / 수리 / 정비튜닝<br>
+			                    	휠/타이어 업그레이드, A/V장착, 썬팅/광택<br>
+			                    	A/V장착 / 썬팅 / 광택
+			                    </p>
+			                </div>
+			            </div>
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                            <i class="flaticon-soup4"></i>
+			                        </a>
+			                    </div>
+			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">렌트 서비스</h4>
+			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
+			                    	당일 차량정비에 한하여 렌트제공<br><br><br>
+			                    </p>
+			                </div>
+			            </div>
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                            <i class="flaticon-pizza4"></i>
+			                        </a>
+			                    </div>
+			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량구입 프로그램 제공</h4>
+			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
+			                    	메이커 별 차량정보 컨설팅 및 시승<br>
+			                    	구입 전과정 비교견적<br>
+			                    	최대할인 및 신차검수
+			                    </p>
+			                </div>
+			            </div>
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                            <i class="flaticon-covered16"></i>
+			                        </a>
+			                    </div>
+			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">신차구입상담</h4>
+			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
+			                    	1:!상담 차량구입관련 컨설팅<br><br><br>
+			                    </p>
+			                </div>
+			            </div>
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                            <i class="flaticon-plate7"></i>
+			                        </a>
+			                    </div>
+			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">기존차량매각</h4>
+			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
+			                    	점검 및 매각 전과정 컨설팅 및 상담<br><br><br>
+			                    </p>
+			                </div>
+			            </div>
+			        </div>
         </div>
     </section>
 
     <section class="bkp-02">
         <div class="container">
             <div class="heading heading-center m-b-40" data-animation="fadeInUp">
-                <h2 class="color-white">CHEF SELECTION'S MENU</h2>
-                <span class="lead color-white">Create amam ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                <h2 class="color-white">차량관리서비스 가격표</h2>
+                <span class="lead color-white">회원등급별로 최적의 서비스를 제공합니다.</span>
             </div>
             <div class="menu-area">
                 <div class="row text-center">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="chef-menu-wrapper">
                             <div class="food-menu-w3">
                                 <img alt="Menu 1" src="images/chef/food-p1.jpg">
                                 <div class="w3-menu-top">
-                                    <h3>MINOSHI</h3>
-                                    <h5 class="colorf">$9.70</h5>
+                                    <h3>VIP회원</h3>
+                                    <h5 class="colorf">￦1,000,000</h5>
                                 </div>
-                                <div class="w3-menu-dts">Verno slices, Dolre oil, Green onions, Mushroom, Tomatoes</div>
+                                <div class="w3-menu-dts">차량관리정비프로그램, 콜서비스, 렌트서비스, 차량구입프로그램 제공</div>
                             </div>
                             <div class="food-menu-w3">
                                 <img alt="Menu 1" src="images/chef/food-p1.jpg">
                                 <div class="w3-menu-top">
-                                    <h3>MINOSHI</h3>
-                                    <h5 class="colorf">$9.70</h5>
+                                    <h3>연간회원</h3>
+                                    <h5 class="colorf">￦500,000</h5>
                                 </div>
-                                <div class="w3-menu-dts">Verno slices, Dolre oil, Green onions, Mushroom, Tomatoes</div>
+                                <div class="w3-menu-dts">차량관리정비프로그램, 렌트서비스, 차량구입프로그램 제공</div>
                             </div>
                             <div class="food-menu-w3">
                                 <img alt="Menu 1" src="images/chef/food-p1.jpg">
                                 <div class="w3-menu-top">
-                                    <h3>MINOSHI</h3>
-                                    <h5 class="colorf">$9.70</h5>
+                                	<h3>비회원</h3>
+                                    <h5 class="colorf">N/A</h5>
                                 </div>
-                                <div class="w3-menu-dts">Verno slices, Dolre oil, Green onions, Mushroom, Tomatoes</div>
+                                <div class="w3-menu-dts">차량관리정비프로그램, 렌트서비스, 차량구입프로그램 제공</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="chef-menu-wrapper">
-                            <div class="food-menu-w3">
-                                <img alt="Menu 1" src="images/chef/food-p1.jpg">
-                                <div class="w3-menu-top">
-                                    <h3>MINOSHI</h3>
-                                    <h5 class="colorf">$9.70</h5>
-                                </div>
-                                <div class="w3-menu-dts">Verno slices, Dolre oil, Green onions, Mushroom, Tomatoes</div>
-                            </div>
-                            <div class="food-menu-w3">
-                                <img alt="Menu 1" src="images/chef/food-p1.jpg">
-                                <div class="w3-menu-top">
-                                    <h3>MINOSHI</h3>
-                                    <h5 class="colorf">$9.70</h5>
-                                </div>
-                                <div class="w3-menu-dts">Verno slices, Dolre oil, Green onions, Mushroom, Tomatoes</div>
-                            </div>
-                            <div class="food-menu-w3">
-                                <img alt="Menu 1" src="images/chef/food-p1.jpg">
-                                <div class="w3-menu-top">
-                                    <h3>MINOSHI</h3>
-                                    <h5 class="colorf">$9.70</h5>
-                                </div>
-                                <div class="w3-menu-dts">Verno slices, Dolre oil, Green onions, Mushroom, Tomatoes</div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
@@ -244,7 +236,7 @@
     <section class="parallax p-t-100 p-b-100">
         <div class="container">
             <div class="heading heading-center m-b-40" data-animation="fadeInUp">
-                <h2>Facts About US</h2>
+                <h2>숫자로 보는 Hongdan Company</h2>
                 <span class="lead">Create amam ipsum dolor sit amet, consectetur adipiscing elit.</span>
             </div>
             <div class="row">
@@ -273,73 +265,7 @@
         </div>
     </section>
 
-    <section class="bkp-03 special-offer">
-        <div class="container">
-           <div class="row">
-               <div class="col-md-5">
-                   <img alt="" class="img-responsive" src="images/burger.png">
-               </div>
-               <div class="col-md-7">
-                   <h4><span>Today Deals</span>Everyday Affordable Value</h4>
-                   <p>Best Dinner Recipes for main Dishes</p>
-                   <a href="#" class="button border rounded red"><strong>CALL US: 1234 0404</strong></a>
-               </div>
-           </div>
-        </div>
-    </section>
 
-
-    <section>
-       <div class="container">
-           <div class="heading heading-center m-b-40">
-               <h2>TESTIMONIAL</h2>
-               <span class="lead">Consectetur adipiscing elit. amam ipsum dolor sit amet.</span>
-           </div>
-           <hr class="space">
-           <div class="carousel" data-carousel-col="1" data-carousel-dots="true" data-isotope-item="testimonial">
-               <div class="testimonial">
-                   <div class="testimonial-description">
-                       <p>The world is a dangerous place to live; not because of the people who are evil, but because of the people who don't do anything about it.</p>
-                   </div>
-                   <div class="testimonial-image">
-                       <img class="round" src="images/team/4.jpg" alt="image">
-                       <h4>MARK DOE</h4>
-                       <p>CEO</p>
-                   </div>
-               </div>
-               <div class="testimonial">
-                   <div class="testimonial-description">
-                       <p>Art is the only serious thing in the world. And the artist is the only person who is never serious.</p>
-                   </div>
-                   <div class="testimonial-image">
-                       <img class="round" src="images/team/4.jpg" alt="image">
-                       <h4>MARK DOE</h4>
-                       <p>CEO</p>
-                   </div>
-               </div>
-               <div class="testimonial">
-                   <div class="testimonial-description">
-                       <p>The world is a dangerous place to live; not because of the people who are evil, but because of the people who don't do anything about it.</p>
-                   </div>
-                   <div class="testimonial-image">
-                       <img class="round" src="images/team/4.jpg" alt="image">
-                       <h4>MARK DOE</h4>
-                       <p>CEO</p>
-                   </div>
-               </div>
-               <div class="testimonial">
-                   <div class="testimonial-description">
-                       <p>The world is a dangerous place to live; not because of the people who are evil, but because of the people who don't do anything about it.</p>
-                   </div>
-                   <div class="testimonial-image">
-                       <img class="round" src="images/team/4.jpg" alt="image">
-                       <h4>MARK DOE</h4>
-                       <p>CEO</p>
-                   </div>
-               </div>
-           </div>
-       </div>
-    </section>
 
 
     <section class="background-grey p-b-40">
