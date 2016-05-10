@@ -42,6 +42,7 @@ public class AdminController {
 		
 		String admin_id 					= 	request.getParameter("admin_id");
 		String admin_password 		= 	request.getParameter("admin_password");
+		boolean isLoginOk = true;
 		
 		logger.debug("아이디 : " + admin_id);
 		logger.debug("패스워드 : " + admin_password);
@@ -66,9 +67,16 @@ public class AdminController {
 			logger.debug("로그인 성공! ==> " + resultMap.get("ID") + ", " + resultMap.get("USR_NM"));
 		}else{
 			logger.debug("로그인 실패!! ");
+			model.addAttribute("msg", "로그인에 실패하였습니다.");
+			isLoginOk = false;
 		}
 		
-		return "redirect:/";
+		if(isLoginOk){
+			return "redirect:/";
+		}else{
+			return "admin/login";
+		}
+		
 	}	
 	
 	

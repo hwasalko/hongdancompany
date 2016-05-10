@@ -2610,6 +2610,10 @@ footer.background-grey .copyright-content {
     background-color: #101010!important;
 }
 
+.background-dark-grey {
+    background-color: #202020!important;
+}
+
 .background-pattern {
     background-image: url(../../images/overlay-pattern/gplay.html);
 }
