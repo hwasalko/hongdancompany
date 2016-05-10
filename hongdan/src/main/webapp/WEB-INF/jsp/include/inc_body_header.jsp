@@ -60,17 +60,7 @@
 	                                    <li> <a href="/price/car_management_each">차량관리서비스(회원별)</a> </li>
 	                                </ul>
 	                            </li>
-	                            
-	                            <!-- 
-	                            <li class="dropdown"> <a href="#">Menus <i class="fa fa-angle-down"></i> </a>
-	                                <ul class="dropdown-menu">
-	                                    <li> <a href="/menu">Basic</a> </li>
-	                                    <li> <a href="/menu-masonary">Masonary</a> </li>
-	                                    <li> <a href="/menu-without-parallax">Without Parallex</a> </li>
-	                                </ul>
-	                            </li>
-	                             -->
-	                            
+	                                
 	                            <li class="dropdown"> <a href="/reservation" class="nav-to">Reservation</a> </li>
 	                            
 	                            <li class="dropdown"> <a href="/contact" class="nav-to">Contact us</a></li>
@@ -82,6 +72,14 @@
 	                            	</a>
 	                            </li>
 	                            </c:if>
+	                            <c:if test="${empty sessionScope}" >
+	                            <li class="dropdown">	
+	                            	<a href="#" class="nav-to">
+	                            	<span class="label label-info" id="login_btn"><i class="fa fa-sign-in"></i><strong>Login</strong> </span>
+	                            	</a>
+	                            </li>
+	                            </c:if>
+	                            
 	                            
 	                        </ul>
 	                        

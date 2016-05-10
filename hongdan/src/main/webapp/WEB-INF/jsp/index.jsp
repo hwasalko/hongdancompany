@@ -83,15 +83,6 @@
         </div>
     </section>
 
-    <section class="p-b-0 bkp-01">
-        <div class="container">
-           <div class="delievery">
-             <h2><font color="black">TOTAL CAR CARE SERVICE</font></h2>
-             <p>종합 차량 케어 서비스</p>
-             <a href="#" class="button border rounded transparent"><strong>CONTACT US</strong></a>
-           </div>
-        </div>
-    </section>
 
 
     <section class="background-grey">
