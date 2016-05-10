@@ -74,7 +74,7 @@
 	                            </c:if>
 	                            <c:if test="${empty sessionScope}" >
 	                            <li class="dropdown">	
-	                            	<a href="#" class="nav-to">
+	                            	<a href="/admin/login">
 	                            	<span class="label label-info" id="login_btn"><i class="fa fa-sign-in"></i><strong>Login</strong> </span>
 	                            	</a>
 	                            </li>

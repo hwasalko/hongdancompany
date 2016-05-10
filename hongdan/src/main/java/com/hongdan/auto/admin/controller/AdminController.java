@@ -30,6 +30,13 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
+	
+	@RequestMapping(value = "/admin/login", method = RequestMethod.GET )
+	public String loginForm(HttpServletRequest request,  Model model, HttpSession session) {		
+		
+		return "admin/login";
+	}
+	
 	@RequestMapping(value = "/admin/login", method = RequestMethod.POST )
 	public String login(HttpServletRequest request,  Model model, HttpSession session) {		
 		
