@@ -21,4 +21,6 @@ public interface BlogDao {
 	public int updateBlog(Map<String, String> param) throws SQLException;
 
 	public List<Map<String, String>> getBlogTagsAll() throws SQLException;
+	
+	public List<Map<String, String>> getBlogCategoryList() throws SQLException;
 }

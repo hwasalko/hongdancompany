@@ -55,5 +55,10 @@ public class BlogDaoImpl implements BlogDao {
     	return query.selectList("com.hongdan.auto.blog.getBlogTagsAll");
     }
     
+    @Override
+    public List<Map<String, String>> getBlogCategoryList() throws SQLException {
+        return query.selectList("com.hongdan.auto.blog.getBlogCategoryList");
+    }
+    
 }
 

@@ -11,7 +11,8 @@
   			REG_DDTM,
   			REG_ID,
   			DEL_YN,
-  			TAGS
+  			TAGS,
+  			BLOG_CTG_CD
 	    )
 		SELECT 
 			(IFNULL(MAX(BLOG_SEQ), 0) +1) BLOG_SEQ,
@@ -20,7 +21,8 @@
 			DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
 			#{register_id},
 			'N',
-			#{tags}
+			#{tags},
+			#{ctg_cd}
 		FROM TB_BLOG
 	</insert>
 	
@@ -33,8 +35,10 @@
   			REG_ID,
   			DEL_YN,
   			TIMESTAMPDIFF(day, DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s'), DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s') ) TIME_DIFF_HOUR,
-  			REPLACE(TAGS, ' ', '') TAGS
-	    FROM TB_BLOG
+  			REPLACE(TAGS, ' ', '') TAGS,
+  			BLOG_CTG_CD,
+  			(SELECT BLOG_CTG_NM FROM TB_BLOG_CTG_CD WHERE A.BLOG_CTG_CD = BLOG_CTG_CD) BLOG_CTG_NM
+	    FROM TB_BLOG A
 	    WHERE DEL_YN = 'N'
 	    
 				    <if test = 'sarchWord != null and searchWordTagYn.equals("N") '>					    	
@@ -86,8 +90,10 @@
   			DEL_YN,
   			TIMESTAMPDIFF(day, DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s'), DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s') ) TIME_DIFF_HOUR,
   			TAGS,
-  			REPLACE(TAGS, ' ', '') TAGS_TRIM
-	    FROM TB_BLOG
+  			REPLACE(TAGS, ' ', '') TAGS_TRIM,
+  			BLOG_CTG_CD,
+  			(SELECT BLOG_CTG_NM FROM TB_BLOG_CTG_CD WHERE A.BLOG_CTG_CD = BLOG_CTG_CD) BLOG_CTG_NM
+	    FROM TB_BLOG A
 	    WHERE
 	    	DEL_YN = 'N' 
 	    	AND BLOG_SEQ = #{blog_seq}	    	
@@ -106,6 +112,7 @@
   		SET TITLE = #{title},
   			  CONTENTS = #{contents},
   			  TAGS = #{tags},
+  			  BLOG_CTG_CD = #{ctg_cd},
   			  UPDATE_DDTM = DATE_FORMAT(now(), '%Y%m%d%H%i%s')
   		WHERE BLOG_SEQ = #{blog_seq}
 	</update>
@@ -115,6 +122,13 @@
 		FROM TB_BLOG
 		WHERE LENGTH(TAGS) > 0
 				AND DEL_YN = 'N' 
+	</select>
+	
+	<select id="com.hongdan.auto.blog.getBlogCategoryList"  resultType="java.util.Map">
+		SELECT 
+			BLOG_CTG_CD,
+			BLOG_CTG_NM 
+		FROM TB_BLOG_CTG_CD
 	</select>
 
     

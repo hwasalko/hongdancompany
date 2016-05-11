@@ -21,4 +21,6 @@ public interface BlogService {
 	public int updateBlog(Map<String, String> param) throws SQLException;
 
 	public List<String> getBlogTagsAllList() throws SQLException;
+	
+	public List<Map<String, String>> getBlogCategoryList() throws SQLException;
 }

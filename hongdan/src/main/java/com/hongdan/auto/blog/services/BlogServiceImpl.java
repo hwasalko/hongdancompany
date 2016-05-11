@@ -78,4 +78,10 @@ public class BlogServiceImpl implements BlogService {
     	return resultList;
     }
     
+    
+    @Override
+    public List<Map<String, String>> getBlogCategoryList()  throws SQLException{
+    	return blogDao.getBlogCategoryList();
+    }
+    
 }

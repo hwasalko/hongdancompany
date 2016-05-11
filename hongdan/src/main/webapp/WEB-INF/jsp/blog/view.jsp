@@ -137,6 +137,17 @@
 								
 								                <!-- Blog Categories Well -->
 								                <div class="well">
+									                    <h4><i class="fa fa-folder-open"></i> Category</h4>
+									                    <ul>
+									                    	<li>전체</li>
+									                    	<c:forEach var="ctg" items="${categoryList }">
+																<li>${ ctg.BLOG_CTG_NM}</li>
+						                        		  	</c:forEach>
+									                    </ul>
+								                </div>
+								
+								                <!-- Blog Tags Well -->
+								                <div class="well">
 									                    <h4><i class="fa fa-tags"></i> Popular Tags:</h4>
 									                    <div class="row">
 										                        <div class="col-lg-12">

@@ -54,6 +54,20 @@
 					                    
 					                    <div class="row">
 					                        <div class="col-md-12">
+					                        	<div class="form-group">
+					                        		<label class="upper" for="name">카테고리</label>
+								                    <select class="form-control required" name="blog_ctg"  id="blog_ctg"  title="선택">
+														  <option value="" selected="selected">선택</option>
+														  <c:forEach var="ctg" items="${categoryList }">
+																<option value="${ ctg.BLOG_CTG_CD }">${ ctg.BLOG_CTG_NM}</option>
+						                        		  </c:forEach>
+													</select>
+												</div>
+					                        </div>
+					                    </div>
+					                    
+					                    <div class="row">
+					                        <div class="col-md-12">
 					                            <div class="form-group">
 					                                <label class="upper" for="name">태그(Tag)</label>
 					                                <input type="text" class="form-control required" name="blog_tag" placeholder="Tag를 입력해 주세요(#자동차, #여행, ...)" id="blog_tag" aria-required="true" value="${blogMap.TAGS}">

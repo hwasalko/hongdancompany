@@ -103,6 +103,7 @@ public class BlogController {
     	model.addAttribute("tagsList", blogService.getBlogTagsAllList());
     	model.addAttribute("sarchWord", searchVal);
     	model.addAttribute("blogListTotalCount",pagingUtil.getTotalCount() );	// 전체건수
+    	model.addAttribute("categoryList" , blogService.getBlogCategoryList() );	// 블로그 카테고리 리스트 
 		
 		return "blog/list";
 	}
@@ -121,13 +122,17 @@ public class BlogController {
 		model.addAttribute("blog_seq" , blog_seq );
 		model.addAttribute("pageNo", request.getParameter("pageNo") );
 		model.addAttribute("tagsList", blogService.getBlogTagsAllList());
+		model.addAttribute("categoryList" , blogService.getBlogCategoryList() );	// 블로그 카테고리 리스트
 		
 		return "blog/view";
 	}
 	
 	
 	@RequestMapping(value = "/blog/write", method = RequestMethod.GET )
-	public String blogWrite(HttpServletRequest request,  Model model) {		
+	public String blogWrite(HttpServletRequest request,  Model model) throws SQLException {		
+		
+		// 블로그 카테고리 리스트 
+		model.addAttribute("categoryList" , blogService.getBlogCategoryList() );
 		
 		return "blog/write";
 	}	
@@ -139,10 +144,12 @@ public class BlogController {
 		String title 			= request.getParameter("blog_title");
 		String contents 	= request.getParameter("blog_content");
 		String tags 		= request.getParameter("blog_tag");
+		String ctg_cd 		= request.getParameter("blog_ctg");
 		String writer_id	= (String) session.getAttribute("usr_id");	// 로그인 사용자 ID
 		
 		logger.info("제목 : " + title  );
 		logger.info("태그 : " + tags  );
+		logger.info("카테고리 : " + ctg_cd  );
 		logger.info("내용 : " + contents  );
 		logger.info("작성자 : " + writer_id  );
 		
@@ -152,6 +159,7 @@ public class BlogController {
     	
     	param.put("title",title);
     	param.put("tags", tags);
+    	param.put("ctg_cd", ctg_cd);
     	param.put("contents", contents);
     	param.put("register_id", writer_id);
 		
@@ -197,6 +205,7 @@ public class BlogController {
 		model.addAttribute("blogMap" , resultMap );
 		model.addAttribute("blog_seq" , blog_seq );
 		model.addAttribute("pageNo", request.getParameter("pageNo") );
+		model.addAttribute("categoryList" , blogService.getBlogCategoryList() );	// 블로그 카테고리 리스트
 		
 		return "blog/write";
 	}
@@ -208,6 +217,7 @@ public class BlogController {
 		String contents 	= request.getParameter("blog_content");
 		String tags 		= request.getParameter("blog_tag");
 		String pageNo = request.getParameter("pageNo");
+		String ctg_cd 		= request.getParameter("blog_ctg");
 		
 		logger.debug("pageNo : " + pageNo);
 		
@@ -215,6 +225,7 @@ public class BlogController {
     	
     	param.put("blog_seq",blog_seq);
     	param.put("title",title);
+    	param.put("ctg_cd",ctg_cd);
     	param.put("contents", contents);
     	param.put("tags", tags);
     	
