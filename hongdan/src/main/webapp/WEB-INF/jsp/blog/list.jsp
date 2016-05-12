@@ -42,7 +42,7 @@
 										
 								        <div class="row">
 								        	
-											<hr style="padding-top : 10px;">
+											<hr style="padding-top : 5px;">
 								            
 								            
 								            <!-- Blog Entries Column -->
@@ -62,10 +62,10 @@
 												                
 												                <!-- <p class="lead">by Hongdan</p> -->
 												                
-												                <p style="font-size: 14px; color: gray;">
-												                	<i class="fa fa-calendar"></i> ${list.REG_DDTM}
+												                <p style="font-size: 12px; color: gray;">
+												                	<span class="glyphicon glyphicon glyphicon-folder-open"></span> Category : ${list.BLOG_CTG_NM} 
 												                	| <span class="glyphicon glyphicon-user"></span> by ${list.REG_ID}
-												                	
+												                	| <i class="fa fa-calendar"></i> ${list.REG_DDTM} 
 												                	<!-- tag값이 있을경우에만 표시 -->
 												                	<c:if test="${not empty list.TAGS}">
 													                	| <span class="glyphicon glyphicon-tags"></span> Tags : 
@@ -178,12 +178,9 @@
 												<!-- Blog Categories Well -->
 								                <div class="well">
 									                    <h4><i class="fa fa-folder-open"></i> Category</h4>
-									                    <ul>
-									                    	<li>전체</li>
-									                    	<c:forEach var="ctg" items="${categoryList }">
-																<li>${ ctg.BLOG_CTG_NM}</li>
-						                        		  	</c:forEach>
-									                    </ul>
+								                    	<c:forEach var="ctg" items="${categoryList }">
+															&nbsp;<a href="#"><i class="fa fa-angle-double-right"></i> ${ ctg.BLOG_CTG_NM} (${ctg.BLOG_CTG_CD_CNT})</a> <br>
+					                        		  	</c:forEach>
 								                </div>
 								
 								                <!-- Blog Tags Well -->

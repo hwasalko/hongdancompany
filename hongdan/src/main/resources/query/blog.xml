@@ -126,9 +126,16 @@
 	
 	<select id="com.hongdan.auto.blog.getBlogCategoryList"  resultType="java.util.Map">
 		SELECT 
+			'' BLOG_CTG_CD,
+			'전체'BLOG_CTG_NM,
+			(SELECT COUNT(*) FROM TB_BLOG WHERE DEL_YN = 'N') BLOG_CTG_CD_CNT 
+		FROM DUAL
+		UNION ALL
+		SELECT 
 			BLOG_CTG_CD,
-			BLOG_CTG_NM 
-		FROM TB_BLOG_CTG_CD
+			BLOG_CTG_NM,
+			(SELECT COUNT(*) FROM TB_BLOG WHERE DEL_YN = 'N' AND BLOG_CTG_CD = A.BLOG_CTG_CD) BLOG_CTG_CD_CNT 
+		FROM TB_BLOG_CTG_CD A
 	</select>
 
     

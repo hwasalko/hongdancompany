@@ -48,19 +48,19 @@
 								            <div class="col-lg-9">
 								            	
 								            	        <!-- 제목 -->
-										                <h2>
+										                <h3>
 										                	${blogMap.TITLE}
 										                	<c:if test="${blogMap.TIME_DIFF_HOUR lt 2 }"> 
 										                		<span class="label label-danger" style="font-size: 10px;">New</span>
 										                	</c:if>
-										                </h2>
+										                </h3>
 										                
 										                
 										                <!-- 등록정보 -->
-										                <p style="font-size: 14px; color: gray;">
-												                	<i class="fa fa-calendar"></i> ${blogMap.REG_DDTM} 
+										                <p style="font-size: 12px; color: gray;">
+										                			<span class="glyphicon glyphicon glyphicon-folder-open"></span> Category : ${blogMap.BLOG_CTG_NM}
 												                	| <span class="glyphicon glyphicon-user"></span> by ${blogMap.REG_ID}
-												                	
+												                	| <i class="fa fa-calendar"></i> ${blogMap.REG_DDTM} 
 												                	
 												                	<!-- tag값이 있을경우에만 표시 -->
 												                	<c:if test="${not empty blogMap.TAGS_TRIM}">
@@ -69,7 +69,7 @@
 													                			<c:set var="orgTags" value="${blogMap.TAGS_TRIM}" />
 													                			<c:set var="taglist" value="${ fn:split(orgTags, ',') }" /> 
 													                			<c:forEach var="tag" items="${taglist}">
-													                					<span class="badge badge-info">${tag}</span>
+													                					<span class="label label-default">${tag}</span>
 													                			</c:forEach>
 												                	</c:if>	
 												                	
@@ -138,12 +138,9 @@
 								                <!-- Blog Categories Well -->
 								                <div class="well">
 									                    <h4><i class="fa fa-folder-open"></i> Category</h4>
-									                    <ul>
-									                    	<li>전체</li>
-									                    	<c:forEach var="ctg" items="${categoryList }">
-																<li>${ ctg.BLOG_CTG_NM}</li>
-						                        		  	</c:forEach>
-									                    </ul>
+									                    <c:forEach var="ctg" items="${categoryList }">
+															&nbsp;<a href="#"><i class="fa fa-angle-double-right"></i> ${ ctg.BLOG_CTG_NM} (${ctg.BLOG_CTG_CD_CNT})</a> <br>
+					                        		  	</c:forEach>
 								                </div>
 								
 								                <!-- Blog Tags Well -->
