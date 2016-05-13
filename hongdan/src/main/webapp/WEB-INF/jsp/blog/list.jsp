@@ -56,13 +56,13 @@
 												                <h4>
 												                	<a href="/blog/${list.BLOG_SEQ}?pageNo=${paging.pageNo}">${list.TITLE}</a>
 												                	<c:if test="${list.TIME_DIFF_HOUR lt 2 }">
-												                		<span class="label label-danger" style="font-size: 10px;">New</span>
+												                		<span class="label label-danger" style="font-size: 12px;">New</span>
 												                	</c:if>
 												                </h4>
 												                
 												                <!-- <p class="lead">by Hongdan</p> -->
 												                
-												                <p style="font-size: 12px; color: gray;">
+												                <p style="font-size: 14px; color: gray;">
 												                	<span class="glyphicon glyphicon glyphicon-folder-open"></span> Category : ${list.BLOG_CTG_NM} 
 												                	| <span class="glyphicon glyphicon-user"></span> by ${list.REG_ID}
 												                	| <i class="fa fa-calendar"></i> ${list.REG_DDTM} 
@@ -179,7 +179,18 @@
 								                <div class="well">
 									                    <h4><i class="fa fa-folder-open"></i> Category</h4>
 								                    	<c:forEach var="ctg" items="${categoryList }">
-															&nbsp;<a href="#"><i class="fa fa-angle-double-right"></i> ${ ctg.BLOG_CTG_NM} (${ctg.BLOG_CTG_CD_CNT})</a> <br>
+															&nbsp;
+															<a href="javascript:searchCategory('${ ctg.BLOG_CTG_CD}')">
+																 
+																<c:if test="${searchCategory == ctg.BLOG_CTG_CD }">
+																	<strong class="text-danger"><i class="fa fa-angle-double-right"></i> ${ ctg.BLOG_CTG_NM} (${ctg.BLOG_CTG_CD_CNT})</strong>
+																</c:if>
+																<c:if test="${searchCategory != ctg.BLOG_CTG_CD }">
+																	<i class="fa fa-angle-right"></i> ${ ctg.BLOG_CTG_NM} (${ctg.BLOG_CTG_CD_CNT})
+																</c:if>
+																
+															</a> 
+															<br>
 					                        		  	</c:forEach>
 								                </div>
 								
@@ -215,6 +226,7 @@
 			  
 			  <form id="frm" name="frm" method="POST" >
 			  		<input type="hidden" name="searchVal" id="searchVal">
+			  		<input type="hidden" name="searchCategory" id="searchCategory" value="${searchCategory}">
 			  </form>
 			  
 			  
@@ -252,6 +264,12 @@
 					// tag 클릭 시
 					function searchTags(tagNm){
 						 $("#searchWord").val(tagNm);	 //검색어 입력창에 tag명 입력						 
+						 goPage(1);
+					}
+					
+					// Category 클릭 시
+					function searchCategory(ctgCd){
+						 $("#searchCategory").val(ctgCd);	 //카테고리 선택값 저장						 
 						 goPage(1);
 					}
 				

@@ -34,7 +34,7 @@
 							</ol>	
 				        
 				            <div class="row">
-				                <div class="col-md-10 col-md-offset-1">
+				                <div class="col-md-12">
 				                
 					                <c:if test="${empty blogMap }">
 					                	<form id="frm" action = "/blog/write" method="post" >
@@ -46,7 +46,7 @@
 					                    <div class="row">
 					                        <div class="col-md-12">
 					                            <div class="form-group">
-					                                <label class="upper" for="name">제목</label>
+					                                <label class="upper" for="name"><i class="fa fa-check" aria-hidden="true"></i> 제목</label>
 					                                <input type="text" class="form-control required" name="blog_title" placeholder="Enter blog title" id="blog_title" aria-required="true" value="${blogMap.TITLE}">
 					                            </div>
 					                        </div>
@@ -55,12 +55,21 @@
 					                    <div class="row">
 					                        <div class="col-md-12">
 					                        	<div class="form-group">
-					                        		<label class="upper" for="name">카테고리</label>
-								                    <select class="form-control required" name="blog_ctg"  id="blog_ctg"  title="선택">
-														  <option value="" selected="selected">선택</option>
-														  <c:forEach var="ctg" items="${categoryList }">
-																<option value="${ ctg.BLOG_CTG_CD }">${ ctg.BLOG_CTG_NM}</option>
-						                        		  </c:forEach>
+					                        		<label class="upper" for="name" style="padding-right : 10px;"><i class="fa fa-check" aria-hidden="true"></i> 카테고리</label>
+					                        		<a href="#"><span class="label label-danger" style="font-size: 9pt;"><i class="fa fa-cog" aria-hidden="true"></i> 관리</span></a>
+								                    <select class="form-control required" name="blog_ctg"  id="blog_ctg" >
+								                    		  <c:forEach var="ctg" items="${categoryList }">
+															  		<c:if test="${empty ctg.BLOG_CTG_CD }">
+																		<option value="${ ctg.BLOG_CTG_CD }">===선택===</option>
+																	</c:if>
+															  		<c:if test="${not empty ctg.BLOG_CTG_CD }">
+																		<option value="${ ctg.BLOG_CTG_CD }"
+																			<c:if test="${not empty blogMap && blogMap.BLOG_CTG_CD == ctg.BLOG_CTG_CD }">
+																				selected
+																			</c:if>
+																		>${ ctg.BLOG_CTG_NM}</option>
+																	</c:if>
+							                        		  </c:forEach>
 													</select>
 												</div>
 					                        </div>
@@ -78,7 +87,7 @@
 					                    <div class="row">
 					                        <div class="col-md-12">
 					                            <div class="form-group">
-					                                <label class="upper" for="comment">내용</label>
+					                                <label class="upper" for="comment"><i class="fa fa-check" aria-hidden="true"></i> 내용</label>
 					                                <textarea name="blog_content" id="blog_content" rows="10" cols="100" style="width:''100%''; height:412px; display:none;"></textarea>
 					                            </div>
 					                        </div>
@@ -174,6 +183,7 @@
 							oEditors.getById["blog_content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
 							// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
 							
+							
 							try {
 								//$("#frm").action='/blog/write'; 
 								$("#frm").submit();
@@ -189,6 +199,7 @@
 						
 							oEditors.getById["blog_content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
 							// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
+							
 							
 							try {
 								$("#frm").submit();
@@ -208,6 +219,14 @@
 							alert( "제목을 입력하세요" );
 							$("#blog_title").focus();
 							result = false;
+							return false;
+						}
+						
+						if( $("#blog_ctg").val() == '' ){
+							alert( "카테고리를 선택하세요" );
+							$("#blog_ctg").focus();
+							result = false;
+							return false;
 						}
 						
 						return result;

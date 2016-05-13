@@ -71,6 +71,8 @@ public class BlogController {
 		
 		//파라미터 저장
 		String searchVal = request.getParameter("searchVal");
+		String searchCategory = request.getParameter("searchCategory");
+		
 		
 		String searchValTagYn = "N";	// 검색어 해시Tag 여부
 		if( searchVal != null && searchVal.startsWith("#")  ){
@@ -79,8 +81,11 @@ public class BlogController {
 		
 		param.put("sarchWord", searchVal);	// 검색어
 		param.put("searchWordTagYn", searchValTagYn);	// 검색어 Tag여부
+		param.put("searchCategory", searchCategory);	// 카테고리 코드
+		
 		logger.debug("검색어 : " + searchVal );	
 		logger.debug("검색어 Tag여부 : " + searchValTagYn );
+		logger.debug("카테고리코드 : " + searchCategory );
 		
 		// 페이징 요소 셋팅
 		pagingUtil.setPageSize(5); 																		// 한 페이지에 보일 게시글 수
@@ -102,6 +107,7 @@ public class BlogController {
     	model.addAttribute("blogList" , blogService.getBlogList( param ) );
     	model.addAttribute("tagsList", blogService.getBlogTagsAllList());
     	model.addAttribute("sarchWord", searchVal);
+    	model.addAttribute("searchCategory", searchCategory);
     	model.addAttribute("blogListTotalCount",pagingUtil.getTotalCount() );	// 전체건수
     	model.addAttribute("categoryList" , blogService.getBlogCategoryList() );	// 블로그 카테고리 리스트 
 		

@@ -55,6 +55,12 @@
 					)  
 					</if>
 					
+					<if test = 'searchCategory != null and searchCategory != "" ' >
+					AND ( 
+						BLOG_CTG_CD = #{searchCategory}
+					)  
+					</if>
+					
 	    ORDER BY BLOG_SEQ DESC
 	    LIMIT  ${currentPageNo} , ${pageSize}
 	</select>
@@ -78,26 +84,35 @@
 					)  
 					</if>
 					
+					<if test = 'searchCategory != null and searchCategory != "" ' >
+					AND ( 
+						BLOG_CTG_CD = #{searchCategory}
+					)  
+					</if>
+					
 	</select>
 	
 	<select id="com.hongdan.auto.blog.getBlogView" parameterType="String"  resultType="java.util.Map">
-	    SELECT
-	        BLOG_SEQ,
-  			TITLE,
-  			CONTENTS,
-  			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM,
-  			REG_ID,
-  			DEL_YN,
-  			TIMESTAMPDIFF(day, DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s'), DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s') ) TIME_DIFF_HOUR,
-  			TAGS,
-  			REPLACE(TAGS, ' ', '') TAGS_TRIM,
-  			BLOG_CTG_CD,
-  			(SELECT BLOG_CTG_NM FROM TB_BLOG_CTG_CD WHERE A.BLOG_CTG_CD = BLOG_CTG_CD) BLOG_CTG_NM
-	    FROM TB_BLOG A
-	    WHERE
-	    	DEL_YN = 'N' 
-	    	AND BLOG_SEQ = #{blog_seq}	    	
-	    
+	<![CDATA[
+		    SELECT
+		        BLOG_SEQ,
+	  			TITLE,
+	  			CONTENTS,
+	  			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s') REG_DDTM,
+	  			REG_ID,
+	  			DEL_YN,
+	  			TIMESTAMPDIFF(day, DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i:%s'), DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s') ) TIME_DIFF_HOUR,
+	  			TAGS,
+	  			REPLACE(TAGS, ' ', '') TAGS_TRIM,
+	  			BLOG_CTG_CD,
+	  			(SELECT BLOG_CTG_NM FROM TB_BLOG_CTG_CD WHERE A.BLOG_CTG_CD = BLOG_CTG_CD) BLOG_CTG_NM,
+	  			(SELECT MIN(BLOG_SEQ) NEXT_SEQ FROM TB_BLOG WHERE DEL_YN = 'N' AND BLOG_SEQ > A.BLOG_SEQ ) NEXT_SEQ,
+	  			(SELECT MAX(BLOG_SEQ) NEXT_SEQ FROM TB_BLOG WHERE DEL_YN = 'N' AND BLOG_SEQ < A.BLOG_SEQ ) PREV_SEQ
+		    FROM TB_BLOG A
+		    WHERE
+		    	DEL_YN = 'N' 
+		    	AND BLOG_SEQ = #{blog_seq}	    	
+	 ]]>   
 	</select>
 	
 	
