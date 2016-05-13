@@ -63,9 +63,9 @@
 												                <!-- <p class="lead">by Hongdan</p> -->
 												                
 												                <p style="font-size: 14px; color: gray;">
-												                	<span class="glyphicon glyphicon glyphicon-folder-open"></span> Category : ${list.BLOG_CTG_NM} 
-												                	| <span class="glyphicon glyphicon-user"></span> by ${list.REG_ID}
+												                	<span class="glyphicon glyphicon glyphicon-folder-open"></span> &nbsp;Category : ${list.BLOG_CTG_NM}
 												                	| <i class="fa fa-calendar"></i> ${list.REG_DDTM} 
+												                	| <span class="glyphicon glyphicon-user"></span> by ${list.REG_ID}
 												                	<!-- tag값이 있을경우에만 표시 -->
 												                	<c:if test="${not empty list.TAGS}">
 													                	| <span class="glyphicon glyphicon-tags"></span> Tags : 

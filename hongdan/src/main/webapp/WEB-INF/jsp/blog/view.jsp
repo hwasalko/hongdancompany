@@ -58,9 +58,9 @@
 										                
 										                <!-- 등록정보 -->
 										                <p style="font-size: 14px; color: gray;">
-										                			<span class="glyphicon glyphicon glyphicon-folder-open"></span> Category : ${blogMap.BLOG_CTG_NM}
-												                	| <span class="glyphicon glyphicon-user"></span> by ${blogMap.REG_ID}
-												                	| <i class="fa fa-calendar"></i> ${blogMap.REG_DDTM} 
+										                			<span class="glyphicon glyphicon glyphicon-folder-open"></span> &nbsp;Category : ${blogMap.BLOG_CTG_NM}
+												                	| <i class="fa fa-calendar"></i> ${blogMap.REG_DDTM}
+												                	| <span class="glyphicon glyphicon-user"></span> by ${blogMap.REG_ID} 
 												                	
 												                	<!-- tag값이 있을경우에만 표시 -->
 												                	<c:if test="${not empty blogMap.TAGS_TRIM}">
