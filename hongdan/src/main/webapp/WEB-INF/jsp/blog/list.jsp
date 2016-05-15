@@ -177,7 +177,11 @@
 								
 												<!-- Blog Categories Well -->
 								                <div class="well">
-									                    <h4><i class="fa fa-folder-open"></i> Category</h4>
+									                    <h4>
+									                    	<i class="fa fa-folder-open"></i> Category 
+									                    	<a href="/admin/setting_category"><span class="label label-success pull-right" ><i class="fa fa-cog" aria-hidden="true"></i></span></a>
+									                    </h4>
+									                    
 								                    	<c:forEach var="ctg" items="${categoryList }">
 															&nbsp;
 															<a href="javascript:searchCategory('${ ctg.BLOG_CTG_CD}')">

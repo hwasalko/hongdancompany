@@ -56,7 +56,6 @@
 					                        <div class="col-md-12">
 					                        	<div class="form-group">
 					                        		<label class="upper" for="name" style="padding-right : 10px;"><i class="fa fa-check" aria-hidden="true"></i> 카테고리</label>
-					                        		<a href="#"><span class="label label-danger" style="font-size: 9pt;"><i class="fa fa-cog" aria-hidden="true"></i> 관리</span></a>
 								                    <select class="form-control required" name="blog_ctg"  id="blog_ctg" >
 								                    		  <c:forEach var="ctg" items="${categoryList }">
 															  		<c:if test="${empty ctg.BLOG_CTG_CD }">

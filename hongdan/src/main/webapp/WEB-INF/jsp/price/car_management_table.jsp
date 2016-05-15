@@ -325,7 +325,7 @@
 							            </tr>
 							            
 							            <tr class="warning" style="border-top-style: double; ">
-							                <td class="tb_title_bottom">
+							                <td class="tb_title_bottom text-center">
 							                	연간 회원가
 							                </td>
 							                <td class="tb_title_bottom text-center"><span class="label label-danger">N/A</span></td>

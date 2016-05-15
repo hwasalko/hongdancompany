@@ -89,4 +89,11 @@ public class AdminController {
 	}
 	
 	
+	@RequestMapping(value = "/admin/setting_category" )
+	public String setting_category(HttpServletRequest request,  Model model, HttpSession session) {		
+		
+		return "admin/setting_category";
+	}
+	
+	
 }
