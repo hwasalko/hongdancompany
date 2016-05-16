@@ -19,6 +19,21 @@ public class AdminDaoImpl implements AdminDao {
     public Map<String, String> getUserInfo(Map<String, String> param) throws SQLException {
     	return query.selectOne("com.hongdan.auto.admin.getUserInfo", param);
     }
-       
+    
+    @Override
+    public List<Map<String, String>> getBlogCategoryList() throws SQLException {
+    	return query.selectList("com.hongdan.auto.admin.getBlogCategoryList");
+    }
+    
+    @Override
+    public int updateBlogCategory(Map<String, String> param) throws SQLException{
+    	return query.update("com.hongdan.auto.admin.updateBlogCategory",param);
+    }
+    
+    @Override
+    public int deleteBlogCategory(Map<String, String> param) throws SQLException{
+    	return query.delete("com.hongdan.auto.admin.deleteBlogCategory",param);
+    }
+           
 }
 

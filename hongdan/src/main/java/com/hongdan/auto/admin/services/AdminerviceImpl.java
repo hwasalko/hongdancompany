@@ -21,4 +21,20 @@ public class AdminerviceImpl implements AdminService {
     	return ( Map<String, String> ) adminDao.getUserInfo(param);
     }
 	
+	
+	@Override
+	public List<Map<String, String>> getBlogCategoryList() throws SQLException{
+		return adminDao.getBlogCategoryList();
+	}
+	
+	@Override
+	public int updateBlogCategory(Map<String, String> param) throws SQLException{
+		return adminDao.updateBlogCategory(param);
+	}
+	
+	@Override
+	public int deleteBlogCategory(Map<String, String> param) throws SQLException{
+		return adminDao.deleteBlogCategory(param);
+	}
+	
 }

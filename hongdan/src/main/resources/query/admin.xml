@@ -15,5 +15,41 @@
 	</select>
 	
 	
+	<select id="com.hongdan.auto.admin.getBlogCategoryList"  resultType="java.util.Map">
+		SELECT 
+			BLOG_CTG_CD,
+			BLOG_CTG_NM
+		FROM TB_BLOG_CTG_CD A
+		ORDER BY ORDER_NO ASC
+	</select>
+	
+	
+	<update id="com.hongdan.auto.admin.updateBlogCategory"  parameterType="java.util.Map" >
+	    UPDATE TB_BLOG_CTG_CD
+  		SET BLOG_CTG_NM = #{blog_category_nm}
+  		WHERE BLOG_CTG_CD = #{blog_category_cd}
+	</update>
+	
+	<delete id="com.hongdan.auto.admin.deleteBlogCategory"  parameterType="java.util.Map" >
+	    DELETE 
+	    FROM TB_BLOG_CTG_CD
+  		WHERE BLOG_CTG_CD = #{blog_category_cd}
+	</delete>
+	
+	<insert id="com.hongdan.auto.admin.insertBlogCategory"  parameterType="java.util.Map" >
+		INSERT INTO TB_BLOG_CTG_CD(
+		  BLOG_CTG_CD,
+		  BLOG_CTG_NM,
+		  REG_DDTM,
+		  ORDER_NO
+		)
+		SELECT 
+			(IFNULL(MAX(BLOG_CTG_CD), 0) +1) BLOG_CTG_CD,
+			#{blog_category_cd},
+			DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
+			(IFNULL(MAX(ORDER_NO), 0) +1) ORDER_NO
+		FROM TB_BLOG_CTG_CD
+	</insert>
+	
     
 </mapper>

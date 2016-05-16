@@ -38,7 +38,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/admin/login", method = RequestMethod.POST )
-	public String login(HttpServletRequest request,  Model model, HttpSession session) {		
+	public String login(HttpServletRequest request,  Model model, HttpSession session) throws SQLException {		
 		
 		String admin_id 					= 	request.getParameter("admin_id");
 		String admin_password 		= 	request.getParameter("admin_password");
@@ -55,12 +55,8 @@ public class AdminController {
 		
     	Map<String, String> resultMap = new HashMap<String, String>();
     	
-    	try {
-			resultMap = adminService.getUserInfo(param);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-    	
+    	resultMap = adminService.getUserInfo(param);
+		
 		if( resultMap != null && resultMap.size() > 0 ){
 			session.setAttribute("usr_nm", resultMap.get("USR_NM"));
 			session.setAttribute("usr_id", resultMap.get("ID"));
@@ -89,10 +85,50 @@ public class AdminController {
 	}
 	
 	
-	@RequestMapping(value = "/admin/setting_category" )
-	public String setting_category(HttpServletRequest request,  Model model, HttpSession session) {		
+	@RequestMapping(value = "/admin/blog_category" )
+	public String blog_category(HttpServletRequest request,  Model model, HttpSession session) throws SQLException {		
 		
-		return "admin/setting_category";
+		model.addAttribute("blogCtgList", adminService.getBlogCategoryList() );
+		
+		return "admin/blog_category";
+	}
+	
+	
+	@RequestMapping(value = "/admin/blog_category/update", method = RequestMethod.POST )
+	public String blog_category_update(HttpServletRequest request,  Model model, HttpSession session) throws SQLException {		
+		String category_cd 		= 	request.getParameter("modal_category_cd");	
+		String category_nm 		= 	request.getParameter("modal_category_nm");
+		
+		logger.debug("카테고리코드 : " +category_cd );
+		logger.debug("카테고리명 : " +category_nm );
+		
+		Map<String, String> param = new HashMap<String, String>();
+    	param.put("blog_category_cd",category_cd);
+    	param.put("blog_category_nm",category_nm);
+		
+    	logger.debug("카테고리코드 수정처리 : " + adminService.updateBlogCategory(param) );
+    	
+		model.addAttribute("blogCtgList", adminService.getBlogCategoryList());
+		model.addAttribute("msg","수정이 완료되었습니다.");
+		
+		return "admin/blog_category";
+	}
+	
+	@RequestMapping(value = "/admin/blog_category/delete", method = RequestMethod.POST )
+	public String blog_category_delete(HttpServletRequest request,  Model model, HttpSession session) throws SQLException {		
+		String category_cd 		= 	request.getParameter("modal_del_category_cd");	
+		
+		logger.debug("카테고리코드 : " +category_cd );
+		
+		Map<String, String> param = new HashMap<String, String>();
+    	param.put("blog_category_cd",category_cd);
+		
+    	logger.debug("카테고리코드 삭제처리 : " + adminService.deleteBlogCategory(param) );
+    	
+		model.addAttribute("blogCtgList", adminService.getBlogCategoryList());
+		model.addAttribute("msg","삭제가 완료되었습니다.");
+		
+		return "admin/blog_category";
 	}
 	
 	

@@ -8,5 +8,10 @@ public interface AdminDao {
 	
 	public Map<String, String> getUserInfo(Map<String, String> param) throws SQLException ;
 	
+	public List<Map<String, String>> getBlogCategoryList() throws SQLException;
+	
+	public int updateBlogCategory(Map<String, String> param) throws SQLException;
+	
+	public int deleteBlogCategory(Map<String, String> param) throws SQLException;
 
 }
