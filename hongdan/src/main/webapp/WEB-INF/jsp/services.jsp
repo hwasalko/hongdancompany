@@ -17,7 +17,7 @@
 			    <div class="container">
 			        <div class="page-title col-md-8">
 			            <h1>OUR SERVICES</h1>
-			            <span>Total Auto Care & Management</span>
+			            <span>Total Auto Care &amp; Management</span>
 			        </div>
 			    </div>
 			</section>

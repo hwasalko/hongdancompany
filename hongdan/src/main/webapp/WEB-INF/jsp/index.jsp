@@ -22,13 +22,9 @@
                 <div class="container container-fullscreen">
                     <div class="text-middle slider-content">
                         <div class="text-center text-light">
-                            <h4>Hongdan Company 1st Auto</h4>
+                        	<h4>Hongdan Company 1st Auto</h4>
                             <h1 class="text-uppercase">Hongdan Company</h1>
                             <h1 >1st Auto</h1>
-                            <i class="fa fa-cutlery"></i>
-                            <p>OPENING HOURS </p>
-                            <p>Monday - Friday: <span>08:00 A.M. - 23:00 P.M.</span></p>
-                            <p>Monday - Friday: <span>08:00 A.M. - 23:00 P.M.</span></p>
                         </div>
                     </div>
                 </div>
@@ -49,10 +45,6 @@
                         <div class="text-center text-light">
                             <h4>The Real</h4>
                             <h1 class="text-uppercase">Best Partner</h1>
-                            <p>
-                                212 Ave, Brooklyn, NewYork <br />
-                                Since January 17, 2014
-                            </p>
                         </div>
                     </div>
                 </div>
