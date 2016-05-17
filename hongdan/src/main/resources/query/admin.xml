@@ -45,7 +45,7 @@
 		)
 		SELECT 
 			(IFNULL(MAX(BLOG_CTG_CD), 0) +1) BLOG_CTG_CD,
-			#{blog_category_cd},
+			#{blog_category_nm},
 			DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
 			(IFNULL(MAX(ORDER_NO), 0) +1) ORDER_NO
 		FROM TB_BLOG_CTG_CD

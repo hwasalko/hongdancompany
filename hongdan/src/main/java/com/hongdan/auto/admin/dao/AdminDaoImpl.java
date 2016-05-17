@@ -34,6 +34,11 @@ public class AdminDaoImpl implements AdminDao {
     public int deleteBlogCategory(Map<String, String> param) throws SQLException{
     	return query.delete("com.hongdan.auto.admin.deleteBlogCategory",param);
     }
+    
+    @Override
+    public int insertBlogCategory(Map<String, String> param) throws SQLException{
+    	return query.insert("com.hongdan.auto.admin.insertBlogCategory",param);
+    }
            
 }
 

@@ -131,5 +131,22 @@ public class AdminController {
 		return "admin/blog_category";
 	}
 	
+	@RequestMapping(value = "/admin/blog_category/insert", method = RequestMethod.POST )
+	public String blog_category_insert(HttpServletRequest request,  Model model, HttpSession session) throws SQLException {		
+		String category_nm 		= 	request.getParameter("modal_insert_category_nm");	
+		
+		logger.debug("카테고리명 : " + category_nm );
+		
+		Map<String, String> param = new HashMap<String, String>();
+    	param.put("blog_category_nm",category_nm);
+		
+    	logger.debug("카테고리코드 신규등록 처리 : " + adminService.insertBlogCategory(param) );
+    	
+		model.addAttribute("blogCtgList", adminService.getBlogCategoryList());
+		model.addAttribute("msg","카테고리 신규등록이 완료되었습니다.");
+		
+		return "admin/blog_category";
+	}
+	
 	
 }

@@ -37,4 +37,9 @@ public class AdminerviceImpl implements AdminService {
 		return adminDao.deleteBlogCategory(param);
 	}
 	
+	@Override
+	public int insertBlogCategory(Map<String, String> param) throws SQLException{
+		return adminDao.insertBlogCategory(param);
+	}
+	
 }

@@ -180,7 +180,7 @@
 									                    <h4>
 									                    	<i class="fa fa-folder-open"></i> Category 
 									                    	<c:if test="${ not empty sessionScope }">
-									                    		<a href="/admin/blog_category"><span class="label label-success pull-right" ><i class="fa fa-cog" aria-hidden="true"></i></span></a>
+									                    		<a href="/admin/blog_category"><span class="label label-danger pull-right" ><i class="fa fa-cog" aria-hidden="true"></i> edit</span></a>
 									                    	</c:if>
 									                    </h4>
 									                    

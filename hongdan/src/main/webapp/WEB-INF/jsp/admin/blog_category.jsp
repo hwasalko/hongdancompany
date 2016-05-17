@@ -46,10 +46,10 @@
 							                   
 							                   <thead>
 							                   		<tr>
-									                   <th class="text-center" width="100">번호</th>
+									                   <th class="text-center" width="120">카테고리코드</th>
 									                   <th>카테고리명</th>
-									                   <th class="text-center" width="70">Edit</th>
-									                   <th class="text-center" width="70">Delete</th>
+									                   <th class="text-center" width="80">Edit</th>
+									                   <th class="text-center" width="80">Delete</th>
 								                   </tr>
 							                   </thead>
 											    <tbody>
@@ -59,10 +59,14 @@
 													    <td class="text-center" >${ctgList.BLOG_CTG_CD}</td>
 													    <td>${ctgList.BLOG_CTG_NM}</td>
 													    <td class="text-center">
-													    	<button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" style="padding: 5px 10px;" onclick="updateCtg( '${ctgList.BLOG_CTG_CD}', '${ctgList.BLOG_CTG_NM}');">수정</button>
+													    	<button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" style="padding: 5px 10px;" onclick="updateCtg( '${ctgList.BLOG_CTG_CD}', '${ctgList.BLOG_CTG_NM}');">
+													    	<i class="fa fa-pencil" aria-hidden="true"></i>
+													    	</button>
 													    </td>
 													    <td class="text-center">
-													    	<button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"  style="padding: 5px 10px;" onclick="deleteCtg('${ctgList.BLOG_CTG_CD}', '${ctgList.BLOG_CTG_NM}');">삭제</button>
+													    	<button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"  style="padding: 5px 10px;" onclick="deleteCtg('${ctgList.BLOG_CTG_CD}', '${ctgList.BLOG_CTG_NM}');">
+													    	<i class="fa fa-trash-o" aria-hidden="true"></i> 
+													    	</button>
 													    </td>
 												    </tr>
 												    </c:forEach>
@@ -74,8 +78,7 @@
 						            </div>
 						            
 						            <hr>
-						            
-						            <button class="btn btn-success btn-xs pull-right" onclick="" style="padding: 5px 10px;"><i class="fa fa-check"></i>&nbsp;신규등록</button>
+						            <button class="btn btn-success btn-xs pull-right" data-title="insert" data-toggle="modal" data-target="#insert"  style="padding: 5px 10px;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;신규등록</button>
 						            
 						        </div>
 							</div>
@@ -105,7 +108,30 @@
 						 	</form>
 						      <!-- /.modal-dialog --> 
 						 </div>
-						    
+						  
+						 
+						 <div class="modal fade" id="insert" tabindex="-1" role="dialog" aria-labelledby="insert" aria-hidden="true">
+							<form name="frm_modal_insert" id="frm_modal_insert" action="/admin/blog_category/insert" method="post">
+						      <div class="modal-dialog">
+								   <div class="modal-content">
+								          <div class="modal-header">
+									        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+									        <h4 class="modal-title custom_align" id="Heading">블로그 카테고리 신규추가</h4>
+									      </div>
+								          <div class="modal-body">
+									          <div class="form-group">
+										       		<input class="form-control " type="text" placeholder="등록을 원하는 카테고리명을 입력하세요" id="modal_insert_category_nm" name="modal_insert_category_nm" >
+										       </div>
+									      </div>
+								          <div class="modal-footer ">
+									        	<button type="submit" class="btn btn-warning btn-md" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> 신규추가</button>
+									      </div>
+								    </div>
+							    <!-- /.modal-content --> 
+							  </div>
+						 	</form>
+						      <!-- /.modal-dialog --> 
+						 </div>   
 						    
 						    
 						    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">

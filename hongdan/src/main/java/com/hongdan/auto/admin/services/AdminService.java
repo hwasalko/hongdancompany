@@ -13,5 +13,7 @@ public interface AdminService {
 	public int updateBlogCategory(Map<String, String> param) throws SQLException;
 	
 	public int deleteBlogCategory(Map<String, String> param) throws SQLException;
+	
+	public int insertBlogCategory(Map<String, String> param) throws SQLException;
 		
 }
