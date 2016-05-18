@@ -89,7 +89,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-heating5"></i>
+			                            <img class="image-icon" src="images/service/car_management.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량관리정비 프로그램 제공</h4>
@@ -104,7 +104,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-food32"></i>
+			                            <img class="image-icon" src="images/service/call.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">콜 서비스</h4>
@@ -119,7 +119,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-soup4"></i>
+			                            <img class="image-icon" src="images/service/rent-a-car.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">렌트 서비스</h4>
@@ -132,7 +132,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-pizza4"></i>
+			                            <img class="image-icon" src="images/service/buy_car.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량구입 프로그램 제공</h4>
@@ -147,7 +147,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-covered16"></i>
+			                            <img class="image-icon" src="images/service/counsult-new-car.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">신차구입상담</h4>
@@ -160,7 +160,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-plate7"></i>
+			                            <img class="image-icon" src="images/service/sell-car.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">기존차량매각</h4>
@@ -184,23 +184,23 @@
                     <div class="col-md-12">
                         <div class="chef-menu-wrapper">
                             <div class="food-menu-w3">
-                                <img alt="Menu 1" src="images/chef/food-p1.jpg">
+                                <img alt="Menu 1" src="images/main/member-vip.png">
                                 <div class="w3-menu-top">
                                     <h3>VIP회원</h3>
-                                    <h5 class="colorf">￦1,000,000</h5>
+                                    <h5 class="colorf"><i class="fa fa-krw"></i> 1,000,000</h5>
                                 </div>
                                 <div class="w3-menu-dts">차량관리정비프로그램, 콜서비스, 렌트서비스, 차량구입프로그램 제공</div>
                             </div>
                             <div class="food-menu-w3">
-                                <img alt="Menu 1" src="images/chef/food-p1.jpg">
+                                <img alt="Menu 1" src="images/main/member-year.png">
                                 <div class="w3-menu-top">
                                     <h3>연간회원</h3>
-                                    <h5 class="colorf">￦500,000</h5>
+                                    <h5 class="colorf"><i class="fa fa-krw"></i> 500,000</h5>
                                 </div>
                                 <div class="w3-menu-dts">차량관리정비프로그램, 렌트서비스, 차량구입프로그램 제공</div>
                             </div>
                             <div class="food-menu-w3">
-                                <img alt="Menu 1" src="images/chef/food-p1.jpg">
+                                <img alt="Menu 1" src="images/main/member-none.png">
                                 <div class="w3-menu-top">
                                 	<h3>비회원</h3>
                                     <h5 class="colorf">N/A</h5>

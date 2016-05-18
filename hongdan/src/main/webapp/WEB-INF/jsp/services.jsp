@@ -45,7 +45,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-heating5"></i>
+			                            <img class="image-icon" src="images/service/car_management.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량관리정비 프로그램 제공</h4>
@@ -60,7 +60,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-food32"></i>
+			                            <img class="image-icon" src="images/service/call.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">콜 서비스</h4>
@@ -75,7 +75,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-soup4"></i>
+			                            <img class="image-icon" src="images/service/rent-a-car.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">렌트 서비스</h4>
@@ -88,7 +88,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-pizza4"></i>
+			                            <img class="image-icon" src="images/service/buy_car.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량구입 프로그램 제공</h4>
@@ -103,7 +103,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-covered16"></i>
+			                            <img class="image-icon" src="images/service/counsult-new-car.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">신차구입상담</h4>
@@ -116,7 +116,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <i class="flaticon-plate7"></i>
+			                            <img class="image-icon" src="images/service/sell-car.png" >
 			                        </a>
 			                    </div>
 			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">기존차량매각</h4>

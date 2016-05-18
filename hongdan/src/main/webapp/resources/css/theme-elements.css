@@ -2963,3 +2963,8 @@ body:not(.device-lg):not(.device-md) .filter-active-title {
     width: 100%;
     z-index: 0;
 }
+
+.image-icon{
+	width : 45%;
+	margin-top : 45px;
+}
