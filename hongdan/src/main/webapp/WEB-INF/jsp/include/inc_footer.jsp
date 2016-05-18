@@ -8,13 +8,13 @@
                         <div class="widget clearfix widget-categories">
                             <h4 class="widget-title">Our Services</h4>
                             <ul class="list list-arrow-icons">
-                                <li> <a href="#" title="">차량관리정비 프로그램</a> </li>
-                                <li> <a href="#" title="">콜 서비스 </a> </li>
-                                <li> <a href="#" title="">렌트 서비스</a> </li>
-                                <li> <a href="#" title="">차량구입 프로그램</a> </li>
-                                <li> <a href="#" title="">신차구입상담</a> </li>
-                                <li> <a href="#" title="">중고차구입상담</a> </li>
-                                <li> <a href="#" title="">기존차량매각</a> </li>
+                                <li> <a href="/services" >차량관리정비 프로그램</a> </li>
+                                <li> <a href="/services" >콜 서비스 </a> </li>
+                                <li> <a href="/services" >렌트 서비스</a> </li>
+                                <li> <a href="/services" >차량구입 프로그램</a> </li>
+                                <li> <a href="/services" >신차구입상담</a> </li>
+                                <li> <a href="/services" >중고차구입상담</a> </li>
+                                <li> <a href="/services" >기존차량매각</a> </li>
                             </ul>
                         </div>
                     </div>
@@ -32,57 +32,28 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <h4 class="widget-title">Opening Times</h4>
+                        <h4 class="widget-title">PRICE</h4>
                         <ul class="list list-arrow-icons">
-                            <li>
-                                <p>Monday
-                                    <time datetime="00:01">1 pm - 10 pm</time>
-                                </p>
-                            </li>
-                            <li>
-                                <p>Tuesday
-                                    <time datetime="00:01">1 pm - 10 pm</time>
-                                </p>
-                            </li>
-                            <li>
-                                <p>Wednesday
-                                    <time datetime="00:01">1 pm - Midnight</time>
-                                </p>
-                            </li>
-                            <li>
-                                <p>Thursday
-                                    <time datetime="00:01">1 pm - 10 pm</time>
-                                </p>
-                            </li>
-                            <li>
-                                <p>Friday
-                                    <time datetime="00:01">1 pm - Midnight</time>
-                                </p>
-                            </li>
-                            <li>
-                                <p>Saturday <span class="label label-default">Closed</span></p>
-                            </li>
-                            <li>
-                                <p>Sunday
-                                    <time datetime="00:01">1 pm - 10 pm</time>
-                                </p>
-                            </li>
+                            <li><p><a href="/price/car_management_total">차량관리서비스 전체</a></p></li>
+                            <li><p><a href="/price/car_management_table">차량관리서비스 Table</a></p></li>
+                            <li><p><a href="/price/car_management_each">차량관리서비스 회원별</a></p></li>
                         </ul>
                     </div>
+                    
                     <div class="col-md-3">
                         <div class="widget clearfix widget-contact-us">
                             <h4 class="widget-title">Contact us</h4>
+                            
+                            <p><img src="images/main/kakao_logo.png" width="20">&nbsp;&nbsp;<strong>카카오톡ID :</strong> <strong class="text-warning">hongdan</strong></p>
                             <ul class="list-large list-icons">
                                 <li><i class="fa fa-map-marker"></i>
                                     <strong>Address:</strong> 서울특별시 동작구 흑석동
                                     <br>홍단빌딩 202호</li>
                                 <li><i class="fa fa-phone"></i><strong>Phone:</strong> 010-1234-5678 </li>
-                                <li><i class="fa fa-clock-o"></i>Monday - Friday: <strong>08:00 - 22:00</strong>
-                                    <br>Saturday, Sunday: <strong>Closed</strong>
-                                </li>
                             </ul>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
