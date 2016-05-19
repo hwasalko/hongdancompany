@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ContactController {
 		
 	
-	@RequestMapping(value = "/contact")
+	@RequestMapping(value = "/membership")
 	public String about(HttpServletRequest request,  Model model) {		
 		
-		return "contact";
+		return "membership";
 	}	
 	
 }

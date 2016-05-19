@@ -17,12 +17,6 @@
 				font-size: 11pt;
 			}
 			
-			.tb_title_bottom{
-				font-weight: bold;
-				color: red;
-				font-size: 12pt;
-			}
-			
 					
 			/* table CSS */
 			.custab{
@@ -147,11 +141,11 @@
 							    <table class="table table-condensed" >
 									    
 									    <thead>
-										        <tr class="success" style=" padding :5px 0 5px 0;">
-										            <th class="text-center" style="width: 50%; font-size: 12pt; font-weight: bold;">서비스</th>
-										            <th class="text-center" style="font-size: 14pt; font-weight: bold;"><span class="label label-success">비회원</span></th>
-										            <th class="text-center" style="font-size: 14pt; font-weight: bold;"><span class="label label-success">연간회원</span></th>
-										            <th class="text-center" style="font-size: 14pt; font-weight: bold;"><span class="label label-success">VIP</span></th>
+										        <tr style=" padding :5px 0 5px 0; background-color: #333; border-bottom-style: double; border-bottom-color: #fff;" >
+										            <th class="text-center" style="width: 50%; color: #fff; font-size:13pt; font-weight: bold; border-style: dotted; border-width: 1px 1px 0 1px; border-color: #fff;">제공 서비스</th>
+										            <th class="text-center" style="color: #fff; font-size:13pt; font-weight: bold; border-style: dotted; border-width: 1px 1px 0 1px; border-color: #fff;">비회원</th>
+										            <th class="text-center " style="color: #fff; font-size: 13pt; font-weight: bold; border-style: dotted; border-width: 1px 1px 0 1px; border-color: #fff;">연간회원</th>
+										            <th class="text-center " style="color: #fff; font-size: 13pt; font-weight: bold; border-style: dotted; border-width: 1px 1px 0 1px; border-color: #fff;">VIP</th>
 										        </tr>
 									    </thead>
 									    
@@ -323,15 +317,12 @@
 							                <td class="text-center" style="vertical-align: middle; color : green;"><i class="glyphicon glyphicon-ok txt-green"></i><br><font color="black"><small>수수료 30만원</small></font></td>
 							                <td class="text-center" style="vertical-align: middle; color : green;"><i class="glyphicon glyphicon-ok txt-green"></i><br><font color="black"><small>무제한</small></font></td>
 							            </tr>
-							            
-							            <tr class="warning" style="border-top-style: double; ">
-							                <td class="tb_title_bottom text-center">
-							                	연간 회원가
-							                </td>
-							                <td class="tb_title_bottom text-center"><span class="label label-danger">N/A</span></td>
-							                <td class="tb_title_bottom text-center"><span class="label label-danger">50만원</span></td>
-							                <td class="tb_title_bottom text-center"><span class="label label-danger">100만원</span></td>
-							            </tr>
+							            <tr style="border-top-style: double; height: 40pt;" >
+								            <td class="text-center text-danger" style="width: 50%; font-size: 13pt; font-weight: bold; background-color: #fff">연간 회원가</td>
+								            <td class="text-center" style="font-size: 15pt; font-weight: bold;"><span class="label label-danger">N/A</span></td>
+							                <td class="text-center" style="font-size: 15pt; font-weight: bold;"><span class="label label-danger">50만원</span></td>
+							                <td class="text-center" style="font-size: 15pt; font-weight: bold;"><span class="label label-danger">100만원</span></td>
+								        </tr>
 							            
 							            
 							    </table>

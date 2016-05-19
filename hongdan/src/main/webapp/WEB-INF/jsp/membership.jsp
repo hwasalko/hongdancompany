@@ -16,8 +16,8 @@
 			    <section class="menu-top-banner background-2 page-title-center">
 			        <div class="container">
 			            <div class="page-title col-md-8">
-			                <h1>Contact Us</h1>
-			                <span>Get in touch</span>
+			                <h1>Membership</h1>
+			                <span>멤버쉽 가입 신청</span>
 			            </div>
 			        </div>
 			    </section>
@@ -26,8 +26,8 @@
 			        <div class="container">
 			            <div class="row">
 			                <div class="col-md-6">
-			                    <h3 class="text-uppercase">Get In Touch</h3>
-			                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum porttitor cursus. Duis nec nulla turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada fermentum bibendum.</p>
+			                    <h3 class="text-uppercase">멤버쉽 가입 신청</h3>
+			                    <p>아래 내용을 입력 후 신청해주시면 멤버쉽 가입을 위한 안내전화를 드립니다.</p>
 			                    <div class="m-t-30">
 			                        <div id="contact-form-result" class="alert alert-success fade in" role="alert">
 			                            <a href="#" class="close" data-dismiss="alert">&times;</a> We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible.</div>
@@ -35,37 +35,37 @@
 			                            <div class="row">
 			                                <div class="col-md-6">
 			                                    <div class="form-group">
-			                                        <label for="name">Your Name</label>
-			                                        <input type="text" class="form-control required" name="senderName" placeholder="Enter name" id="name" aria-required="true" required>
+			                                        <label for="name">이름</label>
+			                                        <input type="text" class="form-control required" name="senderName" placeholder="이름을 입력하세요" id="name" aria-required="true" required>
 			                                    </div>
 			                                </div>
 			                                <div class="col-md-6">
 			                                    <div class="form-group">
-			                                        <label for="email">Your Email</label>
-			                                        <input type="email" class="form-control" id="email" name="senderEmail" placeholder="Email" required>
+			                                        <label for="email">Email</label>
+			                                        <input type="email" class="form-control" id="email" name="senderEmail" placeholder="Email 주소를 입력하세요" required>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                            <div class="row">
 			                                <div class="col-md-12">
 			                                    <div class="form-group">
-			                                        <label for="subject">Your Subject</label>
-			                                        <input type="text" class="form-control required" name="senderSubject" placeholder="Enter Subject" id="subject" required>
+			                                        <label for="subject">연락처</label>
+			                                        <input type="text" class="form-control required" name="senderSubject" placeholder="연락받을 번호를 입력하세요" id="subject" required>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                            <div class="row">
 			                                <div class="col-md-12">
 			                                    <div class="form-group">
-			                                        <label for="comment">Your comment</label>
-			                                        <textarea class="form-control required" name="senderMessage" rows="9" placeholder="Enter comment" id="comment" required></textarea>
+			                                        <label for="comment">신청내용</label>
+			                                        <textarea class="form-control required" name="senderMessage" rows="5" placeholder="신청내용을 입력하세요" id="comment" required></textarea>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                            <div class="row">
 			                                <div class="col-md-12">
 			                                    <div class="form-group text-center">
-			                                        <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+			                                        <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"></i>&nbsp;신청</button>
 			                                    </div>
 			                                </div>
 			                            </div>

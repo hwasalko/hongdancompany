@@ -55,15 +55,17 @@
 	                            
 	                            <li class="dropdown"> <a href="#">Price <i class="fa fa-angle-down"></i> </a>
 	                                <ul class="dropdown-menu">
-	                                    <li> <a href="/price/car_management_total">차량관리서비스(전체)</a> </li>
-	                                    <li> <a href="/price/car_management_table">차량관리서비스(Table)</a> </li>
+	                                    <!-- <li> <a href="/price/car_management_total">차량관리서비스(전체)</a> </li> -->
+	                                    <li> <a href="/price/car_management_table">차량관리서비스(전체)</a> </li>
 	                                    <li> <a href="/price/car_management_each">차량관리서비스(회원별)</a> </li>
 	                                </ul>
 	                            </li>
-	                                
-	                            <li class="dropdown"> <a href="/reservation" class="nav-to">Reservation</a> </li>
 	                            
-	                            <li class="dropdown"> <a href="/contact" class="nav-to">Contact us</a></li>
+	                            <!--     
+	                            <li class="dropdown"> <a href="/reservation" class="nav-to">Reservation</a> </li>
+	                             -->
+	                             
+	                            <li class="dropdown"> <a href="/membership" class="nav-to">Membership</a></li>
 	                            
 	                            <c:if test="${not empty sessionScope}" >
 	                            <li class="dropdown">	

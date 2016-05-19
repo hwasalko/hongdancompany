@@ -44,12 +44,10 @@
                         <div class="widget clearfix widget-contact-us">
                             <h4 class="widget-title">Contact us</h4>
                             
-                            <p><img src="images/main/kakao_logo.png" width="20">&nbsp;&nbsp;<strong>카카오톡ID :</strong> <strong class="text-warning">hongdan</strong></p>
+                            <p><img src="/images/main/kakao_logo.png" width="20">&nbsp;&nbsp;<strong>카카오톡ID :</strong> <strong class="text-info">hongdan</strong></p>
                             <ul class="list-large list-icons">
-                                <li><i class="fa fa-map-marker"></i>
-                                    <strong>Address:</strong> 서울특별시 동작구 흑석동
-                                    <br>홍단빌딩 202호</li>
-                                <li><i class="fa fa-phone"></i><strong>Phone:</strong> 010-1234-5678 </li>
+                                <li><i class="fa fa-phone"></i><strong>Phone : </strong> <strong class="text-info">010-1234-5678</strong> </li>
+                                <li><i class="fa fa-envelope-o"></i><strong>Email : </strong> <strong class="text-info">jwhongdan@naver.com</strong></li>
                             </ul>
                         </div>
                     </div>
