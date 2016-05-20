@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.hongdan.auto.admin.dao.AdminDao;
 
 @Service
-public class AdminerviceImpl implements AdminService {
+public class AdminServiceImpl implements AdminService {
     
 	@Autowired
     private AdminDao adminDao;

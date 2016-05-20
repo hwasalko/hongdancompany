@@ -137,7 +137,8 @@
 			        <div class="row clients-carousel carousel-description-clients carousel-description-style ">
 			            <div class="col-md-4">
 			                <div class="description">
-			                    <h2>Our Clients</h2> Aliquam enim enim, pharetra in sodales at, interdum sit amet dui. Nullam vulputate euis od urna non pharetra. Phasellus bland matt is ipsum, ac laoreet lorem lacinia et. interum sit amet dui.
+			                    <h2>협력업체 <small>Best Partner</small></h2> 
+			                    항상 최상의 서비스를 약속하는 Hongdan Company의 협력업체를 소개합니다.
 			                </div>
 			            </div>
 			            <div class="col-md-8">

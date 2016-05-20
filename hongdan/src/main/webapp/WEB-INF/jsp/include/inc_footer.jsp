@@ -34,8 +34,7 @@
                     <div class="col-md-3">
                         <h4 class="widget-title">PRICE</h4>
                         <ul class="list list-arrow-icons">
-                            <li><p><a href="/price/car_management_total">차량관리서비스 전체</a></p></li>
-                            <li><p><a href="/price/car_management_table">차량관리서비스 Table</a></p></li>
+                            <li><p><a href="/price/car_management_table">차량관리서비스 전체</a></p></li>
                             <li><p><a href="/price/car_management_each">차량관리서비스 회원별</a></p></li>
                         </ul>
                     </div>
@@ -47,7 +46,7 @@
                             <p><img src="/images/main/kakao_logo.png" width="20">&nbsp;&nbsp;<strong>카카오톡ID :</strong> <strong class="text-info">hongdan</strong></p>
                             <ul class="list-large list-icons">
                                 <li><i class="fa fa-phone"></i><strong>Phone : </strong> <strong class="text-info">010-1234-5678</strong> </li>
-                                <li><i class="fa fa-envelope-o"></i><strong>Email : </strong> <strong class="text-info">jwhongdan@naver.com</strong></li>
+                                <li><i class="fa fa-envelope-o"></i><strong>Email : </strong> <strong class="text-info"><a href="mailto:jwhongdan@naver.com">jwhongdan@naver.com</a></strong></li>
                             </ul>
                         </div>
                     </div>

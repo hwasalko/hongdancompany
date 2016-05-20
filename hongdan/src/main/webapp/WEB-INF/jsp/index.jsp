@@ -67,8 +67,8 @@
                     <img class="img-responsive" src="images/food2.jpg" alt="Girl">
                 </div>
                 <div class="col-md-6 col-sm-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam dolor, tincidunt sit amet imperdiet viverra, accumsan at sem. Integer felis enim, aliquam id blandit ut, imperdiet vel nulla. Pellentesque et ex blandit, vehicula dui nec, facilisis magna. Mauris scelerisque ipsum sit amet vulputate lobortis. Duis blandit, nibh ac posuere placerat, mi leo pellentesque arcu, ac dictum odio lorem a purus. Etiam ac ipsum eu dolor eleifend feugiat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam dolor, tincidunt sit amet imperdiet viverra, accumsan at sem. Integer felis enim, aliquam id blandit ut, imperdiet vel nulla. Pellentesque et ex blandit, vehicula dui nec, facilisis magna. Mauris scelerisque ipsum sit amet vulputate lobortis. Duis blandit, nibh ac posuere placerat, mi leo pellentesque arcu, ac dictum odio lorem a purus. Etiam ac ipsum eu dolor eleifend feugiat.</p>
+                    <p>안녕하세요....안녕하세요....안녕하세요....안녕하세요....안녕하세요....안녕하세요....안녕하세요....안녕하세요....안녕하세요....</p>
+                    <p>Hongdan Company에 오신걸 환영합니다.Hongdan Company에 오신걸 환영합니다.Hongdan Company에 오신걸 환영합니다.Hongdan Company에 오신걸 환영합니다.Hongdan Company에 오신걸 환영합니다.</p>
                     <a href="/about" class="button border rounded red"><strong>More About US</strong></a>
                 </div>
             </div>
@@ -88,85 +88,61 @@
 			            <div class="col-md-4">
 			                <div class="icon-box medium">
 			                    <div class="icon">
-			                        <a href="#">
+			                        <a href="/services">
 			                            <img class="image-icon" src="images/service/car_management.png" >
 			                        </a>
 			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량관리정비 프로그램 제공</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	40가지 정기점검정비, 실내외 손세차 <br>
-			                    	엔진클리닝 / 외장 잔기스 관리<br>
-			                    	워셔액 / 부동액 보충 등 점검 등
-			                    </p>
+			                    <h5 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량관리정비 프로그램 제공</h5>
 			                </div>
 			            </div>
 			            <div class="col-md-4">
 			                <div class="icon-box medium">
 			                    <div class="icon">
-			                        <a href="#">
+			                        <a href="/services">
 			                            <img class="image-icon" src="images/service/call.png" >
 			                        </a>
 			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">콜 서비스</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	사고 및 보험견적 / 수리 / 정비튜닝<br>
-			                    	휠/타이어 업그레이드, A/V장착, 썬팅/광택<br>
-			                    	A/V장착 / 썬팅 / 광택
-			                    </p>
+			                    <h5 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">콜 서비스</h5>
 			                </div>
 			            </div>
 			            <div class="col-md-4">
 			                <div class="icon-box medium">
 			                    <div class="icon">
-			                        <a href="#">
+			                        <a href="/services">
 			                            <img class="image-icon" src="images/service/rent-a-car.png" >
 			                        </a>
 			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">렌트 서비스</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	당일 차량정비에 한하여 렌트제공<br><br><br>
-			                    </p>
+			                    <h5 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">렌트 서비스</h5>
 			                </div>
 			            </div>
 			            <div class="col-md-4">
 			                <div class="icon-box medium">
 			                    <div class="icon">
-			                        <a href="#">
+			                        <a href="/services">
 			                            <img class="image-icon" src="images/service/buy_car.png" >
 			                        </a>
 			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량구입 프로그램 제공</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	메이커 별 차량정보 컨설팅 및 시승<br>
-			                    	구입 전과정 비교견적<br>
-			                    	최대할인 및 신차검수
-			                    </p>
+			                    <h5 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량구입 프로그램 제공</h5>
 			                </div>
 			            </div>
 			            <div class="col-md-4">
 			                <div class="icon-box medium">
 			                    <div class="icon">
-			                        <a href="#">
+			                        <a href="/services">
 			                            <img class="image-icon" src="images/service/counsult-new-car.png" >
 			                        </a>
 			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">신차구입상담</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	1:!상담 차량구입관련 컨설팅<br><br><br>
-			                    </p>
+			                    <h5 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">신차구입상담</h5>
 			                </div>
 			            </div>
 			            <div class="col-md-4">
 			                <div class="icon-box medium">
 			                    <div class="icon">
-			                        <a href="#">
+			                        <a href="/services">
 			                            <img class="image-icon" src="images/service/sell-car.png" >
 			                        </a>
 			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">기존차량매각</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	점검 및 매각 전과정 컨설팅 및 상담<br><br><br>
-			                    </p>
+			                    <h5 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">기존차량매각</h5>
 			                </div>
 			            </div>
 			        </div>

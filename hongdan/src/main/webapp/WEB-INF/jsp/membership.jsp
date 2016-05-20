@@ -31,66 +31,55 @@
 			                    <div class="m-t-30">
 			                        <div id="contact-form-result" class="alert alert-success fade in" role="alert">
 			                            <a href="#" class="close" data-dismiss="alert">&times;</a> We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible.</div>
-			                            <form id="contact-form" name="contact-form" action="#" method="post">
-			                            <div class="row">
-			                                <div class="col-md-6">
-			                                    <div class="form-group">
-			                                        <label for="name">이름</label>
-			                                        <input type="text" class="form-control required" name="senderName" placeholder="이름을 입력하세요" id="name" aria-required="true" required>
-			                                    </div>
-			                                </div>
-			                                <div class="col-md-6">
-			                                    <div class="form-group">
-			                                        <label for="email">Email</label>
-			                                        <input type="email" class="form-control" id="email" name="senderEmail" placeholder="Email 주소를 입력하세요" required>
-			                                    </div>
-			                                </div>
-			                            </div>
-			                            <div class="row">
-			                                <div class="col-md-12">
-			                                    <div class="form-group">
-			                                        <label for="subject">연락처</label>
-			                                        <input type="text" class="form-control required" name="senderSubject" placeholder="연락받을 번호를 입력하세요" id="subject" required>
-			                                    </div>
-			                                </div>
-			                            </div>
-			                            <div class="row">
-			                                <div class="col-md-12">
-			                                    <div class="form-group">
-			                                        <label for="comment">신청내용</label>
-			                                        <textarea class="form-control required" name="senderMessage" rows="5" placeholder="신청내용을 입력하세요" id="comment" required></textarea>
-			                                    </div>
-			                                </div>
-			                            </div>
-			                            <div class="row">
-			                                <div class="col-md-12">
-			                                    <div class="form-group text-center">
-			                                        <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"></i>&nbsp;신청</button>
-			                                    </div>
-			                                </div>
-			                            </div>
-			                        </form>
+			                            <form id="membershipFrm" name="membershipFrm"  method="post" action="/membership/insert" onsubmit="return false;">
+				                            <div class="row">
+				                                <div class="col-md-6">
+				                                    <div class="form-group">
+				                                        <label for="name">이름 <span class="text-danger">*</span></label>
+				                                        <input type="text" class="form-control required" name="appl_nm" id="appl_nm"  placeholder="이름을 입력하세요" aria-required="true" maxlength="50" required>
+				                                    </div>
+				                                </div>
+				                                <div class="col-md-6">
+				                                    <div class="form-group">
+				                                        <label for="subject">연락처 <span class="text-danger">*</span></label>
+				                                        <input type="tel" class="form-control required" name="appl_hp" id="appl_hp" placeholder="연락받을 번호를 입력하세요"  maxlength="13" required>
+				                                    </div>
+				                                </div>
+				                            </div>
+				                            <div class="row">
+				                                <div class="col-md-12">
+				                                    <div class="form-group">
+				                                    	<label for="email">Email</label>
+				                                        <input type="email" class="form-control" name="appl_email" id="appl_email" placeholder="Email 주소를 입력하세요" maxlength="50">
+				                                    </div>
+				                                </div>
+				                            </div>
+				                            <div class="row">
+				                                <div class="col-md-12">
+				                                    <div class="form-group">
+				                                        <label for="comment">전달내용</label>
+				                                        <textarea class="form-control required" name="appl_comment" id="appl_comment"  rows="5" placeholder="신청 시 전달할 내용을 입력하세요"  maxlength="1000"></textarea>
+				                                    </div>
+				                                </div>
+				                            </div>
+				                            <div class="row">
+				                                <div class="col-md-12">
+				                                    <div class="form-group text-center">
+				                                        <button class="btn btn-primary" type="submit" onclick="javascript:apply();"><i class="fa fa-paper-plane"></i>&nbsp;신청</button>
+				                                    </div>
+				                                </div>
+				                            </div>
+			                        	</form>
 			                    </div>
 			                </div>
 			                <div class="col-md-6">
-			                    <h3 class="text-uppercase">Address & Map</h3>
-			                    <div class="row">
-			                        <div class="col-md-6">
-			                            <address>
-			                                <strong>Polo, Inc.</strong><br>
-			                                795 Folsom Ave, Suite 600<br>
-			                                San Francisco, CA 94107<br>
-			                                <abbr title="Phone">P:</abbr> (123) 456-7890
-			                            </address>
-			                        </div>
-			                        <div class="col-md-6">
-			                            <address>
-			                                <strong>Polo Office</strong><br>
-			                                795 Folsom Ave, Suite 600<br>
-			                                San Francisco, CA 94107<br>
-			                                <abbr title="Phone">P:</abbr> (123) 456-7890
-			                            </address>
-			                        </div>
+			                    <div class="row" style="padding-left: 20px;">
+			                    	<h4>연락처</h4>
+	                        		<p>
+		                        		<img src="/images/main/kakao_logo.png" width="20">&nbsp;&nbsp;<strong>카카오톡ID :</strong> <strong class="text-info">hongdan</strong><br>
+			                            <i class="fa fa-phone"></i> <strong>Phone : </strong> <strong class="text-info">010-1234-5678</strong><br>
+			                            <i class="fa fa-envelope-o"></i> <strong>Email : </strong> <span class="text-info"><a href="mailto:jwhongdan@naver.com">jwhongdan@naver.com</a></span>
+		                            </p>
 			                    </div>
 			                </div>
 			            </div>
@@ -102,6 +91,45 @@
 		  	</div>
 		 
 			<jsp:include page="/WEB-INF/jsp/include/inc_footer2.jsp"  />
+		  
+		  
+		  
+		  	<script type="text/javascript">
+		  	
+				 	// validation
+					function check(){
+						
+						var result = true;
+						
+						if( $("#appl_nm").val() == '' ){
+							alert( "이름을 입력하세요" );
+							$("#appl_nm").focus();
+							result = false;
+							return false;
+						}
+						
+						if( $("#appl_hp").val() == '' ){
+							alert( "연락처를 입력하세요" );
+							$("#appl_hp").focus();
+							result = false;
+							return false;
+						}
+						
+						return result;
+					}
+				 	
+					//  신청 버튼 클릭 시 
+					function apply() {
+						
+						if(check()){
+							$("#membershipFrm").attr("onsubmit", "true");
+							//$("#membershipFrm").submit();
+						}
+						
+					}
+		  	
+		  	</script>
+		  
 		  
 		</body>
 		

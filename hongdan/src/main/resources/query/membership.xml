@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongdan.auto.membership">
+
+	<insert id="com.hongdan.auto.membership.insertMembershipApply"  parameterType="java.util.Map" >
+		INSERT INTO TB_MEMBERSHIP_APPLY(
+	    	APPL_NO,
+	    	APPL_NM,
+	    	APPL_HP,
+	    	APPL_EMAIL,
+	    	APPL_COMMENT,
+	    	REG_DDTM,
+	    	REG_IP
+	    )
+		SELECT 
+			(IFNULL(MAX(APPL_NO), 0) +1) APPL_NO,
+			#{appl_nm},
+		    #{appl_hp},
+		    #{appl_email},
+		    #{appl_comment},
+		    DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
+		    #{reg_ip}
+		FROM TB_MEMBERSHIP_APPLY
+	</insert>
+	
+    
+</mapper>
