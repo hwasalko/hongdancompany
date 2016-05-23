@@ -53,6 +53,15 @@ public class BlogController {
 	 * 블로그 목록 호출 시 첫번째 페이지 호출하도록 redirect
 	 * @return
 	 */
+	@RequestMapping(value = "/blog", method = RequestMethod.GET )
+	public String blogGoFirst(){
+	    return "redirect:/blog/list/1";
+	}
+	
+	/**
+	 * 블로그 목록 호출 시 첫번째 페이지 호출하도록 redirect
+	 * @return
+	 */
 	@RequestMapping(value = "/blog/list", method = RequestMethod.GET )
 	public String blogListGoFirst(){
 	    return "redirect:/blog/list/1";
