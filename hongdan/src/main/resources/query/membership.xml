@@ -23,5 +23,18 @@
 		FROM TB_MEMBERSHIP_APPLY
 	</insert>
 	
+	<select id="com.hongdan.auto.membership.getMembershipApplyList"  resultType="java.util.Map">
+		SELECT 
+		  	APPL_NO,
+			APPL_NM,
+			APPL_HP,
+			APPL_EMAIL,
+			APPL_COMMENT,
+			DATE_FORMAT(REG_DDTM, '%Y-%m-%d') REG_DDTM,
+			REG_IP
+		FROM TB_MEMBERSHIP_APPLY
+		ORDER BY APPL_NO DESC
+	</select>
+	
     
 </mapper>

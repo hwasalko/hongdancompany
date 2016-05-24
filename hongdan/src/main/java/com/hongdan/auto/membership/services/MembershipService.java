@@ -7,5 +7,7 @@ import java.util.Map;
 public interface MembershipService {
 	
 	public int insertMembershipApply(Map<String, String> param) throws SQLException;
+	
+	public List<Map<String, String>> getMembershipApplyList() throws SQLException;
 		
 }

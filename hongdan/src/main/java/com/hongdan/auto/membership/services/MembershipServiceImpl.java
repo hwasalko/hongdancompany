@@ -22,4 +22,9 @@ public class MembershipServiceImpl implements MembershipService {
 		return membershipDao.insertMembershipApply(param);
 	}
 	
+	@Override
+	public List<Map<String, String>> getMembershipApplyList() throws SQLException{
+		return membershipDao.getMembershipApplyList();
+	}
+	
 }

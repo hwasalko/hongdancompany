@@ -131,7 +131,8 @@
 			        
 			    </div>
 			</section>
-			
+
+<!-- 			
 			<section class="background-grey">
 			    <div class="container">
 			        <div class="row clients-carousel carousel-description-clients carousel-description-style ">
@@ -188,7 +189,8 @@
 			        </div>
 			    </div>
 			</section>
-		
+ -->
+ 		
 			<jsp:include page="/WEB-INF/jsp/include/inc_footer.jsp"  />
 		
 		</div>

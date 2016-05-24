@@ -55,6 +55,7 @@
         </div>
     </section>
 
+<!-- 
     <section class="background-grey">
         <div class="container">
             <div class="heading heading-center">
@@ -149,8 +150,9 @@
             </div>
         </div>
     </section>
+ -->
 
-    <section class="p-b-10">
+	<section class="background-grey">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -163,8 +165,8 @@
                 <div class="col-md-6">
                     <div class="heading heading text-left">
                         <h2>Our Vision</h2>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum volutpat quis. Suspendisse consectetur fringilla luctus. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor. </span>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum volutpat quis. Suspendisse consectetur fringilla luctus. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor. </span>
+                        <span>우리의 비전은 .... 우리의 비전은 .... 우리의 비전은 ....우리의 비전은 ....우리의 비전은 ....우리의 비전은 ....</span>
+                        <span>우리의 비전은 ....우리의 비전은 ....우리의 비전은 ....우리의 비전은 ....우리의 비전은 ....우리의 비전은 ....우리의 비전은 ....우리의 비전은 ....우리의 비전은 ....</span>
                     </div>
                 </div>
             </div>

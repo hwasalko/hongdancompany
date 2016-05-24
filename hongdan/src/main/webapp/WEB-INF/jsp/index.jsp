@@ -192,6 +192,8 @@
         </div>
     </section>
 
+
+<!-- 
     <section class="parallax p-t-100 p-b-100">
         <div class="container">
             <div class="heading heading-center m-b-40" data-animation="fadeInUp">
@@ -223,10 +225,10 @@
             </div>
         </div>
     </section>
+ -->
 
 
-
-
+<!-- 
     <section class="background-grey p-b-40">
        <div class="container">
             <div class="heading heading-center">
@@ -313,7 +315,7 @@
             </div>
        </div>
     </section>
-
+ -->
 
 	<jsp:include page="/WEB-INF/jsp/include/inc_footer.jsp"  />
     

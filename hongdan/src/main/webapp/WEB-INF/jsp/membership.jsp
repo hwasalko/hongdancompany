@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="kr">
@@ -58,7 +59,7 @@
 				                                <div class="col-md-12">
 				                                    <div class="form-group">
 				                                        <label for="comment">전달내용</label>
-				                                        <textarea class="form-control required" name="appl_comment" id="appl_comment"  rows="5" placeholder="신청 시 전달할 내용을 입력하세요"  maxlength="1000"></textarea>
+				                                        <textarea class="form-control required" name="appl_comment" id="appl_comment"  rows="2" placeholder="신청 시 전달할 내용을 입력하세요"  maxlength="1000"></textarea>
 				                                    </div>
 				                                </div>
 				                            </div>
@@ -70,9 +71,40 @@
 				                                </div>
 				                            </div>
 			                        	</form>
+			                        	
+			                        <strong><mark># 신청현황</mark></strong>
+			            			<table class="table table-condensed table-striped table-hover">
+	                        			<thead>
+	                        				<tr class="text-success" style="border-top-style: dotted; border-top-width: 1px;">
+		                        				<th class="text-center">번호</th>
+		                        				<th class="text-center">이름</th>
+		                        				<th class="text-center">연락처</th>
+		                        				<th class="text-center">이메일</th>
+		                        				<th class="text-center">신청일</th>
+		                        			</tr>	
+	                        			</thead>
+	                        			<tbody>
+	                        			
+		                        			<c:forEach var="list" items="${membershipApplyList }">
+		                        			
+		                        				<tr title="[전달내용] ${list.APPL_COMMENT}">
+		                        					<td class="text-center">${list.APPL_NO}</td>
+		                        					<td class="text-center">${list.APPL_NM}</td>
+		                        					<td class="text-center">${list.APPL_HP}</td>
+		                        					<td class="text-center">${list.APPL_EMAIL}</td>
+		                        					<td class="text-center">${list.REG_DDTM}</td>
+		                        				</tr>
+		                        				
+		                        			</c:forEach>
+		                        				
+	                        			</tbody>
+	                        		</table>
+	                        		<hr style="padding-bottom: 50px;">
+	                        		
 			                    </div>
 			                </div>
 			                <div class="col-md-6">
+			                    
 			                    <div class="row" style="padding-left: 20px;">
 			                    	<h4>연락처</h4>
 	                        		<p>
@@ -81,8 +113,12 @@
 			                            <i class="fa fa-envelope-o"></i> <strong>Email : </strong> <span class="text-info"><a href="mailto:jwhongdan@naver.com">jwhongdan@naver.com</a></span>
 		                            </p>
 			                    </div>
+			                    
 			                </div>
 			            </div>
+			            
+			            
+			            
 			        </div>
 			    </section>
 		

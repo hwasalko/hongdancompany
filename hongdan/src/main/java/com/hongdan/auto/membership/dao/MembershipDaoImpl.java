@@ -19,6 +19,11 @@ public class MembershipDaoImpl implements MembershipDao {
     public int insertMembershipApply(Map<String, String> param) throws SQLException{
     	return query.insert("com.hongdan.auto.membership.insertMembershipApply",param);
     }
+    
+    @Override
+    public List<Map<String, String>> getMembershipApplyList() throws SQLException{
+    	return query.selectList("com.hongdan.auto.membership.getMembershipApplyList");
+    }
            
 }
 

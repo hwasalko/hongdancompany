@@ -30,7 +30,9 @@ public class MembershipController {
 	private MembershipService membershipService;
 	
 	@RequestMapping(value = "/membership" , method = RequestMethod.GET )
-	public String membership(HttpServletRequest request,  Model model) {		
+	public String membership(HttpServletRequest request,  Model model) throws SQLException {		
+		
+		model.addAttribute("membershipApplyList", membershipService.getMembershipApplyList() );
 		
 		return "membership";
 	}	
@@ -66,6 +68,8 @@ public class MembershipController {
 		}else{
 			model.addAttribute("msg","신청이 정상 처리되지 않았습니다. 담당자에게 문의하세요~!");
 		}
+		
+		model.addAttribute("membershipApplyList", membershipService.getMembershipApplyList() );
 		
 		return "membership";
 	}	
