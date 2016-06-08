@@ -47,9 +47,9 @@
 	                        	
 	                            <li class="dropdown"><a href="/" class="nav-to">Home</a></li>
 	                            
-	                            <li class="dropdown"> <a href="/about" class="nav-to">About</a> </li>
+	                            <li class="dropdown"> <a href="/blog" class="nav-to">Blog</a> </li>
 	                            
-	                            <li class="dropdown"> <a href="/blog/list" class="nav-to">Blog</a> </li>
+	                            <li class="dropdown"> <a href="/about" class="nav-to">About</a> </li>
 	                            
 	                            <li class="dropdown"> <a href="/services" class="nav-to">Service</a> </li>
 	                            
