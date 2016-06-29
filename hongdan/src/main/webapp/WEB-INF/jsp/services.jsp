@@ -48,55 +48,7 @@
 			                            <img class="image-icon" src="images/service/car_management.png" >
 			                        </a>
 			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량관리정비 프로그램 제공</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	40가지 정기점검정비, 실내외 손세차 <br>
-			                    	엔진클리닝 / 외장 잔기스 관리<br>
-			                    	워셔액 / 부동액 보충 등 점검 등
-			                    </p>
-			                </div>
-			            </div>
-			            <div class="col-md-4">
-			                <div class="icon-box medium">
-			                    <div class="icon">
-			                        <a href="#">
-			                            <img class="image-icon" src="images/service/call.png" >
-			                        </a>
-			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">콜 서비스</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	사고 및 보험견적 / 수리 / 정비튜닝<br>
-			                    	휠/타이어 업그레이드, A/V장착, 썬팅/광택<br>
-			                    	A/V장착 / 썬팅 / 광택
-			                    </p>
-			                </div>
-			            </div>
-			            <div class="col-md-4">
-			                <div class="icon-box medium">
-			                    <div class="icon">
-			                        <a href="#">
-			                            <img class="image-icon" src="images/service/rent-a-car.png" >
-			                        </a>
-			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">렌트 서비스</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	당일 차량정비에 한하여 렌트제공<br><br><br>
-			                    </p>
-			                </div>
-			            </div>
-			            <div class="col-md-4">
-			                <div class="icon-box medium">
-			                    <div class="icon">
-			                        <a href="#">
-			                            <img class="image-icon" src="images/service/buy_car.png" >
-			                        </a>
-			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">차량구입 프로그램 제공</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	메이커 별 차량정보 컨설팅 및 시승<br>
-			                    	구입 전과정 비교견적<br>
-			                    	최대할인 및 신차검수
-			                    </p>
+			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">차량정비대행 프로그램</h5> 
 			                </div>
 			            </div>
 			            <div class="col-md-4">
@@ -106,25 +58,83 @@
 			                            <img class="image-icon" src="images/service/counsult-new-car.png" >
 			                        </a>
 			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">신차구입상담</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	1:!상담 차량구입관련 컨설팅<br><br><br>
-			                    </p>
+			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">사고처리대행 프로그램</h5>
 			                </div>
 			            </div>
 			            <div class="col-md-4">
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <img class="image-icon" src="images/service/sell-car.png" >
+			                            <img class="image-icon" src="images/service/counsult-new-car.png" >
 			                        </a>
 			                    </div>
-			                    <h4 class="subtitle" style="font-family: 'Noto Sans KR', sans-serif;">기존차량매각</h4>
-			                    <p style="font-family: 'Jeju Hallasan', cursive; color: olive;">
-			                    	점검 및 매각 전과정 컨설팅 및 상담<br><br><br>
-			                    </p>
+			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">신차구입상담</h5>
+			                 </div>
+			            </div>
+			            
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                            <img class="image-icon" src="images/service/buy_car.png" >
+			                        </a>
+			                    </div>
+			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">차량관리대행 프로그램</h5>
 			                </div>
 			            </div>
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                        	<img class="image-icon" src="images/service/sell-car.png" >
+			                        </a>
+			                    </div>
+			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">차량양도 및 폐차대행 프로그램</h5>
+			                </div>
+			            </div>
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                            <img class="image-icon" src="images/service/counsult-new-car.png" >
+			                        </a>
+			                    </div>
+			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">병행수입차량상담</h5>
+			                </div>
+			            </div>
+			            
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                            <img class="image-icon" src="images/service/buy_car.png" >
+			                        </a>
+			                    </div>
+			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">차량정비주기 알람서비스</h5>
+			                </div>
+			            </div>
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                        	<img class="image-icon" src="images/service/rent-a-car.png" >
+			                        </a>
+			                    </div>
+			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">렌트 서비스</h5>
+			                </div>
+			            </div>
+			            <div class="col-md-4">
+			                <div class="icon-box medium">
+			                    <div class="icon">
+			                        <a href="#">
+			                        	<img class="image-icon" src="images/service/call.png" >
+			                        </a>
+			                    </div>
+			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">콜 서비스</h5>
+			                </div>
+			            </div>
+			            
+			            
 			        </div>
 			        
 			        <hr class="space">
@@ -132,18 +142,24 @@
 			    </div>
 			</section>
 
-<!-- 			
+ 			
 			<section class="background-grey">
 			    <div class="container">
 			        <div class="row clients-carousel carousel-description-clients carousel-description-style ">
-			            <div class="col-md-4">
+			            <div class="col-md-7">
 			                <div class="description">
 			                    <h2>협력업체 <small>Best Partner</small></h2> 
-			                    항상 최상의 서비스를 약속하는 Hongdan Company의 협력업체를 소개합니다.
+			                    <p>1st AUTO  는 국내 수입되는 전 브랜드의 딜러들은 물론 병행 수입 업체와도 직접 거래하며 저렴한 가격에 수입차를 구입하실 수 있도록 파트너쉽을 맺고 있습니다.</p> 
+			                    
+			                    <p>또한, 각 브랜드 및 딜러사의 정식 A/S 센터 외에 서울 분당 용인 하남 일산 등에 소재한 기술적으로 검증된 각 분야의 전문 업체들과 협력 관계를 맺고 있습니다. 1st AUTO는 브랜드와 차종, 작업 범위 등에 따라 가장 효율적이고 정확한 작업이 진행되도록 합니다.</p>
+			                    
+			                    <p>협력 업체들은 기술적, 재정적으로 신뢰할 수 있는 업체들로서 1st AUTO는 이를 통해 멤버십 회워분들께 저렴하고 정직한 비용으로 정확한 작업을 제공할 수 있도록 해드립니다.</p>
+			                    
+			                    <p>또한 1st AUTO는 수도권의 대형 중고차매매단지의 중고차 딜러들과도 협력관계를 유리하고 있으며 고객의 의뢰시 당사만의 3단계에 걸친 체계적인 확인 작업을 통해 최고의 차량을 구입해 드립니다.</p> 
 			                </div>
 			            </div>
-			            <div class="col-md-8">
-			                <div class="carousel" data-carousel-col="4">
+			            <div class="col-md-5">
+			                <div class="carousel" data-carousel-col="2">
 			                    <div>
 			                        <a href="#"><img alt="" src="images/clients/1.png">
 			                        </a>
@@ -160,36 +176,28 @@
 			                        <a href="#"><img alt="" src="images/clients/4.png">
 			                        </a>
 			                    </div>
-			                    <div>
-			                        <a href="#"><img alt="" src="images/clients/5.png">
-			                        </a>
-			                    </div>
-			                    <div>
-			                        <a href="#"><img alt="" src="images/clients/6.png">
-			                        </a>
-			                    </div>
-			                    <div>
-			                        <a href="#"><img alt="" src="images/clients/7.png">
-			                        </a>
-			                    </div>
-			                    <div>
-			                        <a href="#"><img alt="" src="images/clients/8.png">
-			                        </a>
-			                    </div>
-			                    <div>
-			                        <a href="#"><img alt="" src="images/clients/9.png">
-			                        </a>
-			                    </div>
-			                    <div>
-			                        <a href="#"><img alt="" src="images/clients/10.png">
-			                        </a>
-			                    </div>
 			                </div>
 			            </div>
 			        </div>
 			    </div>
 			</section>
- -->
+			
+			
+			
+			<section>
+			    <div class="container">
+			        <div class="row clients-carousel carousel-description-clients carousel-description-style ">
+			            <div class="col-md-7">
+			                <div class="description">
+			                    <h2>적용 브랜드 <small>Brand</small></h2> 
+			                    <p>국내에 정식 또는 병행 수입 되는 모든 브랜드의 차량을 관리합니다.</p>
+			                    <p>현재 <strong class="text-danger">Benz, Land rover</strong> 적용</p> 
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</section>
+
  		
 			<jsp:include page="/WEB-INF/jsp/include/inc_footer.jsp"  />
 		

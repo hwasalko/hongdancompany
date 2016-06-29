@@ -30,7 +30,7 @@
                 <div class="col-md-7">
                     <div class="heading heading text-left">
                         <h2>THE COMPANY</h2>
-                        <span class="lead" style="font-size:12pt; ">
+                        <span class="lead" style="font-size:10pt; ">
                         <br>
                         <p style= "font-family: 'Nanum Gothic';">
                         	1st AUTO는 우리나라 최초로 차량 종합 관리 대행 서비스를 제공합니다.
