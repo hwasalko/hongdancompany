@@ -43,10 +43,11 @@
                         <div class="widget clearfix widget-contact-us">
                             <h4 class="widget-title">Contact us</h4>
                             
-                            <p><img src="/images/main/kakao_logo.png" width="20">&nbsp;&nbsp;<strong>카카오톡ID :</strong> <strong class="text-info">hongdan</strong></p>
+                            <p><img src="/images/main/kakao_logo.png" width="20">&nbsp;&nbsp;<strong>카카오톡ID :</strong> <strong class="text-info">jwhongdan</strong></p>
                             <ul class="list-large list-icons">
-                                <li><i class="fa fa-phone"></i><strong>Phone : </strong> <strong class="text-info">010-1234-5678</strong> </li>
-                                <li><i class="fa fa-envelope-o"></i><strong>Email : </strong> <strong class="text-info"><a href="mailto:jwhongdan@naver.com">jwhongdan@naver.com</a></strong></li>
+                                <li><i class="fa fa-phone"></i><strong>Phone1 : </strong> <strong class="text-info">010-8772-0935</strong><br>
+                                <strong>Phone2 : </strong> <strong class="text-info">010-8675-5285</strong> </li>
+                                <li><i class="fa fa-envelope-o"></i><strong>Email : </strong> <strong class="text-info"><a href="mailto:jwhongdan@naver.com">jwhongdan@gmail.com</a></strong></li>
                             </ul>
                         </div>
                     </div>

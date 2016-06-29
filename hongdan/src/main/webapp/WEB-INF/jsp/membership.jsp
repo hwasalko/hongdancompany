@@ -71,7 +71,8 @@
 				                                </div>
 				                            </div>
 			                        	</form>
-			                        	
+			                        
+			                        <br>	
 			                        <strong><mark># 신청현황</mark></strong>
 			            			<table class="table table-condensed table-striped table-hover">
 	                        			<thead>
@@ -108,9 +109,10 @@
 			                    <div class="row" style="padding-left: 20px;">
 			                    	<h4>연락처</h4>
 	                        		<p>
-		                        		<img src="/images/main/kakao_logo.png" width="20">&nbsp;&nbsp;<strong>카카오톡ID :</strong> <strong class="text-info">hongdan</strong><br>
-			                            <i class="fa fa-phone"></i> <strong>Phone : </strong> <strong class="text-info">010-1234-5678</strong><br>
-			                            <i class="fa fa-envelope-o"></i> <strong>Email : </strong> <span class="text-info"><a href="mailto:jwhongdan@naver.com">jwhongdan@naver.com</a></span>
+		                        		<img src="/images/main/kakao_logo.png" width="20">&nbsp;&nbsp;<strong>카카오톡ID :</strong> <strong class="text-info">jwhongdan</strong><br>
+			                            <i class="fa fa-phone"></i> <strong>Phone1 : </strong> <strong class="text-info">010-8772-0935</strong><br>
+			                            <i class="fa fa-phone"></i> <strong>Phone2 : </strong> <strong class="text-info">010-8675-5285</strong><br>
+			                            <i class="fa fa-envelope-o"></i> <strong>Email : </strong> <span class="text-info"><a href="mailto:jwhongdan@gmail.com">jwhongdan@gmail.com</a></span>
 		                            </p>
 			                    </div>
 			                    
