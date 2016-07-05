@@ -55,7 +55,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <img class="image-icon" src="images/service/counsult-new-car.png" >
+			                            <img class="image-icon" src="images/service/car-accident.png" >
 			                        </a>
 			                    </div>
 			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">사고처리대행 프로그램</h5>
@@ -76,7 +76,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <img class="image-icon" src="images/service/buy_car.png" >
+			                            <img class="image-icon" src="images/service/car-management.png" >
 			                        </a>
 			                    </div>
 			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">차량관리대행 프로그램</h5>
@@ -96,7 +96,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <img class="image-icon" src="images/service/counsult-new-car.png" >
+			                            <img class="image-icon" src="images/service/car-import.png" >
 			                        </a>
 			                    </div>
 			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">병행수입차량상담</h5>
@@ -107,7 +107,7 @@
 			                <div class="icon-box medium">
 			                    <div class="icon">
 			                        <a href="#">
-			                            <img class="image-icon" src="images/service/buy_car.png" >
+			                            <img class="image-icon" src="images/service/parking-time.png" >
 			                        </a>
 			                    </div>
 			                    <h5 class="subtitle" style="font-size:14pt; font-family: 'Noto Sans KR', sans-serif;">차량정비주기 알람서비스</h5>
@@ -187,13 +187,32 @@
 			<section>
 			    <div class="container">
 			        <div class="row clients-carousel carousel-description-clients carousel-description-style ">
-			            <div class="col-md-7">
+			            
+			            <div class="col-md-6">
 			                <div class="description">
 			                    <h2>적용 브랜드 <small>Brand</small></h2> 
 			                    <p>국내에 정식 또는 병행 수입 되는 모든 브랜드의 차량을 관리합니다.</p>
 			                    <p>현재 <strong class="text-danger">Benz, Land rover</strong> 적용</p> 
 			                </div>
 			            </div>
+			           
+		               <div class="col-md-3">
+		                    <div class="text-center"><img src="images/service/logo_only_benz.png" alt="" style="height: 64px;"></div>
+	                        <div class="image-box-description text-center">
+		                        <h4>Mercedes Benz</h4>
+		                        <hr class="line">
+		                    </div>
+		               </div>
+		               
+		               <div class="col-md-3">
+		                    <div class="text-center"><img src="images/service/logo_landrover.png" alt="" style="height: 64px;"></div>
+	                        <div class="image-box-description text-center">
+		                        <h4>Land Rover</h4>
+		                        <hr class="line">
+		                    </div>
+		               </div>
+		               
+			            
 			        </div>
 			    </div>
 			</section>
