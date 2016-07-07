@@ -5,8 +5,8 @@
 	      <div id="header-wrap">
 	        <div class="container">
 	            <div id="logo">
-	                <a href="/" class="logo" data-dark-logo="/images/logo-dark.png">
-	                <img src="/images/logo.png" alt="Logo">
+	                <a href="/" class="logo" data-dark-logo="/images/hongdan_logo_dark.png">
+	                <img src="/images/hongdan_logo.png" alt="Logo">
 	                </a>
 	            </div>
 	            <div class="nav-main-menu-responsive">
