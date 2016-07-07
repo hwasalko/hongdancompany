@@ -2,7 +2,7 @@
 
 	<div class="loader-wrapper">
 	    <div class="loader">
-	        <img src="/images/hongdan_logo_dark.png" alt="Loading" width="200px">
+	        <img src="/images/hongdan_logo_dark_long.png" alt="Loading" width="200px">
 	        <span class="loader-title">Loading...</span>
 	    </div>
 	</div>
