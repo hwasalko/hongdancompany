@@ -8,26 +8,22 @@
                         <div class="widget clearfix widget-categories">
                             <h4 class="widget-title">Our Services</h4>
                             <ul class="list list-arrow-icons">
-                                <li> <a href="/services" >차량관리정비 프로그램</a> </li>
-                                <li> <a href="/services" >콜 서비스 </a> </li>
-                                <li> <a href="/services" >렌트 서비스</a> </li>
-                                <li> <a href="/services" >차량구입 프로그램</a> </li>
+                                <li> <a href="/services" >차량정비대행 프로그램</a> </li>
+                                <li> <a href="/services" >사고처리대행 프로그램 </a> </li>
+                                <li> <a href="/services" >차량관리대행 프로그램</a> </li>
+                                <li> <a href="/services" >차량양도 및 폐차대행 프로그램</a> </li>
                                 <li> <a href="/services" >신차구입상담</a> </li>
-                                <li> <a href="/services" >중고차구입상담</a> </li>
-                                <li> <a href="/services" >기존차량매각</a> </li>
+                                <li> <a href="/services" >병행수입차량상담</a> </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="widget clearfix widget-categories">
-                            <h4 class="widget-title">Blog categories</h4>
+                            <h4 class="widget-title">&nbsp;</h4>
                             <ul class="list list-arrow-icons">
-                                <li> <a href="#" title="">Development </a> </li>
-                                <li> <a href="#" title="">Branding </a> </li>
-                                <li> <a href="#" title="">Marketing </a> </li>
-                                <li> <a href="#" title="">Branding </a> </li>
-                                <li> <a href="#" title="">Strategy solutions</a> </li>
-                                <li> <a href="#" title="">Copywriting </a> </li>
+                                <li> <a href="/services" >차량정비주기 알람서비스</a> </li>
+                                <li> <a href="/services" >렌트 서비스 </a> </li>
+                                <li> <a href="/services" >콜 서비스</a> </li>
                             </ul>
                         </div>
                     </div>
