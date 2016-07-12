@@ -56,6 +56,7 @@
                 </div>
                 
                 <div class="col-md-5">
+                <br><br>
                     <div class="carousel portfolio-basic-image" data-carousel-col="1">
                         <img alt="image" src="images/about/company_1.jpg">
                         <img alt="image" src="images/about/company_2.jpg">
@@ -66,6 +67,24 @@
             </div>
         </div>
     </section>
+    
+    
+    
+    <section class="background-grey">
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-md-7">
+                    <div class="heading heading text-left">
+                        <h2>THE LOGO</h2> 
+	                    <p>
+	                    	<img src="/images/hongdan_logo_dark_long.png" width="300px">
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+    
 
 <!-- 
     <section class="background-grey">
