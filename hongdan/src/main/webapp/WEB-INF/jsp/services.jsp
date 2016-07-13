@@ -197,7 +197,7 @@
 			            </div>
 			           
 		               <div class="col-md-3">
-		                    <div class="text-center"><img src="images/service/car_logo_benz.png"  style="height: 64px;"></div>
+		                    <div class="text-center"><img src="images/service/car_logo_benz_64.png" ></div>
 	                        <div class="image-box-description text-center">
 		                        <h4>Mercedes Benz</h4>
 		                        <hr class="line">
@@ -205,7 +205,7 @@
 		               </div>
 		               
 		               <div class="col-md-3">
-		                    <div class="text-center"><img src="images/service/car_logo_landrover.png" alt="" style="height: 64px;"></div>
+		                    <div class="text-center"><img src="images/service/car_logo_landrover_64.png" ></div>
 	                        <div class="image-box-description text-center">
 		                        <h4>Land Rover</h4>
 		                        <hr class="line">
