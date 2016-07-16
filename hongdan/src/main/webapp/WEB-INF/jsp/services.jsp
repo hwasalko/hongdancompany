@@ -188,32 +188,119 @@
 			    <div class="container">
 			        <div class="row clients-carousel carousel-description-clients carousel-description-style ">
 			            
-			            <div class="col-md-6">
+			            <div class="col-md-12">
 			                <div class="description">
 			                    <h2>적용 브랜드 <small>Brand</small></h2> 
 			                    <p>국내에 정식 또는 병행 수입 되는 모든 브랜드의 차량을 관리합니다.</p>
 			                    <p>현재 <strong class="text-danger">Benz, Land rover</strong> 적용</p> 
 			                </div>
 			            </div>
-			           
-		               <div class="col-md-3">
-		                    <div class="text-center"><img src="images/service/car_logo_benz_64.png" ></div>
-	                        <div class="image-box-description text-center">
-		                        <h4>Mercedes Benz</h4>
-		                        <hr class="line">
-		                    </div>
-		               </div>
-		               
-		               <div class="col-md-3">
-		                    <div class="text-center"><img src="images/service/car_logo_landrover_64.png" ></div>
-	                        <div class="image-box-description text-center">
-		                        <h4>Land Rover</h4>
-		                        <hr class="line">
-		                    </div>
-		               </div>
-		               
 			            
 			        </div>
+			        
+			        <div class="row">
+			        	<div class="col-md-12">
+			        		<div class="table-responsive">
+			        		
+				        		<table class="table table-striped table-hover table-condens" >
+				        					<tr>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_only_benz.png" ><br>
+					                        		Mercedes-Benz
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_landrover.png" ><br>
+					                        		LAND ROVER
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_audi_PNG1641.png" ><br>
+					                        		Audi
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_bmw_PNG1641.png" ><br>
+					                        		BMW
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_honda_PNG1643.png" ><br>
+					                        		HONDA
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_nissan_PNG1658.png" ><br>
+					                        		NISSAN
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_ferari_PNG1642.png" ><br>
+					                        		Ferrari
+						        				</td>
+						        			</tr>
+						        			<tr>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_fiat_PNG1637.png" ><br>
+					                        		FIAT
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_chevore_PNG1644.png" ><br>
+					                        		CHEVROLET
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_infiniti_PNG1646.png" ><br>
+					                        		INFINITI
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_citroent_PNG1636.png" ><br>
+					                        		CITROEN
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_jaguar_PNG1647.png" ><br>
+					                        		JAGUAR
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_jeep_PNG1648.png" ><br>
+					                        		JEEP
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_lexus_PNG1651.png" ><br>
+					                        		LEXUS
+						        				</td>
+						        			</tr>
+						        			<tr>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_mini_PNG1652.png" ><br>
+					                        		MINI
+						        				</td>
+						        				<td class="text-center">
+					                        		<img src="images/service/brand_logo/car_logo_ford_PNG1666.png" ><br>
+					                        		Ford
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_porsche_PNG1663.png" ><br>
+					                        		PORSCHE
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_pouzo_PNG1660.png" ><br>
+					                        		PEUGEOT
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_toyota_PNG1665.png" ><br>
+					                        		TOYOTA
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_volvo_PNG1668.png" ><br>
+					                        		VOLVO
+						        				</td>
+						        				<td class="text-center">
+						        					<img src="images/service/brand_logo/car_logo_voxvagan_PNG1667.png" ><br>
+					                        		Volkswagen
+						        				</td>
+						        			</tr>
+				        		</table>
+			        		</div>
+			        	</div>
+				         	
+		            </div>
+		            
+		            
+			        
 			    </div>
 			</section>
 
