@@ -59,11 +59,10 @@
 												                		<span class="label label-danger" style="font-size: 12px;">New</span>
 												                	</c:if>
 												                </h4>
-												                
 												                <!-- <p class="lead">by Hongdan</p> -->
 												                
 												                <p style="font-size: 14px; color: gray;">
-												                	<span class="glyphicon glyphicon glyphicon-folder-open"></span> &nbsp;Category : ${list.BLOG_CTG_NM}
+												                	<span class="glyphicon glyphicon glyphicon-folder-open"></span> &nbsp;Category : <span class="text-info">${list.BLOG_CTG_NM}</span>
 												                	| <i class="fa fa-calendar"></i> ${list.REG_DDTM} 
 												                	| <span class="glyphicon glyphicon-user"></span> by ${list.REG_ID}
 												                	<!-- tag값이 있을경우에만 표시 -->
