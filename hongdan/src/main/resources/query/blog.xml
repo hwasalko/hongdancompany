@@ -97,7 +97,7 @@
 		    SELECT
 		        BLOG_SEQ,
 	  			TITLE,
-	  			CONTENTS,
+	  			REPLACE(CONTENTS, '\r\n', '') CONTENTS,
 	  			DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i') REG_DDTM,
 	  			REG_ID,
 	  			DEL_YN,
