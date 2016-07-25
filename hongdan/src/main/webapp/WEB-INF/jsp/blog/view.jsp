@@ -6,6 +6,16 @@
 <html lang="kr">
 
 		<jsp:include page="/WEB-INF/jsp/include/inc_head.jsp"  />
+		
+		<head>
+			<style type="text/css">
+				/* 블로그 내용 html 중 p태그의 마진값 조정 */	
+				p {
+				    margin-top: 5px;
+				    margin-bottom: 5px;
+				}
+			</style>
+		</head>	
 
 		<body class="wide">
 		
