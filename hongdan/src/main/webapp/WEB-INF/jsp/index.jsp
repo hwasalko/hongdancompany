@@ -83,9 +83,9 @@
             </div>
             <div class="row" data-animation="fadeInUp">
                 <div class="col-md-offset-md1 col-md-4 col-sm-offset-1 col-sm-4">
-                    <img class="img-responsive" src="images/about/company_2.jpg" >
+                    <img class="img-responsive img-rounded" src="images/about/company_2.jpg" >
                     <br>
-                    <img class="img-responsive" src="images/about/company_3.jpg" >
+                    <img class="img-responsive img-rounded" src="images/about/company_3.jpg" >
                 </div>
                 <div class="col-md-6 col-sm-6">
                     	<p style= "font-family: 'Nanum Gothic';">
