@@ -107,7 +107,7 @@
 											                    	</c:if>
 											                    	<c:if test="${not empty blogMap.PREV_SEQ}">
 											                    		 <li class="previous">
-											                    		 	<a href="/blog/${blog_seq-1}">&larr; 이전글</a>
+											                    		 	<a href="/blog/${blogMap.PREV_SEQ}">&larr; 이전글</a>
 													                    </li>
 											                    	</c:if>
 													                    
@@ -118,7 +118,7 @@
 													                </c:if>    
 													                <c:if test="${not empty blogMap.NEXT_SEQ}">
 													                    <li class="next">
-													                        <a href="/blog/${blog_seq+1}">다음글 &rarr;</a>
+													                        <a href="/blog/${blogMap.NEXT_SEQ}">다음글 &rarr;</a>
 													                    </li>
 													                </c:if>    
 												                </ul>
