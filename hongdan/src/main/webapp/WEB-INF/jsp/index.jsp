@@ -18,7 +18,7 @@
 
     <section id="slider" class="no-padding">
         <div id="slider-carousel" class="boxed-slider">
-            <div style="background-image:url('images/main/main_bg1.jpg');" class="owl-bg-img">
+            <div style="background-image:url('images/main/main_bg5.jpg');" class="owl-bg-img">
                 <div class="container container-fullscreen">
                     <div class="text-middle slider-content">
                         <div class="text-center text-light">
