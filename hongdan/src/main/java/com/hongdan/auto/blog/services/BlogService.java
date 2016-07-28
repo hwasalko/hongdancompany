@@ -1,8 +1,11 @@
 package com.hongdan.auto.blog.services;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public interface BlogService {
 	
@@ -23,4 +26,8 @@ public interface BlogService {
 	public List<String> getBlogTagsAllList() throws SQLException;
 	
 	public List<Map<String, String>> getBlogCategoryList() throws SQLException;
+	
+	public List<String> saveBlogAttachFile(MultipartFile[] files) throws SQLException, IOException;
+	
+	public int updateBlogViewCount(Map<String, String> param) throws SQLException;
 }

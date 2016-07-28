@@ -68,13 +68,13 @@
 										                
 										                <!-- 등록정보 -->
 										                <p style="font-size: 14px; color: gray;">
-										                			<span class="glyphicon glyphicon glyphicon-folder-open"></span> &nbsp;Category : ${blogMap.BLOG_CTG_NM}
+										                			<span class="glyphicon glyphicon glyphicon-folder-open"></span> &nbsp;Category : <span class="text-info">${blogMap.BLOG_CTG_NM}</span>
 												                	| <i class="fa fa-calendar"></i> ${blogMap.REG_DDTM}
 												                	| <span class="glyphicon glyphicon-user"></span> by ${blogMap.REG_ID} 
-												                	
+												                	| <span class="glyphicon glyphicon-eye-open"></span> View Count : ${blogMap.VIEW_CNT}<br>
 												                	<!-- tag값이 있을경우에만 표시 -->
 												                	<c:if test="${not empty blogMap.TAGS_TRIM}">
-													                	| <span class="glyphicon glyphicon-tags"></span> Tags : 
+													                	<br><span class="glyphicon glyphicon-tags"></span> Tags : 
 													                	
 													                			<c:set var="orgTags" value="${blogMap.TAGS_TRIM}" />
 													                			<c:set var="taglist" value="${ fn:split(orgTags, ',') }" /> 

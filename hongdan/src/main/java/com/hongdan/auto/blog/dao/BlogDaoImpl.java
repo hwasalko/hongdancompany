@@ -1,12 +1,15 @@
 package com.hongdan.auto.blog.dao;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.hongdan.auto.common.vo.FileInfoVO;
 
 
 @Repository
@@ -58,6 +61,16 @@ public class BlogDaoImpl implements BlogDao {
     @Override
     public List<Map<String, String>> getBlogCategoryList() throws SQLException {
         return query.selectList("com.hongdan.auto.blog.getBlogCategoryList");
+    }
+    
+    @Override
+    public int insertBlogAttachFileInfo(Map<String, String> param) throws SQLException {
+        return query.insert("com.hongdan.auto.blog.insertBlogAttachFileInfo",param);
+    }
+    
+    @Override
+    public int updateBlogViewCount(Map<String, String> param) throws SQLException {
+        return query.update("com.hongdan.auto.blog.updateBlogViewCount",param);
     }
     
 }

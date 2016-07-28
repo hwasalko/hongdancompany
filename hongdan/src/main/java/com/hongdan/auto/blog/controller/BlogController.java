@@ -8,7 +8,9 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +29,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
 
@@ -35,6 +39,7 @@ import com.hongdan.auto.blog.vo.PhotoVo;
 import com.hongdan.auto.common.DateUtil;
 import com.hongdan.auto.common.FileUpload;
 import com.hongdan.auto.common.PagingUtil;
+import com.hongdan.auto.common.vo.FileInfoVO;
 
 /**
  * Handles requests for the application home page.
@@ -132,6 +137,10 @@ public class BlogController {
 		
 		param.put("blog_seq",blog_seq);
 		
+		//조회수 증가
+		blogService.updateBlogViewCount(param);
+		
+		//블로그 내용
 		Map<String, String> resultMap = blogService.getBlogView(param);
 		model.addAttribute("blogMap" , resultMap );
 		model.addAttribute("blog_seq" , blog_seq );
@@ -396,7 +405,30 @@ public class BlogController {
 	    } 
 	}
 
-
+	
+	/**
+	 * 블로그 파일업로드 컨트롤러
+	 * Map방식을 이용한 JSON API
+	 * @return
+	 */
+	@RequestMapping(value = "/blog/attachfile/upload", method = RequestMethod.POST )
+	public void blogAttachfileUpload( 
+							@RequestParam(value = "files[]", required = false) MultipartFile[] files , 
+							HttpServletRequest request 
+					) throws IllegalStateException, IOException  {
+		
+		FileInfoVO fileInfoVO = null;
+		
+		// 첨부파일 업로드
+		for (MultipartFile file : files) { 
+			    logger.debug("[첨부파일정보] " + file.getOriginalFilename() + " / " + file.getSize() + " byte");
+			    fileInfoVO = FileUpload.fileUpload(file, "D:/temp");
+		} 
+		
+		// 처리결과
+		logger.debug("업로드 결과 : " + fileInfoVO.toString() );
+		
+	}	
 	
 	
 	

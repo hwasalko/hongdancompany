@@ -65,10 +65,11 @@
 												                	<span class="glyphicon glyphicon glyphicon-folder-open"></span> &nbsp;Category : <span class="text-info">${list.BLOG_CTG_NM}</span>
 												                	| <i class="fa fa-calendar"></i> ${list.REG_DDTM} 
 												                	| <span class="glyphicon glyphicon-user"></span> by ${list.REG_ID}
+												                	| <span class="glyphicon glyphicon-eye-open"></span> View Count : ${list.VIEW_CNT}
+												                	
 												                	<!-- tag값이 있을경우에만 표시 -->
 												                	<c:if test="${not empty list.TAGS}">
-													                	| <span class="glyphicon glyphicon-tags"></span> Tags : 
-													                	
+												                		<br><span class="glyphicon glyphicon-tags "></span> Tags :
 													                			<c:set var="orgTags" value="${list.TAGS}" />
 													                			<c:set var="taglist" value="${ fn:split(orgTags, ',') }" /> 
 													                			<c:forEach var="tag" items="${taglist}">

@@ -37,7 +37,8 @@
   			TIMESTAMPDIFF(day, DATE_FORMAT(REG_DDTM, '%Y-%m-%d %H:%i'), DATE_FORMAT(now(), '%Y-%m-%d %H:%i') ) TIME_DIFF_HOUR,
   			REPLACE(TAGS, ' ', '') TAGS,
   			BLOG_CTG_CD,
-  			(SELECT BLOG_CTG_NM FROM TB_BLOG_CTG_CD WHERE A.BLOG_CTG_CD = BLOG_CTG_CD) BLOG_CTG_NM
+  			(SELECT BLOG_CTG_NM FROM TB_BLOG_CTG_CD WHERE A.BLOG_CTG_CD = BLOG_CTG_CD) BLOG_CTG_NM,
+  			VIEW_CNT
 	    FROM TB_BLOG A
 	    WHERE DEL_YN = 'N'
 	    
@@ -107,7 +108,8 @@
 	  			BLOG_CTG_CD,
 	  			(SELECT BLOG_CTG_NM FROM TB_BLOG_CTG_CD WHERE A.BLOG_CTG_CD = BLOG_CTG_CD) BLOG_CTG_NM,
 	  			(SELECT MIN(BLOG_SEQ) NEXT_SEQ FROM TB_BLOG WHERE DEL_YN = 'N' AND BLOG_SEQ > A.BLOG_SEQ ) NEXT_SEQ,
-	  			(SELECT MAX(BLOG_SEQ) NEXT_SEQ FROM TB_BLOG WHERE DEL_YN = 'N' AND BLOG_SEQ < A.BLOG_SEQ ) PREV_SEQ
+	  			(SELECT MAX(BLOG_SEQ) NEXT_SEQ FROM TB_BLOG WHERE DEL_YN = 'N' AND BLOG_SEQ < A.BLOG_SEQ ) PREV_SEQ,
+	  			VIEW_CNT
 		    FROM TB_BLOG A
 		    WHERE
 		    	DEL_YN = 'N' 
@@ -156,5 +158,31 @@
 		)
 	</select>
 
+	<insert id="com.hongdan.auto.blog.insertBlogAttachFileInfo"  parameterType="java.util.Map" >
+		INSERT INTO TB_BLOG_ATTACH_FILE(
+	    	FILE_SEQ,
+	        FILE_REAL_NM,
+	        FILE_ORIGINAL_NM,
+	        FILE_FULL_PATH,
+	        FILE_SIZE,
+	        REG_DDTM,
+	        BLOG_SEQ
+	    )
+		SELECT 
+			(IFNULL(MAX(FILE_SEQ), 0) +1) FILE_SEQ,
+			#{saveFileName},
+			#{originalFileName},
+			#{saveFileFullPath},
+			#{fileSize},
+			DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
+      		''
+		FROM TB_BLOG_ATTACH_FILE
+	</insert>
+	
+	<update id="com.hongdan.auto.blog.updateBlogViewCount"  parameterType="java.util.Map" >
+	    UPDATE TB_BLOG
+  		SET VIEW_CNT = VIEW_CNT+1
+  		WHERE BLOG_SEQ = #{blog_seq}
+	</update>
     
 </mapper>
