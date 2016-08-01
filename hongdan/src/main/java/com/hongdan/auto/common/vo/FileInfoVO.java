@@ -12,13 +12,15 @@ public class FileInfoVO {
 	private String originalFileName;	// 원본파일명
 	private String saveFileName;		// 업로드 파일명
 	private String saveFileFullPath;	// 업로드 파일 풀패스
+	private String fileContentsType;	// 파일 컨텐츠타입
 	private long fileSize;					// 파일사이즈
 	
-	public FileInfoVO(String originalFileName, String saveFileName, String saveFileFullPath, long fileSize) {
+	public FileInfoVO(String originalFileName, String saveFileName, String saveFileFullPath, String fileContentsType, long fileSize) {
 		super();
 		this.originalFileName = originalFileName;
 		this.saveFileName = saveFileName;
 		this.saveFileFullPath = saveFileFullPath;
+		this.fileContentsType = fileContentsType;
 		this.fileSize = fileSize;
 	}
 	
@@ -40,6 +42,12 @@ public class FileInfoVO {
 	public void setSaveFileFullPath(String saveFileFullPath) {
 		this.saveFileFullPath = saveFileFullPath;
 	}
+	public String getFileContentsType() {
+		return fileContentsType;
+	}
+	public void setFileContentsType(String fileContentsType) {
+		this.fileContentsType = fileContentsType;
+	}
 	public long getFileSize() {
 		return fileSize;
 	}
@@ -50,7 +58,8 @@ public class FileInfoVO {
 	@Override
 	public String toString() {
 		return "FileInfoVO [originalFileName=" + originalFileName + ", saveFileName=" + saveFileName
-				+ ", saveFileFullPath=" + saveFileFullPath + ", fileSize=" + fileSize + "]";
+				+ ", saveFileFullPath=" + saveFileFullPath + ", fileContentsType=" + fileContentsType + ", fileSize="
+				+ fileSize + "]";
 	}
 	
 }

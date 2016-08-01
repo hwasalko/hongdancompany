@@ -45,7 +45,6 @@ public class AdminController {
 		boolean isLoginOk = true;
 		
 		logger.debug("아이디 : " + admin_id);
-		logger.debug("패스워드 : " + admin_password);
 		
 		
 		Map<String, String> param = new HashMap<String, String>();

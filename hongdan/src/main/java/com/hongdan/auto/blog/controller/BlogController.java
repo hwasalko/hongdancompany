@@ -7,10 +7,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +20,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,13 +30,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartRequest;
+
 
 import com.hongdan.auto.blog.services.BlogService;
 import com.hongdan.auto.blog.vo.PhotoVo;
 import com.hongdan.auto.common.DateUtil;
 import com.hongdan.auto.common.FileUpload;
 import com.hongdan.auto.common.PagingUtil;
+import com.hongdan.auto.common.vo.FileInfoJsonVO;
 import com.hongdan.auto.common.vo.FileInfoVO;
 
 /**
@@ -49,9 +48,16 @@ public class BlogController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(BlogController.class);
 	
-	
 	@Autowired
 	private BlogService blogService;
+	
+	/* 프로퍼티 로드 */
+	@Value("${BLOG_ATTACH_FILE_UPLOAD_PATH}") 
+	private String BLOG_ATTACH_FILE_UPLOAD_PATH;
+	
+	/* 프로퍼티 로드 */
+	@Value("${BLOG_ATTACH_FILE_UPLOAD_PATH_WINDOW}")
+	private String BLOG_ATTACH_FILE_UPLOAD_PATH_WINDOW;
 	
 	
 	/**
@@ -412,22 +418,38 @@ public class BlogController {
 	 * @return
 	 */
 	@RequestMapping(value = "/blog/attachfile/upload", method = RequestMethod.POST )
-	public void blogAttachfileUpload( 
+	public @ResponseBody Map<String, Object> blogAttachfileUpload( 
 							@RequestParam(value = "files[]", required = false) MultipartFile[] files , 
 							HttpServletRequest request 
 					) throws IllegalStateException, IOException  {
+		
+		Map<String, Object> jsonMap = new HashMap<String, Object>();
+		String uploadPath;
+		
+		// 윈도우 서버일 경우
+		if( FileUpload.isWindowServer() ){
+			uploadPath = BLOG_ATTACH_FILE_UPLOAD_PATH_WINDOW;
+		}else{ // 윈도우 서버가 아닐 경우 
+			uploadPath = BLOG_ATTACH_FILE_UPLOAD_PATH;
+		}
+		
+		logger.info("파일업로드 경로 : " + uploadPath);
 		
 		FileInfoVO fileInfoVO = null;
 		
 		// 첨부파일 업로드
 		for (MultipartFile file : files) { 
 			    logger.debug("[첨부파일정보] " + file.getOriginalFilename() + " / " + file.getSize() + " byte");
-			    fileInfoVO = FileUpload.fileUpload(file, "D:/temp");
+			    fileInfoVO = FileUpload.fileUpload(file, uploadPath ); // 파일업로드 수행
+			    jsonMap.put("fileName", fileInfoVO.getOriginalFileName());
+			    jsonMap.put("fileSize", fileInfoVO.getFileSize() );
+			    jsonMap.put("fileType", fileInfoVO.getFileContentsType());
 		} 
 		
 		// 처리결과
 		logger.debug("업로드 결과 : " + fileInfoVO.toString() );
 		
+		return jsonMap;
 	}	
 	
 	

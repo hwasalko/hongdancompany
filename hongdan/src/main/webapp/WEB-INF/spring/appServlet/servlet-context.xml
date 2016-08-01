@@ -33,6 +33,8 @@
 	    <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
+     <!-- 프로퍼티 파일 셋팅 -->
+     <context:property-placeholder location="classpath:properties/*.properties" />
 
 	 
 	 

@@ -5,23 +5,25 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.hongdan.auto.common.vo.FileInfoVO;
 
 
+@Service
 public class FileUpload { 
 
 	
 		private static final Logger logger = LoggerFactory.getLogger(FileUpload.class);
-	 
+
 
 		public static void fileUpload(MultipartFile fileData, String path, String fileName) throws IOException {
 		
@@ -112,7 +114,7 @@ public class FileUpload {
 			  
 			  
 			  // ③ 파일정보 리턴
-			  return new FileInfoVO(originalFileName, fileName, fullPath + fileName, fileSize);
+			  return new FileInfoVO(originalFileName, fileName, fullPath + fileName, contentType, fileSize);
 		 }
 		
 		
@@ -124,5 +126,18 @@ public class FileUpload {
 			int pos = fileName.lastIndexOf(".");
 			return fileName.substring(pos);
 		}
+
+		/**
+		 * 윈도우 서버 여부 
+		 */
+		public static boolean isWindowServer(){
+			// 윈도우 서버일 경우
+			if( System.getProperty("os.name").toUpperCase().indexOf("WINDOW") > -1  ){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
 
 }
