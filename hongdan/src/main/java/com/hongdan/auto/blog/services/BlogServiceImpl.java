@@ -94,35 +94,26 @@ public class BlogServiceImpl implements BlogService {
     	return blogDao.getBlogCategoryList();
     }
     
-    @Override
-    public List<String> saveBlogAttachFile(MultipartFile[] files) throws SQLException, IOException{
-    	
-    	String upload_root_path = "C:/blogAttachFiles";
-    	FileInfoVO fileInfoVO = null;	// 파일정보 VO
-    	
-    	List<String> listAttachFileID = new ArrayList<String>();	// 파일정보 DB Insert 결과를 저장 할 변수(첨부파일 ID를 저장함)
-    	
-    	// 첨부파일 업로드
-		for (MultipartFile file : files) { 
-			    fileInfoVO = FileUpload.fileUpload(file, upload_root_path);
-			    
-			    Map<String, String> param = new HashMap<String, String>();
-			    param.put("originalFileName", fileInfoVO.getOriginalFileName());
-		    	param.put("saveFileName", fileInfoVO.getSaveFileName());
-		    	param.put("saveFileFullPath", fileInfoVO.getSaveFileFullPath());
-		    	param.put("fileSize", String.valueOf(fileInfoVO.getFileSize()) );
-			    
-			    blogDao.insertBlogAttachFileInfo(param);
-		} 
-    	
-    	return listAttachFileID;
-    }
-
+   
     
     @Override
     @Transactional
     public int updateBlogViewCount(Map<String, String> param) throws SQLException{
     	return blogDao.updateBlogViewCount(param);
+    }
+    
+    @Override
+    @Transactional
+    public long insertBlogAttachFileInfo(FileInfoVO fileInfoVO) throws SQLException{
+    	Map<String, Object> param = new HashMap<String, Object>();
+    	
+	    param.put("originalFileName", fileInfoVO.getOriginalFileName());
+    	param.put("saveFileName", fileInfoVO.getSaveFileName());
+    	param.put("saveFileFullPath", fileInfoVO.getSaveFileFullPath());
+    	param.put("fileSize", String.valueOf(fileInfoVO.getFileSize()) );
+    	blogDao.insertBlogAttachFileInfo(param);
+    	
+    	return  (long) param.get("inserted_file_seq");
     }
     
 }

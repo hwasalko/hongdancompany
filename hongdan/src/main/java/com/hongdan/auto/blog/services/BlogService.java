@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.hongdan.auto.common.vo.FileInfoVO;
+
 public interface BlogService {
 	
 	public void saveFileToBlob(Map<String, Object> hmap) throws SQLException;
@@ -27,7 +29,7 @@ public interface BlogService {
 	
 	public List<Map<String, String>> getBlogCategoryList() throws SQLException;
 	
-	public List<String> saveBlogAttachFile(MultipartFile[] files) throws SQLException, IOException;
-	
 	public int updateBlogViewCount(Map<String, String> param) throws SQLException;
+	
+	public long insertBlogAttachFileInfo(FileInfoVO fileInfoVO) throws SQLException;
 }

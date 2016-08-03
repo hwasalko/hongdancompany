@@ -158,25 +158,25 @@
 		)
 	</select>
 
-	<insert id="com.hongdan.auto.blog.insertBlogAttachFileInfo"  parameterType="java.util.Map" >
+	<insert id="com.hongdan.auto.blog.insertBlogAttachFileInfo"  parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="inserted_file_seq" >
+		
 		INSERT INTO TB_BLOG_ATTACH_FILE(
-	    	FILE_SEQ,
-	        FILE_REAL_NM,
+	    	FILE_REAL_NM,
 	        FILE_ORIGINAL_NM,
 	        FILE_FULL_PATH,
 	        FILE_SIZE,
 	        REG_DDTM,
 	        BLOG_SEQ
 	    )
-		SELECT 
-			(IFNULL(MAX(FILE_SEQ), 0) +1) FILE_SEQ,
+		VALUES( 
 			#{saveFileName},
 			#{originalFileName},
 			#{saveFileFullPath},
 			#{fileSize},
 			DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
-      		''
-		FROM TB_BLOG_ATTACH_FILE
+			null
+		)
+		
 	</insert>
 	
 	<update id="com.hongdan.auto.blog.updateBlogViewCount"  parameterType="java.util.Map" >

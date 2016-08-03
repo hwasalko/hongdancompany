@@ -271,32 +271,6 @@ public class BlogController {
 		return "redirect:/blog/list/" + pageNo;
 		
 	}
-	
-	
-	/*
-	@RequestMapping(value = "/blog/testFileUpload", method = RequestMethod.POST)
-	 public String fileUpload(Model model, MultipartRequest multipartRequest, HttpServletRequest request) throws IOException{
-
-		Calendar cal = Calendar.getInstance();
-		
-		MultipartFile imgfile = multipartRequest.getFile("Filedata");     //input file의 name
-	  
-		String fileName = imgfile.getOriginalFilename();													// 원본파일명
-		String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());	// 확장자
-		String replaceName = cal.getTimeInMillis() + fileType;  										// 저장파일명(중복방지를 위해 시간을 기준으로 파일명 부여)
-		String path = request.getSession().getServletContext().getRealPath("/")+File.separator+"resources/upload"; //파일이 저장 경로 
-		
-		FileUpload.fileUpload(imgfile, path, replaceName);		// 파일업로드
-		
-		  
-		//파라미터
-		model.addAttribute("path", path);                         // 파일업로드 경로
-		model.addAttribute("filename", replaceName);       // 저장파일명
-		
-		return "file_upload";
-
-	 }
-	 */
 
 	
 	
@@ -416,15 +390,21 @@ public class BlogController {
 	 * 블로그 파일업로드 컨트롤러
 	 * Map방식을 이용한 JSON API
 	 * @return
+	 * @throws SQLException 
 	 */
 	@RequestMapping(value = "/blog/attachfile/upload", method = RequestMethod.POST )
 	public @ResponseBody Map<String, Object> blogAttachfileUpload( 
 							@RequestParam(value = "files[]", required = false) MultipartFile[] files , 
 							HttpServletRequest request 
-					) throws IllegalStateException, IOException  {
+					) throws IllegalStateException, IOException, SQLException  {
 		
-		Map<String, Object> jsonMap = new HashMap<String, Object>();
+		// json 생성용 변수 
+		Map<String, Object> fileInfoMap = new HashMap<String, Object>();
+		Map<String, Object> jsonObject = new HashMap<String, Object>();
+		ArrayList<Map<String, Object>> jsonList = new ArrayList<Map<String, Object>>();
+		
 		String uploadPath;
+		long insertedFileSeq = 0;
 		
 		// 윈도우 서버일 경우
 		if( FileUpload.isWindowServer() ){
@@ -440,16 +420,30 @@ public class BlogController {
 		// 첨부파일 업로드
 		for (MultipartFile file : files) { 
 			    logger.debug("[첨부파일정보] " + file.getOriginalFilename() + " / " + file.getSize() + " byte");
-			    fileInfoVO = FileUpload.fileUpload(file, uploadPath ); // 파일업로드 수행
-			    jsonMap.put("fileName", fileInfoVO.getOriginalFileName());
-			    jsonMap.put("fileSize", fileInfoVO.getFileSize() );
-			    jsonMap.put("fileType", fileInfoVO.getFileContentsType());
+			    
+			    // 파일업로드 수행
+			    fileInfoVO = FileUpload.fileUpload(file, uploadPath ); 
+			    
+			    // 파일업로드 정보 DB에 저장
+			    insertedFileSeq = blogService.insertBlogAttachFileInfo(fileInfoVO);
+			    logger.info("[첨부파일DB저장] return FILE_SEQ : " + insertedFileSeq );
+			    
+			    // json 리턴용
+			    fileInfoMap.put("name", fileInfoVO.getOriginalFileName());
+			    fileInfoMap.put("size", fileInfoVO.getFileSize() );
+			    fileInfoMap.put("fileSeq", insertedFileSeq);
+			    fileInfoMap.put("deleteUrl", "/blog/attachfile/delete/" + insertedFileSeq);
+			    fileInfoMap.put("deleteType", "DELETE");			    
+			    jsonList.add(fileInfoMap);
 		} 
 		
 		// 처리결과
 		logger.debug("업로드 결과 : " + fileInfoVO.toString() );
 		
-		return jsonMap;
+		jsonObject.put("files", jsonList);
+		
+		
+		return jsonObject;
 	}	
 	
 	

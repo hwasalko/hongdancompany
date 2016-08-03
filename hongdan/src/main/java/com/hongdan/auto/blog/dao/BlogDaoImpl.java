@@ -64,7 +64,7 @@ public class BlogDaoImpl implements BlogDao {
     }
     
     @Override
-    public int insertBlogAttachFileInfo(Map<String, String> param) throws SQLException {
+    public int insertBlogAttachFileInfo(Map<String, Object> param) throws SQLException {
         return query.insert("com.hongdan.auto.blog.insertBlogAttachFileInfo",param);
     }
     
