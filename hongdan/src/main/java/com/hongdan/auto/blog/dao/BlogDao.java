@@ -30,4 +30,7 @@ public interface BlogDao {
 	
 	public int updateBlogViewCount(Map<String, String> param) throws SQLException;
 	
+	public Map<String, String> getBlogAttachFileInfo(Map<String, Object> param) throws SQLException;
+	
+	public int deleteBlogAttachFileInfo(Map<String, Object> param) throws SQLException;
 }

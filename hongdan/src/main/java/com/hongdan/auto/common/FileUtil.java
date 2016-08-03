@@ -19,10 +19,10 @@ import com.hongdan.auto.common.vo.FileInfoVO;
 
 
 @Service
-public class FileUpload { 
+public class FileUtil { 
 
 	
-		private static final Logger logger = LoggerFactory.getLogger(FileUpload.class);
+		private static final Logger logger = LoggerFactory.getLogger(FileUtil.class);
 
 
 		public static void fileUpload(MultipartFile fileData, String path, String fileName) throws IOException {
@@ -139,5 +139,16 @@ public class FileUpload {
 			}
 		}
 		
+		
+		/**
+		 * 파일삭제
+		 * @param file_full_path			(경로)
+		 * @return boolean
+		 * @throws IOException
+		 */
+		public static boolean deleteFile(String file_full_path) throws IOException {
+			File delFile = new File(file_full_path);			
+			return delFile.delete();
+		}
 
 }

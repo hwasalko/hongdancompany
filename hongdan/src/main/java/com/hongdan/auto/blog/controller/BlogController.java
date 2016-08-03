@@ -35,7 +35,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.hongdan.auto.blog.services.BlogService;
 import com.hongdan.auto.blog.vo.PhotoVo;
 import com.hongdan.auto.common.DateUtil;
-import com.hongdan.auto.common.FileUpload;
+import com.hongdan.auto.common.FileUtil;
 import com.hongdan.auto.common.PagingUtil;
 import com.hongdan.auto.common.vo.FileInfoVO;
 
@@ -392,7 +392,7 @@ public class BlogController {
 	 * @throws SQLException 
 	 */
 	@RequestMapping(value = "/blog/attachfile/upload", method = RequestMethod.POST )
-	public @ResponseBody Map<String, Object> blogAttachfileUpload( 
+	public @ResponseBody Map<String, Object> uploadBlogAttachfile( 
 							@RequestParam(value = "files[]", required = false) MultipartFile[] files , 
 							HttpServletRequest request 
 					) throws IllegalStateException, IOException, SQLException  {
@@ -406,7 +406,7 @@ public class BlogController {
 		long insertedFileSeq = 0;
 		
 		// 윈도우 서버일 경우
-		if( FileUpload.isWindowServer() ){
+		if( FileUtil.isWindowServer() ){
 			uploadPath = BLOG_ATTACH_FILE_UPLOAD_PATH_WINDOW;
 		}else{ // 윈도우 서버가 아닐 경우 
 			uploadPath = BLOG_ATTACH_FILE_UPLOAD_PATH;
@@ -421,7 +421,7 @@ public class BlogController {
 			    logger.debug("[첨부파일정보] " + file.getOriginalFilename() + " / " + file.getSize() + " byte");
 			    
 			    // 파일업로드 수행
-			    fileInfoVO = FileUpload.fileUpload(file, uploadPath ); 
+			    fileInfoVO = FileUtil.fileUpload(file, uploadPath ); 
 			    
 			    // 파일업로드 정보 DB에 저장
 			    insertedFileSeq = blogService.insertBlogAttachFileInfo(fileInfoVO);
@@ -432,7 +432,7 @@ public class BlogController {
 			    fileInfoMap.put("size", fileInfoVO.getFileSize() );
 			    fileInfoMap.put("fileSeq", insertedFileSeq);
 			    fileInfoMap.put("deleteUrl", "/blog/attachfile/delete/" + insertedFileSeq);
-			    fileInfoMap.put("deleteType", "DELETE");			    
+			    fileInfoMap.put("deleteType", "DELETE");			    	// RequestMethod 방법 결정 (GET, POST, DELETE, PUT, PATCH)
 			    jsonList.add(fileInfoMap);
 		} 
 		
@@ -444,7 +444,47 @@ public class BlogController {
 		
 		return jsonObject;
 	}	
+
 	
+	/**
+	 * 블로그 첨부파일삭제 컨트롤러
+	 * Map방식을 이용한 JSON API
+	 * @return
+	 * @throws SQLException 
+	 * @throws IOException 
+	 */
+	@RequestMapping(value = "/blog/attachfile/delete/{file_seq}", method = RequestMethod.DELETE )
+	public @ResponseBody Map<String, Object> deleteBlogAttachfile(HttpServletRequest request,  @PathVariable String file_seq) throws SQLException, IOException  {
+		
+		logger.info("[삭제대상 첨부파일] FILE_SEQ : " + file_seq );
+		
+		Map<String, Object> param = new HashMap<String, Object>();   // DB 조회 시 사용할 파라미터 MAP
+		boolean deleteFileResult = false;
+		
+		// json 생성용 변수 
+		Map<String, Object> fileInfoMap = new HashMap<String, Object>();
+		Map<String, Object> jsonObject = new HashMap<String, Object>();
+		ArrayList<Map<String, Object>> jsonList = new ArrayList<Map<String, Object>>();
+		
+		
+		//첨부파일 정보 획득
+		param.put("file_seq", file_seq);
+		Map<String, String> resultMap = blogService.getBlogAttachFileInfo(param);
+		logger.info("[삭제대상 첨부파일] FILE_FULL_PATH : " + resultMap.get("FILE_FULL_PATH"));
+		
+		// 첨부파일 삭제
+		logger.info("[삭제대상 첨부파일] DB 삭제결과 : " + blogService.deleteBlogAttachFileInfo(param));
+		deleteFileResult = FileUtil.deleteFile(resultMap.get("FILE_FULL_PATH"));
+		logger.info("[삭제대상 첨부파일] FILE 삭제결과 : " +  deleteFileResult );
+		
+		// JSON 객체 생성
+		fileInfoMap.put( resultMap.get("FILE_ORIGINAL_NM") , deleteFileResult);		    
+	    jsonList.add(fileInfoMap);
+	    jsonObject.put("files", jsonList);
+	    
+	    return jsonObject;
+		
+	}	
 	
 	
 }

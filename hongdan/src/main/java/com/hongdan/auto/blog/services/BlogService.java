@@ -32,4 +32,10 @@ public interface BlogService {
 	public int updateBlogViewCount(Map<String, String> param) throws SQLException;
 	
 	public long insertBlogAttachFileInfo(FileInfoVO fileInfoVO) throws SQLException;
+	
+	public Map<String, String> getBlogAttachFileInfo(Map<String, Object> param) throws SQLException;
+	
+	public int deleteBlogAttachFileInfo(Map<String, Object> param) throws SQLException;
+	
+	
 }

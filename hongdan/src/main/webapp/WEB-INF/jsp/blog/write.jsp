@@ -121,24 +121,24 @@
 														        <div class="row fileupload-buttonbar">
 														            <div class="col-lg-7">
 														                <!-- The fileinput-button span is used to style the file input field as button -->
-														                <span class="btn btn-success fileinput-button">
+														                <span class="btn btn-success fileinput-button" style="padding : 5px 10px;">
 														                    <i class="glyphicon glyphicon-plus"></i>
-														                    <span>Add files...</span>
+														                    <span>파일추가</span>
 														                    <input type="file" name="files[]" multiple>
 														                </span>
-														                <button type="submit" class="btn btn-primary start">
+														                <button type="submit" class="btn btn-primary start" style="padding : 5px 10px;">
 														                    <i class="glyphicon glyphicon-upload"></i>
-														                    <span>Start upload</span>
+														                    <span>전체업로드</span>
 														                </button>
-														                <button type="reset" class="btn btn-warning cancel">
+														                <button type="reset" class="btn btn-warning cancel" style="padding : 5px 10px;">
 														                    <i class="glyphicon glyphicon-ban-circle"></i>
-														                    <span>Cancel upload</span>
+														                    <span>전체취소</span>
 														                </button>
-														                <button type="button" class="btn btn-danger delete">
+														                <button type="button" class="btn btn-danger delete" style="padding : 5px 10px;">
 														                    <i class="glyphicon glyphicon-trash"></i>
-														                    <span>Delete</span>
+														                    <span>전체삭제</span>
 														                </button>
-														                <input type="checkbox" class="toggle">
+														                <input type="checkbox" class="toggle"><span class="text-primary"> 전체선택</span>
 														                <!-- The global file processing state -->
 														                <span class="fileupload-process"></span>
 														            </div>

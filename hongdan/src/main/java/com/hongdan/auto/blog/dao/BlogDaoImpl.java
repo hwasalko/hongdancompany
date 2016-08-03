@@ -73,5 +73,15 @@ public class BlogDaoImpl implements BlogDao {
         return query.update("com.hongdan.auto.blog.updateBlogViewCount",param);
     }
     
+    @Override
+    public Map<String, String> getBlogAttachFileInfo(Map<String, Object> param) throws SQLException{
+        return query.selectOne("com.hongdan.auto.blog.getBlogAttachFileInfo", param);
+    }
+    
+    @Override
+    public int deleteBlogAttachFileInfo(Map<String, Object> param) throws SQLException {
+        return query.delete("com.hongdan.auto.blog.deleteBlogAttachFileInfo",param);
+    }
+    
 }
 

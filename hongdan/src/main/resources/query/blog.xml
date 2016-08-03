@@ -184,5 +184,27 @@
   		SET VIEW_CNT = VIEW_CNT+1
   		WHERE BLOG_SEQ = #{blog_seq}
 	</update>
+	
+	<select id="com.hongdan.auto.blog.getBlogAttachFileInfo" parameterType="java.util.Map" resultType="java.util.Map">
+	<![CDATA[
+		    SELECT
+		        FILE_SEQ,
+  				FILE_REAL_NM,
+  				FILE_ORIGINAL_NM,
+  				FILE_FULL_PATH,
+  				FILE_SIZE,
+  				REG_DDTM,
+  				BLOG_SEQ
+		    FROM TB_BLOG_ATTACH_FILE A
+		    WHERE
+		    	A.FILE_SEQ = #{file_seq}	    	
+	 ]]>   
+	</select>
+	
+	<delete id="com.hongdan.auto.blog.deleteBlogAttachFileInfo"  parameterType="java.util.Map" >
+	    DELETE
+  		FROM TB_BLOG_ATTACH_FILE
+  		WHERE FILE_SEQ = #{file_seq}	
+	</delete>
     
 </mapper>

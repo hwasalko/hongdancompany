@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.hongdan.auto.blog.dao.BlogDao;
-import com.hongdan.auto.common.FileUpload;
+import com.hongdan.auto.common.FileUtil;
 import com.hongdan.auto.common.vo.FileInfoVO;
 import com.hongdan.auto.sample.service.SampleServiceImpl;
 
@@ -115,5 +115,18 @@ public class BlogServiceImpl implements BlogService {
     	
     	return  (long) param.get("inserted_file_seq");
     }
+
+    
+    @Override 
+    public Map<String, String> getBlogAttachFileInfo(Map<String, Object> param) throws SQLException{
+    	return blogDao.getBlogAttachFileInfo(param);
+    }
+
+    @Override
+    @Transactional
+    public int deleteBlogAttachFileInfo(Map<String, Object> param) throws SQLException{
+    	return blogDao.deleteBlogAttachFileInfo(param);
+    }
+    
     
 }
