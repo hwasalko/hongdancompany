@@ -37,8 +37,9 @@ public class BlogServiceImpl implements BlogService {
     
     @Override
     @Transactional
-    public int insertBlog(Map<String, String> param) throws SQLException{
-    	return blogDao.insertBlog(param);
+    public long insertBlog(Map<String, Object> param) throws SQLException{
+    	logger.info("블로그 Insert 결과 : " + blogDao.insertBlog(param) );
+    	return  (long) param.get("inserted_blog_seq");
     }
 
     
@@ -111,6 +112,8 @@ public class BlogServiceImpl implements BlogService {
     	param.put("saveFileName", fileInfoVO.getSaveFileName());
     	param.put("saveFileFullPath", fileInfoVO.getSaveFileFullPath());
     	param.put("fileSize", String.valueOf(fileInfoVO.getFileSize()) );
+    	param.put("fileContentsType", fileInfoVO.getFileContentsType());
+    	
     	blogDao.insertBlogAttachFileInfo(param);
     	
     	return  (long) param.get("inserted_file_seq");
@@ -127,6 +130,17 @@ public class BlogServiceImpl implements BlogService {
     public int deleteBlogAttachFileInfo(Map<String, Object> param) throws SQLException{
     	return blogDao.deleteBlogAttachFileInfo(param);
     }
+
+    @Override 
+    public List<Map<String, String>> getBlogAttachFileInfoList(Map<String, Object> param) throws SQLException {
+    	return blogDao.getBlogAttachFileInfoList(param);
+    }
+
     
+    @Override
+    @Transactional
+    public int updateBlogAttachFileSeq(Map<String, Object> param) throws SQLException{
+    	return blogDao.updateBlogAttachFileSeq(param);
+    }
     
 }

@@ -13,7 +13,7 @@ public interface BlogService {
 	
 	public void saveFileToBlob(Map<String, Object> hmap) throws SQLException;
 	
-	public int insertBlog(Map<String, String> param) throws SQLException;
+	public long insertBlog(Map<String, Object> param) throws SQLException;
 	
 	public List<Map<String, String>> getBlogList(Map<String, Object> param) throws SQLException;
 	
@@ -37,5 +37,8 @@ public interface BlogService {
 	
 	public int deleteBlogAttachFileInfo(Map<String, Object> param) throws SQLException;
 	
+	public List<Map<String, String>> getBlogAttachFileInfoList(Map<String, Object> param) throws SQLException;
+	
+	public int updateBlogAttachFileSeq(Map<String, Object> param) throws SQLException;
 	
 }

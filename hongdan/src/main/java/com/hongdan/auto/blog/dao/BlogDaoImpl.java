@@ -19,7 +19,7 @@ public class BlogDaoImpl implements BlogDao {
     private SqlSessionTemplate query;
 
     @Override
-    public int insertBlog(Map<String, String> param) throws SQLException {
+    public int insertBlog(Map<String, Object> param) throws SQLException {
         return query.insert("com.hongdan.auto.blog.insertBlog",param);
     }
     
@@ -81,6 +81,16 @@ public class BlogDaoImpl implements BlogDao {
     @Override
     public int deleteBlogAttachFileInfo(Map<String, Object> param) throws SQLException {
         return query.delete("com.hongdan.auto.blog.deleteBlogAttachFileInfo",param);
+    }
+    
+    @Override
+    public List<Map<String, String>> getBlogAttachFileInfoList(Map<String, Object> param) throws SQLException {
+        return query.selectList("com.hongdan.auto.blog.getBlogAttachFileInfoList", param);
+    }
+    
+    @Override
+    public int updateBlogAttachFileSeq(Map<String, Object> param) throws SQLException {
+        return query.update("com.hongdan.auto.blog.updateBlogAttachFileSeq",param);
     }
     
 }

@@ -13,7 +13,7 @@ public class FileInfoVO {
 	private String saveFileName;		// 업로드 파일명
 	private String saveFileFullPath;	// 업로드 파일 풀패스
 	private String fileContentsType;	// 파일 컨텐츠타입
-	private long fileSize;					// 파일사이즈
+	private long fileSize;				// 파일사이즈
 	
 	public FileInfoVO(String originalFileName, String saveFileName, String saveFileFullPath, String fileContentsType, long fileSize) {
 		super();

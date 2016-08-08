@@ -8,7 +8,7 @@ import com.hongdan.auto.common.vo.FileInfoVO;
 
 public interface BlogDao {
 	
-	public int insertBlog(Map<String, String> param) throws SQLException;
+	public int insertBlog(Map<String, Object> param) throws SQLException;
 	
 	public void saveFileToBlob(Map<String, Object> hmap) throws SQLException;
 	
@@ -33,4 +33,9 @@ public interface BlogDao {
 	public Map<String, String> getBlogAttachFileInfo(Map<String, Object> param) throws SQLException;
 	
 	public int deleteBlogAttachFileInfo(Map<String, Object> param) throws SQLException;
+	
+	public List<Map<String, String>> getBlogAttachFileInfoList(Map<String, Object> param) throws SQLException;
+	
+	public int updateBlogAttachFileSeq(Map<String, Object> param) throws SQLException;
+	
 }

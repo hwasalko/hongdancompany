@@ -3,10 +3,9 @@
 <mapper namespace="com.hongdan.auto.blog">
 
     
-	<insert id="com.hongdan.auto.blog.insertBlog"  parameterType="java.util.Map" >
+	<insert id="com.hongdan.auto.blog.insertBlog"  parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="inserted_blog_seq" >
 	    INSERT INTO TB_BLOG(
-	    	BLOG_SEQ,
-  			TITLE,
+	    	TITLE,
   			CONTENTS,
   			REG_DDTM,
   			REG_ID,
@@ -14,8 +13,7 @@
   			TAGS,
   			BLOG_CTG_CD
 	    )
-		SELECT 
-			(IFNULL(MAX(BLOG_SEQ), 0) +1) BLOG_SEQ,
+		VALUES( 
 			#{title},
 			#{contents},
 			DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
@@ -23,7 +21,7 @@
 			'N',
 			#{tags},
 			#{ctg_cd}
-		FROM TB_BLOG
+		)
 	</insert>
 	
 	<select id="com.hongdan.auto.blog.getBlogList" resultType="java.util.Map">
@@ -165,6 +163,7 @@
 	        FILE_ORIGINAL_NM,
 	        FILE_FULL_PATH,
 	        FILE_SIZE,
+	        FILE_CONTENTS_TYPE,
 	        REG_DDTM,
 	        BLOG_SEQ
 	    )
@@ -173,8 +172,9 @@
 			#{originalFileName},
 			#{saveFileFullPath},
 			#{fileSize},
+			#{fileContentsType},
 			DATE_FORMAT(now(), '%Y%m%d%H%i%s'),
-			null
+			#{blogSeq}
 		)
 		
 	</insert>
@@ -206,5 +206,32 @@
   		FROM TB_BLOG_ATTACH_FILE
   		WHERE FILE_SEQ = #{file_seq}	
 	</delete>
+	
+	<select id="com.hongdan.auto.blog.getBlogAttachFileInfoList" resultType="java.util.Map">
+	    SELECT
+	        	FILE_SEQ,
+  				FILE_REAL_NM,
+  				FILE_ORIGINAL_NM,
+  				FILE_FULL_PATH,
+  				FILE_SIZE,
+  				REG_DDTM,
+  				BLOG_SEQ
+	    FROM TB_BLOG_ATTACH_FILE A
+	    WHERE BLOG_SEQ = #{blog_seq}
+	</select>
+	
+	<update id="com.hongdan.auto.blog.updateBlogAttachFileSeq"  parameterType="java.util.Map" >
+	    
+	    UPDATE TB_BLOG_ATTACH_FILE
+  		SET BLOG_SEQ = #{blog_seq}
+  		WHERE FILE_SEQ IN
+  		
+  		<foreach collection="file_seq" item="item" open="(" close=")" separator=",">
+  			#{item}
+  		</foreach>
+  		
+  		
+	</update>
+	
     
 </mapper>

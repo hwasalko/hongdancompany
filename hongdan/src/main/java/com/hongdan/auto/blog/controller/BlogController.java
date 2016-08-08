@@ -168,23 +168,26 @@ public class BlogController {
 	
 	
 	@RequestMapping(value = "/blog/write", method = RequestMethod.POST )
-	public String blogSave(HttpServletRequest request,  Model model, HttpSession session) {		
+	public String blogWrite(HttpServletRequest request,  Model model, HttpSession session) {		
 		
 		String title 			= request.getParameter("blog_title");
 		String contents 	= request.getParameter("blog_content");
 		String tags 		= request.getParameter("blog_tag");
 		String ctg_cd 		= request.getParameter("blog_ctg");
 		String writer_id	= (String) session.getAttribute("usr_id");	// 로그인 사용자 ID
+		String attach_file_seq	= request.getParameter("attachFileSeq");	// 첨부파일 FILE_SEQ 목록( ','를 구분자로 사용)
+		long insertedBlogSeq = 0;		// 인서트 후 BLOG_SEQ
 		
 		logger.info("제목 : " + title  );
 		logger.info("태그 : " + tags  );
 		logger.info("카테고리 : " + ctg_cd  );
 		logger.info("내용 : " + contents  );
 		logger.info("작성자 : " + writer_id  );
+		logger.info("첨부파일 SEQ : " + attach_file_seq  );
 		
 		
-		
-    	Map<String, String> param = new HashMap<String, String>();
+		// ① 블로그 글 등록
+    	Map<String, Object> param = new HashMap<String, Object>();		// Main 파라미터
     	
     	param.put("title",title);
     	param.put("tags", tags);
@@ -192,15 +195,37 @@ public class BlogController {
     	param.put("contents", contents);
     	param.put("register_id", writer_id);
 		
-		try {
-			int result = blogService.insertBlog( param );
-			logger.info("처리결과 : " + result);
+    	try {
+			insertedBlogSeq = blogService.insertBlog( param );
+			logger.info("블로그 등록 처리후 BLOG_SEQ : " + insertedBlogSeq);
 		} catch (SQLException e) {
 			e.printStackTrace();
-			logger.error(e.toString());
+			logger.error("[블로그 등록처리 에러]" + e.toString());
 		}
 		
-		return "redirect:/blog/list";
+    	
+    	// ② 블로그 첨부파일 등록(Update)
+    	Map<String, Object> param2 = new HashMap<String, Object>();		// 첨부파일 UPDATE 용 파라미터
+		List<String> list_file_seq = new ArrayList<String>();						// 첨부파일 FILE_SEQ 목록 저장을 위한 LIST
+		
+		// 파일SEQ List 변수에 저장
+		for(String val : attach_file_seq.split(",") ){
+			list_file_seq.add(val);
+		}
+		
+    	param2.put("file_seq", list_file_seq );
+		param2.put("blog_seq", insertedBlogSeq);
+		
+		try {
+			int result = blogService.updateBlogAttachFileSeq(param2);
+			logger.info("블로그 첨부파일 등록(UPDATE) 처리결과 : " + result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			logger.error("[블로그 첨부파일 등록(UPDATE) 처리 에러]" + e.toString());
+		}
+		
+		
+		return "redirect:/blog/" + insertedBlogSeq;		// 등록 후 상세보기 화면으로 이동
 		
 	}
 	
@@ -247,9 +272,13 @@ public class BlogController {
 		String tags 		= request.getParameter("blog_tag");
 		String pageNo = request.getParameter("pageNo");
 		String ctg_cd 		= request.getParameter("blog_ctg");
+		String attach_file_seq	= request.getParameter("attachFileSeq");	// 첨부파일 FILE_SEQ 목록( ','를 구분자로 사용)
 		
 		logger.debug("pageNo : " + pageNo);
 		
+		
+		
+		// ① 블로그 수정처리
 		Map<String, String> param = new HashMap<String, String>();
     	
     	param.put("blog_seq",blog_seq);
@@ -267,7 +296,30 @@ public class BlogController {
 			logger.error(e.toString());
 		}
 		
-		return "redirect:/blog/list/" + pageNo;
+		
+		
+		// ② 블로그 첨부파일 등록(Update)
+    	Map<String, Object> param2 = new HashMap<String, Object>();		// 첨부파일 UPDATE 용 파라미터
+		List<String> list_file_seq = new ArrayList<String>();						// 첨부파일 FILE_SEQ 목록 저장을 위한 LIST
+		
+		// 파일SEQ List 변수에 저장
+		for(String val : attach_file_seq.split(",") ){
+			list_file_seq.add(val);
+		}
+		
+    	param2.put("file_seq", list_file_seq );
+		param2.put("blog_seq", blog_seq);
+		
+		try {
+			int result = blogService.updateBlogAttachFileSeq(param2);
+			logger.info("블로그 첨부파일 등록(UPDATE) 처리결과 : " + result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			logger.error("[블로그 첨부파일 등록(UPDATE) 처리 에러]" + e.toString());
+		}
+		
+		
+		return "redirect:/blog/" + blog_seq;
 		
 	}
 
@@ -393,14 +445,14 @@ public class BlogController {
 	 */
 	@RequestMapping(value = "/blog/attachfile/upload", method = RequestMethod.POST )
 	public @ResponseBody Map<String, Object> uploadBlogAttachfile( 
-							@RequestParam(value = "files[]", required = false) MultipartFile[] files , 
+							@RequestParam(value = "files[]", required = false) MultipartFile[] files ,
 							HttpServletRequest request 
 					) throws IllegalStateException, IOException, SQLException  {
 		
 		// json 생성용 변수 
 		Map<String, Object> fileInfoMap = new HashMap<String, Object>();
 		Map<String, Object> jsonObject = new HashMap<String, Object>();
-		ArrayList<Map<String, Object>> jsonList = new ArrayList<Map<String, Object>>();
+		List<Map<String, Object>> jsonList = new ArrayList<Map<String, Object>>();
 		
 		String uploadPath;
 		long insertedFileSeq = 0;
@@ -433,6 +485,7 @@ public class BlogController {
 			    fileInfoMap.put("fileSeq", insertedFileSeq);
 			    fileInfoMap.put("deleteUrl", "/blog/attachfile/delete/" + insertedFileSeq);
 			    fileInfoMap.put("deleteType", "DELETE");			    	// RequestMethod 방법 결정 (GET, POST, DELETE, PUT, PATCH)
+			    fileInfoMap.put("fileContentsType", fileInfoVO.getFileContentsType());
 			    jsonList.add(fileInfoMap);
 		} 
 		
@@ -485,6 +538,49 @@ public class BlogController {
 	    return jsonObject;
 		
 	}	
+	
+	
+	/**
+	 * 블로그 파일업로드 컨트롤러
+	 * Map방식을 이용한 JSON API
+	 * @return
+	 * @throws SQLException 
+	 */
+	@RequestMapping(value = "/blog/attachfile/upload/{blog_seq}", method = RequestMethod.GET )
+	public @ResponseBody Map<String, Object> selectBlogAttachfile( HttpServletRequest request,  @PathVariable String blog_seq) throws SQLException {
+		
+		logger.info("[첨부파일 목록 호출] BLOG_SEQ : " + blog_seq );
+		
+		Map<String, Object> param = new HashMap<String, Object>();   // DB 조회 시 사용할 파라미터 MAP
+		List<Map<String, String>> resultList = new ArrayList<Map<String, String>>();	// DB 조회결과
+		
+		// json 생성용 변수
+		ArrayList<Map<String, Object>> jsonList = new ArrayList<Map<String, Object>>();
+		Map<String, Object> jsonObject = new HashMap<String, Object>();
+		
+		
+		
+		//첨부파일 목록 획득
+		param.put("blog_seq", blog_seq);		
+		resultList= blogService.getBlogAttachFileInfoList(param);
+		
+		// JSON 객체 생성
+		for(Map resultMap : resultList){
+			Map<String, Object> fileInfoMap = new HashMap<String, Object>();
+			
+			fileInfoMap.put("name", 		resultMap.get("FILE_ORIGINAL_NM") );		    
+			fileInfoMap.put("size", 			resultMap.get("FILE_SIZE") );
+			fileInfoMap.put("deleteUrl", 	"/blog/attachfile/delete/" + resultMap.get("FILE_SEQ") );
+			fileInfoMap.put("deleteType", "DELETE" );
+			
+			jsonList.add(fileInfoMap);
+		}
+		
+		jsonObject.put("files", jsonList);
+	    
+	    return jsonObject;
+		
+	}
 	
 	
 }

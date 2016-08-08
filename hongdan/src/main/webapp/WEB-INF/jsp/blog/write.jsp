@@ -14,6 +14,7 @@
 	
 			<!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
 			<link rel="stylesheet" href="/vendor/jquery-fileupload-plugin/css/jquery.fileupload.css">
+			
 		</head>
 		
 
@@ -102,6 +103,8 @@
 					                        </div>
 					                    </div>    
 					                    
+					                    <!-- 블로그 첨부파일 업로드 후 file_seq 값 전송을 위한 히든객체 -->
+					                    <input type="hidden" id="attachFileSeq" name="attachFileSeq" value="">
 					              </form>
 				                    
 				                   
@@ -113,54 +116,76 @@
 					                   <div class="row">
 						                        <div class="col-md-12">
 						                            <div class="form-group" >
-						                                <label class="upper" for="comment"><i class="fa fa-check" aria-hidden="true"></i> 첨부파일</label>
+						                            
+						                                <label class="upper" for="comment"><i class="fa fa-check" aria-hidden="true"></i> 첨부파일</label><small>(최대 업로드 SIZE : 100MB)</small>
 													    
-														        <!-- Redirect browsers with JavaScript disabled to the origin page -->
-														        <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
-														        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+													    		<!-- 파일추가 목록 영역 -->
+														        <div class="panel panel-default">
+																	  <!-- Default panel contents -->
+																	  <div class="panel-heading">
+																	  		<div id="dropzone" style="height:100px; text-align:center;">이곳에 파일을 끌어다 놓으시면 파일이 추가됩니다.</div>
+																	  </div>
+																</div>
+													    
+														        <!-- 파일업로드 추가/업로드/취소/삭제 버튼 영역부 -->
 														        <div class="row fileupload-buttonbar">
-														            <div class="col-lg-7">
-														                <!-- The fileinput-button span is used to style the file input field as button -->
-														                <span class="btn btn-success fileinput-button" style="padding : 5px 10px;">
-														                    <i class="glyphicon glyphicon-plus"></i>
-														                    <span>파일추가</span>
-														                    <input type="file" name="files[]" multiple>
-														                </span>
-														                <button type="submit" class="btn btn-primary start" style="padding : 5px 10px;">
-														                    <i class="glyphicon glyphicon-upload"></i>
-														                    <span>전체업로드</span>
-														                </button>
-														                <button type="reset" class="btn btn-warning cancel" style="padding : 5px 10px;">
-														                    <i class="glyphicon glyphicon-ban-circle"></i>
-														                    <span>전체취소</span>
-														                </button>
-														                <button type="button" class="btn btn-danger delete" style="padding : 5px 10px;">
-														                    <i class="glyphicon glyphicon-trash"></i>
-														                    <span>전체삭제</span>
-														                </button>
-														                <input type="checkbox" class="toggle"><span class="text-primary"> 전체선택</span>
-														                <!-- The global file processing state -->
-														                <span class="fileupload-process"></span>
-														            </div>
-														            <!-- The global progress state -->
-														            <div class="col-lg-5 fileupload-progress fade">
-														                <!-- The global progress bar -->
-														                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-														                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-														                </div>
-														                <!-- The extended global progress state -->
-														                <div class="progress-extended">&nbsp;</div>
-														            </div>
+															            <div class="col-md-6">
+															                <!-- The fileinput-button span is used to style the file input field as button -->
+															                <span class="btn btn-success fileinput-button" style="padding : 3px 7px;">
+															                    <i class="glyphicon glyphicon-plus"></i>
+															                    <span>파일추가</span>
+															                    <input type="file" name="files[]" multiple>
+															                </span>
+															                <button type="submit" class="btn btn-primary start" style="padding : 3px 7px;">
+															                    <i class="glyphicon glyphicon-upload"></i>
+															                    <span>전체업로드</span>
+															                </button>
+															                <button type="reset" class="btn btn-warning cancel" style="padding : 3px 7px;">
+															                    <i class="glyphicon glyphicon-ban-circle"></i>
+															                    <span>전체취소</span>
+															                </button>
+															                <button type="button" class="btn btn-danger delete" style="padding : 3px 7px;">
+															                    <i class="glyphicon glyphicon-trash"></i>
+															                    <span>전체삭제</span>
+															                </button>
+															                <input type="checkbox" class="toggle"><span class="text-primary"> 전체선택</span>
+															                <!-- The global file processing state -->
+															                <span class="fileupload-process"></span>
+															            </div>
+														            
+															            <!-- 전체 파일업로드 진행률 Progress bar 영역 -->
+															            <div class="col-md-6 fileupload-progress fade">
+															                <!-- The global progress bar -->
+															                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+															                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+															                </div>
+															                <!-- The extended global progress state -->
+															                <div class="progress-extended">&nbsp;</div>
+															            </div>
+														            
 														        </div>
-														        <!-- The table listing the files available for upload/download -->
-														        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+														        
+																<div class="table-responsive">
+																	<!-- Table -->
+																	<table role="presentation" class="table table-striped table-condensed table-hover table-bordered">
+																		<thead>
+																			<tr class="warning">
+																				<th class="text-center"></th>
+																				<th class="text-center">파일명</th>
+																				<th class="text-center">파일사이즈</th>
+																				<th class="text-center">버튼</th>
+																			</tr>
+																		</thead>
+																		<tbody class="files"></tbody>
+																	</table>
+																</div>
+														        
 													    
 						                            </div>
 						                        </div>
 					                    </div>    
 				                    </form>
 				                   
-				                   <hr>
 				                    
 				                    
 				                    <br>
@@ -243,84 +268,82 @@
 
 
 			<script>
+			
+					/** 파일업로드 컴포넌트 **/
 					$(function () {
-					    'use strict';
-		
+					
 					    // Initialize the jQuery File Upload widget:
 					    $('#fileupload').fileupload({
-					        // Uncomment the following to send cross-domain cookies:
-					        //xhrFields: {withCredentials: true},
-					        url: '/blog/attachfile/upload'
+					    	url : '/blog/attachfile/upload?blog_seq=${blog_seq}',
+					        dataType : 'json',
+					        dropZone: $('#dropzone')
 					    });
 		
-					    // Enable iframe cross-domain access via redirect option:
-					    $('#fileupload').fileupload(
-					        'option',
-					        'redirect',
-					        window.location.href.replace(
-					            /\/[^\/]*$/,
-					            '/cors/result.html?%s'
-					        )
-					    );
+
+					   
 	
 				        // Load existing files:
 				        $('#fileupload').addClass('fileupload-processing');
 				        $.ajax({
 				            // Uncomment the following to send cross-domain cookies:
 				            //xhrFields: {withCredentials: true},
-				            url: $('#fileupload').fileupload('option', 'url'),
+				            //url: $('#fileupload').fileupload('option', 'url'),
+						<c:if test="${not empty blogMap }">
+				            url: '/blog/attachfile/upload/${blog_seq}' ,
 				            dataType: 'json',
 				            context: $('#fileupload')[0]
+				        </c:if>
 				        }).always(function () {
 				            $(this).removeClass('fileupload-processing');
 				        }).done(function (result) {
 				            $(this).fileupload('option', 'done')
-				                .call(this, $.Event('done'), {result: result});
-				        });
+			                .call(this, $.Event('done'), {result: result});
+			        	});
 
 		
 					});
 			</script>
 
-			
-			<script id="template-upload" type="text/x-tmpl">
+
+
+<!---------------------------------  파일업로드 컴포넌트 템플릿 ----------------------------------------->			
+<script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
-        <td>
+        <td class="text-center">
             <span class="preview"></span>
         </td>
         <td>
-            <p class="name">{%=file.name%}</p>
+            <span class="name">{%=file.name%}</span>
             <strong class="error text-danger"></strong>
         </td>
-        <td>
-            <p class="size">Processing...</p>
+		<td class="text-right">
+			<span class="size" style="margin-bottom : 10 px;">Processing...</span>
             <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
         </td>
-        <td>
+        <td class="text-center">
             {% if (!i && !o.options.autoUpload) { %}
-                <button class="btn btn-primary start" disabled>
+                <button class="btn btn-primary start" disabled style="padding : 2px 5px;">
                     <i class="glyphicon glyphicon-upload"></i>
-                    <span>Start</span>
+                    <span>업로드</span>
                 </button>
             {% } %}
             {% if (!i) { %}
-                <button class="btn btn-warning cancel">
+                <button class="btn btn-warning cancel" style="padding : 2px 5px;">
                     <i class="glyphicon glyphicon-ban-circle"></i>
-                    <span>Cancel</span>
+                    <span>취소</span>
                 </button>
             {% } %}
         </td>
     </tr>
 {% } %}
-	</script>
-	
-	
-			<!-- The template to display files available for download -->
-			<script id="template-download" type="text/x-tmpl">
+</script>
+		
+<!-- The template to display files available for download -->
+<script id="template-download" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-download fade">
-        <td>
+        <td class="text-center">
             <span class="preview">
                 {% if (file.thumbnailUrl) { %}
                     <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
@@ -328,37 +351,39 @@
             </span>
         </td>
         <td>
-            <p class="name">
+            <span class="name">
                 {% if (file.url) { %}
                     <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
                 {% } else { %}
                     <span>{%=file.name%}</span>
                 {% } %}
-            </p>
+            </span>
             {% if (file.error) { %}
                 <div><span class="label label-danger">Error</span> {%=file.error%}</div>
             {% } %}
         </td>
-        <td>
-            <span class="size">{%=o.formatFileSize(file.size)%}</span>
+        <td class="text-right">
+            <span class="size" style="margin-bottom : 0 px;">{%=o.formatFileSize(file.size)%}</span>
         </td>
-        <td>
+        <td class="text-center">
             {% if (file.deleteUrl) { %}
-                <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                <button class="btn btn-danger delete" style="padding : 2px 5px;" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                     <i class="glyphicon glyphicon-trash"></i>
-                    <span>Delete</span>
+                    <span>삭제</span>
                 </button>
                 <input type="checkbox" name="delete" value="1" class="toggle">
             {% } else { %}
-                <button class="btn btn-warning cancel">
+                <button class="btn btn-warning cancel" style="padding : 2px 5px;">
                     <i class="glyphicon glyphicon-ban-circle"></i>
-                    <span>Cancel</span>
+                    <span>취소</span>
                 </button>
             {% } %}
+			<span class="file_seq_val" style="font-size : 0;">{%=file.fileSeq%}</span>
         </td>
     </tr>
 {% } %}
-	</script>
+</script>
+<!---------------------------------  파일업로드 컴포넌트 템플릿 ----------------------------------------->
 			
 	
 			
@@ -414,12 +439,18 @@
 						
 						if( check() ){
 						
+							
 							oEditors.getById["blog_content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
 							// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
 							
 							
+							// 파일업로드 SEQ 셋팅
+							$("#attachFileSeq").val('');	// 전달 인자값 초기화
+							$(".file_seq_val").each(function(index, value){
+								setFileSeq( $(this).text() )							
+							});
+							
 							try {
-								//$("#frm").action='/blog/write'; 
 								$("#frm").submit();
 							} catch(e) {}
 						
@@ -434,6 +465,11 @@
 							oEditors.getById["blog_content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
 							// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("blog_content").value를 이용해서 처리하면 됩니다.
 							
+							// 파일업로드 SEQ 셋팅
+							$("#attachFileSeq").val('');	// 전달 인자값 초기화
+							$(".file_seq_val").each(function(index, value){
+								setFileSeq( $(this).text() )							
+							});
 							
 							try {
 								$("#frm").submit();
@@ -472,6 +508,21 @@
 						var nFontSize = 9;
 						oEditors.getById["blog_content"].setDefaultFont(sDefaultFont, nFontSize);
 					}
+					
+					//첨부파일 file_seq 값 저장
+					function setFileSeq(file_seq){
+						var resultFileSeq = $("#attachFileSeq").val();
+						
+						// 기존 값이 있을 경우에는 ','를 구분자로 하여 저장'
+						if(resultFileSeq == null || resultFileSeq == '' ){
+							resultFileSeq = file_seq;
+						}else{
+							resultFileSeq = resultFileSeq + ',' + file_seq;
+						}
+						
+						$("#attachFileSeq").val(resultFileSeq);
+					}
+					
 					
 			</script>
 		  
