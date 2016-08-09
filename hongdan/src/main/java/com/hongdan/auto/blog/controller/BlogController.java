@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
+import org.springframework.web.servlet.ModelAndView;
 
 import com.hongdan.auto.blog.services.BlogService;
 import com.hongdan.auto.blog.vo.PhotoVo;
@@ -136,11 +136,13 @@ public class BlogController {
 	
 	
 	@RequestMapping(value = "/blog/{blog_seq}")
-	public String blogView(HttpServletRequest request,  Model model, @PathVariable String blog_seq) throws SQLException {
+	public String blogView(HttpServletRequest request,  Model model, @PathVariable String blog_seq) throws SQLException, IOException {
 		
 		Map<String, String> param = new HashMap<String, String>();
+		Map<String, Object> param2 = new HashMap<String, Object>();
 		
 		param.put("blog_seq",blog_seq);
+		param2.put("blog_seq",blog_seq);
 		
 		//조회수 증가
 		blogService.updateBlogViewCount(param);
@@ -152,6 +154,7 @@ public class BlogController {
 		model.addAttribute("pageNo", request.getParameter("pageNo") );
 		model.addAttribute("tagsList", blogService.getBlogTagsAllList());
 		model.addAttribute("categoryList" , blogService.getBlogCategoryList() );	// 블로그 카테고리 리스트
+		model.addAttribute("attachFileList" , blogService.getBlogAttachFileInfoList(param2) );	// 블로그 첨부파일 리스트
 		
 		return "blog/view";
 	}
@@ -578,9 +581,28 @@ public class BlogController {
 		
 		jsonObject.put("files", jsonList);
 	    
-	    return jsonObject;
-		
+	    return jsonObject;		
 	}
+	
+	
+	@RequestMapping(value = "/blog/attachfile/download/{file_seq}", method = RequestMethod.GET )
+	 public ModelAndView blogAttachFileDownload(HttpServletRequest request, @PathVariable String file_seq) throws SQLException{
+		
+		Map<String, Object> param = new HashMap<String, Object>();   // DB 조회 시 사용할 파라미터 MAP
+		
+		//첨부파일 정보 획득
+		param.put("file_seq", file_seq);
+		Map<String, String> mapBlogAttachFileInfo = blogService.getBlogAttachFileInfo(param);
+		logger.debug("[첨부파일 정보] : " + mapBlogAttachFileInfo.toString() );
+		
+		 File file = new File(mapBlogAttachFileInfo.get("FILE_FULL_PATH"));						// 실제 서버에 위치한 파일경로 및 파일명
+		 request.setAttribute("fileName", mapBlogAttachFileInfo.get("FILE_ORIGINAL_NM"));	// 다운로드 받을 파일명
+
+		 return new ModelAndView("fileDownloadView","fileDownload", file);
+		 
+	 }
+
+
 	
 	
 }

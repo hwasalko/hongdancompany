@@ -150,5 +150,35 @@ public class FileUtil {
 			File delFile = new File(file_full_path);			
 			return delFile.delete();
 		}
+		
+		/**
+		 * 파일용량 계산
+		 * @param file_byte_size			(파일사이즈)
+		 * @return boolean
+		 * @throws IOException
+		 */
+		public static String getFileSizePerUnit(String file_byte_size) throws IOException {
+			String result = "";
+			
+			double bytes = Double.parseDouble(file_byte_size);
+	        double kilobytes = (bytes / 1024);
+	        double megabytes = (kilobytes / 1024);
+	        double gigabytes = (megabytes / 1024);
+	        
+	        if( kilobytes < 1 ){
+	        	result = bytes + " bytes";
+	        }else if( megabytes < 1 ){
+	        	result = kilobytes + " KB";
+	        }else if( gigabytes < 1 ){
+	        	result = megabytes + " MB";
+	        }else{
+	        	result = gigabytes + " GB";
+	        }
+	        
+	        return result;
+			
+		}
+		
+
 
 }

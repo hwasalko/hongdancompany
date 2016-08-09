@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" 		uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" 	uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" 	uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <!DOCTYPE html>
 <html lang="kr">
@@ -86,6 +88,22 @@
 												        </p>
 										                
 										                <hr>
+										                
+										                <!-- 첨부파일 -->
+										                <c:if test="${not empty attachFileList}">										                   
+										                <blockquote class="blockquote-reverse" style="font-size: 16px;">
+										                	<p class="text-primary" style="font-weight: bold;">[첨부파일]</p>
+										                	<c:forEach var="file" items="${attachFileList}">
+								                					<small>
+								                						<a href="/blog/attachfile/download/${file.FILE_SEQ}">
+								                							<strong><span style="padding-right : 5px;" class="glyphicon glyphicon-download-alt"></span> ${file.FILE_ORIGINAL_NM}</strong>
+								                							(<fmt:formatNumber value="${file.FILE_SIZE_MB}" groupingUsed="true" /> MB)
+								                						</a>
+								                					</small>
+								                			</c:forEach>
+										                </blockquote>
+										                </c:if>
+										                
 										                
 										                <!-- 내용  -->
 										                <p>
