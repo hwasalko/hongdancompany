@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="row">
                     <div class="copyright-text text-center">
-                        &copy; 2016 Hongdan Company - 1st Auto. All Rights Reserved.
+                        &copy; 2016 홍단컴퍼니 Hongdan Company - 1st Auto. All Rights Reserved.
                     </div>
                 </div>
             </div>
