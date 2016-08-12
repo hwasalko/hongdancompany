@@ -5,7 +5,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/> 
-<title>Hongdan Company 1st Auto</title>
+<meta name="description" content="홍단컴퍼니(hongdan company)에서는 수입차 사후관리(수리 및 정비), 신차구매, 중고차 구매 등 차량종합관리대행 서비스를 제공합니다.">
+
+<title>홍단컴퍼니 1st Auto</title>
+
+
  
 <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/vendor/fontawesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
