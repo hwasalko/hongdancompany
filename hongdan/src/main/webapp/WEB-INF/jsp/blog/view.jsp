@@ -92,15 +92,17 @@
 										                <!-- 첨부파일 -->
 										                <c:if test="${not empty attachFileList}">										                   
 										                <blockquote class="blockquote-reverse" style="font-size: 16px;">
-										                	<p class="text-primary" style="font-weight: bold;">[첨부파일]</p>
-										                	<c:forEach var="file" items="${attachFileList}">
-								                					<small>
-								                						<a href="/blog/attachfile/download/${file.FILE_SEQ}">
-								                							<strong><span style="padding-right : 5px;" class="glyphicon glyphicon-download-alt"></span> ${file.FILE_ORIGINAL_NM}</strong>
-								                							(<fmt:formatNumber value="${file.FILE_SIZE_MB}" groupingUsed="true" /> MB)
-								                						</a>
-								                					</small>
-								                			</c:forEach>
+										                	<div class="alert alert-warning" role="alert">
+										                		    	<p class="text-primary" style="font-weight: bold; padding-bottom : 10px;"><i class="fa fa-paperclip"></i> 첨부파일</p>
+													                	<c:forEach var="file" items="${attachFileList}">
+											                					<small>
+											                						<a href="/blog/attachfile/download/${file.FILE_SEQ}">
+											                							<strong><span style="padding-right : 5px;" class="glyphicon glyphicon-download-alt"></span> ${file.FILE_ORIGINAL_NM}</strong>
+											                							(<fmt:formatNumber value="${file.FILE_SIZE_MB}" groupingUsed="true" /> MB)
+											                						</a>
+											                					</small>
+											                			</c:forEach>
+															</div>
 										                </blockquote>
 										                </c:if>
 										                
